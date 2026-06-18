@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>About Us | Aiva Wellness</title>
+  <meta name="description" content="Aiva Wellness is a premium healthcare & wellness brand, formulating science-backed, FSSAI-licensed supplements from Solan, Himachal Pradesh for households across India." />
+  <meta name="keywords" content="Aiva Wellness, about us, our story, wellness brand, supplements India, Solan Himachal Pradesh, FSSAI licensed" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aivawellness.com/about.html" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── CSS VARIABLES (exact match across the site) ─── */
+    :root {
+      --blue: #1d4ed8;
+      --blue-light: #3b82f6;
+      --blue-soft: rgba(59,130,246,0.10);
+      --blue-border: rgba(59,130,246,0.25);
+      --black: #0d1117;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --light: #f1f5f9;
+      --white: #ffffff;
+      --green: #16a34a;
+      --green-soft: #dcfce7;
+      --border: #e2e8f0;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow: 0 4px 24px rgba(13,17,23,0.07);
+      --shadow-lg: 0 16px 48px rgba(13,17,23,0.13);
+      --header-height: 68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; width: 100%; font-family: 'Inter', sans-serif; background: #f8fafc; color: var(--ink); }
+    body { padding-top: var(--header-height); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    /* ─── NAVBAR ─── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 9999;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(13,17,23,0.06);
+    }
+    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: var(--header-height); }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand img { width: 46px; height: 46px; border-radius: 10px; }
+    .brand-name { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--black); }
+    .brand-name span { color: var(--blue); }
+    .brand-sub { font-size: 0.72rem; color: var(--muted); display: block; margin-top: 1px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue); }
+    .nav-cta {
+      background: var(--blue); color: #fff; border: none; padding: 9px 22px;
+      border-radius: 999px; font-size: 0.88rem; font-weight: 600; cursor: pointer;
+      text-decoration: none; display: flex; align-items: center; gap: 7px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: #1e40af; transform: translateY(-1px); color: #fff; }
+    .hamburger { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; padding: 8px; cursor: pointer; }
+    .hamburger span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px 0; border-radius: 2px; transition: 0.3s; }
+
+    /* ─── MOBILE MENU ─── */
+    .mobile-menu {
+      position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0; z-index: 999;
+      background: rgba(13,17,23,0.7); backdrop-filter: blur(6px);
+      display: none; flex-direction: column;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-nav { background: #fff; padding: 20px; display: flex; flex-direction: column; gap: 4px; }
+    .mobile-nav a { padding: 12px 14px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; color: var(--ink); text-decoration: none; transition: background 0.2s; }
+    .mobile-nav a:hover { background: var(--light); }
+    .mobile-nav a.active { color: var(--blue); background: var(--blue-soft); }
+    .mobile-nav a.cta { background: var(--blue); color: #fff; text-align: center; margin-top: 8px; }
+
+    /* ─── BREADCRUMB ─── */
+    .breadcrumb-bar { background: #fff; border-bottom: 1px solid var(--border); }
+    .breadcrumb-bar .inner { max-width: 1280px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 6px; font-size: 0.8rem; }
+    .breadcrumb-bar a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb-bar a:hover { color: var(--blue); }
+    .breadcrumb-bar .sep { color: var(--border); }
+    .breadcrumb-bar .current { color: var(--ink); font-weight: 500; }
+
+    /* ─── IN-PAGE TABS ─── */
+    .about-tabs { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: var(--header-height); z-index: 500; }
+    .about-tabs-inner { max-width: 1280px; margin: 0 auto; padding: 0 20px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+    .about-tabs-inner::-webkit-scrollbar { display: none; }
+    .tab-link {
+      padding: 14px 18px; font-size: 0.85rem; font-weight: 600; color: var(--muted);
+      text-decoration: none; border-bottom: 3px solid transparent; white-space: nowrap;
+      transition: color 0.2s; margin-bottom: -1px;
+    }
+    .tab-link:hover { color: var(--blue); }
+    .tab-link.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+    /* ─── HERO BANNER ─── */
+    .about-hero {
+      background: linear-gradient(135deg, #0d1117 0%, #1e3a5f 60%, #1d4ed8 100%);
+      padding: 64px 20px 56px; text-align: center; position: relative; overflow: hidden;
+      scroll-margin-top: 130px;
+    }
+    .about-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(59,130,246,0.25) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .about-hero::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 20% 80%, rgba(29,78,216,0.2) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .about-hero-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+    .about-hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(59,130,246,0.18); border: 1px solid rgba(59,130,246,0.35);
+      color: #93c5fd; font-size: 0.75rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 999px; margin-bottom: 20px; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .about-hero h1 { font-family: 'Sora', sans-serif; font-size: 2.6rem; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.18; }
+    .about-hero h1 span { color: #60a5fa; }
+    .about-hero p { color: rgba(255,255,255,0.68); font-size: 1.02rem; line-height: 1.65; margin: 0 auto; max-width: 540px; }
+    .hero-stats { display: flex; justify-content: center; gap: 44px; margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat-num { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; }
+    .hero-stat-label { font-size: 0.74rem; color: rgba(255,255,255,0.5); margin-top: 3px; }
+
+    /* ─── PAGE WRAP ─── */
+    .page-wrap { max-width: 1280px; margin: 0 auto; padding: 60px 20px 0; }
+    section { scroll-margin-top: 130px; }
+    .section-heading { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--black); margin-bottom: 6px; }
+    .section-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 36px; max-width: 640px; }
+    .center { text-align: center; margin-left: auto; margin-right: auto; }
+
+    /* ─── STORY SECTION ─── */
+    .story-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; padding-bottom: 60px; }
+    .eyebrow { display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+    .story-text h2 { font-family: 'Sora', sans-serif; font-size: 1.9rem; font-weight: 800; color: var(--black); line-height: 1.25; margin-bottom: 18px; }
+    .story-text p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 0; }
+    .vision-quote {
+      font-style: italic; color: var(--ink); font-size: 0.98rem; line-height: 1.7;
+      border-left: 3px solid var(--blue); background: var(--blue-soft);
+      border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 22px 0;
+    }
+    .story-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+    .story-badge {
+      display: inline-flex; align-items: center; gap: 7px; background: #fff;
+      border: 1px solid var(--border); border-radius: 999px; padding: 7px 14px;
+      font-size: 0.78rem; font-weight: 600; color: var(--ink); box-shadow: var(--shadow);
+    }
+    .story-badge i { color: var(--blue); }
+
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .stat-card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 26px 18px; text-align: center; box-shadow: var(--shadow);
+      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+    }
+    .stat-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: var(--blue-border); }
+    .stat-num { font-family: 'Sora', sans-serif; font-size: 1.9rem; font-weight: 800; color: var(--blue); }
+    .stat-label { font-size: 0.76rem; color: var(--muted); margin-top: 4px; font-weight: 500; line-height: 1.4; }
+
+    /* ─── MISSION BANNER ─── */
+    .mission-banner {
+      background: linear-gradient(135deg, #0d1117 0%, #1e3a5f 60%, #1d4ed8 100%);
+      border-radius: 20px; padding: 52px 40px; text-align: center; position: relative; overflow: hidden;
+    }
+    .mission-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(59,130,246,0.28) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .mb-eyebrow { position: relative; display: inline-block; color: #93c5fd; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+    .mission-banner p { position: relative; color: #fff; font-family: 'Sora', sans-serif; font-size: 1.35rem; font-weight: 700; line-height: 1.5; max-width: 760px; margin: 0 auto; }
+
+    /* ─── VALUES ─── */
+    .values-section-inner { padding: 64px 0; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .value-card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 28px 24px; box-shadow: var(--shadow);
+      transition: box-shadow 0.35s ease, transform 0.35s ease, background 0.35s ease, color 0.25s ease;
+      text-align: center; color: var(--ink);
+    }
+    .value-card:hover {
+      box-shadow: var(--shadow-lg); transform: translateY(-6px);
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+      color: #fff; border-color: transparent;
+    }
+    .value-icon {
+      width: 52px; height: 52px; background: #fff; border: 1px solid rgba(59,130,246,0.16);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: var(--blue); margin: 0 auto 18px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    }
+    .value-card:hover .value-icon { transform: scale(1.08); border-radius: 50%; background: #fff; box-shadow: 0 12px 30px rgba(16,24,40,0.18); }
+    .value-card:hover .value-title, .value-card:hover .value-desc { color: #fff; }
+    .value-title { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+    .value-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── BEHIND THE SCENES / PEEK ─── */
+    .peek-section { padding: 0 0 64px; }
+    .peek-wrap { max-width: 880px; margin: 0 auto; }
+    .peek-main-wrap { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--border); }
+    .peek-main-img { width: 100%; height: 400px; object-fit: cover; display: block; transition: opacity 0.3s ease; }
+    .peek-caption-bar {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 20px;
+      background: linear-gradient(to top, rgba(13,17,23,0.85), transparent);
+      color: #fff; font-size: 0.85rem; font-weight: 600;
+    }
+    .peek-thumbs { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; justify-content: center; }
+    .peek-thumb { width: 92px; height: 64px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 3px solid transparent; opacity: 0.6; transition: all 0.2s; }
+    .peek-thumb.active, .peek-thumb:hover { opacity: 1; border-color: var(--blue); }
+
+    /* ─── JOURNEY TIMELINE ─── */
+    .journey-section { padding: 0 0 64px; }
+    .journey-track { position: relative; max-width: 760px; margin: 0 auto; }
+    .journey-track::before { content: ''; position: absolute; left: 19px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+    .timeline-item { position: relative; padding-left: 56px; margin-bottom: 30px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute; left: 0; top: 0; width: 40px; height: 40px; background: var(--blue);
+      color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Sora', sans-serif; font-weight: 800; font-size: 0.76rem;
+      box-shadow: 0 0 0 5px var(--blue-soft); z-index: 1;
+    }
+    .timeline-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; box-shadow: var(--shadow); }
+    .timeline-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--black); margin-bottom: 4px; font-size: 0.95rem; }
+    .timeline-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── TRUST STRIP ─── */
+    .trust-section { padding: 0 0 64px; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .trust-card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 22px 20px; text-align: center; transition: box-shadow 0.35s ease, transform 0.35s ease, background 0.35s ease, color 0.25s ease;
+      box-shadow: var(--shadow); color: var(--ink);
+    }
+    .trust-card:hover {
+      box-shadow: var(--shadow-lg); transform: translateY(-6px);
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+      color: #fff; border-color: transparent;
+    }
+    .trust-card:hover .trust-card-title,
+    .trust-card:hover .trust-card-desc { color: #fff; }
+    .trust-icon-wrap {
+      width: 52px; height: 52px; margin: 0 auto 14px;
+      background: #fff; border: 1px solid rgba(59,130,246,0.12);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: var(--blue); transition: transform 0.28s ease, box-shadow 0.28s ease, border-radius 0.28s ease;
+      box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    }
+    .trust-card:hover .trust-icon-wrap { transform: scale(1.06); border-radius: 50%; box-shadow: 0 12px 30px rgba(16,24,40,0.18); }
+    .trust-card-title { font-family: 'Sora', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+    .trust-card-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-outer { padding: 0 0 64px; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .testimonial-card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 26px; box-shadow: var(--shadow); transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .testimonial-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .t-stars { color: #f59e0b; font-size: 13px; margin-bottom: 12px; letter-spacing: 2px; }
+    .t-text { font-size: 0.87rem; color: var(--ink); line-height: 1.7; margin-bottom: 18px; }
+    .t-author { display: flex; align-items: center; gap: 10px; }
+    .t-avatar {
+      width: 38px; height: 38px; border-radius: 50%; background: var(--blue-soft); color: var(--blue);
+      display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif;
+      font-weight: 700; font-size: 0.82rem; flex-shrink: 0;
+    }
+    .t-name { font-weight: 700; font-size: 0.85rem; color: var(--black); }
+    .t-meta { font-size: 0.72rem; color: var(--muted); }
+
+    /* ─── MAP SECTION ─── */
+    .map-section { padding: 0 0 64px; }
+    .map-section-title { font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--black); margin-bottom: 8px; }
+    .map-section-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 24px; }
+    .map-wrap { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); height: 360px; }
+    .map-wrap iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+    /* ─── CTA BANNER ─── */
+    .cta-banner { background: var(--light); border: 1px solid var(--border); border-radius: 20px; padding: 52px 32px; text-align: center; margin-bottom: 64px; }
+    .cta-banner h2 { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--black); margin-bottom: 10px; }
+    .cta-banner p { color: var(--muted); font-size: 0.95rem; margin-bottom: 26px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-primary {
+      background: var(--blue); color: #fff; padding: 12px 28px; border-radius: 999px;
+      font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-flex;
+      align-items: center; gap: 8px; transition: all 0.2s;
+    }
+    .btn-cta-primary:hover { background: #1e40af; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(29,78,216,0.3); }
+    .btn-cta-secondary {
+      background: #fff; color: var(--ink); border: 1.5px solid var(--border); padding: 12px 28px;
+      border-radius: 999px; font-weight: 700; font-size: 0.9rem; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;
+    }
+    .btn-cta-secondary:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ─── REVEAL ANIMATION ─── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    /* ─── FOOTER ─── */
+    footer { background: #0d1117; color: #94a3b8; padding: 56px 20px 28px; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .footer-brand span { color: var(--blue-light); }
+    .footer-desc { font-size: 0.85rem; line-height: 1.7; margin-bottom: 16px; }
+    .footer-social { display: flex; gap: 10px; }
+    .social-btn { width: 36px; height: 36px; background: #1e293b; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; text-decoration: none; font-size: 14px; transition: all 0.2s; }
+    .social-btn:hover { background: var(--blue); color: #fff; }
+    .footer-col h6 { font-size: 0.82rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul li a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.83rem; margin-bottom: 10px; }
+    .footer-contact-item i { color: var(--blue-light); margin-top: 2px; flex-shrink: 0; }
+    .footer-contact-item a { color: #94a3b8; text-decoration: none; }
+    .footer-contact-item a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid #1e293b; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.78rem; }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: #64748b; text-decoration: none; }
+    .footer-bottom-links a:hover { color: #fff; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .story-grid { grid-template-columns: 1fr; }
+      .stats-grid { max-width: 460px; margin: 0 auto; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; flex-direction: column; }
+      .about-hero h1 { font-size: 2rem; }
+      .hero-stats { gap: 24px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .peek-main-img { height: 280px; }
+      .mission-banner { padding: 38px 24px; }
+      .mission-banner p { font-size: 1.1rem; }
+      .footer-top { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+      .footer-top > div { width: 100%; max-width: 420px; }
+      .footer-brand, .footer-social { display: flex; justify-content: center; align-items: center; gap: 10px; }
+      .footer-col { width: 100%; display: flex; flex-direction: column; align-items: center; }
+      .footer-col h6 { text-align: center; }
+      .footer-col ul { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0; margin: 0; }
+      .footer-contact-item { justify-content: center; text-align: center; }
+      .footer-contact-item i { margin-top: 0; }
+      .footer-bottom { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; }
+      .footer-bottom-links { justify-content: center; flex-wrap: wrap; }
+      .section-heading, .section-sub, .story-text, .map-section-title, .map-section-sub { text-align: center; }
+      .story-text { text-align: center; }
+      .story-badges, .section-sub.center { margin-left: auto; margin-right: auto; }
+      .vision-quote { text-align: left; }
+    }
+    @media (max-width: 480px) {
+      .about-hero { padding: 44px 16px 40px; }
+      .about-hero h1 { font-size: 1.65rem; }
+      .hero-stats { flex-wrap: wrap; gap: 18px; }
+      .page-wrap { padding: 40px 14px 0; }
+      .stats-grid { grid-template-columns: 1fr; max-width: 300px; }
+      .mission-banner p { font-size: 1rem; }
+      .peek-main-img { height: 220px; }
+      .peek-thumb { width: 70px; height: 50px; }
+      .cta-banner { padding: 38px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Aiva Wellness" onerror="this.style.display='none'">
+      <div>
+        <span class="brand-name">Aiva<span>Wellness</span></span>
+        <small class="brand-sub">Premium Healthcare & Wellness</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="tel:+917807751710" class="nav-cta">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" onclick="if(event.target===this)toggleMenu()">
+  <nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html" class="active">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+917807751710" class="cta"><i class="fa-solid fa-phone me-2"></i>Call Now</a>
+  </nav>
+</div>
+
+<!-- ─── BREADCRUMB ─── -->
+<div class="breadcrumb-bar">
+  <div class="inner">
+    <a href="index.html">Home</a>
+    <span class="sep">›</span>
+    <span class="current">About Us</span>
+  </div>
+</div>
+
+<!-- ─── IN-PAGE TABS ─── -->
+  <div class="about-tabs">
+  <div class="about-tabs-inner" id="aboutTabs">
+    <a href="#story" class="tab-link active">Our Story</a>
+    <a href="#behind-the-scenes" class="tab-link">Behind the Scenes</a>
+  </div>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="about-hero" id="top">
+  <div class="about-hero-inner">
+    <div class="about-hero-badge"><i class="fa-solid fa-mountain"></i> Our Story</div>
+    <h1>From the Hills of Himachal to <span>Your Daily Wellness Ritual</span></h1>
+    <p>Aiva Wellness began with a simple frustration — why was it so hard to find supplements you could actually trust? Today we formulate, test and ship science-backed wellness products from our home in Solan, Himachal Pradesh, to thousands of households across India.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">2022</div><div class="hero-stat-label">Founded</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">25+</div><div class="hero-stat-label">Products</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">10K+</div><div class="hero-stat-label">Customers</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">FSSAI</div><div class="hero-stat-label">Licensed Facility</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MAIN CONTENT ─── -->
+<main>
+<div class="page-wrap">
+
+  <!-- ─── STORY ─── -->
+  <section id="story">
+    <div class="story-grid">
+      <div class="story-text reveal">
+        <span class="eyebrow">Who We Are</span>
+        <h2>A Wellness Brand Built on Purity, Proof &amp; People</h2>
+        <p>Aiva Wellness is a direct-to-consumer healthcare and nutraceutical brand. We design every formulation with input from nutrition experts, manufacture in an FSSAI-licensed facility, and send each batch for independent lab testing before it ever reaches your doorstep. No trend-chasing, no inflated claims — just honestly labelled supplements that do what they say.</p>
+        <div class="vision-quote">"To make trustworthy wellness ordinary — not a luxury, not a gamble, just something every Indian household can rely on."</div>
+        <div class="story-badges">
+          <span class="story-badge"><i class="fa-solid fa-certificate"></i> FSSAI Licensed</span>
+          <span class="story-badge"><i class="fa-solid fa-flask-vial"></i> Third-Party Lab Tested</span>
+        </div>
+      </div>
+      <div class="stats-grid reveal">
+        <div class="stat-card"><div class="stat-num">25+</div><div class="stat-label">Products Across 11 Categories</div></div>
+        <div class="stat-card"><div class="stat-num">10K+</div><div class="stat-label">Customers Served</div></div>
+        <div class="stat-card"><div class="stat-num">4.8★</div><div class="stat-label">Average Customer Rating</div></div>
+        <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Genuine, Sealed Products</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MISSION BANNER ─── -->
+  <div class="mission-banner reveal" style="margin-bottom: 64px;">
+    <div class="mb-eyebrow">Our Mission</div>
+    <p>Bring lab-tested, honestly-labelled wellness products to every corner of India — at a price that respects your trust.</p>
+  </div>
+
+  <!-- ─── CORE VALUES ─── -->
+  <section id="values" class="values-section-inner">
+    <h2 class="section-heading center">What We Stand For</h2>
+    <p class="section-sub center">Five core values shape every formulation, every label and every order that leaves our facility.</p>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="fa-solid fa-flask-vial"></i></div>
+        <div class="value-title">Science First</div>
+        <div class="value-desc">Every formulation starts with research, not trends. We work with nutrition experts long before a product reaches the production line.</div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="value-title">Purity &amp; Safety</div>
+        <div class="value-desc">FSSAI-licensed manufacturing and third-party lab testing on every batch, so what's on the label is exactly what's in the bottle.</div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="fa-solid fa-eye"></i></div>
+        <div class="value-title">Radical Transparency</div>
+        <div class="value-desc">No hidden fillers and no inflated claims. Full ingredient panels and sourcing information are always available to you.</div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+        <div class="value-title">Customer First</div>
+        <div class="value-desc">From formulation to support, every decision starts with one question: is this genuinely good for the person taking it?</div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+        <div class="value-title">Honest Pricing</div>
+        <div class="value-desc">Premium quality shouldn't mean a premium markup. We price for accessibility, not exclusivity.</div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="value-title">Mindful Sourcing</div>
+        <div class="value-desc">Where possible, we source locally from Himachal Pradesh and work with suppliers who share our sustainability standards.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BEHIND THE SCENES ─── -->
+  <section id="behind-the-scenes" class="peek-section">
+    <h2 class="section-heading center">A Peek Behind the Counter</h2>
+    <p class="section-sub center">We're a small, hands-on team — from formulation to the final seal on every bottle. Here's a glimpse of how Aiva products come together.</p>
+    <div class="peek-wrap reveal">
+      <div class="peek-main-wrap">
+        <img id="peekMain" class="peek-main-img"
+             src="assets/about/peek-formulation.jpg"
+             alt="Aiva Wellness behind the scenes"
+             onerror="this.src='https://placehold.co/900x500/f1f5f9/64748b?text=Formulation+%26+R%26D'">
+        <div class="peek-caption-bar" id="peekCaption">Formulation &amp; R&amp;D</div>
+      </div>
+      <div class="peek-thumbs" id="peekThumbs"></div>
+    </div>
+  </section>
+
+  <!-- ─── OUR JOURNEY ─── -->
+  <section id="journey" class="journey-section">
+    <h2 class="section-heading center">Our Journey So Far</h2>
+    <p class="section-sub center">A young brand, growing one honest label at a time.</p>
+    <div class="journey-track">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot">'22</div>
+        <div class="timeline-card">
+          <div class="timeline-title">Aiva Wellness is founded</div>
+          <div class="timeline-desc">Started in Solan, Himachal Pradesh, with our first Magnesium formulation and a small, dedicated team.</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot">'23</div>
+        <div class="timeline-card">
+          <div class="timeline-title">FSSAI licensed, range expands</div>
+          <div class="timeline-desc">Our facility became FSSAI licensed, and we expanded into Vitamins, Immunity and Men's &amp; Women's Health lines.</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot">'24</div>
+        <div class="timeline-card">
+          <div class="timeline-title">10,000+ customers served</div>
+          <div class="timeline-desc">We crossed our first major milestone and introduced Protein, Pre-Workout and Gainer lines for active lifestyles.</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot">'25</div>
+        <div class="timeline-card">
+          <div class="timeline-title">25+ products, 11 categories</div>
+          <div class="timeline-desc">Our catalogue grew to 25+ science-backed products, with every single batch independently lab tested.</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot">'26</div>
+        <div class="timeline-card">
+          <div class="timeline-title">Going pan-India</div>
+          <div class="timeline-desc">We're continuing to expand delivery across India, while staying true to the same small-batch standards we started with.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TRUST STRIP ─── -->
+  <div class="trust-section">
+    <h2 class="section-heading center">Why People Trust Aiva</h2>
+    <p class="section-sub center">The same standards that apply to our products apply to how we treat every customer.</p>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="trust-card-title">100% Genuine</div>
+        <div class="trust-card-desc">Every product is sealed, lab-tested and FSSAI licensed before it ships.</div>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon-wrap"><i class="fa-solid fa-rotate-left"></i></div>
+        <div class="trust-card-title">7-Day Easy Returns</div>
+        <div class="trust-card-desc">Hassle-free returns on sealed, unopened products — no awkward questions.</div>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon-wrap"><i class="fa-solid fa-truck-fast"></i></div>
+        <div class="trust-card-title">Pan-India Delivery</div>
+        <div class="trust-card-desc">Fast, trackable shipping to every pincode we currently serve.</div>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon-wrap"><i class="fa-solid fa-headset"></i></div>
+        <div class="trust-card-title">2–4 Hr Support</div>
+        <div class="trust-card-desc">Real humans respond to queries fast, over call or WhatsApp.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── TESTIMONIALS ─── -->
+  <!-- TODO: Replace these sample quotes with real, verified customer reviews before publishing live. -->
+  <section class="testimonials-outer">
+    <h2 class="section-heading center">What Our Customers Say</h2>
+    <p class="section-sub center">A few words from people who've made Aiva part of their daily routine.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-text">What stood out to me was the transparency — the label actually matches what's inside. My sleep and muscle cramps have both improved since I started the Magnesium Complex.</div>
+        <div class="t-author">
+          <div class="t-avatar">DS</div>
+          <div>
+            <div class="t-name">Deepanshu Shukla</div>
+            <div class="t-meta">Verified Buyer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-text">Good to see a small Indian brand actually getting their products lab tested. Delivery was quick too — ordered from Bengaluru and it reached in under a week.</div>
+        <div class="t-author">
+          <div class="t-avatar">TP</div>
+          <div>
+            <div class="t-name">Tirthankar Purkayastha</div>
+            <div class="t-meta">Verified Buyer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-text">I recommend the Vitamin D3 + Immunity pack to clients at my gym. Honest pricing, no gimmicks, and customer support actually replies on WhatsApp.</div>
+        <div class="t-author">
+          <div class="t-avatar">VS</div>
+          <div>
+            <div class="t-name">Varun Sonagra</div>
+            <div class="t-meta">Verified Buyer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MAP / VISIT US ─── -->
+  <div class="map-section">
+    <h2 class="map-section-title">Visit Our Home in the Hills</h2>
+    <p class="map-section-sub">Our formulation and manufacturing base is in Solan, Himachal Pradesh.</p>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3361.8537831906324!2d77.1878!3d31.0236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391e52!2d77.1878!3d31.0236!5e0!3m2!1sen!2sin!4v1757563662397!5m2!1sen!2sin"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ─── CTA ─── -->
+  <div class="cta-banner reveal">
+    <h2>Ready to Start Your Wellness Journey?</h2>
+    <p>Browse our full range of science-backed, lab-tested supplements — or talk to us first if you're not sure where to start.</p>
+    <div class="cta-btns">
+      <a href="shop.html" class="btn-cta-primary"><i class="fa-solid fa-bag-shopping"></i> Shop Now</a>
+      <a href="contact.html" class="btn-cta-secondary"><i class="fa-solid fa-headset"></i> Talk to Us</a>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Aiva Wellness" width="36" height="36" style="border-radius:8px;" onerror="this.style.display='none'">
+          Aiva<span>Wellness</span>
+        </div>
+        <div class="footer-desc">Premium Healthcare & Wellness Solutions. Delivering trusted wellness products with transparency, care, and science-backed formulations.</div>
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a class="social-btn" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a class="social-btn" href="https://wa.me/917807751710" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="social-btn" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Categories</h6>
+        <ul>
+          <li><a href="#">Magnesium</a></li>
+          <li><a href="#">Protein</a></li>
+          <li><a href="#">Vitamins</a></li>
+          <li><a href="#">Pre-Workout</a></li>
+          <li><a href="#">Recovery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Contact</h6>
+        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+917807751710">+91 78077 51710</a></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:aivawellness@gmail.com">aivawellness@gmail.com</a></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Solan, Himachal Pradesh</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aiva Wellness. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Shipping Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  /* ── Mobile Menu ── */
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  /* ── Behind-the-scenes peek slider ── */
+  const peekSlides = [
+    { src: 'assets/about/peek-formulation.jpg', fallback: 'Formulation+%26+R%26D', caption: 'Formulation & R&D' },
+    { src: 'assets/about/peek-lab.jpg', fallback: 'Quality+Testing+Lab', caption: 'Quality Testing Lab' },
+    { src: 'assets/about/peek-packing.jpg', fallback: 'Packing+%26+Sealing', caption: 'Packing & Sealing' },
+    { src: 'assets/about/peek-team.jpg', fallback: 'Our+Team', caption: 'Our Team' },
+    { src: 'assets/about/peek-dispatch.jpg', fallback: 'Ready+for+Dispatch', caption: 'Ready for Dispatch' }
+  ];
+  let peekIndex = 0;
+  const peekThumbsWrap = document.getElementById('peekThumbs');
+  const peekMain = document.getElementById('peekMain');
+  const peekCaption = document.getElementById('peekCaption');
+
+  peekSlides.forEach((slide, i) => {
+    const t = document.createElement('img');
+    t.src = slide.src;
+    t.alt = slide.caption;
+    t.className = 'peek-thumb' + (i === 0 ? ' active' : '');
+    t.onerror = function () { this.src = 'https://placehold.co/180x120/f1f5f9/64748b?text=' + slide.fallback; };
+    t.onclick = () => setPeekSlide(i);
+    peekThumbsWrap.appendChild(t);
+  });
+
+  function setPeekSlide(i) {
+    peekIndex = i;
+    const slide = peekSlides[i];
+    peekMain.style.opacity = '0';
+    setTimeout(() => {
+      peekMain.src = slide.src;
+      peekMain.onerror = function () { this.src = 'https://placehold.co/900x500/f1f5f9/64748b?text=' + slide.fallback; };
+      peekCaption.textContent = slide.caption;
+      peekMain.style.opacity = '1';
+    }, 200);
+    document.querySelectorAll('.peek-thumb').forEach((t, idx) => t.classList.toggle('active', idx === i));
+  }
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reducedMotion) {
+    setInterval(() => setPeekSlide((peekIndex + 1) % peekSlides.length), 4000);
+  }
+
+  /* ── In-page tabs: smooth scroll + scroll-spy ── */
+  document.querySelectorAll('.tab-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const tabSections = ['story', 'values', 'behind-the-scenes', 'journey'].map(id => document.getElementById(id));
+  const tabLinks = document.querySelectorAll('.tab-link');
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tabLinks.forEach(l => l.classList.remove('active'));
+        const match = document.querySelector(`.tab-link[href="#${entry.target.id}"]`);
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  tabSections.forEach(s => s && spyObserver.observe(s));
+
+  /* ── Scroll reveal ── */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
