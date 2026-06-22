@@ -1,1056 +1,2559 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magnesium Complex 5-in-1 | Aiva Wellness</title>
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --blue: #1d4ed8;
-      --header-height: 68px;
-      --blue-light: #3b82f6;
-      --blue-soft: rgba(59,130,246,0.10);
-      --blue-border: rgba(59,130,246,0.25);
-      --black: #0d1117;
-      --ink: #1e293b;
-      --muted: #64748b;
-      --light: #f1f5f9;
-      --white: #ffffff;
-      --green: #16a34a;
-      --green-soft: #dcfce7;
-      --amber: #d97706;
-      --border: #e2e8f0;
-      --radius: 14px;
-      --radius-sm: 8px;
-      --shadow: 0 4px 24px rgba(13,17,23,0.08);
-      --shadow-lg: 0 16px 48px rgba(13,17,23,0.13);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { overflow-x: hidden; width: 100%; font-family: 'Inter', sans-serif; background: #f8fafc; color: var(--ink); }
-    body { padding-top: var(--header-height); }
-
-    /* ─── NAVBAR ─────────────────────────────────────────── */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: var(--header-height);
-      z-index: 9999;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 8px rgba(13,17,23,0.06);
-      transform: translateZ(0);
-    }
-    .nav-inner {
-      max-width: 1280px; margin: 0 auto; padding: 0 20px;
-      display: flex; align-items: center; justify-content: space-between; height: 68px;
-    }
-    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .brand img { width: 46px; height: 46px; border-radius: 10px; }
-    .brand-name { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--black); }
-    .brand-name span { color: var(--blue); }
-    .brand-sub { font-size: 0.72rem; color: var(--muted); display: block; margin-top: 1px; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--blue); }
-    .nav-cta {
-      background: var(--blue); color: #fff; border: none; padding: 9px 22px;
-      border-radius: 999px; font-size: 0.88rem; font-weight: 600; cursor: pointer;
-      text-decoration: none; display: flex; align-items: center; gap: 7px;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .nav-cta:hover { background: #1e40af; transform: translateY(-1px); color: #fff; }
-    .hamburger { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; padding: 8px; cursor: pointer; }
-    .hamburger span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px 0; border-radius: 2px; transition: 0.3s; }
-
-    /* ─── BREADCRUMB ─────────────────────────────────────── */
-    .breadcrumb-bar { background: #fff; border-bottom: 1px solid var(--border); }
-    .breadcrumb-bar .inner { max-width: 1280px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 6px; font-size: 0.8rem; }
-    .breadcrumb-bar a { color: var(--muted); text-decoration: none; }
-    .breadcrumb-bar a:hover { color: var(--blue); }
-    .breadcrumb-bar .sep { color: var(--border); }
-    .breadcrumb-bar .current { color: var(--ink); font-weight: 500; }
-
-    /* ─── MAIN LAYOUT ────────────────────────────────────── */
-    .page-wrap { max-width: 1280px; margin: 0 auto; padding: 24px 20px 60px; }
-
-    /* ─── PRODUCT TOP SECTION ────────────────────────────── */
-    .product-top { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 56px; }
-
-    /* ─── GALLERY ────────────────────────────────────────── */
-    .gallery-wrap { position: sticky; top: 88px; align-self: start; }
-    .main-image-box {
-      background: #fff; border-radius: var(--radius); border: 1px solid var(--border);
-      overflow: hidden; height: 480px; display: flex; align-items: center; justify-content: center;
-      position: relative; box-shadow: var(--shadow);
-    }
-    .main-image-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-    .main-image-box:hover img { transform: scale(1.04); }
-    .thumbs { display: flex; gap: 10px; margin-top: 14px; overflow-x: auto; padding-bottom: 4px; }
-    .thumbs img {
-      width: 80px; height: 80px; object-fit: cover; border-radius: 10px;
-      border: 2px solid var(--border); cursor: pointer; transition: border-color 0.2s, transform 0.2s;
-      flex-shrink: 0;
-    }
-    .thumbs img:hover { transform: scale(1.06); }
-    .thumbs img.active { border-color: var(--blue); }
-
-    /* ─── PRODUCT INFO ───────────────────────────────────── */
-    .product-info { display: flex; flex-direction: column; gap: 22px; }
-    .title-block { display: flex; flex-direction: column; gap: 6px; margin-top: 2rem; }
-    .product-title { font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800; color: var(--black); line-height: 1.2; margin: 0; }
-    .product-short-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.6; margin: 0; max-width: 680px; }
-    .rating-row { display: flex; align-items: center; gap: 10px; }
-    .stars { display: flex; gap: 2px; color: #f59e0b; font-size: 16px; }
-    .rating-text { font-size: 0.85rem; color: var(--muted); }
-    .rating-text strong { color: var(--ink); }
-    .verified-badge {
-      background: var(--green-soft); color: var(--green);
-      font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
-    }
-    .price-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 20px 22px; box-shadow: var(--shadow);
-    }
-    .price-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-    .price-main { font-size: 2.1rem; font-weight: 800; color: var(--black); font-family: 'Sora', sans-serif; }
-    .price-old { font-size: 1.1rem; color: var(--muted); text-decoration: line-through; }
-    .discount-chip {
-      background: #fef3c7; color: #92400e;
-      font-size: 11px; font-weight: 700; padding: 4px 10px;
-      border-radius: 6px; border: 1px solid #fde68a;
-    }
-    .saving-text { font-size: 0.8rem; color: var(--green); font-weight: 600; margin-top: 6px; }
-    .tax-text { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
-    .divider { height: 1px; background: var(--border); }
-
-    /* Variants */
-
-    /* Stock */
-    .stock-row { display: flex; align-items: center; gap: 8px; }
-    .stock-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
-    .stock-label { font-size: 0.82rem; font-weight: 600; color: var(--green); }
-    .stock-count { font-size: 0.78rem; color: var(--muted); }
-
-    /* Quantity + CTA */
-    .add-section { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-
-    /* Premium Buy Now button (desktop + mobile friendly) */
-    .btn-buy {
-      background: linear-gradient(135deg, #0f172a, #2563eb); color: #fff;
-      padding: 14px 28px; border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 12px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.02em; cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease;
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.95rem;
-      text-align: center;
-    }
-    .btn-buy:hover { transform: translateY(-3px); box-shadow: 0 20px 36px rgba(37,99,235,0.18); background: linear-gradient(135deg,#1e3a8a,#3b82f6); }
-
-    @media (max-width: 640px) {
-      .add-section { justify-content: center; }
-      .btn-buy {
-        width: 100% !important;
-        min-width: unset !important;
-        padding: 16px 18px !important;
-        font-size: 1rem !important;
-        border-radius: 10px !important;
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnesium Complex 5-in-1 | Aiva Wellness</title>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --blue: #1d4ed8;
+        --header-height: 68px;
+        --blue-light: #3b82f6;
+        --blue-soft: rgba(59, 130, 246, 0.1);
+        --blue-border: rgba(59, 130, 246, 0.25);
+        --black: #0d1117;
+        --ink: #1e293b;
+        --muted: #64748b;
+        --light: #f1f5f9;
+        --white: #ffffff;
+        --green: #16a34a;
+        --green-soft: #dcfce7;
+        --amber: #d97706;
+        --border: #e2e8f0;
+        --radius: 14px;
+        --radius-sm: 8px;
+        --shadow: 0 4px 24px rgba(13, 17, 23, 0.08);
+        --shadow-lg: 0 16px 48px rgba(13, 17, 23, 0.13);
       }
-    }
 
-    /* Trust strips */
-    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .trust-item {
-      background: var(--light); border-radius: var(--radius-sm); padding: 12px 14px;
-      display: flex; align-items: center; gap: 10px; border: 1px solid var(--border);
-    }
-    .trust-icon { font-size: 20px; color: var(--blue); flex-shrink: 0; }
-    .trust-text { font-size: 0.78rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
-    .trust-sub { font-size: 0.7rem; color: var(--muted); }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        background: #f8fafc;
+        color: var(--ink);
+      }
+      body {
+        padding-top: var(--header-height);
+      }
 
-    /* Key features */
-    .features-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px;
-    }
-    .features-title { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 14px; }
-    .feat-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .feat-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: var(--ink); line-height: 1.5; }
-    .feat-check { color: var(--green); font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+      /* ─── NAVBAR ─────────────────────────────────────────── */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: var(--header-height);
+        z-index: 9999;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 1px 8px rgba(13, 17, 23, 0.06);
+        transform: translateZ(0);
+      }
+      .nav-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 68px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .brand img {
+        width: 46px;
+        height: 46px;
+        border-radius: 10px;
+      }
+      .brand-name {
+        font-family: "Sora", sans-serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--black);
+      }
+      .brand-name span {
+        color: var(--blue);
+      }
+      .brand-sub {
+        font-size: 0.72rem;
+        color: var(--muted);
+        display: block;
+        margin-top: 1px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--blue);
+      }
+      .nav-cta {
+        background: var(--blue);
+        color: #fff;
+        border: none;
+        padding: 9px 22px;
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .nav-cta:hover {
+        background: #1e40af;
+        transform: translateY(-1px);
+        color: #fff;
+      }
+      .hamburger {
+        display: none;
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 8px;
+        cursor: pointer;
+      }
+      .hamburger span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: var(--ink);
+        margin: 4px 0;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
 
-    /* Meta */
-    .meta-row { display: flex; gap: 24px; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 14px; flex-wrap: wrap; }
-    .meta-row strong { color: var(--ink); }
-    .meta-row a { color: var(--blue); text-decoration: none; }
+      /* ─── BREADCRUMB ─────────────────────────────────────── */
+      .breadcrumb-bar {
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+      }
+      .breadcrumb-bar .inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.8rem;
+      }
+      .breadcrumb-bar a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .breadcrumb-bar a:hover {
+        color: var(--blue);
+      }
+      .breadcrumb-bar .sep {
+        color: var(--border);
+      }
+      .breadcrumb-bar .current {
+        color: var(--ink);
+        font-weight: 500;
+      }
 
-    /* Share buttons */
-    .share-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .share-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
-    .share-btn {
-      width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border);
-      background: #fff; display: flex; align-items: center; justify-content: center;
-      font-size: 14px; cursor: pointer; transition: all 0.2s; text-decoration: none; color: var(--ink);
-    }
-    .share-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-soft); }
+      /* ─── MAIN LAYOUT ────────────────────────────────────── */
+      .page-wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 24px 20px 60px;
+      }
 
-    /* ─── TABS SECTION ───────────────────────────────────── */
-    .tabs-section { margin-bottom: 56px; }
-    .tabs-nav { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 32px; overflow-x: auto; }
-    .tab-btn {
-      padding: 12px 24px; font-size: 0.88rem; font-weight: 600; color: var(--muted);
-      background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -2px;
-      cursor: pointer; white-space: nowrap; transition: all 0.2s;
-    }
-    .tab-btn:hover { color: var(--blue); }
-    .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
+      /* ─── PRODUCT TOP SECTION ────────────────────────────── */
+      .product-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 56px;
+      }
 
-    /* Description tab */
-    .desc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-    .desc-text p { font-size: 0.92rem; line-height: 1.8; color: var(--muted); margin-bottom: 16px; }
-    .desc-text h4 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--black); margin-bottom: 10px; }
-    .benefit-card {
-      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-      border: 1px solid rgba(59, 130, 246, 0.16);
-      border-radius: calc(var(--radius) * 1.2);
-      padding: 22px 24px;
-      display: flex; flex-direction: column; gap: 10px;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-    }
-    .benefit-card:hover {
-      transform: translateY(-6px);
-      background: linear-gradient(180deg, #ffffff 0%, #eff6ff 70%, #dbeafe 100%);
-      border-color: rgba(59, 130, 246, 0.35);
-      box-shadow: 0 28px 45px rgba(59, 130, 246, 0.15);
-    }
-    .benefit-card:hover .benefit-icon {
-      transform: scale(1.15);
-    }
-    .benefit-card:hover .benefit-title {
-      color: #1d4ed8;
-    }
-    .benefit-icon {
-      font-size: 30px;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-    .benefit-title {
-      font-weight: 700; font-size: 0.94rem; color: var(--black);
-      transition: color 0.3s ease;
-    }
-    .benefit-desc {
-      font-size: 0.82rem; color: var(--muted); line-height: 1.7;
-    }
-    .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      /* ─── GALLERY ────────────────────────────────────────── */
+      .gallery-wrap {
+        position: sticky;
+        top: 88px;
+        align-self: start;
+      }
+      .main-image-box {
+        background: #fff;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        overflow: hidden;
+        height: 480px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-shadow: var(--shadow);
+      }
+      .main-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .main-image-box:hover img {
+        transform: scale(1.04);
+      }
+      .thumbs {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      .thumbs img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid var(--border);
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+        flex-shrink: 0;
+      }
+      .thumbs img:hover {
+        transform: scale(1.06);
+      }
+      .thumbs img.active {
+        border-color: var(--blue);
+      }
 
-    /* Nutrition tab */
-    .nutrition-wrap { max-width: 720px; }
-    .nutrition-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
-    .nutrition-table thead th { background: var(--black); color: #fff; padding: 12px 16px; text-align: left; font-weight: 600; }
-    .nutrition-table thead th:last-child { text-align: right; }
-    .nutrition-table tbody tr { border-bottom: 1px solid var(--border); }
-    .nutrition-table tbody tr:nth-child(even) { background: var(--light); }
-    .nutrition-table tbody td { padding: 11px 16px; color: var(--ink); }
-    .nutrition-table tbody td:last-child { text-align: right; font-weight: 600; }
-    .nutrition-note { font-size: 0.78rem; color: var(--muted); margin-top: 12px; line-height: 1.6; }
-    .daily-value { font-size: 0.75rem; color: var(--muted); }
+      /* ─── PRODUCT INFO ───────────────────────────────────── */
+      .product-info {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      .title-block {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 2rem;
+      }
+      .product-title {
+        font-family: "Sora", sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--black);
+        line-height: 1.2;
+        margin: 0;
+      }
+      .product-short-desc {
+        font-size: 0.95rem;
+        color: var(--muted);
+        line-height: 1.6;
+        margin: 0;
+        max-width: 680px;
+      }
+      .rating-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .stars {
+        display: flex;
+        gap: 2px;
+        color: #f59e0b;
+        font-size: 16px;
+      }
+      .rating-text {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .rating-text strong {
+        color: var(--ink);
+      }
+      .verified-badge {
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 999px;
+      }
+      .price-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px 22px;
+        box-shadow: var(--shadow);
+      }
+      .price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .price-main {
+        font-size: 2.1rem;
+        font-weight: 800;
+        color: var(--black);
+        font-family: "Sora", sans-serif;
+      }
+      .price-old {
+        font-size: 1.1rem;
+        color: var(--muted);
+        text-decoration: line-through;
+      }
+      .discount-chip {
+        background: #fef3c7;
+        color: #92400e;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 6px;
+        border: 1px solid #fde68a;
+      }
+      .saving-text {
+        font-size: 0.8rem;
+        color: var(--green);
+        font-weight: 600;
+        margin-top: 6px;
+      }
+      .tax-text {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 3px;
+      }
+      .divider {
+        height: 1px;
+        background: var(--border);
+      }
 
-    /* Ingredients tab */
-    .ingredients-text { font-size: 0.88rem; color: var(--muted); line-height: 1.8; max-width: 800px; margin-bottom: 20px; }
-    .allergen-box {
-      background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-sm);
-      padding: 14px 18px; font-size: 0.85rem; color: #78350f;
-    }
-    .allergen-box strong { display: block; margin-bottom: 4px; }
+      /* Variants */
 
-    /* How to use tab */
-    .usage-steps { display: flex; flex-direction: column; gap: 20px; max-width: 680px; }
-    .usage-step { display: flex; gap: 18px; align-items: flex-start; }
-    .step-num {
-      width: 38px; height: 38px; border-radius: 10px; background: var(--blue);
-      color: #fff; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-family: 'Sora', sans-serif;
-    }
-    .step-text h5 { font-size: 0.92rem; font-weight: 700; color: var(--black); margin-bottom: 4px; }
-    .step-text p { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
-    .warning-box {
-      background: #fef2f2; border: 1px solid #fecaca; border-radius: var(--radius-sm);
-      padding: 14px 18px; font-size: 0.83rem; color: #991b1b; margin-top: 8px;
-      max-width: 680px;
-    }
-    .warning-box strong { display: block; margin-bottom: 4px; }
+      /* Stock */
+      .stock-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .stock-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--green);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+      .stock-label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--green);
+      }
+      .stock-count {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
 
-    /* ─── REVIEWS ─────────────────────────────────────────── */
-    .reviews-section { margin-bottom: 56px; }
-    .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: gap; }
-    .section-title { font-family: 'Sora', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--black); }
-    .reviews-layout { display: grid; grid-template-columns: 280px 1fr; gap: 32px; align-items: start; }
-    .rating-summary {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 28px 22px; text-align: center; box-shadow: var(--shadow); position: sticky; top: 100px;
-    }
-    .big-score { font-family: 'Sora', sans-serif; font-size: 3.5rem; font-weight: 800; color: var(--black); line-height: 1; }
-    .big-stars { color: #f59e0b; font-size: 22px; display: flex; justify-content: center; gap: 3px; margin: 8px 0; }
-    .total-reviews { font-size: 0.8rem; color: var(--muted); margin-bottom: 20px; }
-    .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
-    .bar-label { font-size: 12px; color: var(--muted); min-width: 34px; text-align: right; }
-    .bar-track { flex: 1; height: 7px; background: var(--light); border-radius: 4px; overflow: hidden; }
-    .bar-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
-    .bar-count { font-size: 11px; color: var(--muted); min-width: 22px; text-align: left; }
-    .reviews-list { display: flex; flex-direction: column; gap: 0; }
-    .review-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; margin-bottom: 14px; box-shadow: var(--shadow); }
-    .rc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-    .rc-author { font-weight: 700; font-size: 0.9rem; color: var(--black); }
-    .rc-verified { font-size: 11px; color: var(--green); font-weight: 600; margin-top: 2px; }
-    .rc-date { font-size: 0.78rem; color: var(--muted); }
-    .rc-stars { color: #f59e0b; font-size: 14px; display: flex; gap: 2px; margin-bottom: 8px; }
-    .rc-title { font-weight: 700; font-size: 0.88rem; color: var(--ink); margin-bottom: 5px; }
-    .rc-text { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
-    .rc-helpful { display: flex; align-items: center; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
-    .rc-helpful span { font-size: 0.78rem; color: var(--muted); }
-    .helpful-btn { background: var(--light); border: 1px solid var(--border); border-radius: 6px; padding: 4px 12px; font-size: 0.75rem; cursor: pointer; font-weight: 600; color: var(--muted); transition: all 0.2s; }
-    .helpful-btn:hover { border-color: var(--blue); color: var(--blue); }
+      /* Quantity + CTA */
+      .add-section {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
 
-    /* ─── SIMILAR PRODUCTS ───────────────────────────────── */
-    .similar-section { margin-bottom: 40px; }
-    .similar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .product-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      overflow: hidden; box-shadow: var(--shadow); transition: box-shadow 0.3s, transform 0.3s;
-    }
-    .product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
-    .card-img-wrap { position: relative; height: 200px; overflow: hidden; background: var(--light); }
-    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .product-card:hover .card-img-wrap img { transform: scale(1.06); }
-    .card-badge {
-      position: absolute; top: 10px; left: 10px; background: var(--blue); color: #fff;
-      font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px;
-    }
-    .card-actions { position: absolute; top: 8px; right: 8px; display: flex; flex-direction: column; gap: 5px; opacity: 0; transition: opacity 0.2s; }
-    .product-card:hover .card-actions { opacity: 1; }
-    .card-action-btn {
-      width: 32px; height: 32px; background: rgba(255,255,255,0.92); border: none;
-      border-radius: 8px; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
-    .card-action-btn:hover { background: var(--blue); color: #fff; }
-    .card-body { padding: 14px 16px 16px; }
-    .card-cat { font-size: 0.72rem; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
-    .card-name { font-weight: 700; font-size: 0.88rem; color: var(--black); margin-bottom: 6px; line-height: 1.3; }
-    .card-stars { color: #f59e0b; font-size: 12px; display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
-    .card-stars span { font-size: 0.75rem; color: var(--muted); }
-    .card-price-row { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
-    .card-price { font-weight: 800; font-size: 0.95rem; color: var(--black); font-family: 'Sora', sans-serif; }
-    .card-old { font-size: 0.78rem; color: var(--muted); text-decoration: line-through; }
-    .card-add { background: var(--black); color: #fff; border: none; border-radius: 7px; padding: 6px 12px; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
-    .card-add:hover { background: var(--blue); }
+      /* Premium Buy Now button (desktop + mobile friendly) */
+      .btn-buy {
+        background: linear-gradient(135deg, #0f172a, #2563eb);
+        color: #fff;
+        padding: 14px 28px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.95rem;
+        text-align: center;
+      }
+      .btn-buy:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 36px rgba(37, 99, 235, 0.18);
+        background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      }
 
-    /* ─── FOOTER ─────────────────────────────────────────── */
-    footer { background: #0d1117; color: #94a3b8; padding: 56px 20px 28px; }
-    .footer-inner { max-width: 1280px; margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-brand { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-    .footer-brand span { color: var(--blue-light); }
-    .footer-desc { font-size: 0.85rem; line-height: 1.7; margin-bottom: 16px; }
-    .footer-social { display: flex; gap: 10px; }
-    .social-btn { width: 36px; height: 36px; background: #1e293b; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; text-decoration: none; font-size: 14px; transition: all 0.2s; }
-    .social-btn:hover { background: var(--blue); color: #fff; }
-    .footer-col h6 { font-size: 0.82rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .footer-col ul li a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: #fff; }
-    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.83rem; margin-bottom: 10px; }
-    .footer-contact-item i { color: var(--blue-light); margin-top: 2px; flex-shrink: 0; }
-    .footer-contact-item a { color: #94a3b8; text-decoration: none; }
-    .footer-contact-item a:hover { color: #fff; }
-    .footer-bottom { border-top: 1px solid #1e293b; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.78rem; }
-    .footer-bottom-links { display: flex; gap: 20px; }
-    .footer-bottom-links a { color: #64748b; text-decoration: none; }
-    .footer-bottom-links a:hover { color: #fff; }
+      @media (max-width: 640px) {
+        .add-section {
+          justify-content: center;
+        }
+        .btn-buy {
+          width: 100% !important;
+          min-width: unset !important;
+          padding: 16px 18px !important;
+          font-size: 1rem !important;
+          border-radius: 10px !important;
+        }
+      }
 
-    /* ─── TOAST ──────────────────────────────────────────── */
-    .toast-wrap { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
-    .toast {
-      background: #0d1117; color: #fff; padding: 12px 20px; border-radius: 10px;
-      font-size: 0.88rem; font-weight: 600; box-shadow: var(--shadow-lg);
-      display: flex; align-items: center; gap: 10px; pointer-events: auto;
-      transform: translateX(120%); transition: transform 0.35s ease;
-    }
-    .toast.show { transform: translateX(0); }
-    .toast .t-icon { font-size: 18px; }
+      /* Trust strips */
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .trust-item {
+        background: var(--light);
+        border-radius: var(--radius-sm);
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid var(--border);
+      }
+      .trust-icon {
+        font-size: 20px;
+        color: var(--blue);
+        flex-shrink: 0;
+      }
+      .trust-text {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--ink);
+        line-height: 1.3;
+      }
+      .trust-sub {
+        font-size: 0.7rem;
+        color: var(--muted);
+      }
 
-    /* ─── MOBILE NAV MENU ─────────────────────────────────── */
-    .mobile-menu {
-      position: fixed; top: 68px; left: 0; right: 0; bottom: 0; z-index: 999;
-      background: rgba(13,17,23,0.7); backdrop-filter: blur(6px);
-      display: none; flex-direction: column;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-nav {
-      background: #fff; padding: 20px; display: flex; flex-direction: column; gap: 4px;
-    }
-    .mobile-nav a { padding: 12px 14px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; color: var(--ink); text-decoration: none; transition: background 0.2s; }
-    .mobile-nav a:hover { background: var(--light); }
-    .mobile-nav a.cta { background: var(--blue); color: #fff; text-align: center; margin-top: 8px; }
+      /* Key features */
+      .features-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px 22px;
+      }
+      .features-title {
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+      .feat-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .feat-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.88rem;
+        color: var(--ink);
+        line-height: 1.5;
+      }
+      .feat-check {
+        color: var(--green);
+        font-size: 15px;
+        margin-top: 1px;
+        flex-shrink: 0;
+      }
 
-    /* ─── RESPONSIVE ─────────────────────────────────────── */
-    @media (max-width: 1024px) {
-      .similar-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-top { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; flex-direction: column; }
-      .product-top { grid-template-columns: 1fr; gap: 24px; }
-      .gallery-wrap { position: static; }
-      .main-image-box { height: 320px; }
-      .product-title { font-size: 1.5rem; }
-      .price-main { font-size: 1.7rem; }
-      .trust-grid { grid-template-columns: 1fr; }
-      .desc-grid { grid-template-columns: 1fr; }
-      .benefits-grid { grid-template-columns: 1fr; }
-      .reviews-layout { grid-template-columns: 1fr; }
-      .rating-summary { position: static; }
-      .similar-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-top { grid-template-columns: 1fr; gap: 24px; }
-      .footer-top { display: flex; flex-direction: column; align-items: center; text-align: center; }
-      .footer-top > div { width: 100%; max-width: 420px; display: flex; flex-direction: column; align-items: center; text-align: center; }
-      .footer-brand, .footer-social { justify-content: center; }
-      .footer-col { width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
-      .footer-col h6 { text-align: center; }
-      .footer-col ul { width: 100%; align-items: center; padding: 0; margin: 0; }
-      .footer-col ul li { width: auto; }
-      .footer-contact-item { justify-content: center; text-align: center; }
-      .footer-contact-item a, .footer-contact-item span { display: inline-block; }
-      .footer-bottom { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; }
-      .footer-bottom-links { justify-content: center; flex-wrap: wrap; }
-      .add-section { flex-direction: column; }
-      .btn-cart, .btn-buy { min-width: unset; width: 100%; }
-      .qty-wrap { width: 100%; }
-      .qty-input { flex: 1; }
-    }
-    @media (max-width: 480px) {
-      .page-wrap { padding: 20px 12px 40px; }
-      .main-image-box { height: 260px; }
-      .thumbs img { width: 64px; height: 64px; }
-      .product-title { font-size: 1.25rem; }
-      .similar-grid { grid-template-columns: 1fr; }
-      .tab-btn { padding: 10px 14px; font-size: 0.82rem; }
-    }
-  </style>
-</head>
-<body>
+      /* Meta */
+      .meta-row {
+        display: flex;
+        gap: 24px;
+        font-size: 0.78rem;
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+        padding-top: 14px;
+        flex-wrap: wrap;
+      }
+      .meta-row strong {
+        color: var(--ink);
+      }
+      .meta-row a {
+        color: var(--blue);
+        text-decoration: none;
+      }
 
-<!-- ─── HEADER ──────────────────────────────────────────────── -->
-<header class="site-header">
-  <nav class="nav-inner">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="Aiva Wellness" onerror="this.style.display='none'">
-      <div>
-        <span class="brand-name">Aiva<span>Wellness</span></span>
-        <small class="brand-sub">Premium Healthcare & Wellness</small>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="shop.html" class="active">Shop</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="tel:+917807751710" class="nav-cta">
-      <i class="fa-solid fa-phone"></i> Call Now
-    </a>
-    <button class="hamburger" onclick="toggleMenu()" id="ham-btn" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-</header>
+      /* Share buttons */
+      .share-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .share-label {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .share-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+        color: var(--ink);
+      }
+      .share-btn:hover {
+        border-color: var(--blue);
+        color: var(--blue);
+        background: var(--blue-soft);
+      }
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu" onclick="if(event.target===this)toggleMenu()">
-  <nav class="mobile-nav">
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="#">About Us</a>
-    <a href="contact.html">Contact</a>
-    <a href="tel:+917807751710" class="cta"><i class="fa-solid fa-phone me-2"></i>Call Now</a>
-  </nav>
-</div>
+      /* ─── TABS SECTION ───────────────────────────────────── */
+      .tabs-section {
+        margin-bottom: 56px;
+      }
+      .tabs-nav {
+        display: flex;
+        gap: 0;
+        border-bottom: 2px solid var(--border);
+        margin-bottom: 32px;
+        overflow-x: auto;
+      }
+      .tab-btn {
+        padding: 12px 24px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--muted);
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.2s;
+      }
+      .tab-btn:hover {
+        color: var(--blue);
+      }
+      .tab-btn.active {
+        color: var(--blue);
+        border-bottom-color: var(--blue);
+      }
+      .tab-panel {
+        display: none;
+      }
+      .tab-panel.active {
+        display: block;
+      }
 
-<!-- ─── BREADCRUMB ───────────────────────────────────────────── -->
-<div class="breadcrumb-bar">
-  <div class="inner">
-    <a href="index.html">Home</a>
-    <span class="sep">›</span>
-    <a href="shop.html">Shop</a>
-    <span class="sep">›</span>
-    <a href="#">Magnesium</a>
-    <span class="sep">›</span>
-    <span class="current">Magnesium Complex 5-in-1</span>
-  </div>
-</div>
+      /* Description tab */
+      .desc-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .desc-text p {
+        font-size: 0.92rem;
+        line-height: 1.8;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+      .desc-text h4 {
+        font-family: "Sora", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--black);
+        margin-bottom: 10px;
+      }
+      .benefit-card {
+        background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+        border: 1px solid rgba(59, 130, 246, 0.16);
+        border-radius: calc(var(--radius) * 1.2);
+        padding: 22px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s ease,
+          background 0.3s ease;
+      }
+      .benefit-card:hover {
+        transform: translateY(-6px);
+        background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #eff6ff 70%,
+          #dbeafe 100%
+        );
+        border-color: rgba(59, 130, 246, 0.35);
+        box-shadow: 0 28px 45px rgba(59, 130, 246, 0.15);
+      }
+      .benefit-card:hover .benefit-icon {
+        transform: scale(1.15);
+      }
+      .benefit-card:hover .benefit-title {
+        color: #1d4ed8;
+      }
+      .benefit-icon {
+        font-size: 30px;
+        transition:
+          transform 0.3s ease,
+          color 0.3s ease;
+      }
+      .benefit-title {
+        font-weight: 700;
+        font-size: 0.94rem;
+        color: var(--black);
+        transition: color 0.3s ease;
+      }
+      .benefit-desc {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
 
-<!-- ─── PAGE ─────────────────────────────────────────────────── -->
-<main>
-<div class="page-wrap">
+      /* Nutrition tab */
+      .nutrition-wrap {
+        max-width: 720px;
+      }
+      .nutrition-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+      }
+      .nutrition-table thead th {
+        background: var(--black);
+        color: #fff;
+        padding: 12px 16px;
+        text-align: left;
+        font-weight: 600;
+      }
+      .nutrition-table thead th:last-child {
+        text-align: right;
+      }
+      .nutrition-table tbody tr {
+        border-bottom: 1px solid var(--border);
+      }
+      .nutrition-table tbody tr:nth-child(even) {
+        background: var(--light);
+      }
+      .nutrition-table tbody td {
+        padding: 11px 16px;
+        color: var(--ink);
+      }
+      .nutrition-table tbody td:last-child {
+        text-align: right;
+        font-weight: 600;
+      }
+      .nutrition-note {
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-top: 12px;
+        line-height: 1.6;
+      }
+      .daily-value {
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
 
-  <!-- ── PRODUCT TOP ── -->
-  <div class="product-top">
+      /* Ingredients tab */
+      .ingredients-text {
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.8;
+        max-width: 800px;
+        margin-bottom: 20px;
+      }
+      .allergen-box {
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        border-radius: var(--radius-sm);
+        padding: 14px 18px;
+        font-size: 0.85rem;
+        color: #78350f;
+      }
+      .allergen-box strong {
+        display: block;
+        margin-bottom: 4px;
+      }
 
-    <!-- Gallery -->
-    <div class="gallery-wrap">
-      <div class="main-image-box">
-        <img id="mainImg" src="products-1/Magnesium Complex.jpg"
-             alt="Magnesium Complex 5-in-1"
-             onerror="this.src='https://placehold.co/600x480/f1f5f9/64748b?text=Magnesium+Complex'">
-      </div>
-      <div class="thumbs">
-        <img src="products-1/Magnesium Complex.jpg" alt="Front" class="active"
-             onerror="this.src='https://placehold.co/80x80/f1f5f9/64748b?text=1'"
-             onclick="setMainImg(this,'products-1/Magnesium Complex.jpg')">
-        <img src="products-1/hover-Magnesium Complex.jpg" alt="Back"
-             onerror="this.src='https://placehold.co/80x80/f1f5f9/64748b?text=2'"
-             onclick="setMainImg(this,'products-1/hover-Magnesium Complex.jpg')">
-        <img src="products-1/Magnesium Complex.jpg" alt="Side"
-             onerror="this.src='https://placehold.co/80x80/f1f5f9/64748b?text=3'"
-             onclick="setMainImg(this,'products-1/Magnesium Complex.jpg')">
-        <img src="products-1/hover-Magnesium Complex.jpg" alt="Label"
-             onerror="this.src='https://placehold.co/80x80/f1f5f9/64748b?text=4'"
-             onclick="setMainImg(this,'products-1/hover-Magnesium Complex.jpg')">
-        <img src="products-1/Magnesium Complex-5.jpg" alt="Extra"
-             onerror="this.src='https://placehold.co/80x80/f1f5f9/64748b?text=5'"
-             onclick="setMainImg(this,'products-1/Magnesium Complex-5.jpg')">
-      </div>
-    </div>
+      /* How to use tab */
+      .usage-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 680px;
+      }
+      .usage-step {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+      }
+      .step-num {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: var(--blue);
+        color: #fff;
+        font-weight: 800;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-family: "Sora", sans-serif;
+      }
+      .step-text h5 {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: var(--black);
+        margin-bottom: 4px;
+      }
+      .step-text p {
+        font-size: 0.84rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .warning-box {
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        border-radius: var(--radius-sm);
+        padding: 14px 18px;
+        font-size: 0.83rem;
+        color: #991b1b;
+        margin-top: 8px;
+        max-width: 680px;
+      }
+      .warning-box strong {
+        display: block;
+        margin-bottom: 4px;
+      }
 
-    <!-- Info -->
-    <div class="product-info">
-      <div class="title-block">
-        <h1 class="product-title">Magnesium Complex 5-in-1</h1>
-        <p class="product-short-desc">Magnesium Complex 5 in 1 supports bone strength, muscle recovery, and cardiac wellness with a balanced formula of Magnesium, Vitamin D3, Zinc, and Calcium. Ideal for daily energy, immunity, and overall vitality.</p>
-      </div>
+      /* ─── REVIEWS ─────────────────────────────────────────── */
+      .reviews-section {
+        margin-bottom: 56px;
+      }
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 28px;
+        flex-wrap: gap;
+      }
+      .section-title {
+        font-family: "Sora", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--black);
+      }
+      .reviews-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 32px;
+        align-items: start;
+      }
+      .rating-summary {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px 22px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 100px;
+      }
+      .big-score {
+        font-family: "Sora", sans-serif;
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--black);
+        line-height: 1;
+      }
+      .big-stars {
+        color: #f59e0b;
+        font-size: 22px;
+        display: flex;
+        justify-content: center;
+        gap: 3px;
+        margin: 8px 0;
+      }
+      .total-reviews {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
+      .bar-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 9px;
+      }
+      .bar-label {
+        font-size: 12px;
+        color: var(--muted);
+        min-width: 34px;
+        text-align: right;
+      }
+      .bar-track {
+        flex: 1;
+        height: 7px;
+        background: var(--light);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .bar-fill {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.6s ease;
+      }
+      .bar-count {
+        font-size: 11px;
+        color: var(--muted);
+        min-width: 22px;
+        text-align: left;
+      }
+      .reviews-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .review-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 22px;
+        margin-bottom: 14px;
+        box-shadow: var(--shadow);
+      }
+      .rc-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+      .rc-author {
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--black);
+      }
+      .rc-verified {
+        font-size: 11px;
+        color: var(--green);
+        font-weight: 600;
+        margin-top: 2px;
+      }
+      .rc-date {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+      .rc-stars {
+        color: #f59e0b;
+        font-size: 14px;
+        display: flex;
+        gap: 2px;
+        margin-bottom: 8px;
+      }
+      .rc-title {
+        font-weight: 700;
+        font-size: 0.88rem;
+        color: var(--ink);
+        margin-bottom: 5px;
+      }
+      .rc-text {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .rc-helpful {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid var(--border);
+      }
+      .rc-helpful span {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+      .helpful-btn {
+        background: var(--light);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 4px 12px;
+        font-size: 0.75rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--muted);
+        transition: all 0.2s;
+      }
+      .helpful-btn:hover {
+        border-color: var(--blue);
+        color: var(--blue);
+      }
 
-      <div class="rating-row">
-        <div class="stars">★★★★<span style="color:#e2e8f0;">★</span></div>
-        <span class="rating-text"><strong>4.8</strong> out of 5</span>
-        <span class="rating-text" style="color:var(--blue); cursor:pointer;" onclick="document.querySelector('.reviews-section').scrollIntoView({behavior:'smooth'})">(128 reviews)</span>
-        <span class="verified-badge">✓ Verified</span>
-      </div>
-      
-      <!-- Stock -->
-      <div class="stock-row">
-        <div class="stock-dot"></div>
-        <span class="stock-label">In Stock</span>
-        <span class="stock-count">· 250+ units available · Usually ships in 24 hrs</span>
-      </div>
+      /* ─── SIMILAR PRODUCTS ───────────────────────────────── */
+      .similar-section {
+        margin-bottom: 40px;
+      }
+      .similar-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+      .product-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition:
+          box-shadow 0.3s,
+          transform 0.3s;
+      }
+      .product-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+      }
+      .card-img-wrap {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+        background: var(--light);
+      }
+      .card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+      .product-card:hover .card-img-wrap img {
+        transform: scale(1.06);
+      }
+      .card-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: var(--blue);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 4px;
+      }
+      .card-actions {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .product-card:hover .card-actions {
+        opacity: 1;
+      }
+      .card-action-btn {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.92);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+      }
+      .card-action-btn:hover {
+        background: var(--blue);
+        color: #fff;
+      }
+      .card-body {
+        padding: 14px 16px 16px;
+      }
+      .card-cat {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--blue);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 5px;
+      }
+      .card-name {
+        font-weight: 700;
+        font-size: 0.88rem;
+        color: var(--black);
+        margin-bottom: 6px;
+        line-height: 1.3;
+      }
+      .card-stars {
+        color: #f59e0b;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 8px;
+      }
+      .card-stars span {
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+      .card-price-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: space-between;
+      }
+      .card-price {
+        font-weight: 800;
+        font-size: 0.95rem;
+        color: var(--black);
+        font-family: "Sora", sans-serif;
+      }
+      .card-old {
+        font-size: 0.78rem;
+        color: var(--muted);
+        text-decoration: line-through;
+      }
+      .card-add {
+        background: var(--black);
+        color: #fff;
+        border: none;
+        border-radius: 7px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .card-add:hover {
+        background: var(--blue);
+      }
 
-      <!-- Price Card -->
-      <div class="price-card">
-        <div class="price-row">
-          <span class="price-main">₹1,299</span>
-          <span class="price-old">₹1,499</span>
-          <span class="discount-chip">13% OFF</span>
-        </div>
-        <div class="saving-text">You save ₹200 on this order!</div>
-        <div class="tax-text">Inclusive of all taxes · Free delivery on orders above ₹499</div>
-      </div>
+      /* ─── FOOTER ─────────────────────────────────────────── */
+      footer {
+        background: #0d1117;
+        color: #94a3b8;
+        padding: 56px 20px 28px;
+      }
+      .footer-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .footer-brand {
+        font-family: "Sora", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      .footer-brand span {
+        color: var(--blue-light);
+      }
+      .footer-desc {
+        font-size: 0.85rem;
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+      .footer-social {
+        display: flex;
+        gap: 10px;
+      }
+      .social-btn {
+        width: 36px;
+        height: 36px;
+        background: #1e293b;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.2s;
+      }
+      .social-btn:hover {
+        background: var(--blue);
+        color: #fff;
+      }
+      .footer-col h6 {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin-bottom: 16px;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .footer-col ul li a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: #fff;
+      }
+      .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.83rem;
+        margin-bottom: 10px;
+      }
+      .footer-contact-item i {
+        color: var(--blue-light);
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      .footer-contact-item a {
+        color: #94a3b8;
+        text-decoration: none;
+      }
+      .footer-contact-item a:hover {
+        color: #fff;
+      }
+      .footer-bottom {
+        border-top: 1px solid #1e293b;
+        padding-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.78rem;
+      }
+      .footer-bottom-links {
+        display: flex;
+        gap: 20px;
+      }
+      .footer-bottom-links a {
+        color: #64748b;
+        text-decoration: none;
+      }
+      .footer-bottom-links a:hover {
+        color: #fff;
+      }
 
-      <div class="add-section">
-        <button class="btn-buy" onclick="showToast('✅','Buy Now clicked');">Buy Now</button>
-      </div>
+      /* ─── TOAST ──────────────────────────────────────────── */
+      .toast-wrap {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        pointer-events: none;
+      }
+      .toast {
+        background: #0d1117;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        box-shadow: var(--shadow-lg);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        pointer-events: auto;
+        transform: translateX(120%);
+        transition: transform 0.35s ease;
+      }
+      .toast.show {
+        transform: translateX(0);
+      }
+      .toast .t-icon {
+        font-size: 18px;
+      }
 
-      <!-- Trust Strips -->
-      <div class="trust-grid">
-        <div class="trust-item">
-          <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      /* ─── MOBILE NAV MENU ─────────────────────────────────── */
+      .mobile-menu {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        background: rgba(13, 17, 23, 0.7);
+        backdrop-filter: blur(6px);
+        display: none;
+        flex-direction: column;
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-nav {
+        background: #fff;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .mobile-nav a {
+        padding: 12px 14px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--ink);
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .mobile-nav a:hover {
+        background: var(--light);
+      }
+      .mobile-nav a.cta {
+        background: var(--blue);
+        color: #fff;
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      /* ─── RESPONSIVE ─────────────────────────────────────── */
+      @media (max-width: 1024px) {
+        .similar-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-top {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+          flex-direction: column;
+        }
+        .product-top {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .gallery-wrap {
+          position: static;
+        }
+        .main-image-box {
+          height: 320px;
+        }
+        .product-title {
+          font-size: 1.5rem;
+        }
+        .price-main {
+          font-size: 1.7rem;
+        }
+        .trust-grid {
+          grid-template-columns: 1fr;
+        }
+        .desc-grid {
+          grid-template-columns: 1fr;
+        }
+        .benefits-grid {
+          grid-template-columns: 1fr;
+        }
+        .reviews-layout {
+          grid-template-columns: 1fr;
+        }
+        .rating-summary {
+          position: static;
+        }
+        .similar-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-top {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .footer-top {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .footer-top > div {
+          width: 100%;
+          max-width: 420px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .footer-brand,
+        .footer-social {
+          justify-content: center;
+        }
+        .footer-col {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .footer-col h6 {
+          text-align: center;
+        }
+        .footer-col ul {
+          width: 100%;
+          align-items: center;
+          padding: 0;
+          margin: 0;
+        }
+        .footer-col ul li {
+          width: auto;
+        }
+        .footer-contact-item {
+          justify-content: center;
+          text-align: center;
+        }
+        .footer-contact-item a,
+        .footer-contact-item span {
+          display: inline-block;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          gap: 10px;
+        }
+        .footer-bottom-links {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        .add-section {
+          flex-direction: column;
+        }
+        .btn-cart,
+        .btn-buy {
+          min-width: unset;
+          width: 100%;
+        }
+        .qty-wrap {
+          width: 100%;
+        }
+        .qty-input {
+          flex: 1;
+        }
+      }
+      @media (max-width: 480px) {
+        .page-wrap {
+          padding: 20px 12px 40px;
+        }
+        .main-image-box {
+          height: 260px;
+        }
+        .thumbs img {
+          width: 64px;
+          height: 64px;
+        }
+        .product-title {
+          font-size: 1.25rem;
+        }
+        .similar-grid {
+          grid-template-columns: 1fr;
+        }
+        .tab-btn {
+          padding: 10px 14px;
+          font-size: 0.82rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ─── HEADER ──────────────────────────────────────────────── -->
+    <header class="site-header">
+      <nav class="nav-inner">
+        <a class="brand" href="index.html">
+          <img
+            src="assets/logo.png"
+            alt="Aiva Wellness"
+            onerror="this.style.display = 'none'"
+          />
           <div>
-            <div class="trust-text">100% Genuine</div>
-            <div class="trust-sub">Lab-tested quality</div>
+            <span class="brand-name">Aiva<span>Wellness</span></span>
+            <small class="brand-sub">Premium Healthcare & Wellness</small>
           </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon"><i class="fa-solid fa-rotate-left"></i></div>
-          <div>
-            <div class="trust-text">Easy Returns</div>
-            <div class="trust-sub">7-day return policy</div>
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
-          <div>
-            <div class="trust-text">Fast Delivery</div>
-            <div class="trust-sub">Pan-India shipping</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Key Benefits Quick List -->
-      <div class="features-card">
-        <div class="features-title">Key Benefits</div>
-        <ul class="feat-list">
-          <li><span class="feat-check">✓</span> Supports bone strength with Calcium + Vitamin D3</li>
-          <li><span class="feat-check">✓</span> Aids muscle recovery & reduces cramps after exercise</li>
-          <li><span class="feat-check">✓</span> Promotes cardiac wellness and healthy nerve function</li>
-          <li><span class="feat-check">✓</span> Boosts immunity with Zinc + Magnesium combination</li>
-          <li><span class="feat-check">✓</span> Enhances daily energy, focus, and overall vitality</li>
-        </ul>
-      </div>
-
-      <!-- Share -->
-      <div class="share-row">
-        <span class="share-label">Share:</span>
-        <a class="share-btn" href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a class="share-btn" href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-        <a class="share-btn" href="#" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a class="share-btn" href="#" title="Copy link" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href);showToast('🔗','Link copied!')"><i class="fa-solid fa-link"></i></a>
-      </div>
-
-      <!-- Meta -->
-      <div class="meta-row">
-        <div><strong>SKU:</strong> MC-501</div>
-        <div><strong>Brand:</strong> Aiva Wellness</div>
-        <div><strong>Country:</strong> Made in India</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── TABS ── -->
-  <div class="tabs-section">
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab('desc',this)">Description</button>
-      <button class="tab-btn" onclick="switchTab('nutrition',this)">Nutrition Facts</button>
-      <button class="tab-btn" onclick="switchTab('ingredients',this)">Ingredients</button>
-      <button class="tab-btn" onclick="switchTab('usage',this)">How to Use</button>
-    </div>
-
-    <!-- Description -->
-    <div class="tab-panel active" id="tab-desc">
-      <div class="desc-grid">
-        <div class="desc-text">
-          <h4>About Magnesium Complex 5-in-1</h4>
-          <p>Aiva Wellness Magnesium Complex 5-in-1 is a scientifically formulated supplement combining five synergistic nutrients — Magnesium, Vitamin D3, Zinc, Calcium, and Vitamin K2 — in a single, convenient tablet.</p>
-          <p>Magnesium is involved in over 300 enzymatic reactions in the body, supporting everything from ATP energy production to protein synthesis. Paired with Calcium and Vitamin D3 for superior bone mineralisation, and Zinc for immune defence, this complex ensures you get maximum benefit from every dose.</p>
-          <p>Whether you are an active athlete recovering from training, a professional managing stress, or simply someone looking to fill nutritional gaps in a modern diet, this formula is designed to fit seamlessly into your daily routine.</p>
-          <h4 style="margin-top:20px;">Why Choose This Formula?</h4>
-          <p>Most single-ingredient magnesium supplements miss the cofactors that enable proper absorption. Our 5-in-1 formula is built around bioavailability — combining nutrients that work together, not against each other. Every batch is third-party tested and FSSAI-certified.</p>
-        </div>
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">🦴</div>
-            <div class="benefit-title">Strong Bones</div>
-            <div class="benefit-desc">Calcium + Vitamin D3 + K2 trinity optimises bone mineral density and reduces fracture risk.</div>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-icon">💪</div>
-            <div class="benefit-title">Muscle Recovery</div>
-            <div class="benefit-desc">Magnesium reduces muscle cramps, supports post-workout recovery and protein synthesis.</div>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-icon">❤️</div>
-            <div class="benefit-title">Heart Health</div>
-            <div class="benefit-desc">Regulates blood pressure, supports cardiac rhythm and healthy vascular function.</div>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-icon">🛡️</div>
-            <div class="benefit-title">Immune Defence</div>
-            <div class="benefit-desc">Zinc and Vitamin D3 fortify your body's natural immune response year-round.</div>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-icon">⚡</div>
-            <div class="benefit-title">Daily Energy</div>
-            <div class="benefit-desc">Magnesium is essential for ATP production — your body's primary energy currency.</div>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-icon">🧠</div>
-            <div class="benefit-title">Sleep & Calm</div>
-            <div class="benefit-desc">Helps regulate the nervous system and promotes deeper, more restorative sleep.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Nutrition -->
-    <div class="tab-panel" id="tab-nutrition">
-      <div class="nutrition-wrap">
-        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:16px;"><strong>Serving Size:</strong> 2 Tablets &nbsp;|&nbsp; <strong>Servings Per Container:</strong> 30</p>
-        <table class="nutrition-table">
-          <thead>
-            <tr>
-              <th>Nutrient</th>
-              <th style="text-align:center;">Per Serving</th>
-              <th>% Daily Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Magnesium (as Magnesium Glycinate)</td><td style="text-align:center;">300 mg</td><td style="text-align:right;">71%</td></tr>
-            <tr><td>Calcium (as Calcium Carbonate)</td><td style="text-align:center;">200 mg</td><td style="text-align:right;">20%</td></tr>
-            <tr><td>Vitamin D3 (Cholecalciferol)</td><td style="text-align:center;">1000 IU</td><td style="text-align:right;">250%</td></tr>
-            <tr><td>Zinc (as Zinc Gluconate)</td><td style="text-align:center;">10 mg</td><td style="text-align:right;">91%</td></tr>
-            <tr><td>Vitamin K2 (MK-7)</td><td style="text-align:center;">45 mcg</td><td style="text-align:right;">56%</td></tr>
-            <tr><td>Vitamin B6 (Pyridoxine HCl)</td><td style="text-align:center;">5 mg</td><td style="text-align:right;">294%</td></tr>
-          </tbody>
-        </table>
-        <p class="nutrition-note">* Percent Daily Values are based on a 2,000 calorie diet. Daily Values may be higher or lower depending on your calorie requirements. <span class="daily-value">† Daily Value not established.</span></p>
-      </div>
-    </div>
-
-    <!-- Ingredients -->
-    <div class="tab-panel" id="tab-ingredients">
-      <p class="ingredients-text"><strong>Active Ingredients:</strong> Magnesium Glycinate (300 mg), Calcium Carbonate (200 mg), Cholecalciferol / Vitamin D3 (25 mcg), Zinc Gluconate (10 mg), Menaquinone-7 / Vitamin K2 MK-7 (45 mcg), Pyridoxine HCl / Vitamin B6 (5 mg).</p>
-      <p class="ingredients-text"><strong>Other Ingredients:</strong> Microcrystalline Cellulose, Dicalcium Phosphate, Magnesium Stearate (vegetable), Silicon Dioxide, Hydroxypropyl Methylcellulose (coating), Polyethylene Glycol.</p>
-      <div class="allergen-box">
-        <strong><i class="fa-solid fa-triangle-exclamation"></i> Allergen Information</strong>
-        Contains no gluten, dairy, soy, nut, or shellfish-derived ingredients. Manufactured in a facility that also processes milk and soy. Suitable for vegetarians. Not suitable for vegans (Vitamin D3 is lanolin-derived).
-      </div>
-    </div>
-
-    <!-- How to Use -->
-    <div class="tab-panel" id="tab-usage">
-      <div class="usage-steps">
-        <div class="usage-step">
-          <div class="step-num">1</div>
-          <div class="step-text">
-            <h5>Take 2 tablets per day</h5>
-            <p>The recommended dose is 2 tablets daily. Do not exceed this amount unless advised by a healthcare professional.</p>
-          </div>
-        </div>
-        <div class="usage-step">
-          <div class="step-num">2</div>
-          <div class="step-text">
-            <h5>Take with or after meals</h5>
-            <p>Take with food to enhance absorption of fat-soluble vitamins (D3, K2) and to minimise any chance of stomach discomfort. Evening is ideal, as magnesium supports relaxation and sleep quality.</p>
-          </div>
-        </div>
-        <div class="usage-step">
-          <div class="step-num">3</div>
-          <div class="step-text">
-            <h5>Swallow with a full glass of water</h5>
-            <p>Drink at least 200 ml of water when taking the tablets. Avoid taking with caffeinated drinks or alcohol as these can reduce mineral absorption.</p>
-          </div>
-        </div>
-        <div class="usage-step">
-          <div class="step-num">4</div>
-          <div class="step-text">
-            <h5>Use consistently for best results</h5>
-            <p>Benefits are cumulative. Use for a minimum of 8–12 weeks for noticeable improvements in energy, sleep, and muscle comfort. Store below 30°C in a cool, dry place away from direct sunlight.</p>
-          </div>
-        </div>
-      </div>
-      <div class="warning-box" style="margin-top:24px;">
-        <strong><i class="fa-solid fa-circle-exclamation"></i> Important Notice</strong>
-        Consult your doctor before use if you are pregnant, nursing, have kidney disease, are on prescription medications (especially blood thinners or antibiotics), or have a known medical condition. Keep out of reach of children. This product is not intended to diagnose, treat, cure, or prevent any disease.
-      </div>
-    </div>
-  </div>
-
-  <!-- ── REVIEWS ── -->
-  <div class="reviews-section">
-    <div class="section-header">
-      <h2 class="section-title">Customer Reviews</h2>
-    </div>
-
-    <div class="reviews-layout">
-      <!-- Summary -->
-      <div class="rating-summary">
-        <div class="big-score">4.8</div>
-        <div class="big-stars">★★★★<span style="color:#e2e8f0;">★</span></div>
-        <div class="total-reviews">Based on 128 verified reviews</div>
-        <div>
-          <div class="bar-row"><span class="bar-label">5 ★</span><div class="bar-track"><div class="bar-fill" style="width:78%;background:#16a34a;"></div></div><span class="bar-count">100</span></div>
-          <div class="bar-row"><span class="bar-label">4 ★</span><div class="bar-track"><div class="bar-fill" style="width:14%;background:#65a30d;"></div></div><span class="bar-count">18</span></div>
-          <div class="bar-row"><span class="bar-label">3 ★</span><div class="bar-track"><div class="bar-fill" style="width:5%;background:#ca8a04;"></div></div><span class="bar-count">6</span></div>
-          <div class="bar-row"><span class="bar-label">2 ★</span><div class="bar-track"><div class="bar-fill" style="width:2%;background:#ea580c;"></div></div><span class="bar-count">3</span></div>
-          <div class="bar-row"><span class="bar-label">1 ★</span><div class="bar-track"><div class="bar-fill" style="width:1%;background:#dc2626;"></div></div><span class="bar-count">1</span></div>
-        </div>
-      </div>
-
-      <!-- Reviews List -->
-      <div>
-          <div class="reviews-list">
-
-          <div class="review-card">
-            <div class="rc-header">
-              <div>
-                <div class="rc-author">Rohit Sharma</div>
-                <div class="rc-verified">✓ Verified Purchase</div>
-              </div>
-              <div class="rc-date">2 days ago</div>
-            </div>
-            <div class="rc-stars">★★★★★</div>
-            <div class="rc-title">Noticeably improved my sleep within a week!</div>
-            <div class="rc-text">I was skeptical at first but after just 7 days my sleep has gotten significantly deeper. I no longer wake up with leg cramps at night. The tablet is easy to swallow and no aftertaste. Definitely a keeper.</div>
-            <div class="rc-helpful">
-              <span>Helpful?</span>
-              <button class="helpful-btn" onclick="this.textContent='👍 Yes (43)'">👍 Yes (42)</button>
-              <button class="helpful-btn">👎 No (1)</button>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="rc-header">
-              <div>
-                <div class="rc-author">Priya Kapoor</div>
-                <div class="rc-verified">✓ Verified Purchase</div>
-              </div>
-              <div class="rc-date">1 week ago</div>
-            </div>
-            <div class="rc-stars">★★★★<span style="color:#e2e8f0;">★</span></div>
-            <div class="rc-title">Great value, fast shipping</div>
-            <div class="rc-text">Ordered for my parents who are in their 60s. They've been taking it for 3 weeks and both say their joints feel less stiff in the mornings. Packaging is excellent and delivery was quicker than expected. Minus one star only because I wish it came in a more compact bottle.</div>
-            <div class="rc-helpful">
-              <span>Helpful?</span>
-              <button class="helpful-btn">👍 Yes (28)</button>
-              <button class="helpful-btn">👎 No (0)</button>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="rc-header">
-              <div>
-                <div class="rc-author">Amandeep Singh</div>
-                <div class="rc-verified">✓ Verified Purchase</div>
-              </div>
-              <div class="rc-date">3 weeks ago</div>
-            </div>
-            <div class="rc-stars">★★★★★</div>
-            <div class="rc-title">Best magnesium supplement I've tried</div>
-            <div class="rc-text">As a gym trainer I've tried at least 6 different magnesium products. This one stands out because of the glycinate form — it's much gentler on the stomach than oxide forms. My clients have also started using it and feedback has been overwhelmingly positive. The 5-in-1 combo is unbeatable at this price point.</div>
-            <div class="rc-helpful">
-              <span>Helpful?</span>
-              <button class="helpful-btn">👍 Yes (61)</button>
-              <button class="helpful-btn">👎 No (2)</button>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="rc-header">
-              <div>
-                <div class="rc-author">Meera Iyer</div>
-                <div class="rc-verified">✓ Verified Purchase</div>
-              </div>
-              <div class="rc-date">1 month ago</div>
-            </div>
-            <div class="rc-stars">★★★★★</div>
-            <div class="rc-title">Doctor recommended and it works!</div>
-            <div class="rc-text">My doctor suggested adding magnesium and D3 to my diet. Found this and it ticks every box. After 6 weeks my Vitamin D levels are almost normal. It's convenient to take just 2 pills rather than separate supplements. Reordering immediately.</div>
-            <div class="rc-helpful">
-              <span>Helpful?</span>
-              <button class="helpful-btn">👍 Yes (35)</button>
-              <button class="helpful-btn">👎 No (0)</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── SIMILAR PRODUCTS ── -->
-  <div class="similar-section">
-    <h2 class="section-title" style="margin-bottom:24px;">You May Also Like</h2>
-    <div class="similar-grid">
-
-      <div class="product-card">
-        <div class="card-img-wrap">
-          <img src="./assets/images/products/whey-powder.webp" alt="Whey Protein Concentrate" onerror="this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Whey+Protein'">
-          <span class="card-badge">−15%</span>
-        </div>
-        <div class="card-body">
-          <div class="card-cat">Whey Protein</div>
-          <div class="card-name">Whey Protein Concentrate</div>
-          <div class="card-stars">★★★★<span style="color:#e2e8f0;">★</span> <span>(98)</span></div>
-          <div class="card-price-row">
-            <div><span class="card-price">₹2,099</span> <span class="card-old">₹2,449</span></div>
-            <button class="card-add" onclick="showToast('🛒','View product')">View Product</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="card-img-wrap">
-          <img src="./assets/images/products/creatine.webp" alt="Mass Gainer Pro" onerror="this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Mass+Gainer'">
-          <span class="card-badge">SALE</span>
-        </div>
-        <div class="card-body">
-          <div class="card-cat">Supplements</div>
-          <div class="card-name">Mass Gainer Pro Blend</div>
-          <div class="card-stars">★★★★★ <span>(234)</span></div>
-          <div class="card-price-row">
-            <div><span class="card-price">₹3,849</span> <span class="card-old">₹4,899</span></div>
-            <button class="card-add" onclick="showToast('🛒','View product')">View Product</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="card-img-wrap">
-          <img src="./assets/images/products/BCAA.webp" alt="BCAA Complex Amino" onerror="this.src='https://placehold.co/300x200/f1f5f9/64748b?text=BCAA'">
-          <span class="card-badge" style="background:#16a34a;">NEW</span>
-        </div>
-        <div class="card-body">
-          <div class="card-cat">Supplements</div>
-          <div class="card-name">BCAA Complex Amino</div>
-          <div class="card-stars">★★★★★ <span>(342)</span></div>
-          <div class="card-price-row">
-            <div><span class="card-price">₹2,309</span> <span class="card-old">₹2,799</span></div>
-            <button class="card-add" onclick="showToast('🛒','View product')">View Product</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="card-img-wrap">
-          <img src="./assets/images/products/pea-protein.webp" alt="Pre-Workout Energy Boost" onerror="this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Pre-Workout'">
-          <span class="card-badge">HOT</span>
-        </div>
-        <div class="card-body">
-          <div class="card-cat">Pre-Workout</div>
-          <div class="card-name">Pre-Workout Energy Boost</div>
-          <div class="card-stars">★★★★<span style="color:#e2e8f0;">★</span> <span>(156)</span></div>
-          <div class="card-price-row">
-            <div><span class="card-price">₹1,959</span> <span class="card-old">₹2,799</span></div>
-            <button class="card-add" onclick="showToast('🛒','View product')">View Product</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div><!-- /page-wrap -->
-</main>
-
-<!-- ─── FOOTER ──────────────────────────────────────────────── -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="Aiva Wellness" width="36" height="36" style="border-radius:8px;" onerror="this.style.display='none'">
-          Aiva<span>Wellness</span>
-        </div>
-        <div class="footer-desc">Premium Healthcare & Wellness Solutions. Delivering trusted wellness products with transparency, care, and science-backed formulations.</div>
-        <div class="footer-social">
-          <a class="social-btn" href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a class="social-btn" href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a class="social-btn" href="#"><i class="fa-brands fa-whatsapp"></i></a>
-          <a class="social-btn" href="#"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h6>Quick Links</h6>
-        <ul>
+        </a>
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="shop.html">Shop</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
           <li><a href="#">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </div>
-      <div class="footer-col">
-        <h6>Categories</h6>
-        <ul>
-          <li><a href="#">Magnesium</a></li>
-          <li><a href="#">Protein</a></li>
-          <li><a href="#">Vitamins</a></li>
-          <li><a href="#">Pre-Workout</a></li>
-          <li><a href="#">Recovery</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h6>Contact</h6>
-        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+917807751710">+91 78077 51710</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:aivawellness@gmail.com">aivawellness@gmail.com</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Solan, Himachal Pradesh</span></div>
+        <a href="tel:+917807751710" class="nav-cta">
+          <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+        <button
+          class="hamburger"
+          onclick="toggleMenu()"
+          id="ham-btn"
+          aria-label="Open menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      onclick="if (event.target === this) toggleMenu();"
+    >
+      <nav class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="#">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:+917807751710" class="cta"
+          ><i class="fa-solid fa-phone me-2"></i>Call Now</a
+        >
+      </nav>
+    </div>
+
+    <!-- ─── BREADCRUMB ───────────────────────────────────────────── -->
+    <div class="breadcrumb-bar">
+      <div class="inner">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="shop.html">Shop</a>
+        <span class="sep">›</span>
+        <a href="#">Magnesium</a>
+        <span class="sep">›</span>
+        <span class="current">Magnesium Complex 5-in-1</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Aiva Wellness. All rights reserved.</span>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Shipping Policy</a>
+
+    <!-- ─── PAGE ─────────────────────────────────────────────────── -->
+    <main>
+      <div class="page-wrap">
+        <!-- ── PRODUCT TOP ── -->
+        <div class="product-top">
+          <!-- Gallery -->
+          <div class="gallery-wrap">
+            <div class="main-image-box">
+              <img
+                id="mainImg"
+                src="products-1/Magnesium Complex.jpg"
+                alt="Magnesium Complex 5-in-1"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x480/f1f5f9/64748b?text=Magnesium+Complex'
+                "
+              />
+            </div>
+            <div class="thumbs">
+              <img
+                src="products-1/Magnesium Complex.jpg"
+                alt="Front"
+                class="active"
+                onerror="
+                  this.src = 'https://placehold.co/80x80/f1f5f9/64748b?text=1'
+                "
+                onclick="setMainImg(this, 'products-1/Magnesium Complex.jpg')"
+              />
+              <img
+                src="products-1/hover-Magnesium Complex.jpg"
+                alt="Back"
+                onerror="
+                  this.src = 'https://placehold.co/80x80/f1f5f9/64748b?text=2'
+                "
+                onclick="
+                  setMainImg(this, 'products-1/hover-Magnesium Complex.jpg')
+                "
+              />
+              <img
+                src="products-1/Magnesium Complex.jpg"
+                alt="Side"
+                onerror="
+                  this.src = 'https://placehold.co/80x80/f1f5f9/64748b?text=3'
+                "
+                onclick="setMainImg(this, 'products-1/Magnesium Complex.jpg')"
+              />
+              <img
+                src="products-1/hover-Magnesium Complex.jpg"
+                alt="Label"
+                onerror="
+                  this.src = 'https://placehold.co/80x80/f1f5f9/64748b?text=4'
+                "
+                onclick="
+                  setMainImg(this, 'products-1/hover-Magnesium Complex.jpg')
+                "
+              />
+              <img
+                src="products-1/Magnesium Complex-5.jpg"
+                alt="Extra"
+                onerror="
+                  this.src = 'https://placehold.co/80x80/f1f5f9/64748b?text=5'
+                "
+                onclick="setMainImg(this, 'products-1/Magnesium Complex-5.jpg')"
+              />
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="product-info">
+            <div class="title-block">
+              <h1 class="product-title">Magnesium Complex 5-in-1</h1>
+              <p class="product-short-desc">
+                Magnesium Complex 5 in 1 supports bone strength, muscle
+                recovery, and cardiac wellness with a balanced formula of
+                Magnesium, Vitamin D3, Zinc, and Calcium. Ideal for daily
+                energy, immunity, and overall vitality.
+              </p>
+            </div>
+
+            <div class="rating-row">
+              <div class="stars">★★★★<span style="color: #e2e8f0">★</span></div>
+              <span class="rating-text"><strong>4.8</strong> out of 5</span>
+              <span
+                class="rating-text"
+                style="color: var(--blue); cursor: pointer"
+                onclick="
+                  document
+                    .querySelector('.reviews-section')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+                >(128 reviews)</span
+              >
+              <span class="verified-badge">✓ Verified</span>
+            </div>
+
+            <!-- Stock -->
+            <div class="stock-row">
+              <div class="stock-dot"></div>
+              <span class="stock-label">In Stock</span>
+              <span class="stock-count"
+                >· 250+ units available · Usually ships in 24 hrs</span
+              >
+            </div>
+
+            <!-- Price Card -->
+            <div class="price-card">
+              <div class="price-row">
+                <span id="priceMain" class="price-main">₹1,299</span>
+                <span id="priceOld" class="price-old">₹1,499</span>
+                <span id="discountChip" class="discount-chip">13% OFF</span>
+              </div>
+              <div id="savingText" class="saving-text">
+                You save ₹200 on this order!
+              </div>
+              <div class="tax-text">
+                Inclusive of all taxes · Free delivery on orders above ₹499
+              </div>
+            </div>
+
+            <div class="add-section">
+              <button
+                id="buyButton"
+                class="btn-buy"
+                onclick="showToast('✅', 'Buy Now clicked')"
+              >
+                Buy Now
+              </button>
+            </div>
+
+            <!-- Trust Strips -->
+            <div class="trust-grid">
+              <div class="trust-item">
+                <div class="trust-icon">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                  <div class="trust-text">100% Genuine</div>
+                  <div class="trust-sub">Lab-tested quality</div>
+                </div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-icon">
+                  <i class="fa-solid fa-rotate-left"></i>
+                </div>
+                <div>
+                  <div class="trust-text">Easy Returns</div>
+                  <div class="trust-sub">7-day return policy</div>
+                </div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-icon">
+                  <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div>
+                  <div class="trust-text">Fast Delivery</div>
+                  <div class="trust-sub">Pan-India shipping</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Benefits Quick List -->
+            <div class="features-card">
+              <div class="features-title">Key Benefits</div>
+              <ul class="feat-list">
+                <li>
+                  <span class="feat-check">✓</span> Supports bone strength with
+                  Calcium + Vitamin D3
+                </li>
+                <li>
+                  <span class="feat-check">✓</span> Aids muscle recovery &
+                  reduces cramps after exercise
+                </li>
+                <li>
+                  <span class="feat-check">✓</span> Promotes cardiac wellness
+                  and healthy nerve function
+                </li>
+                <li>
+                  <span class="feat-check">✓</span> Boosts immunity with Zinc +
+                  Magnesium combination
+                </li>
+                <li>
+                  <span class="feat-check">✓</span> Enhances daily energy,
+                  focus, and overall vitality
+                </li>
+              </ul>
+            </div>
+
+            <!-- Share -->
+            <div class="share-row">
+              <span class="share-label">Share:</span>
+              <a class="share-btn" href="#" title="WhatsApp"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+              <a class="share-btn" href="#" title="Facebook"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a class="share-btn" href="#" title="X / Twitter"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                class="share-btn"
+                href="#"
+                title="Copy link"
+                onclick="
+                  navigator.clipboard &&
+                    navigator.clipboard.writeText(location.href);
+                  showToast('🔗', 'Link copied!');
+                "
+                ><i class="fa-solid fa-link"></i
+              ></a>
+            </div>
+
+            <!-- Meta -->
+            <div class="meta-row">
+              <div><strong>SKU:</strong> MC-501</div>
+              <div><strong>Brand:</strong> Aiva Wellness</div>
+              <div><strong>Country:</strong> Made in India</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── TABS ── -->
+        <div class="tabs-section">
+          <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('desc', this)">
+              Description
+            </button>
+            <button class="tab-btn" onclick="switchTab('nutrition', this)">
+              Nutrition Facts
+            </button>
+            <button class="tab-btn" onclick="switchTab('ingredients', this)">
+              Ingredients
+            </button>
+            <button class="tab-btn" onclick="switchTab('usage', this)">
+              How to Use
+            </button>
+          </div>
+
+          <!-- Description -->
+          <div class="tab-panel active" id="tab-desc">
+            <div class="desc-grid">
+              <div class="desc-text">
+                <h4>About Magnesium Complex 5-in-1</h4>
+                <p>
+                  Aiva Wellness Magnesium Complex 5-in-1 is a scientifically
+                  formulated supplement combining five synergistic nutrients —
+                  Magnesium, Vitamin D3, Zinc, Calcium, and Vitamin K2 — in a
+                  single, convenient tablet.
+                </p>
+                <p>
+                  Magnesium is involved in over 300 enzymatic reactions in the
+                  body, supporting everything from ATP energy production to
+                  protein synthesis. Paired with Calcium and Vitamin D3 for
+                  superior bone mineralisation, and Zinc for immune defence,
+                  this complex ensures you get maximum benefit from every dose.
+                </p>
+                <p>
+                  Whether you are an active athlete recovering from training, a
+                  professional managing stress, or simply someone looking to
+                  fill nutritional gaps in a modern diet, this formula is
+                  designed to fit seamlessly into your daily routine.
+                </p>
+                <h4 style="margin-top: 20px">Why Choose This Formula?</h4>
+                <p>
+                  Most single-ingredient magnesium supplements miss the
+                  cofactors that enable proper absorption. Our 5-in-1 formula is
+                  built around bioavailability — combining nutrients that work
+                  together, not against each other. Every batch is third-party
+                  tested and FSSAI-certified.
+                </p>
+              </div>
+              <div class="benefits-grid">
+                <div class="benefit-card">
+                  <div class="benefit-icon">🦴</div>
+                  <div class="benefit-title">Strong Bones</div>
+                  <div class="benefit-desc">
+                    Calcium + Vitamin D3 + K2 trinity optimises bone mineral
+                    density and reduces fracture risk.
+                  </div>
+                </div>
+                <div class="benefit-card">
+                  <div class="benefit-icon">💪</div>
+                  <div class="benefit-title">Muscle Recovery</div>
+                  <div class="benefit-desc">
+                    Magnesium reduces muscle cramps, supports post-workout
+                    recovery and protein synthesis.
+                  </div>
+                </div>
+                <div class="benefit-card">
+                  <div class="benefit-icon">❤️</div>
+                  <div class="benefit-title">Heart Health</div>
+                  <div class="benefit-desc">
+                    Regulates blood pressure, supports cardiac rhythm and
+                    healthy vascular function.
+                  </div>
+                </div>
+                <div class="benefit-card">
+                  <div class="benefit-icon">🛡️</div>
+                  <div class="benefit-title">Immune Defence</div>
+                  <div class="benefit-desc">
+                    Zinc and Vitamin D3 fortify your body's natural immune
+                    response year-round.
+                  </div>
+                </div>
+                <div class="benefit-card">
+                  <div class="benefit-icon">⚡</div>
+                  <div class="benefit-title">Daily Energy</div>
+                  <div class="benefit-desc">
+                    Magnesium is essential for ATP production — your body's
+                    primary energy currency.
+                  </div>
+                </div>
+                <div class="benefit-card">
+                  <div class="benefit-icon">🧠</div>
+                  <div class="benefit-title">Sleep & Calm</div>
+                  <div class="benefit-desc">
+                    Helps regulate the nervous system and promotes deeper, more
+                    restorative sleep.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nutrition -->
+          <div class="tab-panel" id="tab-nutrition">
+            <div class="nutrition-wrap">
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: var(--muted);
+                  margin-bottom: 16px;
+                "
+              >
+                <strong>Serving Size:</strong> 2 Tablets &nbsp;|&nbsp;
+                <strong>Servings Per Container:</strong> 30
+              </p>
+              <table class="nutrition-table">
+                <thead>
+                  <tr>
+                    <th>Nutrient</th>
+                    <th style="text-align: center">Per Serving</th>
+                    <th>% Daily Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Magnesium (as Magnesium Glycinate)</td>
+                    <td style="text-align: center">300 mg</td>
+                    <td style="text-align: right">71%</td>
+                  </tr>
+                  <tr>
+                    <td>Calcium (as Calcium Carbonate)</td>
+                    <td style="text-align: center">200 mg</td>
+                    <td style="text-align: right">20%</td>
+                  </tr>
+                  <tr>
+                    <td>Vitamin D3 (Cholecalciferol)</td>
+                    <td style="text-align: center">1000 IU</td>
+                    <td style="text-align: right">250%</td>
+                  </tr>
+                  <tr>
+                    <td>Zinc (as Zinc Gluconate)</td>
+                    <td style="text-align: center">10 mg</td>
+                    <td style="text-align: right">91%</td>
+                  </tr>
+                  <tr>
+                    <td>Vitamin K2 (MK-7)</td>
+                    <td style="text-align: center">45 mcg</td>
+                    <td style="text-align: right">56%</td>
+                  </tr>
+                  <tr>
+                    <td>Vitamin B6 (Pyridoxine HCl)</td>
+                    <td style="text-align: center">5 mg</td>
+                    <td style="text-align: right">294%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="nutrition-note">
+                * Percent Daily Values are based on a 2,000 calorie diet. Daily
+                Values may be higher or lower depending on your calorie
+                requirements.
+                <span class="daily-value">† Daily Value not established.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Ingredients -->
+          <div class="tab-panel" id="tab-ingredients">
+            <p class="ingredients-text">
+              <strong>Active Ingredients:</strong> Magnesium Glycinate (300 mg),
+              Calcium Carbonate (200 mg), Cholecalciferol / Vitamin D3 (25 mcg),
+              Zinc Gluconate (10 mg), Menaquinone-7 / Vitamin K2 MK-7 (45 mcg),
+              Pyridoxine HCl / Vitamin B6 (5 mg).
+            </p>
+            <p class="ingredients-text">
+              <strong>Other Ingredients:</strong> Microcrystalline Cellulose,
+              Dicalcium Phosphate, Magnesium Stearate (vegetable), Silicon
+              Dioxide, Hydroxypropyl Methylcellulose (coating), Polyethylene
+              Glycol.
+            </p>
+            <div class="allergen-box">
+              <strong
+                ><i class="fa-solid fa-triangle-exclamation"></i> Allergen
+                Information</strong
+              >
+              Contains no gluten, dairy, soy, nut, or shellfish-derived
+              ingredients. Manufactured in a facility that also processes milk
+              and soy. Suitable for vegetarians. Not suitable for vegans
+              (Vitamin D3 is lanolin-derived).
+            </div>
+          </div>
+
+          <!-- How to Use -->
+          <div class="tab-panel" id="tab-usage">
+            <div class="usage-steps">
+              <div class="usage-step">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                  <h5>Take 2 tablets per day</h5>
+                  <p>
+                    The recommended dose is 2 tablets daily. Do not exceed this
+                    amount unless advised by a healthcare professional.
+                  </p>
+                </div>
+              </div>
+              <div class="usage-step">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                  <h5>Take with or after meals</h5>
+                  <p>
+                    Take with food to enhance absorption of fat-soluble vitamins
+                    (D3, K2) and to minimise any chance of stomach discomfort.
+                    Evening is ideal, as magnesium supports relaxation and sleep
+                    quality.
+                  </p>
+                </div>
+              </div>
+              <div class="usage-step">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                  <h5>Swallow with a full glass of water</h5>
+                  <p>
+                    Drink at least 200 ml of water when taking the tablets.
+                    Avoid taking with caffeinated drinks or alcohol as these can
+                    reduce mineral absorption.
+                  </p>
+                </div>
+              </div>
+              <div class="usage-step">
+                <div class="step-num">4</div>
+                <div class="step-text">
+                  <h5>Use consistently for best results</h5>
+                  <p>
+                    Benefits are cumulative. Use for a minimum of 8–12 weeks for
+                    noticeable improvements in energy, sleep, and muscle
+                    comfort. Store below 30°C in a cool, dry place away from
+                    direct sunlight.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="warning-box" style="margin-top: 24px">
+              <strong
+                ><i class="fa-solid fa-circle-exclamation"></i> Important
+                Notice</strong
+              >
+              Consult your doctor before use if you are pregnant, nursing, have
+              kidney disease, are on prescription medications (especially blood
+              thinners or antibiotics), or have a known medical condition. Keep
+              out of reach of children. This product is not intended to
+              diagnose, treat, cure, or prevent any disease.
+            </div>
+          </div>
+        </div>
+
+        <!-- ── REVIEWS ── -->
+        <div class="reviews-section">
+          <div class="section-header">
+            <h2 class="section-title">Customer Reviews</h2>
+          </div>
+
+          <div class="reviews-layout">
+            <!-- Summary -->
+            <div class="rating-summary">
+              <div class="big-score">4.8</div>
+              <div class="big-stars">
+                ★★★★<span style="color: #e2e8f0">★</span>
+              </div>
+              <div class="total-reviews">Based on 128 verified reviews</div>
+              <div>
+                <div class="bar-row">
+                  <span class="bar-label">5 ★</span>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      style="width: 78%; background: #16a34a"
+                    ></div>
+                  </div>
+                  <span class="bar-count">100</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">4 ★</span>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      style="width: 14%; background: #65a30d"
+                    ></div>
+                  </div>
+                  <span class="bar-count">18</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">3 ★</span>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      style="width: 5%; background: #ca8a04"
+                    ></div>
+                  </div>
+                  <span class="bar-count">6</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">2 ★</span>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      style="width: 2%; background: #ea580c"
+                    ></div>
+                  </div>
+                  <span class="bar-count">3</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">1 ★</span>
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      style="width: 1%; background: #dc2626"
+                    ></div>
+                  </div>
+                  <span class="bar-count">1</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reviews List -->
+            <div>
+              <div class="reviews-list">
+                <div class="review-card">
+                  <div class="rc-header">
+                    <div>
+                      <div class="rc-author">Rohit Sharma</div>
+                      <div class="rc-verified">✓ Verified Purchase</div>
+                    </div>
+                    <div class="rc-date">2 days ago</div>
+                  </div>
+                  <div class="rc-stars">★★★★★</div>
+                  <div class="rc-title">
+                    Noticeably improved my sleep within a week!
+                  </div>
+                  <div class="rc-text">
+                    I was skeptical at first but after just 7 days my sleep has
+                    gotten significantly deeper. I no longer wake up with leg
+                    cramps at night. The tablet is easy to swallow and no
+                    aftertaste. Definitely a keeper.
+                  </div>
+                  <div class="rc-helpful">
+                    <span>Helpful?</span>
+                    <button
+                      class="helpful-btn"
+                      onclick="this.textContent = '👍 Yes (43)'"
+                    >
+                      👍 Yes (42)
+                    </button>
+                    <button class="helpful-btn">👎 No (1)</button>
+                  </div>
+                </div>
+
+                <div class="review-card">
+                  <div class="rc-header">
+                    <div>
+                      <div class="rc-author">Priya Kapoor</div>
+                      <div class="rc-verified">✓ Verified Purchase</div>
+                    </div>
+                    <div class="rc-date">1 week ago</div>
+                  </div>
+                  <div class="rc-stars">
+                    ★★★★<span style="color: #e2e8f0">★</span>
+                  </div>
+                  <div class="rc-title">Great value, fast shipping</div>
+                  <div class="rc-text">
+                    Ordered for my parents who are in their 60s. They've been
+                    taking it for 3 weeks and both say their joints feel less
+                    stiff in the mornings. Packaging is excellent and delivery
+                    was quicker than expected. Minus one star only because I
+                    wish it came in a more compact bottle.
+                  </div>
+                  <div class="rc-helpful">
+                    <span>Helpful?</span>
+                    <button class="helpful-btn">👍 Yes (28)</button>
+                    <button class="helpful-btn">👎 No (0)</button>
+                  </div>
+                </div>
+
+                <div class="review-card">
+                  <div class="rc-header">
+                    <div>
+                      <div class="rc-author">Amandeep Singh</div>
+                      <div class="rc-verified">✓ Verified Purchase</div>
+                    </div>
+                    <div class="rc-date">3 weeks ago</div>
+                  </div>
+                  <div class="rc-stars">★★★★★</div>
+                  <div class="rc-title">
+                    Best magnesium supplement I've tried
+                  </div>
+                  <div class="rc-text">
+                    As a gym trainer I've tried at least 6 different magnesium
+                    products. This one stands out because of the glycinate form
+                    — it's much gentler on the stomach than oxide forms. My
+                    clients have also started using it and feedback has been
+                    overwhelmingly positive. The 5-in-1 combo is unbeatable at
+                    this price point.
+                  </div>
+                  <div class="rc-helpful">
+                    <span>Helpful?</span>
+                    <button class="helpful-btn">👍 Yes (61)</button>
+                    <button class="helpful-btn">👎 No (2)</button>
+                  </div>
+                </div>
+
+                <div class="review-card">
+                  <div class="rc-header">
+                    <div>
+                      <div class="rc-author">Meera Iyer</div>
+                      <div class="rc-verified">✓ Verified Purchase</div>
+                    </div>
+                    <div class="rc-date">1 month ago</div>
+                  </div>
+                  <div class="rc-stars">★★★★★</div>
+                  <div class="rc-title">Doctor recommended and it works!</div>
+                  <div class="rc-text">
+                    My doctor suggested adding magnesium and D3 to my diet.
+                    Found this and it ticks every box. After 6 weeks my Vitamin
+                    D levels are almost normal. It's convenient to take just 2
+                    pills rather than separate supplements. Reordering
+                    immediately.
+                  </div>
+                  <div class="rc-helpful">
+                    <span>Helpful?</span>
+                    <button class="helpful-btn">👍 Yes (35)</button>
+                    <button class="helpful-btn">👎 No (0)</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── SIMILAR PRODUCTS ── -->
+        <div class="similar-section">
+          <h2 class="section-title" style="margin-bottom: 24px">
+            You May Also Like
+          </h2>
+          <div class="similar-grid">
+            <div class="product-card">
+              <div class="card-img-wrap">
+                <img
+                  src="./assets/images/products/whey-powder.webp"
+                  alt="Whey Protein Concentrate"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/300x200/f1f5f9/64748b?text=Whey+Protein'
+                  "
+                />
+                <span class="card-badge">−15%</span>
+              </div>
+              <div class="card-body">
+                <div class="card-cat">Whey Protein</div>
+                <div class="card-name">Whey Protein Concentrate</div>
+                <div class="card-stars">
+                  ★★★★<span style="color: #e2e8f0">★</span> <span>(98)</span>
+                </div>
+                <div class="card-price-row">
+                  <div>
+                    <span class="card-price">₹2,099</span>
+                    <span class="card-old">₹2,449</span>
+                  </div>
+                  <button
+                    class="card-add"
+                    onclick="showToast('🛒', 'View product')"
+                  >
+                    View Product
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="card-img-wrap">
+                <img
+                  src="./assets/images/products/creatine.webp"
+                  alt="Mass Gainer Pro"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/300x200/f1f5f9/64748b?text=Mass+Gainer'
+                  "
+                />
+                <span class="card-badge">SALE</span>
+              </div>
+              <div class="card-body">
+                <div class="card-cat">Supplements</div>
+                <div class="card-name">Mass Gainer Pro Blend</div>
+                <div class="card-stars">★★★★★ <span>(234)</span></div>
+                <div class="card-price-row">
+                  <div>
+                    <span class="card-price">₹3,849</span>
+                    <span class="card-old">₹4,899</span>
+                  </div>
+                  <button
+                    class="card-add"
+                    onclick="showToast('🛒', 'View product')"
+                  >
+                    View Product
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="card-img-wrap">
+                <img
+                  src="./assets/images/products/BCAA.webp"
+                  alt="BCAA Complex Amino"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/300x200/f1f5f9/64748b?text=BCAA'
+                  "
+                />
+                <span class="card-badge" style="background: #16a34a">NEW</span>
+              </div>
+              <div class="card-body">
+                <div class="card-cat">Supplements</div>
+                <div class="card-name">BCAA Complex Amino</div>
+                <div class="card-stars">★★★★★ <span>(342)</span></div>
+                <div class="card-price-row">
+                  <div>
+                    <span class="card-price">₹2,309</span>
+                    <span class="card-old">₹2,799</span>
+                  </div>
+                  <button
+                    class="card-add"
+                    onclick="showToast('🛒', 'View product')"
+                  >
+                    View Product
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="card-img-wrap">
+                <img
+                  src="./assets/images/products/pea-protein.webp"
+                  alt="Pre-Workout Energy Boost"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/300x200/f1f5f9/64748b?text=Pre-Workout'
+                  "
+                />
+                <span class="card-badge">HOT</span>
+              </div>
+              <div class="card-body">
+                <div class="card-cat">Pre-Workout</div>
+                <div class="card-name">Pre-Workout Energy Boost</div>
+                <div class="card-stars">
+                  ★★★★<span style="color: #e2e8f0">★</span> <span>(156)</span>
+                </div>
+                <div class="card-price-row">
+                  <div>
+                    <span class="card-price">₹1,959</span>
+                    <span class="card-old">₹2,799</span>
+                  </div>
+                  <button
+                    class="card-add"
+                    onclick="showToast('🛒', 'View product')"
+                  >
+                    View Product
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</footer>
+      <!-- /page-wrap -->
+    </main>
 
-<!-- Toast -->
-<div class="toast-wrap" id="toastWrap"></div>
+    <!-- ─── FOOTER ──────────────────────────────────────────────── -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="assets/logo.png"
+                alt="Aiva Wellness"
+                width="36"
+                height="36"
+                style="border-radius: 8px"
+                onerror="this.style.display = 'none'"
+              />
+              Aiva<span>Wellness</span>
+            </div>
+            <div class="footer-desc">
+              Premium Healthcare & Wellness Solutions. Delivering trusted
+              wellness products with transparency, care, and science-backed
+              formulations.
+            </div>
+            <div class="footer-social">
+              <a class="social-btn" href="#"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a class="social-btn" href="#"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a class="social-btn" href="#"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+              <a class="social-btn" href="#"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h6>Quick Links</h6>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h6>Categories</h6>
+            <ul>
+              <li><a href="#">Magnesium</a></li>
+              <li><a href="#">Protein</a></li>
+              <li><a href="#">Vitamins</a></li>
+              <li><a href="#">Pre-Workout</a></li>
+              <li><a href="#">Recovery</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h6>Contact</h6>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i
+              ><a href="tel:+917807751710">+91 78077 51710</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i
+              ><a href="mailto:aivawellness@gmail.com"
+                >aivawellness@gmail.com</a
+              >
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i
+              ><span>Solan, Himachal Pradesh</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Aiva Wellness. All rights reserved.</span>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Shipping Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-<!-- Scripts -->
-<script>
-  // Tabs
-  function switchTab(id, btn) {
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-' + id).classList.add('active');
-    btn.classList.add('active');
-  }
+    <!-- Toast -->
+    <div class="toast-wrap" id="toastWrap"></div>
 
-  // Gallery
-  function setMainImg(el, src) {
-    document.querySelectorAll('.thumbs img').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
-    const main = document.getElementById('mainImg');
-    main.style.opacity = '0';
-    setTimeout(() => { main.src = src; main.style.opacity = '1'; }, 150);
-  }
-  document.getElementById('mainImg').style.transition = 'opacity 0.15s';
+    <!-- Scripts -->
+    <script>
+      // Tabs
+      function switchTab(id, btn) {
+        document
+          .querySelectorAll(".tab-panel")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById("tab-" + id).classList.add("active");
+        btn.classList.add("active");
+      }
 
-  // Quantity
-  function changeQty(delta) {
-    const inp = document.getElementById('qtyInput');
-    const val = Math.max(1, Math.min(99, parseInt(inp.value) + delta));
-    inp.value = val;
-  }
+      // Gallery
+      function setMainImg(el, src) {
+        document
+          .querySelectorAll(".thumbs img")
+          .forEach((t) => t.classList.remove("active"));
+        el.classList.add("active");
+        const main = document.getElementById("mainImg");
+        main.style.opacity = "0";
+        setTimeout(() => {
+          main.src = src;
+          main.style.opacity = "1";
+        }, 150);
+      }
+      document.getElementById("mainImg").style.transition = "opacity 0.15s";
 
-  // Add to cart
-  function handleAddToCart() {
-    const qty = parseInt(document.getElementById('qtyInput').value) || 1;
-    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    const idx = cart.findIndex(i => i.name === 'Magnesium Complex 5-in-1');
-    if (idx > -1) cart[idx].quantity += qty;
-    else cart.push({ name: 'Magnesium Complex 5-in-1', price: 1299, quantity: qty, image: 'products-1/Magnesium Complex.jpg' });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    showToast('🛒', qty + ' item(s) added to cart!');
-  }
+      // Quantity
+      function changeQty(delta) {
+        const inp = document.getElementById("qtyInput");
+        const val = Math.max(1, Math.min(99, parseInt(inp.value) + delta));
+        inp.value = val;
+      }
 
-  // Toast
-  function showToast(icon, msg) {
-    const wrap = document.getElementById('toastWrap');
-    const t = document.createElement('div');
-    t.className = 'toast';
-    t.innerHTML = `<span class="t-icon">${icon}</span><span>${msg}</span>`;
-    wrap.appendChild(t);
-    requestAnimationFrame(() => { requestAnimationFrame(() => t.classList.add('show')); });
-    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 350); }, 2800);
-  }
+      // Add to cart
+      function handleAddToCart() {
+        const qty = parseInt(document.getElementById("qtyInput").value) || 1;
+        const productId =
+          parseInt(new URLSearchParams(window.location.search).get("id")) ||
+          101;
+        const product = PRODUCT_MAP[productId] || PRODUCT_MAP[101];
+        let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const idx = cart.findIndex((i) => i.id === product.id);
+        if (idx > -1) cart[idx].quantity += qty;
+        else
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: qty,
+            image: product.img,
+          });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        showToast("🛒", qty + " item(s) added to cart!");
+      }
 
-  // Mobile menu
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('open');
-  }
+      const PRODUCT_MAP = {
+        101: {
+          id: 101,
+          name: "Magnesium Complex 5-in-1",
+          img: "products-1/Magnesium Complex.jpg",
+          price: 1299,
+          old: 1499,
+          desc: "Magnesium Complex 5 in 1 supports bone strength, muscle recovery, and cardiac wellness with a balanced formula of Magnesium, Vitamin D3, Zinc, and Calcium. Ideal for daily energy, immunity, and overall vitality.",
+          discount: 13,
+        },
+        103: {
+          id: 103,
+          name: "Nattokinase 100 mg",
+          img: "products-1/Nattokinase Carton  final.jpg",
+          price: 1199,
+          old: 1399,
+          desc: "Nattokinase 100 mg supports heart health and immune balance, helping maintain healthy circulation and vascular function with every daily serving.",
+          discount: 14,
+        },
+        108: {
+          id: 108,
+          name: "Vitamin D3 Supplement",
+          img: "products-1/VITAMIN D3.jpg",
+          price: 499,
+          old: 599,
+          desc: "Vitamin D3 helps support bone strength, immunity and energy synthesis with a daily dose that fits into your wellness routine.",
+          discount: 17,
+        },
+        111: {
+          id: 111,
+          name: "ZMA + Vitamin B6 (90 Capsules)",
+          img: "products-1/ZMA + VITAMIN B6.jpg",
+          price: 1499,
+          old: 1699,
+          desc: "ZMA + Vitamin B6 supports recovery, muscle strength and restful sleep for active lifestyles.",
+          discount: 12,
+        },
+        122: {
+          id: 122,
+          name: "Omega-3 Fish Oil",
+          img: "products-1/omega 3, Vitamin E.jpg",
+          price: 899,
+          old: 1099,
+          desc: "Omega-3 Fish Oil with Vitamin E supports heart, brain and joint health with every serving.",
+          discount: 18,
+        },
+      };
 
-  // Review filter chips (UI only)
-  document.querySelectorAll('.filter-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-    });
-  });
-</script>
+      function applyProductDetails() {
+        const params = new URLSearchParams(window.location.search);
+        const productId = parseInt(params.get("id"), 10) || 101;
+        const product = PRODUCT_MAP[productId] || PRODUCT_MAP[101];
+        document.getElementById("productTitle").textContent = product.name;
+        document.getElementById("productDesc").textContent = product.desc;
+        document.getElementById("mainImg").src = product.img;
+        document.getElementById("mainImg").alt = product.name;
+        document.getElementById("priceMain").textContent =
+          "₹" + product.price.toLocaleString("en-IN");
+        document.getElementById("priceOld").textContent =
+          "₹" + product.old.toLocaleString("en-IN");
+        document.getElementById("discountChip").textContent =
+          product.discount + "% OFF";
+        document.getElementById("savingText").textContent =
+          "You save ₹" + (product.old - product.price) + " on this order!";
+        document.getElementById("buyButton").onclick = () =>
+          showToast("✅", "Buy " + product.name + " clicked");
+      }
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+      applyProductDetails();
+
+      // Toast
+      function showToast(icon, msg) {
+        const wrap = document.getElementById("toastWrap");
+        const t = document.createElement("div");
+        t.className = "toast";
+        t.innerHTML = `<span class="t-icon">${icon}</span><span>${msg}</span>`;
+        wrap.appendChild(t);
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => t.classList.add("show"));
+        });
+        setTimeout(() => {
+          t.classList.remove("show");
+          setTimeout(() => t.remove(), 350);
+        }, 2800);
+      }
+
+      // Mobile menu
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("open");
+      }
+
+      // Review filter chips (UI only)
+      document.querySelectorAll(".filter-chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter-chip")
+            .forEach((c) => c.classList.remove("active"));
+          chip.classList.add("active");
+        });
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
