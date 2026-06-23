@@ -526,6 +526,12 @@
         font-weight: 600;
         margin-bottom: 14px;
       }
+      .about-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
       .about-text h2 {
         font-family: "Cormorant Garamond", serif;
         font-size: clamp(26px, 4vw, 46px);
@@ -543,11 +549,12 @@
       .about-stats {
         display: flex;
         gap: 24px;
-        margin: 24px 0;
+        margin: 24px auto;
         padding: 20px 0;
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
         flex-wrap: wrap;
+        justify-content: center;
       }
       .a-stat-num {
         font-family: "Sora", sans-serif;
@@ -574,11 +581,17 @@
         font-weight: 600;
         transition: all 0.25s;
         border-radius: 4px;
+        margin: 0 auto;
       }
       .btn-outline:hover {
         background: var(--blue);
         color: #fff;
         gap: 12px;
+      }
+      .about-cta {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
       }
       .about-images {
         display: grid;
@@ -664,7 +677,8 @@
 
       /* ── PRODUCTS SECTION ── */
       .products-section {
-        background: var(--light);
+        background: linear-gradient(rgba(255,255,255,0.95), rgba(250,250,252,0.95)),
+          url("background2.webp") center/cover no-repeat;
         padding: 64px 20px;
         width: 100%;
       }
@@ -2083,9 +2097,11 @@
             <div class="a-stat-label">Average Rating</div>
           </div>
         </div>
-        <a href="about.html" class="btn-outline"
-          >Know Our Story <i class="fa-solid fa-arrow-right"></i
-        ></a>
+        <div class="about-cta">
+          <a href="about.html" class="btn-outline"
+            >Know Our Story <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
       </div>
       <div
         class="about-images"
