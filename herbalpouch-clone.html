@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -33,7 +33,7 @@
       }
 
       :root {
-        /* ── SHOP.HTML COLOR PALETTE ── */
+        /* -- SHOP.HTML COLOR PALETTE -- */
         --blue: #1d4ed8;
         --blue-light: #3b82f6;
         --blue-pale: #dbeafe;
@@ -81,7 +81,7 @@
         padding-top: 68px;
       }
 
-      /* ── PRELOADER ── */
+      /* -- PRELOADER -- */
       #preloader {
         position: fixed;
         inset: 0;
@@ -124,7 +124,7 @@
         }
       }
 
-      /* ── ANNOUNCEMENT BAR ── */
+      /* -- ANNOUNCEMENT BAR -- */
       .ann-bar {
         background: var(--blue);
         color: #fff;
@@ -153,7 +153,7 @@
         }
       }
 
-      /* ── HEADER (shop.html exact match) ── */
+      /* -- HEADER (shop.html exact match) -- */
       .site-header {
         background: rgba(255, 255, 255, 0.96);
         border-bottom: 1px solid var(--border);
@@ -293,7 +293,7 @@
         transform: rotate(-45deg) translate(4px, -4px);
       }
 
-      /* ── MOBILE MENU ── */
+      /* -- MOBILE MENU -- */
       .mobile-menu {
         display: none;
         position: fixed;
@@ -341,7 +341,7 @@
         background: #1e40af;
       }
 
-      /* ── HERO SLIDER ── */
+      /* -- HERO SLIDER -- */
       .hero-slider {
         position: relative;
         overflow: hidden;
@@ -460,7 +460,7 @@
         }
       }
 
-      /* ── TRUST STRIP ── */
+      /* -- TRUST STRIP -- */
       .trust-strip {
         background: var(--white);
         border-top: 1px solid var(--border);
@@ -508,7 +508,7 @@
         }
       }
 
-      /* ── ABOUT SECTION ── */
+      /* -- ABOUT SECTION -- */
       .about-section {
         max-width: 1200px;
         margin: 64px auto;
@@ -645,7 +645,7 @@
         }
       }
 
-      /* ── SECTION HEADER ── */
+      /* -- SECTION HEADER -- */
       .section-header {
         text-align: center;
         margin-bottom: 44px;
@@ -675,7 +675,7 @@
         line-height: 1.7;
       }
 
-      /* ── PRODUCTS SECTION ── */
+      /* -- PRODUCTS SECTION -- */
       .products-section {
         background:
           linear-gradient(rgba(255, 255, 255, 0.95), rgba(250, 250, 252, 0.95)),
@@ -945,7 +945,7 @@
         }
       }
 
-      /* ── FEATURES ── */
+      /* -- FEATURES -- */
       .features-section {
         padding: 64px 20px;
         max-width: 1200px;
@@ -1056,7 +1056,7 @@
         }
       }
 
-      /* ── COMBO ── */
+      /* -- COMBO -- */
       .combo-section {
         max-width: 1200px;
         margin: 0 auto 64px;
@@ -1214,7 +1214,7 @@
         }
       }
 
-      /* ── DROPS SECTION ── */
+      /* -- DROPS SECTION -- */
       .drops-section {
         padding: 64px 20px;
         background: linear-gradient(
@@ -1326,7 +1326,7 @@
         }
       }
 
-      /* ── TESTIMONIALS ── */
+      /* -- TESTIMONIALS -- */
       .testimonials-section {
         padding: 64px 20px;
         width: 100%;
@@ -1401,7 +1401,7 @@
         }
       }
 
-      /* ── FAQ ── */
+      /* -- FAQ -- */
       .faq-section {
         background: var(--light);
         padding: 64px 20px;
@@ -1467,7 +1467,7 @@
         line-height: 1.75;
       }
 
-      /* ── BLOGS ── */
+      /* -- BLOGS -- */
       .blogs-section {
         padding: 64px 20px;
         width: 100%;
@@ -1560,7 +1560,7 @@
         }
       }
 
-      /* ── INSTAGRAM ── */
+      /* -- INSTAGRAM -- */
       .insta-section {
         padding: 52px 0 0;
         overflow: hidden;
@@ -1621,7 +1621,7 @@
         }
       }
 
-      /* ── NEWSLETTER ── */
+      /* -- NEWSLETTER -- */
       .newsletter-section {
         padding: 64px 20px;
         background: linear-gradient(
@@ -1710,7 +1710,7 @@
         }
       }
 
-      /* ── FOOTER (shop.html exact match) ── */
+      /* -- FOOTER (shop.html exact match) -- */
       footer {
         background: #0d1117;
         color: #94a3b8;
@@ -1876,17 +1876,13 @@
         }
       }
 
-      /* ── NAV RESPONSIVE ── */
+      /* -- NAV RESPONSIVE -- */
       @media (max-width: 768px) {
         .nav-inner {
-          flex-wrap: wrap;
-          align-items: flex-start;
+          align-items: center;
           justify-content: space-between;
-          gap: 8px;
         }
         .brand {
-          flex-wrap: wrap;
-          gap: 6px;
           min-width: 0;
         }
         .brand-name {
@@ -1902,14 +1898,13 @@
           margin-top: 0;
           max-width: 100%;
         }
-        .nav-links {
-          display: none;
-        }
+        .nav-links,
         .nav-cta {
           display: none;
         }
         .hamburger {
           display: flex;
+          flex-direction: column;
         }
       }
       @media (max-width: 400px) {
@@ -1941,14 +1936,14 @@
     <div class="ann-bar">
       <div class="ann-bar-track">
         <span
-          >✨ Premium Healthcare formulas made in Himachal Pradesh &nbsp;|&nbsp;
+          >? Premium Healthcare formulas made in Himachal Pradesh &nbsp;|&nbsp;
           10% off your first order with code
           <strong>AIVA10</strong> &nbsp;|&nbsp; Free shipping on orders over Rs.
           999 &nbsp;|&nbsp; 100% Ayurvedic &amp; Natural &nbsp;|&nbsp; No
           Fillers, No Binders</span
         >
         <span
-          >✨ Premium Healthcare formulas made in Himachal Pradesh &nbsp;|&nbsp;
+          >? Premium Healthcare formulas made in Himachal Pradesh &nbsp;|&nbsp;
           10% off your first order with code
           <strong>AIVA10</strong> &nbsp;|&nbsp; Free shipping on orders over Rs.
           999 &nbsp;|&nbsp; 100% Ayurvedic &amp; Natural &nbsp;|&nbsp; No
@@ -2014,7 +2009,6 @@
       class="hero-slider"
       id="heroSlider"
       data-aos="fade-up"
-      data-aos-duration="800"
     >
       <div class="slider-track" id="sliderTrack">
         <div class="slide">
@@ -2079,7 +2073,7 @@
           ><span>No Fillers or Binders</span>
         </div>
         <div class="trust-item">
-          <i class="fa-solid fa-truck"></i><span>Free Shipping on ₹999+</span>
+          <i class="fa-solid fa-truck"></i><span>Free Shipping on ?999+</span>
         </div>
         <div class="trust-item">
           <i class="fa-solid fa-flask"></i><span>Science-Backed Formulas</span>
@@ -2091,14 +2085,14 @@
     </div>
 
     <!-- ABOUT SECTION -->
-    <section class="about-section" data-aos="fade-up" data-aos-duration="800">
-      <div class="about-text" data-aos="fade-right" data-aos-duration="700">
+    <section class="about-section" data-aos="fade-up">
+      <div class="about-text" data-aos="fade-right">
         <p class="about-eyebrow">Who We Are</p>
         <h2>Has wellness stopped feeling simple?</h2>
         <p>
           At Aiva Wellness, we make it simple again. From our facility in Solan,
           Himachal Pradesh, we craft precision health formulas designed for the
-          modern Indian body — free from unnecessary additives, binders, and
+          modern Indian body � free from unnecessary additives, binders, and
           fillers.
         </p>
         <p>
@@ -2115,7 +2109,7 @@
             <div class="a-stat-label">Premium Products</div>
           </div>
           <div>
-            <div class="a-stat-num">4.8★</div>
+            <div class="a-stat-num">4.8?</div>
             <div class="a-stat-label">Average Rating</div>
           </div>
         </div>
@@ -2128,8 +2122,6 @@
       <div
         class="about-images"
         data-aos="fade-left"
-        data-aos-duration="700"
-        data-aos-delay="100"
       >
         <div class="about-img-main">
           <img
@@ -2157,7 +2149,6 @@
       class="products-section"
       id="products"
       data-aos="fade-up"
-      data-aos-duration="800"
     >
       <div class="section-header" data-aos="fade-up">
         <p class="section-eyebrow">Our Products</p>
@@ -2171,8 +2162,6 @@
         <div
           class="product-card"
           data-aos="fade-right"
-          data-aos-duration="820"
-          data-aos-delay="0"
         >
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
@@ -2201,10 +2190,10 @@
           <div class="product-info">
             <div class="product-cat">Magnesium</div>
             <h3><a href="product-details.html">Magnesium Complex 5-in-1</a></h3>
-            <div class="stars">★★★★★ <span>128 reviews</span></div>
+            <div class="stars">????? <span>128 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,299</span
-              ><span class="original-price">₹1,499</span
+              <span class="sale-price">?1,299</span
+              ><span class="original-price">?1,499</span
               ><span class="save-badge">Save 13%</span>
             </div>
             <button class="btn-cart">
@@ -2215,8 +2204,6 @@
         <div
           class="product-card"
           data-aos="fade-up"
-          data-aos-duration="760"
-          data-aos-delay="80"
         >
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
@@ -2247,10 +2234,10 @@
             <h3>
               <a href="product-details.html">ZMA + Vitamin B6 (90 Capsules)</a>
             </h3>
-            <div class="stars">★★★★★ <span>62 reviews</span></div>
+            <div class="stars">????? <span>62 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,499</span
-              ><span class="original-price">₹1,699</span
+              <span class="sale-price">?1,499</span
+              ><span class="original-price">?1,699</span
               ><span class="save-badge">Save 12%</span>
             </div>
             <button class="btn-cart">
@@ -2261,8 +2248,6 @@
         <div
           class="product-card"
           data-aos="fade-left"
-          data-aos-duration="820"
-          data-aos-delay="160"
         >
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
@@ -2291,10 +2276,10 @@
           <div class="product-info">
             <div class="product-cat">Immunity</div>
             <h3><a href="product-details.html">Probiotics Advanced</a></h3>
-            <div class="stars">★★★★★ <span>57 reviews</span></div>
+            <div class="stars">????? <span>57 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,299</span
-              ><span class="original-price">₹1,499</span
+              <span class="sale-price">?1,299</span
+              ><span class="original-price">?1,499</span
               ><span class="save-badge">Save 13%</span>
             </div>
             <button class="btn-cart">
@@ -2305,8 +2290,6 @@
         <div
           class="product-card"
           data-aos="zoom-in"
-          data-aos-duration="740"
-          data-aos-delay="240"
         >
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span>
@@ -2335,10 +2318,10 @@
           <div class="product-info">
             <div class="product-cat">Nattokinase</div>
             <h3><a href="product-details.html">Nattokinase 200 mg</a></h3>
-            <div class="stars">★★★★★ <span>73 reviews</span></div>
+            <div class="stars">????? <span>73 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,899</span
-              ><span class="original-price">₹2,099</span
+              <span class="sale-price">?1,899</span
+              ><span class="original-price">?2,099</span
               ><span class="save-badge">Save 10%</span>
             </div>
             <button class="btn-cart">
@@ -2349,8 +2332,6 @@
         <div
           class="product-card"
           data-aos="fade-right"
-          data-aos-duration="820"
-          data-aos-delay="320"
         >
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span>
@@ -2383,10 +2364,10 @@
                 >Vitamins &amp; Minerals with Amino Acids (Women)</a
               >
             </h3>
-            <div class="stars">★★★★★ <span>101 reviews</span></div>
+            <div class="stars">????? <span>101 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,199</span
-              ><span class="original-price">₹1,399</span
+              <span class="sale-price">?1,199</span
+              ><span class="original-price">?1,399</span
               ><span class="save-badge">Save 14%</span>
             </div>
             <button class="btn-cart">
@@ -2397,8 +2378,6 @@
         <div
           class="product-card"
           data-aos="fade-up"
-          data-aos-duration="760"
-          data-aos-delay="400"
         >
           <div class="product-img">
             <span class="p-badge badge-sale">Sale</span>
@@ -2431,10 +2410,10 @@
                 >Bone Health Support (CCM + Mg + Zc + D3)</a
               >
             </h3>
-            <div class="stars">★★★★☆ <span>84 reviews</span></div>
+            <div class="stars">????? <span>84 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹899</span
-              ><span class="original-price">₹999</span
+              <span class="sale-price">?899</span
+              ><span class="original-price">?999</span
               ><span class="save-badge">Save 10%</span>
             </div>
             <button class="btn-cart">
@@ -2445,8 +2424,6 @@
         <div
           class="product-card"
           data-aos="fade-left"
-          data-aos-duration="820"
-          data-aos-delay="480"
         >
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
@@ -2475,10 +2452,10 @@
           <div class="product-info">
             <div class="product-cat">Vitamins</div>
             <h3><a href="product-details.html">Vitamin D3 Supplement</a></h3>
-            <div class="stars">★★★★★ <span>142 reviews</span></div>
+            <div class="stars">????? <span>142 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹499</span
-              ><span class="original-price">₹599</span
+              <span class="sale-price">?499</span
+              ><span class="original-price">?599</span
               ><span class="save-badge">Save 17%</span>
             </div>
             <button class="btn-cart">
@@ -2486,7 +2463,7 @@
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="product-card" data-aos="fade-up">
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span>
             <a href="product-details.html"
@@ -2516,10 +2493,10 @@
             <h3>
               <a href="product-details.html">Omega-3 Fish Oil + Vitamin E</a>
             </h3>
-            <div class="stars">★★★★★ <span>198 reviews</span></div>
+            <div class="stars">????? <span>198 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹899</span
-              ><span class="original-price">₹1,099</span
+              <span class="sale-price">?899</span
+              ><span class="original-price">?1,099</span
               ><span class="save-badge">Save 18%</span>
             </div>
             <button class="btn-cart">
@@ -2539,7 +2516,6 @@
     <section
       class="features-section"
       data-aos="fade-up"
-      data-aos-duration="800"
     >
       <div class="section-header" data-aos="fade-up">
         <p class="section-eyebrow">Why Aiva Wellness</p>
@@ -2550,8 +2526,6 @@
         <div
           class="feature-item"
           data-aos="fade-right"
-          data-aos-duration="700"
-          data-aos-delay="40"
         >
           <div class="feature-icon"><i class="fa-solid fa-capsules"></i></div>
           <h4>Premium Vitamins &amp; Minerals</h4>
@@ -2563,8 +2537,6 @@
         <div
           class="feature-item"
           data-aos="fade-up"
-          data-aos-duration="700"
-          data-aos-delay="160"
         >
           <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
           <h4>100% Natural Extracts</h4>
@@ -2576,23 +2548,19 @@
         <div
           class="feature-item"
           data-aos="fade-left"
-          data-aos-duration="700"
-          data-aos-delay="280"
         >
           <div class="feature-icon">
             <i class="fa-solid fa-vial-circle-check"></i>
           </div>
           <h4>No Fillers or Binders</h4>
           <p>
-            Every capsule contains only what the label says — nothing more,
+            Every capsule contains only what the label says � nothing more,
             nothing less.
           </p>
         </div>
         <div
           class="feature-item"
           data-aos="zoom-in"
-          data-aos-duration="700"
-          data-aos-delay="360"
         >
           <div class="feature-icon">
             <i class="fa-solid fa-calendar-check"></i>
@@ -2608,8 +2576,6 @@
         <div
           class="value-item"
           data-aos="fade-right"
-          data-aos-duration="700"
-          data-aos-delay="60"
         >
           <h4>Simple <span>01</span></h4>
           <p>
@@ -2621,8 +2587,6 @@
         <div
           class="value-item"
           data-aos="fade-up"
-          data-aos-duration="700"
-          data-aos-delay="180"
         >
           <h4>Pure <span>02</span></h4>
           <p>
@@ -2634,13 +2598,11 @@
         <div
           class="value-item"
           data-aos="fade-left"
-          data-aos-duration="700"
-          data-aos-delay="300"
         >
           <h4>Essential <span>03</span></h4>
           <p>
             We focus on the most effective botanicals in their most supportive
-            forms — precision formulas that honor the wisdom of Ayurveda and the
+            forms � precision formulas that honor the wisdom of Ayurveda and the
             needs of the modern body.
           </p>
         </div>
@@ -2648,8 +2610,8 @@
     </section>
 
     <!-- COMBO / FEATURED PRODUCT -->
-    <section class="combo-section" data-aos="fade-up" data-aos-duration="800">
-      <div class="combo-img-wrap" data-aos="fade-right" data-aos-duration="700">
+    <section class="combo-section" data-aos="fade-up">
+      <div class="combo-img-wrap" data-aos="fade-right">
         <img
           src="products-1/ZMA + VITAMIN B6.jpg"
           alt="ZMA + Vitamin B6"
@@ -2663,18 +2625,16 @@
       <div
         class="combo-info"
         data-aos="fade-left"
-        data-aos-duration="700"
-        data-aos-delay="100"
       >
         <p class="about-eyebrow">Bestseller Combo</p>
         <h2>ZMA + Vitamin B6 Formula</h2>
         <p class="combo-sub">
-          Zinc, Magnesium &amp; B6 — the trinity for deep sleep, testosterone,
+          Zinc, Magnesium &amp; B6 � the trinity for deep sleep, testosterone,
           and muscle recovery.
         </p>
-        <div class="combo-stars">★★★★★ <span>62 reviews</span></div>
+        <div class="combo-stars">????? <span>62 reviews</span></div>
         <div class="combo-price-row">
-          <span class="sale">₹1,499</span><span class="orig">₹1,699</span>
+          <span class="sale">?1,499</span><span class="orig">?1,699</span>
         </div>
         <p class="combo-mrp">(MRP inclusive of all Taxes)</p>
         <p class="combo-includes-label">What's Included</p>
@@ -2720,7 +2680,7 @@
     </section>
 
     <!-- DROPS VS CAPSULES -->
-    <section class="drops-section" data-aos="fade-up" data-aos-duration="800">
+    <section class="drops-section" data-aos="fade-up">
       <div class="drops-inner">
         <div class="sh" data-aos="fade-up">
           <p class="se">The Aiva Advantage</p>
@@ -2732,7 +2692,7 @@
         </div>
         <div class="drops-grid">
           <div class="drops-left">
-            <div class="drop-feat" data-aos="fade-right" data-aos-delay="0">
+            <div class="drop-feat" data-aos="fade-right">
               <div class="drop-feat-icon"><i class="fa-solid fa-bolt"></i></div>
               <div class="drop-feat-text">
                 <h4>Better Absorption</h4>
@@ -2742,7 +2702,7 @@
                 </p>
               </div>
             </div>
-            <div class="drop-feat" data-aos="fade-right" data-aos-delay="80">
+            <div class="drop-feat" data-aos="fade-right">
               <div class="drop-feat-icon">
                 <i class="fa-solid fa-shield-halved"></i>
               </div>
@@ -2754,14 +2714,14 @@
                 </p>
               </div>
             </div>
-            <div class="drop-feat" data-aos="fade-right" data-aos-delay="160">
+            <div class="drop-feat" data-aos="fade-right">
               <div class="drop-feat-icon">
                 <i class="fa-solid fa-heart-pulse"></i>
               </div>
               <div class="drop-feat-text">
                 <h4>Digestive Comfort</h4>
                 <p>
-                  Bypasses heavy digestion — ideal for sensitive stomachs and
+                  Bypasses heavy digestion � ideal for sensitive stomachs and
                   those with gut issues.
                 </p>
               </div>
@@ -2778,7 +2738,7 @@
             />
           </div>
           <div class="drops-right">
-            <div class="drop-feat" data-aos="fade-left" data-aos-delay="0">
+            <div class="drop-feat" data-aos="fade-left">
               <div class="drop-feat-icon">
                 <i class="fa-solid fa-microscope"></i>
               </div>
@@ -2790,7 +2750,7 @@
                 </p>
               </div>
             </div>
-            <div class="drop-feat" data-aos="fade-left" data-aos-delay="80">
+            <div class="drop-feat" data-aos="fade-left">
               <div class="drop-feat-icon"><i class="fa-solid fa-leaf"></i></div>
               <div class="drop-feat-text">
                 <h4>Maximum Purity</h4>
@@ -2800,7 +2760,7 @@
                 </p>
               </div>
             </div>
-            <div class="drop-feat" data-aos="fade-left" data-aos-delay="160">
+            <div class="drop-feat" data-aos="fade-left">
               <div class="drop-feat-icon">
                 <i class="fa-solid fa-circle-check"></i>
               </div>
@@ -2821,7 +2781,6 @@
     <section
       class="testimonials-section"
       data-aos="fade-up"
-      data-aos-duration="800"
     >
       <div class="test-inner">
         <div class="section-header" data-aos="fade-up">
@@ -2829,11 +2788,11 @@
           <h2>Trusted by Wellness Seekers Across India</h2>
         </div>
         <div class="test-grid">
-          <div class="test-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="test-stars">★★★★★</div>
+          <div class="test-card" data-aos="fade-up">
+            <div class="test-stars">?????</div>
             <blockquote>
               "The Magnesium Complex has genuinely changed my sleep quality. I
-              wake up feeling rested — something I hadn't experienced in years.
+              wake up feeling rested � something I hadn't experienced in years.
               Highly recommend!"
             </blockquote>
             <div class="test-author">
@@ -2844,8 +2803,8 @@
               </div>
             </div>
           </div>
-          <div class="test-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="test-stars">★★★★★</div>
+          <div class="test-card" data-aos="fade-up">
+            <div class="test-stars">?????</div>
             <blockquote>
               "Clean ingredients, transparent labeling, no heaviness like
               typical capsules. The Nattokinase formula is now a permanent part
@@ -2859,11 +2818,11 @@
               </div>
             </div>
           </div>
-          <div class="test-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="test-stars">★★★★★</div>
+          <div class="test-card" data-aos="fade-up">
+            <div class="test-stars">?????</div>
             <blockquote>
               "What stood out was the transparency. No hidden ingredients, no
-              bold claims — just honest, effective wellness products from a
+              bold claims � just honest, effective wellness products from a
               brand I genuinely trust."
             </blockquote>
             <div class="test-author">
@@ -2879,13 +2838,13 @@
     </section>
 
     <!-- FAQ -->
-    <section class="faq-section" data-aos="fade-up" data-aos-duration="800">
+    <section class="faq-section" data-aos="fade-up">
       <div class="faq-inner">
         <div class="section-header" data-aos="fade-up">
           <p class="section-eyebrow">Got Questions?</p>
           <h2>Frequently Asked Questions</h2>
         </div>
-        <div data-aos="fade-up" data-aos-delay="100">
+        <div data-aos="fade-up">
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               What makes Aiva Wellness different from other supplements?<span
@@ -2895,7 +2854,7 @@
             </div>
             <div class="faq-a">
               <p>
-                Our formulas contain only essential, high-quality ingredients —
+                Our formulas contain only essential, high-quality ingredients �
                 no fillers, no binders, no artificial additives. We source
                 potent raw materials and use modern extraction methods to
                 preserve their natural efficacy, combining Ayurvedic wisdom with
@@ -2927,7 +2886,7 @@
             <div class="faq-a">
               <p>
                 Results vary per individual. Most users report noticing a
-                difference within 2–4 weeks of consistent daily use. Ayurvedic
+                difference within 2�4 weeks of consistent daily use. Ayurvedic
                 formulations work best when used regularly over time, supporting
                 cumulative improvement in wellbeing.
               </p>
@@ -2940,7 +2899,7 @@
             <div class="faq-a">
               <p>
                 Yes, we ship pan-India. Orders above Rs. 999 qualify for free
-                shipping. Standard delivery takes 4–7 business days depending on
+                shipping. Standard delivery takes 4�7 business days depending on
                 your location.
               </p>
             </div>
@@ -2979,7 +2938,7 @@
     </section>
 
     <!-- BLOGS -->
-    <section class="blogs-section" data-aos="fade-up" data-aos-duration="800">
+    <section class="blogs-section" data-aos="fade-up">
       <div class="blogs-inner">
         <div class="section-header" data-aos="fade-up">
           <p class="section-eyebrow">Health Insights</p>
@@ -2993,8 +2952,6 @@
           <div
             class="blog-card"
             data-aos="fade-right"
-            data-aos-duration="700"
-            data-aos-delay="60"
           >
             <div class="blog-img">
               <img
@@ -3006,7 +2963,7 @@
               <div class="blog-tag">Magnesium</div>
               <h3>
                 <a href="#"
-                  >5 Signs You May Be Magnesium Deficient — And What to Do About
+                  >5 Signs You May Be Magnesium Deficient � And What to Do About
                   It</a
                 >
               </h3>
@@ -3018,8 +2975,6 @@
           <div
             class="blog-card"
             data-aos="fade-up"
-            data-aos-duration="700"
-            data-aos-delay="200"
           >
             <div class="blog-img">
               <img
@@ -3043,8 +2998,6 @@
           <div
             class="blog-card"
             data-aos="fade-left"
-            data-aos-duration="700"
-            data-aos-delay="340"
           >
             <div class="blog-img">
               <img
@@ -3070,7 +3023,7 @@
     </section>
 
     <!-- INSTAGRAM -->
-    <section class="insta-section" data-aos="fade-up" data-aos-duration="800">
+    <section class="insta-section" data-aos="fade-up">
       <div class="insta-header" data-aos="fade-up">
         <a
           href="https://www.instagram.com/aivawellness/"
@@ -3160,7 +3113,6 @@
     <section
       class="newsletter-section"
       data-aos="fade-up"
-      data-aos-duration="800"
     >
       <div class="newsletter-inner" data-aos="fade-up">
         <div class="newsletter-icon">
@@ -3261,7 +3213,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© 2026 Aiva Wellness. All rights reserved.</span>
+          <span>� 2026 Aiva Wellness. All rights reserved.</span>
           <div class="footer-bottom-links">
             <a href="#">Privacy Policy</a><a href="#">Terms of Service</a
             ><a href="#">Shipping Policy</a><a href="#">Return Policy</a>
@@ -3386,8 +3338,9 @@
       function handleNewsletter(e) {
         e.preventDefault();
         e.target.innerHTML =
-          '<p style="color:#fff;font-size:16px;padding:14px 0;font-family:Cormorant Garamond,serif;font-style:italic">✓ Thank you for joining the Aiva Wellness community!</p>';
+          '<p style="color:#fff;font-size:16px;padding:14px 0;font-family:Cormorant Garamond,serif;font-style:italic">? Thank you for joining the Aiva Wellness community!</p>';
       }
     </script>
   </body>
 </html>
+
