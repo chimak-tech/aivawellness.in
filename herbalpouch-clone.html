@@ -677,7 +677,8 @@
 
       /* ── PRODUCTS SECTION ── */
       .products-section {
-        background: linear-gradient(rgba(255,255,255,0.95), rgba(250,250,252,0.95)),
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.95), rgba(250, 250, 252, 0.95)),
           url("background2.webp") center/cover no-repeat;
         padding: 64px 20px;
         width: 100%;
@@ -1877,6 +1878,30 @@
 
       /* ── NAV RESPONSIVE ── */
       @media (max-width: 768px) {
+        .nav-inner {
+          flex-wrap: wrap;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 8px;
+        }
+        .brand {
+          flex-wrap: wrap;
+          gap: 6px;
+          min-width: 0;
+        }
+        .brand-name {
+          white-space: normal;
+          font-size: 1.05rem;
+        }
+        .brand-sub {
+          display: block;
+          white-space: normal;
+          font-size: 0.72rem;
+          line-height: 1.35;
+          opacity: 0.85;
+          margin-top: 0;
+          max-width: 100%;
+        }
         .nav-links {
           display: none;
         }
@@ -1885,9 +1910,6 @@
         }
         .hamburger {
           display: flex;
-        }
-        .brand-sub {
-          display: none;
         }
       }
       @media (max-width: 400px) {
@@ -3252,9 +3274,11 @@
     <script>
       AOS.init({
         once: true,
-        offset: 80,
+        disable: false,
+        offset: 70,
         duration: 700,
         easing: "ease-out-quad",
+        anchorPlacement: "top-bottom",
       });
 
       window.addEventListener("load", () => {
