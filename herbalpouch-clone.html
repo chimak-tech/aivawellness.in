@@ -33,50 +33,59 @@
       }
 
       :root {
-        --green: #2d5016;
-        --green-light: #4a7c2f;
-        --green-pale: #e8f0df;
-        --green-soft: #f0f7e8;
-        --cream: #faf8f3;
-        --cream2: #f4f0e8;
-        --brown: #6b4c2a;
-        --text: #1a1a1a;
-        --text-mid: #555;
-        --text-light: #888;
-        --white: #fff;
-        --border: #e0dbd0;
-        --gold: #c8a96e;
+        /* ── SHOP.HTML COLOR PALETTE ── */
         --blue: #1d4ed8;
         --blue-light: #3b82f6;
+        --blue-pale: #dbeafe;
+        --blue-soft: rgba(59, 130, 246, 0.1);
+        --blue-border: rgba(59, 130, 246, 0.25);
+        --accent: #60a5fa;
+
+        --black: #0d1117;
+        --ink: #1e293b;
+        --muted: #64748b;
+        --light: #f1f5f9;
+        --bg: #f8fafc;
+        --cream: #f8fafc;
+        --cream2: #f1f5f9;
+        --white: #ffffff;
+
+        --green: #16a34a;
+        --green-soft: #dcfce7;
+
+        --gold: #f59e0b;
+        --border: #e2e8f0;
+        --text: #1e293b;
+        --text-mid: #64748b;
+        --text-light: #94a3b8;
+
         --radius: 14px;
         --radius-sm: 8px;
-        --shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-        --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.13);
+        --shadow: 0 4px 24px rgba(13, 17, 23, 0.07);
+        --shadow-lg: 0 16px 48px rgba(13, 17, 23, 0.13);
       }
 
       html {
         scroll-behavior: smooth;
-        /* FIX: prevent horizontal scroll globally */
         overflow-x: hidden;
         width: 100%;
       }
       body {
         font-family: "Inter", sans-serif;
-        background: var(--cream);
+        background: var(--bg);
         color: var(--text);
-        /* FIX: critical — clip everything to viewport width */
         overflow-x: hidden;
         width: 100%;
         max-width: 100vw;
         position: relative;
-        padding-top: 68px; /* reserve space for fixed header */
+        padding-top: 68px;
       }
 
       /* ── PRELOADER ── */
       #preloader {
         position: fixed;
         inset: 0;
-        background: var(--cream);
+        background: var(--white);
         z-index: 9999;
         display: flex;
         align-items: center;
@@ -99,7 +108,7 @@
       .preloader-inner p {
         margin-top: 16px;
         font-size: 13px;
-        color: var(--text-mid);
+        color: var(--muted);
         letter-spacing: 0.1em;
         text-transform: uppercase;
       }
@@ -117,22 +126,19 @@
 
       /* ── ANNOUNCEMENT BAR ── */
       .ann-bar {
-        background: var(--green);
+        background: var(--blue);
         color: #fff;
         font-size: 13px;
         letter-spacing: 0.04em;
         padding: 9px 0;
-        /* FIX: clip overflow */
         overflow: hidden;
         white-space: nowrap;
         width: 100%;
-        max-width: 100%;
       }
       .ann-bar-track {
         display: inline-flex;
         animation: marquee 30s linear infinite;
         gap: 80px;
-        /* FIX: don't constrain width here */
         will-change: transform;
       }
       .ann-bar-track:hover {
@@ -147,14 +153,15 @@
         }
       }
 
-      /* ── HEADER ── */
+      /* ── HEADER (shop.html exact match) ── */
       .site-header {
-        background: rgba(250, 248, 243, 0.97);
+        background: rgba(255, 255, 255, 0.96);
         border-bottom: 1px solid var(--border);
         position: fixed;
         top: 0;
         z-index: 1200;
         backdrop-filter: blur(12px);
+        box-shadow: 0 1px 8px rgba(13, 17, 23, 0.06);
         transition:
           box-shadow 0.3s,
           background 0.3s;
@@ -166,13 +173,12 @@
         background: rgba(255, 255, 255, 0.98);
       }
       .nav-inner {
-        max-width: 1400px;
+        max-width: 1280px;
         margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        /* FIX: safe padding on mobile */
-        padding: 0 16px;
+        padding: 0 20px;
         height: 68px;
         gap: 12px;
       }
@@ -181,67 +187,52 @@
         align-items: center;
         gap: 10px;
         text-decoration: none;
-        /* FIX: prevent shrinking too much */
         flex-shrink: 0;
         min-width: 0;
       }
       .brand img {
-        width: 42px;
-        height: 42px;
+        width: 46px;
+        height: 46px;
         object-fit: contain;
         border-radius: 10px;
         flex-shrink: 0;
       }
       .brand-name {
         font-family: "Sora", sans-serif;
-        font-size: 1.05rem;
+        font-size: 1.15rem;
         font-weight: 700;
-        color: var(--green);
+        color: var(--black);
         display: block;
         white-space: nowrap;
       }
       .brand-name span {
-        color: var(--green-light);
-        font-weight: 600;
+        color: var(--blue);
+        font-weight: 700;
       }
       .brand-sub {
         display: block;
-        font-size: 0.68rem;
-        color: var(--text-mid);
+        font-size: 0.72rem;
+        color: var(--muted);
         line-height: 1.3;
         white-space: nowrap;
+        margin-top: 1px;
       }
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 28px;
+        gap: 32px;
         list-style: none;
       }
       .nav-links a {
         text-decoration: none;
-        color: var(--text);
-        font-size: 0.88rem;
+        color: var(--muted);
+        font-size: 0.9rem;
         font-weight: 500;
-        position: relative;
         transition: color 0.2s;
-      }
-      .nav-links a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -6px;
-        width: 0;
-        height: 2px;
-        background: var(--green);
-        transition: width 0.25s;
-      }
-      .nav-links a:hover::after,
-      .nav-links a.active::after {
-        width: 100%;
       }
       .nav-links a:hover,
       .nav-links a.active {
-        color: var(--green);
+        color: var(--blue);
       }
       .nav-right {
         display: flex;
@@ -250,11 +241,11 @@
         flex-shrink: 0;
       }
       .nav-cta {
-        background: var(--green);
+        background: var(--blue);
         color: #fff;
         border-radius: 999px;
-        padding: 10px 20px;
-        font-size: 0.85rem;
+        padding: 9px 22px;
+        font-size: 0.88rem;
         font-weight: 600;
         text-decoration: none;
         display: flex;
@@ -262,20 +253,20 @@
         gap: 7px;
         transition:
           background 0.2s,
-          transform 0.2s,
-          box-shadow 0.2s;
+          transform 0.2s;
         white-space: nowrap;
+        border: none;
+        cursor: pointer;
       }
       .nav-cta:hover {
-        background: #184a14;
+        background: #1e40af;
         transform: translateY(-1px);
-        box-shadow: 0 8px 24px rgba(45, 80, 22, 0.25);
         color: #fff;
       }
       .hamburger {
         display: none;
         flex-direction: column;
-        gap: 5px;
+        gap: 4px;
         cursor: pointer;
         padding: 8px;
         background: none;
@@ -286,94 +277,75 @@
       .hamburger span {
         width: 20px;
         height: 2px;
-        background: var(--green);
+        background: var(--ink);
         display: block;
         transition: all 0.3s;
         border-radius: 2px;
+        margin: 0;
       }
       .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(4px, 4px);
       }
       .hamburger.active span:nth-child(2) {
         opacity: 0;
       }
       .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+        transform: rotate(-45deg) translate(4px, -4px);
       }
 
       /* ── MOBILE MENU ── */
       .mobile-menu {
         display: none;
         position: fixed;
-        top: 0;
+        top: 68px;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(15, 20, 10, 0.65);
+        background: rgba(13, 17, 23, 0.7);
         backdrop-filter: blur(6px);
         z-index: 1000;
+        flex-direction: column;
       }
       .mobile-menu.open {
-        display: block;
+        display: flex;
       }
       .mobile-nav-panel {
-        background: var(--cream);
-        width: min(320px, 90vw);
-        height: 100%;
-        padding: 80px 28px 32px;
+        background: var(--white);
+        padding: 20px;
         display: flex;
         flex-direction: column;
-        box-shadow: 4px 0 40px rgba(0, 0, 0, 0.15);
+        gap: 4px;
       }
       .mobile-nav-panel a {
-        font-size: 19px;
-        font-family: "Cormorant Garamond", serif;
-        color: var(--green);
+        padding: 12px 14px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--ink);
         text-decoration: none;
-        border-bottom: 1px solid var(--border);
-        padding: 14px 0;
-        display: block;
-        transition: padding-left 0.2s;
       }
       .mobile-nav-panel a:hover {
-        padding-left: 8px;
+        background: var(--light);
       }
       .mobile-nav-panel .m-cta {
-        font-size: 14px;
-        font-family: "Inter", sans-serif;
+        background: var(--blue);
         color: #fff;
-        background: var(--green);
-        border-bottom: none;
-        margin-top: 20px;
-        padding: 12px 20px;
-        border-radius: 999px;
         text-align: center;
+        margin-top: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
       }
       .mobile-nav-panel .m-cta:hover {
-        padding-left: 20px;
-        background: var(--green-light);
-      }
-      .mob-close {
-        position: absolute;
-        top: 24px;
-        right: 24px;
-        background: none;
-        border: none;
-        font-size: 22px;
-        cursor: pointer;
-        color: var(--text);
+        background: #1e40af;
       }
 
       /* ── HERO SLIDER ── */
       .hero-slider {
         position: relative;
-        /* FIX: ensure it never exceeds viewport */
         overflow: hidden;
-        background: #0d1a07;
+        background: var(--black);
         width: 100%;
         max-width: 100%;
       }
@@ -381,11 +353,9 @@
         display: flex;
         transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         will-change: transform;
-        /* FIX: important — no extra width */
         width: 100%;
       }
       .slide {
-        /* FIX: use flex-shrink 0 and exact 100% */
         min-width: 100%;
         flex: 0 0 100%;
         position: relative;
@@ -404,16 +374,16 @@
         height: auto;
         display: block;
         object-fit: cover;
-        aspect-ratio: 16/6;
+        aspect-ratio: 16/6.4;
       }
       @media (max-width: 768px) {
         .slide-link img {
-          aspect-ratio: 4/3;
+          aspect-ratio: 4/4.2;
         }
       }
       @media (max-width: 480px) {
         .slide-link img {
-          aspect-ratio: 1/1;
+          aspect-ratio: 1/1.7;
         }
       }
 
@@ -464,7 +434,7 @@
         justify-content: center;
         z-index: 10;
         transition: all 0.2s;
-        color: var(--green);
+        color: var(--blue);
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
       }
       .slider-btn:hover {
@@ -492,11 +462,10 @@
 
       /* ── TRUST STRIP ── */
       .trust-strip {
-        background: var(--cream2);
+        background: var(--white);
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
-        padding: 16px 16px;
-        /* FIX */
+        padding: 16px;
         width: 100%;
         overflow: hidden;
       }
@@ -516,12 +485,12 @@
       }
       .trust-item i {
         font-size: 18px;
-        color: var(--green);
+        color: var(--blue);
       }
       .trust-item span {
         font-size: 12px;
         font-weight: 500;
-        color: var(--text-mid);
+        color: var(--muted);
         white-space: nowrap;
       }
       @media (max-width: 480px) {
@@ -534,7 +503,7 @@
         }
       }
       @media (max-width: 600px) {
-        .trust-strip .trust-item {
+        .trust-strip {
           display: none !important;
         }
       }
@@ -553,7 +522,7 @@
         font-size: 11px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--green-light);
+        color: var(--blue-light);
         font-weight: 600;
         margin-bottom: 14px;
       }
@@ -561,7 +530,7 @@
         font-family: "Cormorant Garamond", serif;
         font-size: clamp(26px, 4vw, 46px);
         font-weight: 400;
-        color: var(--green);
+        color: var(--black);
         line-height: 1.2;
         margin-bottom: 18px;
       }
@@ -584,7 +553,7 @@
         font-family: "Sora", sans-serif;
         font-size: 1.5rem;
         font-weight: 800;
-        color: var(--green);
+        color: var(--blue);
       }
       .a-stat-label {
         font-size: 11px;
@@ -595,8 +564,8 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        border: 1.5px solid var(--green);
-        color: var(--green);
+        border: 1.5px solid var(--blue);
+        color: var(--blue);
         padding: 11px 24px;
         font-size: 12px;
         letter-spacing: 0.08em;
@@ -604,9 +573,10 @@
         text-transform: uppercase;
         font-weight: 600;
         transition: all 0.25s;
+        border-radius: 4px;
       }
       .btn-outline:hover {
-        background: var(--green);
+        background: var(--blue);
         color: #fff;
         gap: 12px;
       }
@@ -635,6 +605,7 @@
       .about-img-main,
       .ai-sm {
         overflow: hidden;
+        border-radius: var(--radius-sm);
       }
       .about-img-main:hover img,
       .ai-sm:hover img {
@@ -668,7 +639,7 @@
         font-size: 11px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--green-light);
+        color: var(--blue-light);
         font-weight: 600;
         margin-bottom: 10px;
       }
@@ -676,12 +647,12 @@
         font-family: "Cormorant Garamond", serif;
         font-size: clamp(28px, 4vw, 52px);
         font-weight: 400;
-        color: var(--green);
+        color: var(--black);
         margin-bottom: 10px;
         line-height: 1.2;
       }
       .section-header p {
-        color: var(--text-mid);
+        color: var(--muted);
         font-size: 14px;
         max-width: 540px;
         margin: 0 auto;
@@ -690,7 +661,7 @@
 
       /* ── PRODUCTS SECTION ── */
       .products-section {
-        background: var(--cream2);
+        background: var(--light);
         padding: 64px 20px;
         width: 100%;
       }
@@ -714,6 +685,16 @@
         display: flex;
         flex-direction: column;
       }
+      @media (max-width: 1024px) {
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+      }
       .product-card:hover {
         box-shadow: var(--shadow-lg);
         transform: translateY(-4px);
@@ -721,7 +702,7 @@
       .product-img {
         position: relative;
         overflow: hidden;
-        background: #f5f5f0;
+        background: var(--light);
         aspect-ratio: 1;
         width: 100%;
       }
@@ -786,11 +767,6 @@
         transition:
           opacity 0.3s,
           transform 0.3s;
-      }
-      /* keep action buttons hidden on hover as requested */
-      .product-card:hover .p-actions {
-        opacity: 0;
-        transform: translateX(12px);
         pointer-events: none;
       }
       .p-action-btn {
@@ -801,7 +777,7 @@
         border-radius: 8px;
         cursor: pointer;
         font-size: 13px;
-        color: var(--text);
+        color: var(--ink);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -809,7 +785,7 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
       .p-action-btn:hover {
-        background: var(--green);
+        background: var(--blue);
         color: #fff;
       }
       .product-info {
@@ -822,8 +798,8 @@
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: var(--green-light);
-        font-weight: 600;
+        color: var(--blue-light);
+        font-weight: 700;
         margin-bottom: 6px;
       }
       .product-info h3 {
@@ -839,7 +815,7 @@
         transition: color 0.2s;
       }
       .product-info h3 a:hover {
-        color: var(--green);
+        color: var(--blue);
       }
       .stars {
         color: var(--gold);
@@ -861,8 +837,8 @@
       .sale-price {
         font-family: "Sora", sans-serif;
         font-size: 15px;
-        font-weight: 700;
-        color: var(--green);
+        font-weight: 800;
+        color: var(--black);
       }
       .original-price {
         font-size: 12px;
@@ -879,7 +855,7 @@
       }
       .btn-cart {
         width: 100%;
-        background: var(--green);
+        background: var(--black);
         color: #fff;
         border: none;
         padding: 12px;
@@ -887,7 +863,7 @@
         letter-spacing: 0.09em;
         text-transform: uppercase;
         cursor: pointer;
-        font-weight: 600;
+        font-weight: 700;
         transition: background 0.25s;
         font-family: "Inter", sans-serif;
         display: flex;
@@ -895,9 +871,10 @@
         justify-content: center;
         gap: 7px;
         margin-top: auto;
+        border-radius: 0 0 var(--radius) var(--radius);
       }
       .btn-cart:hover {
-        background: var(--green-light);
+        background: var(--blue);
       }
       .view-all-wrap {
         text-align: center;
@@ -907,7 +884,7 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        background: var(--green);
+        background: var(--blue);
         color: #fff;
         padding: 13px 32px;
         font-size: 13px;
@@ -922,19 +899,19 @@
           box-shadow 0.2s;
       }
       .btn-view-all:hover {
-        background: var(--green-light);
+        background: #1e40af;
         transform: translateY(-2px);
-        box-shadow: 0 10px 28px rgba(45, 80, 22, 0.22);
+        box-shadow: 0 10px 28px rgba(29, 78, 216, 0.25);
         color: #fff;
       }
       @media (max-width: 900px) {
         .products-grid {
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: 1fr;
         }
       }
       @media (max-width: 480px) {
         .products-grid {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
           gap: 14px;
         }
         .product-info {
@@ -973,15 +950,15 @@
           border-color 0.3s;
       }
       .feature-item:hover {
-        box-shadow: 0 12px 40px rgba(45, 80, 22, 0.1);
+        box-shadow: 0 12px 40px rgba(29, 78, 216, 0.1);
         transform: translateY(-4px);
-        border-color: var(--green-pale);
+        border-color: var(--blue-border);
       }
       .feature-icon {
         width: 56px;
         height: 56px;
         margin: 0 auto 14px;
-        background: var(--green-pale);
+        background: var(--blue-pale);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -990,10 +967,10 @@
       }
       .feature-icon i {
         font-size: 20px;
-        color: var(--green);
+        color: var(--blue);
       }
       .feature-item:hover .feature-icon {
-        background: var(--green);
+        background: var(--blue);
       }
       .feature-item:hover .feature-icon i {
         color: #fff;
@@ -1002,12 +979,12 @@
         font-family: "Cormorant Garamond", serif;
         font-size: 18px;
         font-weight: 500;
-        color: var(--green);
+        color: var(--black);
         margin-bottom: 7px;
       }
       .feature-item p {
         font-size: 13px;
-        color: var(--text-mid);
+        color: var(--muted);
         line-height: 1.7;
       }
       .values-row {
@@ -1022,7 +999,7 @@
         font-family: "Cormorant Garamond", serif;
         font-size: 21px;
         font-weight: 500;
-        color: var(--green);
+        color: var(--black);
         margin-bottom: 10px;
         display: flex;
         align-items: center;
@@ -1031,8 +1008,8 @@
       }
       .value-item h4 span {
         font-size: 11px;
-        background: var(--green-pale);
-        color: var(--green);
+        background: var(--blue-pale);
+        color: var(--blue);
         padding: 3px 10px;
         border-radius: 999px;
         font-family: "Inter", sans-serif;
@@ -1040,7 +1017,7 @@
       }
       .value-item p {
         font-size: 14px;
-        color: var(--text-mid);
+        color: var(--muted);
         line-height: 1.8;
       }
       @media (max-width: 900px) {
@@ -1090,25 +1067,26 @@
         position: absolute;
         top: 16px;
         left: 16px;
-        background: var(--green);
+        background: var(--blue);
         color: #fff;
         font-size: 11px;
         font-weight: 700;
         padding: 5px 12px;
         letter-spacing: 0.07em;
         text-transform: uppercase;
+        border-radius: 4px;
       }
       .combo-info h2 {
         font-family: "Cormorant Garamond", serif;
         font-size: clamp(24px, 3.5vw, 42px);
         font-weight: 400;
-        color: var(--green);
+        color: var(--black);
         margin-bottom: 10px;
         line-height: 1.2;
       }
       .combo-sub {
         font-size: 14px;
-        color: var(--text-mid);
+        color: var(--muted);
         margin-bottom: 14px;
       }
       .combo-stars {
@@ -1131,7 +1109,7 @@
         font-family: "Sora", sans-serif;
         font-size: 24px;
         font-weight: 800;
-        color: var(--green);
+        color: var(--black);
       }
       .combo-price-row .orig {
         font-size: 15px;
@@ -1147,7 +1125,7 @@
         font-size: 11px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--text-mid);
+        color: var(--muted);
         font-weight: 600;
         margin-bottom: 12px;
       }
@@ -1172,12 +1150,12 @@
           box-shadow 0.2s;
       }
       .combo-item:hover img {
-        border-color: var(--green);
-        box-shadow: 0 4px 12px rgba(45, 80, 22, 0.15);
+        border-color: var(--blue);
+        box-shadow: 0 4px 12px rgba(29, 78, 216, 0.15);
       }
       .combo-item span {
         font-size: 11px;
-        color: var(--text-mid);
+        color: var(--muted);
         display: block;
         margin-top: 4px;
       }
@@ -1187,7 +1165,7 @@
         justify-content: center;
         gap: 10px;
         width: 100%;
-        background: var(--green);
+        background: var(--black);
         color: #fff;
         border: none;
         padding: 14px;
@@ -1196,13 +1174,13 @@
         text-transform: uppercase;
         cursor: pointer;
         font-family: "Inter", sans-serif;
-        font-weight: 600;
+        font-weight: 700;
         transition: background 0.25s;
         text-decoration: none;
-        border-radius: 2px;
+        border-radius: var(--radius-sm);
       }
       .btn-add:hover {
-        background: var(--green-light);
+        background: var(--blue);
         color: #fff;
       }
       .combo-note {
@@ -1221,7 +1199,12 @@
       /* ── DROPS SECTION ── */
       .drops-section {
         padding: 64px 20px;
-        background: var(--green);
+        background: linear-gradient(
+          135deg,
+          #0d1117 0%,
+          #1e3a5f 60%,
+          #1d4ed8 100%
+        );
         color: #fff;
         width: 100%;
       }
@@ -1329,6 +1312,7 @@
       .testimonials-section {
         padding: 64px 20px;
         width: 100%;
+        background: var(--white);
       }
       .test-inner {
         max-width: 1100px;
@@ -1340,9 +1324,9 @@
         gap: 20px;
       }
       .test-card {
-        background: var(--cream2);
+        background: var(--light);
         padding: 26px;
-        border-left: 3px solid var(--green);
+        border-left: 3px solid var(--blue);
         border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         transition:
           transform 0.3s,
@@ -1374,18 +1358,18 @@
         width: 34px;
         height: 34px;
         border-radius: 50%;
-        background: var(--green-pale);
+        background: var(--blue-pale);
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: 700;
-        color: var(--green);
+        color: var(--blue);
         font-size: 13px;
         flex-shrink: 0;
       }
       .test-card cite {
         font-size: 13px;
-        color: var(--text-mid);
+        color: var(--muted);
         font-style: normal;
         font-weight: 600;
       }
@@ -1401,7 +1385,7 @@
 
       /* ── FAQ ── */
       .faq-section {
-        background: var(--cream2);
+        background: var(--light);
         padding: 64px 20px;
         width: 100%;
       }
@@ -1426,18 +1410,18 @@
         user-select: none;
       }
       .faq-q:hover {
-        color: var(--green);
+        color: var(--blue);
       }
       .faq-icon {
         width: 24px;
         height: 24px;
         flex-shrink: 0;
-        border: 1.5px solid var(--green);
+        border: 1.5px solid var(--blue);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--green);
+        color: var(--blue);
         font-size: 16px;
         transition:
           transform 0.35s,
@@ -1445,7 +1429,7 @@
       }
       .faq-item.open .faq-icon {
         transform: rotate(45deg);
-        background: var(--green);
+        background: var(--blue);
         color: #fff;
       }
       .faq-a {
@@ -1461,7 +1445,7 @@
       }
       .faq-a p {
         font-size: 14px;
-        color: var(--text-mid);
+        color: var(--muted);
         line-height: 1.75;
       }
 
@@ -1469,6 +1453,7 @@
       .blogs-section {
         padding: 64px 20px;
         width: 100%;
+        background: var(--bg);
       }
       .blogs-inner {
         max-width: 1200px;
@@ -1512,7 +1497,7 @@
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: var(--green-light);
+        color: var(--blue-light);
         font-weight: 700;
         margin-bottom: 7px;
       }
@@ -1529,13 +1514,13 @@
         transition: color 0.2s;
       }
       .blog-info h3 a:hover {
-        color: var(--green);
+        color: var(--blue);
       }
       .blog-read {
         font-size: 12px;
         text-transform: uppercase;
         letter-spacing: 0.07em;
-        color: var(--green);
+        color: var(--blue);
         font-weight: 600;
         text-decoration: none;
         display: inline-flex;
@@ -1562,6 +1547,7 @@
         padding: 52px 0 0;
         overflow: hidden;
         width: 100%;
+        background: var(--white);
       }
       .insta-header {
         text-align: center;
@@ -1570,7 +1556,7 @@
       }
       .insta-header a {
         font-size: 14px;
-        color: var(--text-mid);
+        color: var(--muted);
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -1578,7 +1564,7 @@
         transition: color 0.2s;
       }
       .insta-header a:hover {
-        color: var(--green);
+        color: var(--blue);
       }
       .insta-track {
         display: flex;
@@ -1620,7 +1606,12 @@
       /* ── NEWSLETTER ── */
       .newsletter-section {
         padding: 64px 20px;
-        background: var(--green);
+        background: linear-gradient(
+          135deg,
+          #0d1117 0%,
+          #1e3a5f 60%,
+          #1d4ed8 100%
+        );
         width: 100%;
       }
       .newsletter-inner {
@@ -1650,6 +1641,9 @@
         display: flex;
         max-width: 440px;
         margin: 0 auto;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
       }
       .newsletter-form input {
         flex: 1;
@@ -1672,7 +1666,7 @@
       }
       .newsletter-form button {
         background: #fff;
-        color: var(--green);
+        color: var(--blue);
         border: none;
         padding: 13px 20px;
         font-size: 12px;
@@ -1686,18 +1680,19 @@
         flex-shrink: 0;
       }
       .newsletter-form button:hover {
-        background: var(--cream2);
+        background: #dbeafe;
       }
       @media (max-width: 500px) {
         .newsletter-form {
           flex-direction: column;
+          border-radius: 8px;
         }
         .newsletter-form button {
           width: 100%;
         }
       }
 
-      /* ── FOOTER ── */
+      /* ── FOOTER (shop.html exact match) ── */
       footer {
         background: #0d1117;
         color: #94a3b8;
@@ -1716,9 +1711,9 @@
       }
       .footer-brand {
         font-family: "Sora", sans-serif;
-        font-size: 1.05rem;
+        font-size: 1.1rem;
         font-weight: 700;
-        color: var(--green);
+        color: #fff;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -1726,8 +1721,7 @@
         white-space: nowrap;
       }
       .footer-brand span {
-        color: var(--green-light);
-        font-weight: 600;
+        color: #60a5fa;
       }
       .footer-desc {
         font-size: 0.83rem;
@@ -1753,13 +1747,13 @@
         transition: all 0.2s;
       }
       .social-btn:hover {
-        background: var(--green);
+        background: var(--blue);
         color: #fff;
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(45, 80, 22, 0.18);
+        box-shadow: 0 8px 24px rgba(29, 78, 216, 0.18);
       }
       .footer-col h6 {
-        font-size: 0.8rem;
+        font-size: 0.82rem;
         font-weight: 700;
         color: #fff;
         text-transform: uppercase;
@@ -1793,7 +1787,7 @@
         margin-bottom: 10px;
       }
       .footer-contact-item i {
-        color: var(--green);
+        color: #60a5fa;
         margin-top: 2px;
         flex-shrink: 0;
       }
@@ -1803,7 +1797,7 @@
         transition: color 0.2s;
       }
       .footer-contact-item a:hover {
-        color: var(--green);
+        color: #60a5fa;
       }
       .footer-bottom {
         border-top: 1px solid #1e293b;
@@ -1864,17 +1858,17 @@
         }
       }
 
-      /* WhatsApp float removed for this page */
-
       /* ── NAV RESPONSIVE ── */
       @media (max-width: 768px) {
         .nav-links {
           display: none;
         }
+        .nav-cta {
+          display: none;
+        }
         .hamburger {
           display: flex;
         }
-        /* FIX: hide brand-sub on small screens to save space */
         .brand-sub {
           display: none;
         }
@@ -1924,7 +1918,7 @@
       </div>
     </div>
 
-    <!-- HEADER -->
+    <!-- HEADER (shop.html match) -->
     <header class="site-header" id="siteHeader">
       <nav class="nav-inner">
         <a class="brand" href="index.html">
@@ -1959,20 +1953,13 @@
       </nav>
     </header>
 
-    <!-- MOBILE MENU -->
+    <!-- MOBILE MENU (shop.html match) -->
     <div
       class="mobile-menu"
       id="mobileMenu"
       onclick="if (event.target === this) toggleMenu();"
     >
-      <nav class="mobile-nav-panel" id="mobilePanel">
-        <button
-          class="mob-close"
-          onclick="toggleMenu()"
-          aria-label="Close menu"
-        >
-          &times;
-        </button>
+      <nav class="mobile-nav-panel">
         <a href="index.html">Home</a>
         <a href="shop.html">Shop</a>
         <a href="about.html">About Us</a>
@@ -2081,11 +2068,11 @@
         </p>
         <div class="about-stats">
           <div>
-            <div class="a-stat-num">1200+</div>
+            <div class="a-stat-num">10k+</div>
             <div class="a-stat-label">Happy Customers</div>
           </div>
           <div>
-            <div class="a-stat-num">15+</div>
+            <div class="a-stat-num">25+</div>
             <div class="a-stat-label">Premium Products</div>
           </div>
           <div>
@@ -2147,8 +2134,8 @@
           data-aos-delay="0"
         >
           <div class="product-img">
-            <span class="p-badge badge-new">New</span
-            ><a href="product-details.html"
+            <span class="p-badge badge-new">New</span>
+            <a href="product-details.html"
               ><img
                 src="products-1/Magnesium Complex.jpg"
                 alt="Magnesium Complex 5-in-1"
@@ -2208,9 +2195,8 @@
             />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-heart"></i></button
+              ><button class="p-action-btn" title="Quick view">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
@@ -2255,9 +2241,8 @@
             />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
-                <i class="fa-regular fa-heart"></i>
-              </button>
-              <button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-heart"></i></button
+              ><button class="p-action-btn" title="Quick view">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
@@ -2283,8 +2268,8 @@
           data-aos-delay="240"
         >
           <div class="product-img">
-            <span class="p-badge badge-top">Top Seller</span
-            ><a href="product-details.html"
+            <span class="p-badge badge-top">Top Seller</span>
+            <a href="product-details.html"
               ><img
                 src="products-1/Nattokinase 200 Carton  final.jpg"
                 alt="Nattokinase 200mg"
@@ -2327,8 +2312,8 @@
           data-aos-delay="320"
         >
           <div class="product-img">
-            <span class="p-badge badge-top">Top Seller</span
-            ><a href="product-details.html"
+            <span class="p-badge badge-top">Top Seller</span>
+            <a href="product-details.html"
               ><img
                 src="products-1/vitamins minerals with amino acid (Woman).jpg"
                 alt="Vitamins &amp; Minerals for Women"
@@ -2375,8 +2360,8 @@
           data-aos-delay="400"
         >
           <div class="product-img">
-            <span class="p-badge badge-sale">Sale</span
-            ><a href="product-details.html"
+            <span class="p-badge badge-sale">Sale</span>
+            <a href="product-details.html"
               ><img
                 src="products-1/CCM, Mg, Zc, D3.jpg"
                 alt="Bone Health Support"
@@ -2423,8 +2408,8 @@
           data-aos-delay="480"
         >
           <div class="product-img">
-            <span class="p-badge badge-new">New</span
-            ><a href="product-details.html"
+            <span class="p-badge badge-new">New</span>
+            <a href="product-details.html"
               ><img
                 src="products-1/VITAMIN D3.jpg"
                 alt="Vitamin D3 Supplement"
@@ -2462,8 +2447,8 @@
         </div>
         <div class="product-card" data-aos="fade-up" data-aos-delay="160">
           <div class="product-img">
-            <span class="p-badge badge-top">Top Seller</span
-            ><a href="product-details.html"
+            <span class="p-badge badge-top">Top Seller</span>
+            <a href="product-details.html"
               ><img
                 src="products-1/omega 3, Vitamin E.jpg"
                 alt="Omega-3 Fish Oil"
@@ -2862,8 +2847,10 @@
         <div data-aos="fade-up" data-aos-delay="100">
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
-              What makes Aiva Wellness different from other supplements?
-              <span class="faq-icon">+</span>
+              What makes Aiva Wellness different from other supplements?<span
+                class="faq-icon"
+                >+</span
+              >
             </div>
             <div class="faq-a">
               <p>
@@ -2877,8 +2864,10 @@
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
-              Are Aiva Wellness products safe for daily use?
-              <span class="faq-icon">+</span>
+              Are Aiva Wellness products safe for daily use?<span
+                class="faq-icon"
+                >+</span
+              >
             </div>
             <div class="faq-a">
               <p>
@@ -2892,7 +2881,7 @@
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
-              How quickly will I notice results? <span class="faq-icon">+</span>
+              How quickly will I notice results?<span class="faq-icon">+</span>
             </div>
             <div class="faq-a">
               <p>
@@ -2905,7 +2894,7 @@
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
-              Do you ship across India? <span class="faq-icon">+</span>
+              Do you ship across India?<span class="faq-icon">+</span>
             </div>
             <div class="faq-a">
               <p>
@@ -2917,8 +2906,10 @@
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
-              Can I take more than one Aiva Wellness product at once?
-              <span class="faq-icon">+</span>
+              Can I take more than one Aiva Wellness product at once?<span
+                class="faq-icon"
+                >+</span
+              >
             </div>
             <div class="faq-a">
               <p>
@@ -2931,7 +2922,7 @@
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
-              What is your return policy? <span class="faq-icon">+</span>
+              What is your return policy?<span class="faq-icon">+</span>
             </div>
             <div class="faq-a">
               <p>
@@ -3146,7 +3137,7 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (shop.html exact match) -->
     <footer>
       <div class="footer-inner">
         <div class="footer-top">
@@ -3237,8 +3228,6 @@
         </div>
       </div>
     </footer>
-
-    <!-- WhatsApp float removed -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
