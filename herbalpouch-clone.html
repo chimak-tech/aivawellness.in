@@ -1,1265 +1,3101 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-  <title>Aiva Wellness | Premium Healthcare & Wellness</title>
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5"
+    />
+    <title>Aiva Wellness | Premium Healthcare & Wellness</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --green: #2d5016;
-      --green-light: #4a7c2f;
-      --green-pale: #e8f0df;
-      --green-soft: #f0f7e8;
-      --cream: #faf8f3;
-      --cream2: #f4f0e8;
-      --brown: #6b4c2a;
-      --text: #1a1a1a;
-      --text-mid: #555;
-      --text-light: #888;
-      --white: #fff;
-      --border: #e0dbd0;
-      --gold: #c8a96e;
-      --blue: #1d4ed8;
-      --blue-light: #3b82f6;
-      --radius: 14px;
-      --radius-sm: 8px;
-      --shadow: 0 4px 24px rgba(0,0,0,0.07);
-      --shadow-lg: 0 16px 48px rgba(0,0,0,0.13);
-    }
+      :root {
+        --green: #2d5016;
+        --green-light: #4a7c2f;
+        --green-pale: #e8f0df;
+        --green-soft: #f0f7e8;
+        --cream: #faf8f3;
+        --cream2: #f4f0e8;
+        --brown: #6b4c2a;
+        --text: #1a1a1a;
+        --text-mid: #555;
+        --text-light: #888;
+        --white: #fff;
+        --border: #e0dbd0;
+        --gold: #c8a96e;
+        --blue: #1d4ed8;
+        --blue-light: #3b82f6;
+        --radius: 14px;
+        --radius-sm: 8px;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+        --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.13);
+      }
 
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--cream);
+        color: var(--text);
+        overflow-x: hidden;
+      }
 
-    /* ── PRELOADER ── */
-    #preloader {
-      position: fixed; inset: 0; background: var(--cream); z-index: 9999;
-      display: flex; align-items: center; justify-content: center;
-      transition: opacity 0.5s, visibility 0.5s;
-    }
-    #preloader.hide { opacity: 0; visibility: hidden; }
-    .preloader-inner { text-align: center; }
-    .preloader-inner img { width: 72px; animation: pulse 1.4s ease-in-out infinite; }
-    .preloader-inner p { margin-top: 16px; font-size: 13px; color: var(--text-mid); letter-spacing: 0.1em; text-transform: uppercase; }
-    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.08);opacity:0.8} }
+      /* ── PRELOADER ── */
+      #preloader {
+        position: fixed;
+        inset: 0;
+        background: var(--cream);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          opacity 0.5s,
+          visibility 0.5s;
+      }
+      #preloader.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .preloader-inner {
+        text-align: center;
+      }
+      .preloader-inner img {
+        width: 72px;
+        animation: pulse 1.4s ease-in-out infinite;
+      }
+      .preloader-inner p {
+        margin-top: 16px;
+        font-size: 13px;
+        color: var(--text-mid);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.08);
+          opacity: 0.8;
+        }
+      }
 
-    /* ── ANNOUNCEMENT BAR ── */
-    .ann-bar {
-      background: var(--green); color: #fff; font-size: 13px;
-      letter-spacing: 0.04em; padding: 9px 0; overflow: hidden; white-space: nowrap;
-    }
-    .ann-bar-track { display: inline-flex; animation: marquee 30s linear infinite; gap: 80px; }
-    .ann-bar-track:hover { animation-play-state: paused; }
-    @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+      /* ── ANNOUNCEMENT BAR ── */
+      .ann-bar {
+        background: var(--green);
+        color: #fff;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        padding: 9px 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .ann-bar-track {
+        display: inline-flex;
+        animation: marquee 30s linear infinite;
+        gap: 80px;
+      }
+      .ann-bar-track:hover {
+        animation-play-state: paused;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
 
-    /* ── HEADER ── */
-    .site-header {
-      background: rgba(250,248,243,0.97); border-bottom: 1px solid var(--border);
-      position: sticky; top: 0; z-index: 999;
-      backdrop-filter: blur(12px);
-      transition: box-shadow 0.3s, background 0.3s;
-    }
-    .site-header.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.1); background: rgba(255,255,255,0.98); }
-    .nav-inner {
-      max-width: 1400px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 24px; height: 72px; gap: 20px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand img { width: 46px; height: 46px; object-fit: contain; border-radius: 12px; }
-    .brand-name { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--green); display: block; }
-    .brand-name span { color: var(--green-light); font-weight: 600; }
-    .brand-sub { display: block; font-size: 0.72rem; color: var(--text-mid); line-height: 1.3; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a {
-      text-decoration: none; color: var(--text); font-size: 0.9rem; font-weight: 500;
-      position: relative; transition: color 0.2s; letter-spacing: 0.01em;
-    }
-    .nav-links a::after {
-      content: ''; position: absolute; left: 0; bottom: -6px;
-      width: 0; height: 2px; background: var(--green); transition: width 0.25s;
-    }
-    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-    .nav-links a:hover, .nav-links a.active { color: var(--green); }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-    .nav-cta {
-      background: var(--green); color: #fff; border-radius: 999px;
-      padding: 10px 24px; font-size: 0.88rem; font-weight: 600;
-      text-decoration: none; display: flex; align-items: center; gap: 8px;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      white-space: nowrap;
-    }
-    .nav-cta:hover { background: #184a14; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(45,80,22,0.25); color: #fff; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: 1px solid var(--border); border-radius: 8px; }
-    .hamburger span { width: 20px; height: 2px; background: var(--green); display: block; transition: all 0.3s; border-radius: 2px; }
-    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .hamburger.active span:nth-child(2) { opacity: 0; }
-    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+      /* ── HEADER ── */
+      .site-header {
+        background: rgba(250, 248, 243, 0.97);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        backdrop-filter: blur(12px);
+        transition:
+          box-shadow 0.3s,
+          background 0.3s;
+      }
+      .site-header.scrolled {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.98);
+      }
+      .nav-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        height: 72px;
+        gap: 20px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+      .brand img {
+        width: 46px;
+        height: 46px;
+        object-fit: contain;
+        border-radius: 12px;
+      }
+      .brand-name {
+        font-family: "Sora", sans-serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--green);
+        display: block;
+      }
+      .brand-name span {
+        color: var(--green-light);
+        font-weight: 600;
+      }
+      .brand-sub {
+        display: block;
+        font-size: 0.72rem;
+        color: var(--text-mid);
+        line-height: 1.3;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        list-style: none;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text);
+        font-size: 0.9rem;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.2s;
+        letter-spacing: 0.01em;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 2px;
+        background: var(--green);
+        transition: width 0.25s;
+      }
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--green);
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .nav-cta {
+        background: var(--green);
+        color: #fff;
+        border-radius: 999px;
+        padding: 10px 24px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          background 0.2s,
+          transform 0.2s,
+          box-shadow 0.2s;
+        white-space: nowrap;
+      }
+      .nav-cta:hover {
+        background: #184a14;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 24px rgba(45, 80, 22, 0.25);
+        color: #fff;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 6px;
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+      .hamburger span {
+        width: 20px;
+        height: 2px;
+        background: var(--green);
+        display: block;
+        transition: all 0.3s;
+        border-radius: 2px;
+      }
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
 
-    /* ── MOBILE MENU ── */
-    .mobile-menu {
-      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(15,20,10,0.65); backdrop-filter: blur(6px); z-index: 1000;
-    }
-    .mobile-menu.open { display: block; }
-    .mobile-nav-panel {
-      background: var(--cream); width: min(320px, 90vw); height: 100%;
-      padding: 80px 28px 32px; display: flex; flex-direction: column; gap: 0;
-      box-shadow: 4px 0 40px rgba(0,0,0,0.15);
-    }
-    .mobile-nav-panel a {
-      font-size: 19px; font-family: 'Cormorant Garamond', serif; color: var(--green);
-      text-decoration: none; border-bottom: 1px solid var(--border); padding: 14px 0;
-      transition: padding-left 0.2s; display: block;
-    }
-    .mobile-nav-panel a:hover { padding-left: 8px; }
-    .mobile-nav-panel .m-cta {
-      font-size: 14px; font-family: 'Inter', sans-serif; color: #fff;
-      background: var(--green); border-bottom: none; margin-top: 20px;
-      padding: 12px 20px; border-radius: 999px; text-align: center;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-    }
-    .mobile-nav-panel .m-cta:hover { padding-left: 20px; background: var(--green-light); }
-    .mob-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text); }
+      /* ── MOBILE MENU ── */
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 20, 10, 0.65);
+        backdrop-filter: blur(6px);
+        z-index: 1000;
+      }
+      .mobile-menu.open {
+        display: block;
+      }
+      .mobile-nav-panel {
+        background: var(--cream);
+        width: min(320px, 90vw);
+        height: 100%;
+        padding: 80px 28px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 4px 0 40px rgba(0, 0, 0, 0.15);
+      }
+      .mobile-nav-panel a {
+        font-size: 19px;
+        font-family: "Cormorant Garamond", serif;
+        color: var(--green);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border);
+        padding: 14px 0;
+        transition: padding-left 0.2s;
+        display: block;
+      }
+      .mobile-nav-panel a:hover {
+        padding-left: 8px;
+      }
+      .mobile-nav-panel .m-cta {
+        font-size: 14px;
+        font-family: "Inter", sans-serif;
+        color: #fff;
+        background: var(--green);
+        border-bottom: none;
+        margin-top: 20px;
+        padding: 12px 20px;
+        border-radius: 999px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .mobile-nav-panel .m-cta:hover {
+        padding-left: 20px;
+        background: var(--green-light);
+      }
+      .mob-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: none;
+        border: none;
+        font-size: 22px;
+        cursor: pointer;
+        color: var(--text);
+      }
 
-    /* ── HERO SLIDER ── */
-    .hero-slider { position: relative; overflow: hidden; background: #0d1a07; cursor: grab; }
-    .hero-slider:active { cursor: grabbing; }
-    .slider-track { display: flex; transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); }
-    .slide { min-width: 100%; position: relative; }
-    .slide img { width: 100%; height: 90vh; object-fit: cover; display: block; }
-    @media (max-width: 768px) { .slide img { height: 56vw; min-height: 240px; } }
-    .slide-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(10,25,5,0.55) 0%, transparent 70%);
-      display: flex; align-items: center;
-    }
-    .slide-content {
-      max-width: 520px; padding: 0 60px; color: #fff;
-    }
-    .slide-eyebrow { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 14px; }
-    .slide-content h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,5vw,62px); font-weight: 400; line-height: 1.15; margin-bottom: 16px; }
-    .slide-content p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.82); margin-bottom: 28px; }
-    .slide-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: #fff; color: var(--green); padding: 13px 30px;
-      font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-      text-decoration: none; transition: background 0.25s, color 0.25s, transform 0.2s;
-    }
-    .slide-btn:hover { background: var(--green); color: #fff; transform: translateX(4px); }
-    .slider-dots { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: background 0.3s, transform 0.3s; }
-    .dot.active { background: #fff; transform: scale(1.35); }
-    .slider-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(255,255,255,0.88); border: none; width: 46px; height: 46px;
-      border-radius: 50%; cursor: pointer; font-size: 18px;
-      display: flex; align-items: center; justify-content: center; z-index: 10;
-      transition: all 0.2s; color: var(--green); box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-    }
-    .slider-btn:hover { background: #fff; transform: translateY(-50%) scale(1.07); }
-    .slider-prev { left: 20px; }
-    .slider-next { right: 20px; }
-    @media (max-width: 600px) { .slide-content { padding: 0 24px; } .slide-content h1 { font-size: clamp(24px,7vw,36px); } .slider-btn { display: none; } }
+      /* ── HERO SLIDER (IMAGE ONLY, FULLY RESPONSIVE) ── */
+      .hero-slider {
+        position: relative;
+        overflow: hidden;
+        background: #0d1a07;
+        cursor: pointer;
+        /* No fixed height — let image dictate */
+        width: 100%;
+      }
+      .slider-track {
+        display: flex;
+        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+      }
+      .slide {
+        min-width: 100%;
+        position: relative;
+        display: block;
+      }
+      /* The anchor covers the entire slide */
+      .slide-link {
+        display: block;
+        width: 100%;
+        line-height: 0;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .slide-link img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        /* Responsive heights */
+        aspect-ratio: 16/6;
+      }
+      @media (max-width: 768px) {
+        .slide-link img {
+          aspect-ratio: 4/3;
+        }
+      }
+      @media (max-width: 480px) {
+        .slide-link img {
+          aspect-ratio: 1/1;
+        }
+      }
 
-    /* ── TRUST STRIP ── */
-    .trust-strip { background: var(--cream2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 20px 24px; }
-    .trust-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
-    .trust-item { display: flex; align-items: center; gap: 10px; }
-    .trust-item i { font-size: 20px; color: var(--green); }
-    .trust-item span { font-size: 13px; font-weight: 500; color: var(--text-mid); white-space: nowrap; }
-    @media (max-width: 600px) { .trust-inner { gap: 20px; } .trust-item span { font-size: 12px; } }
+      /* Dots */
+      .slider-dots {
+        position: absolute;
+        bottom: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          transform 0.3s;
+        border: none;
+        padding: 0;
+        /* bigger tap area on mobile */
+        position: relative;
+      }
+      .dot::before {
+        content: "";
+        position: absolute;
+        inset: -8px;
+      }
+      .dot.active {
+        background: #fff;
+        transform: scale(1.35);
+      }
 
-    /* ── ABOUT SECTION ── */
-    .about-section { max-width: 1200px; margin: 80px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .about-eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-light); font-weight: 600; margin-bottom: 14px; }
-    .about-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,4vw,46px); font-weight: 400; color: var(--green); line-height: 1.2; margin-bottom: 20px; }
-    .about-text p { font-size: 15px; color: var(--text-mid); line-height: 1.85; margin-bottom: 20px; }
-    .about-stats { display: flex; gap: 32px; margin: 28px 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .a-stat-num { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--green); }
-    .a-stat-label { font-size: 12px; color: var(--text-light); margin-top: 2px; }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1.5px solid var(--green); color: var(--green);
-      padding: 12px 28px; font-size: 13px; letter-spacing: 0.08em;
-      text-decoration: none; text-transform: uppercase; font-weight: 600;
-      transition: all 0.25s;
-    }
-    .btn-outline:hover { background: var(--green); color: #fff; gap: 12px; }
-    .about-images { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 12px; }
-    .about-img-main { grid-column: 1 / -1; }
-    .about-img-main img, .about-images .ai-sm img {
-      width: 100%; object-fit: cover; display: block;
-      transition: transform 0.55s ease;
-    }
-    .about-img-main img { height: 280px; }
-    .ai-sm img { height: 170px; }
-    .about-img-main, .ai-sm { overflow: hidden; }
-    .about-img-main:hover img, .ai-sm:hover img { transform: scale(1.04); }
-    @media (max-width: 900px) { .about-section { grid-template-columns: 1fr; gap: 36px; } }
-    @media (max-width: 480px) { .about-stats { gap: 20px; } }
+      /* Prev / Next arrows — hidden on small mobile */
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.88);
+        border: none;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: all 0.2s;
+        color: var(--green);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+      }
+      .slider-btn:hover {
+        background: #fff;
+        transform: translateY(-50%) scale(1.07);
+      }
+      .slider-prev {
+        left: 16px;
+      }
+      .slider-next {
+        right: 16px;
+      }
+      @media (max-width: 600px) {
+        .slider-btn {
+          display: none;
+        }
+        .slider-dots {
+          bottom: 10px;
+        }
+        .dot {
+          width: 7px;
+          height: 7px;
+        }
+      }
 
-    /* ── SECTION HEADER ── */
-    .section-header { text-align: center; margin-bottom: 52px; }
-    .section-eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-light); font-weight: 600; margin-bottom: 12px; }
-    .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px,4vw,52px); font-weight: 400; color: var(--green); margin-bottom: 12px; line-height: 1.2; }
-    .section-header p { color: var(--text-mid); font-size: 15px; max-width: 540px; margin: 0 auto; line-height: 1.7; }
+      /* ── TRUST STRIP ── */
+      .trust-strip {
+        background: var(--cream2);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 24px;
+      }
+      .trust-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+        flex-wrap: wrap;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .trust-item i {
+        font-size: 20px;
+        color: var(--green);
+      }
+      .trust-item span {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-mid);
+        white-space: nowrap;
+      }
+      @media (max-width: 600px) {
+        .trust-inner {
+          gap: 20px;
+        }
+        .trust-item span {
+          font-size: 12px;
+        }
+      }
 
-    /* ── PRODUCTS SECTION ── */
-    .products-section { background: var(--cream2); padding: 80px 24px; }
-    .products-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .product-card { background: var(--white); overflow: hidden; transition: box-shadow 0.35s, transform 0.35s; position: relative; }
-    .product-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.13); transform: translateY(-6px); }
-    .product-img { position: relative; overflow: hidden; background: #f5f5f0; }
-    .product-img img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; transition: transform 0.55s ease; }
-    .product-card:hover .product-img img { transform: scale(1.05); }
-    .p-badge {
-      position: absolute; top: 12px; left: 12px;
-      font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 6px;
-      text-transform: uppercase; letter-spacing: 0.05em; z-index: 2;
-    }
-    .badge-new { background: var(--blue); color: #fff; }
-    .badge-sale { background: #dc2626; color: #fff; }
-    .badge-top { background: #d97706; color: #fff; }
-    .p-actions {
-      position: absolute; top: 12px; right: 12px;
-      display: flex; flex-direction: column; gap: 6px; z-index: 2;
-      opacity: 0; transform: translateX(12px); transition: opacity 0.3s, transform 0.3s;
-    }
-    .product-card:hover .p-actions { opacity: 1; transform: translateX(0); }
-    .p-action-btn {
-      width: 36px; height: 36px; background: rgba(255,255,255,0.95); border: none;
-      border-radius: 8px; cursor: pointer; font-size: 13px; color: var(--text);
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .p-action-btn:hover { background: var(--green); color: #fff; }
-    .product-info { padding: 20px; }
-    .product-cat { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-light); font-weight: 600; margin-bottom: 6px; }
-    .product-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 500; margin-bottom: 8px; line-height: 1.3; }
-    .product-info h3 a { color: var(--text); text-decoration: none; transition: color 0.2s; }
-    .product-info h3 a:hover { color: var(--green); }
-    .stars { color: var(--gold); font-size: 13px; margin-bottom: 10px; }
-    .stars span { color: var(--text-light); font-size: 12px; margin-left: 4px; }
-    .price-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-    .sale-price { font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 700; color: var(--green); }
-    .original-price { font-size: 13px; color: var(--text-light); text-decoration: line-through; }
-    .save-badge { font-size: 11px; background: #dcfce7; color: #16a34a; padding: 2px 8px; border-radius: 999px; font-weight: 600; }
-    .btn-cart {
-      width: 100%; background: var(--green); color: #fff; border: none; padding: 13px;
-      font-size: 12px; letter-spacing: 0.09em; text-transform: uppercase;
-      cursor: pointer; font-weight: 600; transition: background 0.25s;
-      font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px;
-    }
-    .btn-cart:hover { background: var(--green-light); }
-    .view-all-wrap { text-align: center; margin-top: 48px; }
-    .btn-view-all {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--green); color: #fff; padding: 14px 36px;
-      font-size: 13px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
-      text-decoration: none; border-radius: 999px;
-      transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-view-all:hover { background: var(--green-light); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(45,80,22,0.22); color: #fff; }
-    @media (max-width: 900px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .products-grid { grid-template-columns: 1fr; } }
+      /* ── ABOUT SECTION ── */
+      .about-section {
+        max-width: 1200px;
+        margin: 80px auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .about-eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--green-light);
+        font-weight: 600;
+        margin-bottom: 14px;
+      }
+      .about-text h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(28px, 4vw, 46px);
+        font-weight: 400;
+        color: var(--green);
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+      .about-text p {
+        font-size: 15px;
+        color: var(--text-mid);
+        line-height: 1.85;
+        margin-bottom: 20px;
+      }
+      .about-stats {
+        display: flex;
+        gap: 32px;
+        margin: 28px 0;
+        padding: 24px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .a-stat-num {
+        font-family: "Sora", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--green);
+      }
+      .a-stat-label {
+        font-size: 12px;
+        color: var(--text-light);
+        margin-top: 2px;
+      }
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1.5px solid var(--green);
+        color: var(--green);
+        padding: 12px 28px;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: all 0.25s;
+      }
+      .btn-outline:hover {
+        background: var(--green);
+        color: #fff;
+        gap: 12px;
+      }
+      .about-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 12px;
+      }
+      .about-img-main {
+        grid-column: 1 / -1;
+      }
+      .about-img-main img,
+      .about-images .ai-sm img {
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.55s ease;
+      }
+      .about-img-main img {
+        height: 280px;
+      }
+      .ai-sm img {
+        height: 170px;
+      }
+      .about-img-main,
+      .ai-sm {
+        overflow: hidden;
+      }
+      .about-img-main:hover img,
+      .ai-sm:hover img {
+        transform: scale(1.04);
+      }
+      @media (max-width: 900px) {
+        .about-section {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+      }
+      @media (max-width: 480px) {
+        .about-stats {
+          gap: 20px;
+        }
+      }
 
-    /* ── FEATURES / WHY US ── */
-    .features-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
-    .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    .feature-item {
-      text-align: center; padding: 28px 20px; border-radius: var(--radius);
-      border: 1px solid var(--border); background: var(--white);
-      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
-    }
-    .feature-item:hover { box-shadow: 0 12px 40px rgba(45,80,22,0.1); transform: translateY(-4px); border-color: var(--green-pale); }
-    .feature-icon { width: 60px; height: 60px; margin: 0 auto 16px; background: var(--green-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
-    .feature-icon i { font-size: 22px; color: var(--green); }
-    .feature-item:hover .feature-icon { background: var(--green); }
-    .feature-item:hover .feature-icon i { color: #fff; }
-    .feature-item h4 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 500; color: var(--green); margin-bottom: 8px; }
-    .feature-item p { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
-    .values-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; border-top: 1px solid var(--border); padding-top: 60px; }
-    .value-item h4 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--green); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-    .value-item h4 span { font-size: 12px; background: var(--green-pale); color: var(--green); padding: 3px 10px; border-radius: 999px; font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 0.05em; }
-    .value-item p { font-size: 14px; color: var(--text-mid); line-height: 1.8; }
-    @media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } .values-row { grid-template-columns: 1fr; } }
-    @media (max-width: 480px) { .features-grid { grid-template-columns: 1fr 1fr; } }
+      /* ── SECTION HEADER ── */
+      .section-header {
+        text-align: center;
+        margin-bottom: 52px;
+      }
+      .section-eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--green-light);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .section-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(30px, 4vw, 52px);
+        font-weight: 400;
+        color: var(--green);
+        margin-bottom: 12px;
+        line-height: 1.2;
+      }
+      .section-header p {
+        color: var(--text-mid);
+        font-size: 15px;
+        max-width: 540px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
 
-    /* ── COMBO / FEATURED PRODUCT ── */
-    .combo-section { max-width: 1200px; margin: 0 auto 80px; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-    .combo-img-wrap { position: relative; overflow: hidden; border-radius: var(--radius); }
-    .combo-img-wrap img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; transition: transform 0.55s ease; }
-    .combo-img-wrap:hover img { transform: scale(1.04); }
-    .combo-img-badge {
-      position: absolute; top: 20px; left: 20px; background: var(--green); color: #fff;
-      font-size: 11px; font-weight: 700; padding: 6px 14px; letter-spacing: 0.07em; text-transform: uppercase;
-    }
-    .combo-info h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,3.5vw,42px); font-weight: 400; color: var(--green); margin-bottom: 10px; line-height: 1.2; }
-    .combo-sub { font-size: 14px; color: var(--text-mid); margin-bottom: 16px; }
-    .combo-stars { color: var(--gold); font-size: 14px; margin-bottom: 18px; }
-    .combo-stars span { color: var(--text-light); font-size: 12px; margin-left: 4px; }
-    .combo-price-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
-    .combo-price-row .sale { font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 800; color: var(--green); }
-    .combo-price-row .orig { font-size: 16px; color: var(--text-light); text-decoration: line-through; }
-    .combo-mrp { font-size: 12px; color: var(--text-light); margin-bottom: 24px; }
-    .combo-includes-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); font-weight: 600; margin-bottom: 12px; }
-    .combo-items { display: flex; gap: 16px; margin-bottom: 28px; }
-    .combo-item { text-align: center; }
-    .combo-item img { width: 64px; height: 64px; object-fit: contain; border: 1px solid var(--border); padding: 6px; border-radius: 8px; transition: border-color 0.2s, box-shadow 0.2s; }
-    .combo-item:hover img { border-color: var(--green); box-shadow: 0 4px 12px rgba(45,80,22,0.15); }
-    .combo-item span { font-size: 11px; color: var(--text-mid); display: block; margin-top: 5px; }
-    .btn-add {
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      width: 100%; background: var(--green); color: #fff; border: none; padding: 15px;
-      font-size: 13px; letter-spacing: 0.09em; text-transform: uppercase;
-      cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600;
-      transition: background 0.25s; text-decoration: none; border-radius: 2px;
-    }
-    .btn-add:hover { background: var(--green-light); color: #fff; }
-    .combo-note { font-size: 12px; color: var(--text-light); text-align: center; margin-top: 10px; }
-    @media (max-width: 900px) { .combo-section { grid-template-columns: 1fr; gap: 36px; } }
+      /* ── PRODUCTS SECTION ── */
+      .products-section {
+        background: var(--cream2);
+        padding: 80px 24px;
+      }
+      .products-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+      .product-card {
+        background: var(--white);
+        overflow: hidden;
+        transition:
+          box-shadow 0.35s,
+          transform 0.35s;
+        position: relative;
+      }
+      .product-card:hover {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.13);
+        transform: translateY(-6px);
+      }
+      .product-img {
+        position: relative;
+        overflow: hidden;
+        background: #f5f5f0;
+      }
+      .product-img img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.55s ease;
+      }
+      .product-card:hover .product-img img {
+        transform: scale(1.05);
+      }
+      .p-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        z-index: 2;
+      }
+      .badge-new {
+        background: var(--blue);
+        color: #fff;
+      }
+      .badge-sale {
+        background: #dc2626;
+        color: #fff;
+      }
+      .badge-top {
+        background: #d97706;
+        color: #fff;
+      }
+      .p-actions {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        z-index: 2;
+        opacity: 0;
+        transform: translateX(12px);
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+      }
+      .product-card:hover .p-actions {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .p-action-btn {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.95);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 13px;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .p-action-btn:hover {
+        background: var(--green);
+        color: #fff;
+      }
+      .product-info {
+        padding: 20px;
+      }
+      .product-cat {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--green-light);
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .product-info h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 21px;
+        font-weight: 500;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+      .product-info h3 a {
+        color: var(--text);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .product-info h3 a:hover {
+        color: var(--green);
+      }
+      .stars {
+        color: var(--gold);
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      .stars span {
+        color: var(--text-light);
+        font-size: 12px;
+        margin-left: 4px;
+      }
+      .price-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+      .sale-price {
+        font-family: "Sora", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--green);
+      }
+      .original-price {
+        font-size: 13px;
+        color: var(--text-light);
+        text-decoration: line-through;
+      }
+      .save-badge {
+        font-size: 11px;
+        background: #dcfce7;
+        color: #16a34a;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .btn-cart {
+        width: 100%;
+        background: var(--green);
+        color: #fff;
+        border: none;
+        padding: 13px;
+        font-size: 12px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.25s;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .btn-cart:hover {
+        background: var(--green-light);
+      }
+      .view-all-wrap {
+        text-align: center;
+        margin-top: 48px;
+      }
+      .btn-view-all {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--green);
+        color: #fff;
+        padding: 14px 36px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 999px;
+        transition:
+          background 0.25s,
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .btn-view-all:hover {
+        background: var(--green-light);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(45, 80, 22, 0.22);
+        color: #fff;
+      }
+      @media (max-width: 900px) {
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 480px) {
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    /* ── DROPS VS CAPSULES ── */
-    .drops-section { padding: 80px 24px; background: var(--green); color: #fff; }
-    .drops-inner { max-width: 1200px; margin: 0 auto; }
-    .drops-inner .sh { text-align: center; margin-bottom: 56px; }
-    .drops-inner .sh .se { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 600; margin-bottom: 12px; }
-    .drops-inner .sh h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,4vw,46px); font-weight: 400; margin-bottom: 8px; }
-    .drops-inner .sh p { font-size: 14px; opacity: 0.75; }
-    .drops-grid { display: grid; grid-template-columns: 1fr 260px 1fr; gap: 32px; align-items: start; }
-    .drop-feat { display: flex; gap: 16px; align-items: flex-start; padding: 18px; border-radius: 8px; transition: background 0.2s; }
-    .drop-feat:hover { background: rgba(255,255,255,0.07); }
-    .drop-feat-icon {
-      width: 52px; height: 52px; flex-shrink: 0;
-      background: rgba(255,255,255,0.12); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; font-size: 20px;
-      transition: background 0.2s;
-    }
-    .drop-feat:hover .drop-feat-icon { background: rgba(255,255,255,0.22); }
-    .drop-feat-text h4 { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
-    .drop-feat-text p { font-size: 13px; opacity: 0.72; line-height: 1.6; }
-    .drops-left, .drops-right { display: flex; flex-direction: column; }
-    .drops-middle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
-    .drops-middle img { width: 100%; max-width: 200px; object-fit: contain; border-radius: 8px; }
-    @media (max-width: 900px) { .drops-grid { grid-template-columns: 1fr 1fr; } .drops-middle { display: none; } }
-    @media (max-width: 600px) { .drops-grid { grid-template-columns: 1fr; } }
+      /* ── FEATURES / WHY US ── */
+      .features-section {
+        padding: 80px 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+      .feature-item {
+        text-align: center;
+        padding: 28px 20px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--white);
+        transition:
+          box-shadow 0.3s,
+          transform 0.3s,
+          border-color 0.3s;
+      }
+      .feature-item:hover {
+        box-shadow: 0 12px 40px rgba(45, 80, 22, 0.1);
+        transform: translateY(-4px);
+        border-color: var(--green-pale);
+      }
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 16px;
+        background: var(--green-pale);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s;
+      }
+      .feature-icon i {
+        font-size: 22px;
+        color: var(--green);
+      }
+      .feature-item:hover .feature-icon {
+        background: var(--green);
+      }
+      .feature-item:hover .feature-icon i {
+        color: #fff;
+      }
+      .feature-item h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 19px;
+        font-weight: 500;
+        color: var(--green);
+        margin-bottom: 8px;
+      }
+      .feature-item p {
+        font-size: 13px;
+        color: var(--text-mid);
+        line-height: 1.7;
+      }
+      .values-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-top: 60px;
+        border-top: 1px solid var(--border);
+        padding-top: 60px;
+      }
+      .value-item h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--green);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .value-item h4 span {
+        font-size: 12px;
+        background: var(--green-pale);
+        color: var(--green);
+        padding: 3px 10px;
+        border-radius: 999px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+      .value-item p {
+        font-size: 14px;
+        color: var(--text-mid);
+        line-height: 1.8;
+      }
+      @media (max-width: 900px) {
+        .features-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .values-row {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 480px) {
+        .features-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
 
-    /* ── TESTIMONIALS ── */
-    .testimonials-section { padding: 80px 24px; }
-    .test-inner { max-width: 1100px; margin: 0 auto; }
-    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .test-card {
-      background: var(--cream2); padding: 30px; border-left: 3px solid var(--green);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .test-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.09); }
-    .test-stars { color: var(--gold); font-size: 15px; margin-bottom: 14px; }
-    .test-card blockquote { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--text); line-height: 1.65; margin-bottom: 16px; }
-    .test-author { display: flex; align-items: center; gap: 10px; }
-    .test-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--green); font-size: 14px; flex-shrink: 0; }
-    .test-card cite { font-size: 13px; color: var(--text-mid); font-style: normal; font-weight: 600; }
-    .test-card .test-location { font-size: 12px; color: var(--text-light); }
-    @media (max-width: 900px) { .test-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 600px) { .test-grid { grid-template-columns: 1fr; } }
+      /* ── COMBO / FEATURED PRODUCT ── */
+      .combo-section {
+        max-width: 1200px;
+        margin: 0 auto 80px;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .combo-img-wrap {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius);
+      }
+      .combo-img-wrap img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.55s ease;
+      }
+      .combo-img-wrap:hover img {
+        transform: scale(1.04);
+      }
+      .combo-img-badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: var(--green);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 6px 14px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      .combo-info h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(26px, 3.5vw, 42px);
+        font-weight: 400;
+        color: var(--green);
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      .combo-sub {
+        font-size: 14px;
+        color: var(--text-mid);
+        margin-bottom: 16px;
+      }
+      .combo-stars {
+        color: var(--gold);
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+      .combo-stars span {
+        color: var(--text-light);
+        font-size: 12px;
+        margin-left: 4px;
+      }
+      .combo-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 6px;
+      }
+      .combo-price-row .sale {
+        font-family: "Sora", sans-serif;
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--green);
+      }
+      .combo-price-row .orig {
+        font-size: 16px;
+        color: var(--text-light);
+        text-decoration: line-through;
+      }
+      .combo-mrp {
+        font-size: 12px;
+        color: var(--text-light);
+        margin-bottom: 24px;
+      }
+      .combo-includes-label {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-mid);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .combo-items {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+      .combo-item {
+        text-align: center;
+      }
+      .combo-item img {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        border: 1px solid var(--border);
+        padding: 6px;
+        border-radius: 8px;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      .combo-item:hover img {
+        border-color: var(--green);
+        box-shadow: 0 4px 12px rgba(45, 80, 22, 0.15);
+      }
+      .combo-item span {
+        font-size: 11px;
+        color: var(--text-mid);
+        display: block;
+        margin-top: 5px;
+      }
+      .btn-add {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        background: var(--green);
+        color: #fff;
+        border: none;
+        padding: 15px;
+        font-size: 13px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        transition: background 0.25s;
+        text-decoration: none;
+        border-radius: 2px;
+      }
+      .btn-add:hover {
+        background: var(--green-light);
+        color: #fff;
+      }
+      .combo-note {
+        font-size: 12px;
+        color: var(--text-light);
+        text-align: center;
+        margin-top: 10px;
+      }
+      @media (max-width: 900px) {
+        .combo-section {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+      }
 
-    /* ── FAQ ── */
-    .faq-section { background: var(--cream2); padding: 80px 24px; }
-    .faq-inner { max-width: 760px; margin: 0 auto; }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-q {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 0; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text);
-      gap: 12px; transition: color 0.2s; user-select: none;
-    }
-    .faq-q:hover { color: var(--green); }
-    .faq-icon {
-      width: 24px; height: 24px; flex-shrink: 0; border: 1.5px solid var(--green);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      color: var(--green); font-size: 16px; transition: transform 0.35s, background 0.25s;
-    }
-    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--green); color: #fff; }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.45s ease, padding 0.3s; }
-    .faq-item.open .faq-a { max-height: 250px; padding-bottom: 16px; }
-    .faq-a p { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+      /* ── DROPS VS CAPSULES ── */
+      .drops-section {
+        padding: 80px 24px;
+        background: var(--green);
+        color: #fff;
+      }
+      .drops-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .drops-inner .sh {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+      .drops-inner .sh .se {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .drops-inner .sh h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(28px, 4vw, 46px);
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+      .drops-inner .sh p {
+        font-size: 14px;
+        opacity: 0.75;
+      }
+      .drops-grid {
+        display: grid;
+        grid-template-columns: 1fr 260px 1fr;
+        gap: 32px;
+        align-items: start;
+      }
+      .drop-feat {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 18px;
+        border-radius: 8px;
+        transition: background 0.2s;
+      }
+      .drop-feat:hover {
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .drop-feat-icon {
+        width: 52px;
+        height: 52px;
+        flex-shrink: 0;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: background 0.2s;
+      }
+      .drop-feat:hover .drop-feat-icon {
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .drop-feat-text h4 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      .drop-feat-text p {
+        font-size: 13px;
+        opacity: 0.72;
+        line-height: 1.6;
+      }
+      .drops-left,
+      .drops-right {
+        display: flex;
+        flex-direction: column;
+      }
+      .drops-middle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+      .drops-middle img {
+        width: 100%;
+        max-width: 200px;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+      @media (max-width: 900px) {
+        .drops-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .drops-middle {
+          display: none;
+        }
+      }
+      @media (max-width: 600px) {
+        .drops-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    /* ── BLOGS ── */
-    .blogs-section { padding: 80px 24px; }
-    .blogs-inner { max-width: 1200px; margin: 0 auto; }
-    .blogs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .blog-card { background: var(--white); overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); transition: box-shadow 0.3s, transform 0.3s; }
-    .blog-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); transform: translateY(-5px); }
-    .blog-img { overflow: hidden; }
-    .blog-img img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; transition: transform 0.55s ease; }
-    .blog-card:hover .blog-img img { transform: scale(1.05); }
-    .blog-info { padding: 22px; }
-    .blog-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-light); font-weight: 700; margin-bottom: 8px; }
-    .blog-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; margin-bottom: 14px; line-height: 1.35; }
-    .blog-info h3 a { color: var(--text); text-decoration: none; transition: color 0.2s; }
-    .blog-info h3 a:hover { color: var(--green); }
-    .blog-read { font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; }
-    .blog-read:hover { gap: 12px; }
-    @media (max-width: 900px) { .blogs-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) { .blogs-grid { grid-template-columns: 1fr; } }
+      /* ── TESTIMONIALS ── */
+      .testimonials-section {
+        padding: 80px 24px;
+      }
+      .test-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .test-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .test-card {
+        background: var(--cream2);
+        padding: 30px;
+        border-left: 3px solid var(--green);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+      .test-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
+      }
+      .test-stars {
+        color: var(--gold);
+        font-size: 15px;
+        margin-bottom: 14px;
+      }
+      .test-card blockquote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 18px;
+        font-style: italic;
+        color: var(--text);
+        line-height: 1.65;
+        margin-bottom: 16px;
+      }
+      .test-author {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .test-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--green-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: var(--green);
+        font-size: 14px;
+        flex-shrink: 0;
+      }
+      .test-card cite {
+        font-size: 13px;
+        color: var(--text-mid);
+        font-style: normal;
+        font-weight: 600;
+      }
+      .test-card .test-location {
+        font-size: 12px;
+        color: var(--text-light);
+      }
+      @media (max-width: 900px) {
+        .test-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .test-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    /* ── INSTAGRAM STRIP ── */
-    .insta-section { padding: 60px 0 0; overflow: hidden; }
-    .insta-header { text-align: center; margin-bottom: 24px; padding: 0 24px; }
-    .insta-header a { font-size: 15px; color: var(--text-mid); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.2s; }
-    .insta-header a:hover { color: var(--green); }
-    .insta-track { display: flex; gap: 6px; animation: scrollX 32s linear infinite; }
-    .insta-track:hover { animation-play-state: paused; }
-    .insta-img { min-width: 200px; height: 200px; object-fit: cover; flex-shrink: 0; transition: opacity 0.2s, transform 0.3s; }
-    .insta-img:hover { opacity: 0.85; transform: scale(0.98); }
-    @keyframes scrollX { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-    @media (max-width: 600px) { .insta-img { min-width: 140px; height: 140px; } }
+      /* ── FAQ ── */
+      .faq-section {
+        background: var(--cream2);
+        padding: 80px 24px;
+      }
+      .faq-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .faq-item {
+        border-bottom: 1px solid var(--border);
+      }
+      .faq-q {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text);
+        gap: 12px;
+        transition: color 0.2s;
+        user-select: none;
+      }
+      .faq-q:hover {
+        color: var(--green);
+      }
+      .faq-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        border: 1.5px solid var(--green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--green);
+        font-size: 16px;
+        transition:
+          transform 0.35s,
+          background 0.25s;
+      }
+      .faq-item.open .faq-icon {
+        transform: rotate(45deg);
+        background: var(--green);
+        color: #fff;
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.45s ease,
+          padding 0.3s;
+      }
+      .faq-item.open .faq-a {
+        max-height: 250px;
+        padding-bottom: 16px;
+      }
+      .faq-a p {
+        font-size: 14px;
+        color: var(--text-mid);
+        line-height: 1.75;
+      }
 
-    /* ── NEWSLETTER ── */
-    .newsletter-section { padding: 80px 24px; background: var(--green); }
-    .newsletter-inner { max-width: 560px; margin: 0 auto; text-align: center; }
-    .newsletter-icon { font-size: 40px; color: rgba(255,255,255,0.7); margin-bottom: 20px; }
-    .newsletter-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,3.5vw,40px); color: #fff; font-weight: 400; margin-bottom: 8px; }
-    .newsletter-inner p { font-size: 14px; color: rgba(255,255,255,0.78); margin-bottom: 30px; line-height: 1.7; }
-    .newsletter-form { display: flex; max-width: 440px; margin: 0 auto; gap: 0; }
-    .newsletter-form input { flex: 1; padding: 14px 18px; border: none; font-family: 'Inter', sans-serif; font-size: 14px; background: rgba(255,255,255,0.13); color: #fff; outline: none; border: 1.5px solid rgba(255,255,255,0.35); transition: border-color 0.2s; }
-    .newsletter-form input:focus { border-color: rgba(255,255,255,0.7); }
-    .newsletter-form input::placeholder { color: rgba(255,255,255,0.55); }
-    .newsletter-form button { background: #fff; color: var(--green); border: none; padding: 14px 24px; font-size: 12px; letter-spacing: 0.09em; text-transform: uppercase; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.2s; white-space: nowrap; }
-    .newsletter-form button:hover { background: var(--cream2); }
-    @media (max-width: 500px) { .newsletter-form { flex-direction: column; } .newsletter-form button { width: 100%; } }
+      /* ── BLOGS ── */
+      .blogs-section {
+        padding: 80px 24px;
+      }
+      .blogs-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .blogs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+      .blog-card {
+        background: var(--white);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        transition:
+          box-shadow 0.3s,
+          transform 0.3s;
+      }
+      .blog-card:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+      }
+      .blog-img {
+        overflow: hidden;
+      }
+      .blog-img img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.55s ease;
+      }
+      .blog-card:hover .blog-img img {
+        transform: scale(1.05);
+      }
+      .blog-info {
+        padding: 22px;
+      }
+      .blog-tag {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--green-light);
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .blog-info h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 14px;
+        line-height: 1.35;
+      }
+      .blog-info h3 a {
+        color: var(--text);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .blog-info h3 a:hover {
+        color: var(--green);
+      }
+      .blog-read {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: var(--green);
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: gap 0.2s;
+      }
+      .blog-read:hover {
+        gap: 12px;
+      }
+      @media (max-width: 900px) {
+        .blogs-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .blogs-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    /* ── FOOTER ── */
-    footer { background: #0d1117; color: #94a3b8; padding: 56px 20px 28px; }
-    .footer-inner { max-width: 1280px; margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-brand { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-    .footer-brand span { color: #60a5fa; }
-    .footer-desc { font-size: 0.85rem; line-height: 1.75; margin-bottom: 18px; }
-    .footer-social { display: flex; gap: 10px; }
-    .social-btn { width: 36px; height: 36px; background: #1e293b; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; text-decoration: none; font-size: 14px; transition: all 0.2s; }
-    .social-btn:hover { background: var(--blue); color: #fff; transform: translateY(-2px); }
-    .footer-col h6 { font-size: 0.82rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .footer-col ul li a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; transition: color 0.2s, padding-left 0.2s; display: inline-block; }
-    .footer-col ul li a:hover { color: #fff; padding-left: 4px; }
-    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.83rem; margin-bottom: 10px; }
-    .footer-contact-item i { color: #60a5fa; margin-top: 2px; flex-shrink: 0; }
-    .footer-contact-item a { color: #94a3b8; text-decoration: none; transition: color 0.2s; }
-    .footer-contact-item a:hover { color: #fff; }
-    .footer-bottom { border-top: 1px solid #1e293b; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.78rem; }
-    .footer-bottom-links { display: flex; gap: 20px; flex-wrap: wrap; }
-    .footer-bottom-links a { color: #64748b; text-decoration: none; transition: color 0.2s; }
-    .footer-bottom-links a:hover { color: #fff; }
-    @media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) {
-      .footer-top { grid-template-columns: 1fr; gap: 28px; text-align: center; }
-      .footer-brand, .footer-social { justify-content: center; }
-      .footer-col { display: flex; flex-direction: column; align-items: center; }
-      .footer-col ul { align-items: center; }
-      .footer-contact-item { justify-content: center; }
-      .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
-      .footer-bottom-links { justify-content: center; }
-    }
+      /* ── INSTAGRAM STRIP ── */
+      .insta-section {
+        padding: 60px 0 0;
+        overflow: hidden;
+      }
+      .insta-header {
+        text-align: center;
+        margin-bottom: 24px;
+        padding: 0 24px;
+      }
+      .insta-header a {
+        font-size: 15px;
+        color: var(--text-mid);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.2s;
+      }
+      .insta-header a:hover {
+        color: var(--green);
+      }
+      .insta-track {
+        display: flex;
+        gap: 6px;
+        animation: scrollX 32s linear infinite;
+      }
+      .insta-track:hover {
+        animation-play-state: paused;
+      }
+      .insta-img {
+        min-width: 200px;
+        height: 200px;
+        object-fit: cover;
+        flex-shrink: 0;
+        transition:
+          opacity 0.2s,
+          transform 0.3s;
+      }
+      .insta-img:hover {
+        opacity: 0.85;
+        transform: scale(0.98);
+      }
+      @keyframes scrollX {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      @media (max-width: 600px) {
+        .insta-img {
+          min-width: 140px;
+          height: 140px;
+        }
+      }
 
-    /* ── WHATSAPP FLOAT ── */
-    .whatsapp-float {
-      position: fixed; bottom: 24px; right: 24px; z-index: 900;
-      background: #25d366; width: 54px; height: 54px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45); text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .whatsapp-float:hover { transform: scale(1.12); box-shadow: 0 8px 28px rgba(37,211,102,0.55); }
-    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+      /* ── NEWSLETTER ── */
+      .newsletter-section {
+        padding: 80px 24px;
+        background: var(--green);
+      }
+      .newsletter-inner {
+        max-width: 560px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .newsletter-icon {
+        font-size: 40px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 20px;
+      }
+      .newsletter-inner h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(26px, 3.5vw, 40px);
+        color: #fff;
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+      .newsletter-inner p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.78);
+        margin-bottom: 30px;
+        line-height: 1.7;
+      }
+      .newsletter-form {
+        display: flex;
+        max-width: 440px;
+        margin: 0 auto;
+        gap: 0;
+      }
+      .newsletter-form input {
+        flex: 1;
+        padding: 14px 18px;
+        border: none;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.13);
+        color: #fff;
+        outline: none;
+        border: 1.5px solid rgba(255, 255, 255, 0.35);
+        transition: border-color 0.2s;
+      }
+      .newsletter-form input:focus {
+        border-color: rgba(255, 255, 255, 0.7);
+      }
+      .newsletter-form input::placeholder {
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .newsletter-form button {
+        background: #fff;
+        color: var(--green);
+        border: none;
+        padding: 14px 24px;
+        font-size: 12px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        transition: background 0.2s;
+        white-space: nowrap;
+      }
+      .newsletter-form button:hover {
+        background: var(--cream2);
+      }
+      @media (max-width: 500px) {
+        .newsletter-form {
+          flex-direction: column;
+        }
+        .newsletter-form button {
+          width: 100%;
+        }
+      }
 
-    /* ── HAMBURGER RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-    }
-  </style>
-</head>
-<body>
+      /* ── FOOTER ── */
+      footer {
+        background: #0d1117;
+        color: #94a3b8;
+        padding: 56px 20px 28px;
+      }
+      .footer-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .footer-brand {
+        font-family: "Sora", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      .footer-brand span {
+        color: #60a5fa;
+      }
+      .footer-desc {
+        font-size: 0.85rem;
+        line-height: 1.75;
+        margin-bottom: 18px;
+      }
+      .footer-social {
+        display: flex;
+        gap: 10px;
+      }
+      .social-btn {
+        width: 36px;
+        height: 36px;
+        background: #1e293b;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.2s;
+      }
+      .social-btn:hover {
+        background: var(--blue);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      .footer-col h6 {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin-bottom: 16px;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .footer-col ul li a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition:
+          color 0.2s,
+          padding-left 0.2s;
+        display: inline-block;
+      }
+      .footer-col ul li a:hover {
+        color: #fff;
+        padding-left: 4px;
+      }
+      .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.83rem;
+        margin-bottom: 10px;
+      }
+      .footer-contact-item i {
+        color: #60a5fa;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      .footer-contact-item a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-contact-item a:hover {
+        color: #fff;
+      }
+      .footer-bottom {
+        border-top: 1px solid #1e293b;
+        padding-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.78rem;
+      }
+      .footer-bottom-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .footer-bottom-links a {
+        color: #64748b;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-bottom-links a:hover {
+        color: #fff;
+      }
+      @media (max-width: 1024px) {
+        .footer-top {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .footer-top {
+          grid-template-columns: 1fr;
+          gap: 28px;
+          text-align: center;
+        }
+        .footer-brand,
+        .footer-social {
+          justify-content: center;
+        }
+        .footer-col {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .footer-col ul {
+          align-items: center;
+        }
+        .footer-contact-item {
+          justify-content: center;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .footer-bottom-links {
+          justify-content: center;
+        }
+      }
 
-<!-- PRELOADER -->
-<div id="preloader">
-  <div class="preloader-inner">
-    <img src="assets/logo.png" alt="Aiva Wellness" width="80" onerror="this.style.display='none'" />
-    <p>Aiva Wellness</p>
-  </div>
-</div>
+      /* ── WHATSAPP FLOAT ── */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 900;
+        background: #25d366;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+        text-decoration: none;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .whatsapp-float:hover {
+        transform: scale(1.12);
+        box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+      }
+      .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+        fill: #fff;
+      }
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="ann-bar">
-  <div class="ann-bar-track">
-    <span>✨ Premium Healthcare formulas made in Himachal Pradesh &nbsp;|&nbsp; 10% off your first order with code <strong>AIVA10</strong> &nbsp;|&nbsp; Free shipping on orders over Rs. 999 &nbsp;|&nbsp; 100% Ayurvedic &amp; Natural &nbsp;|&nbsp; No Fillers, No Binders</span>
-    <span>✨ Premium Healthcare formulas made in Himachal Pradesh &nbsp;|&nbsp; 10% off your first order with code <strong>AIVA10</strong> &nbsp;|&nbsp; Free shipping on orders over Rs. 999 &nbsp;|&nbsp; 100% Ayurvedic &amp; Natural &nbsp;|&nbsp; No Fillers, No Binders</span>
-  </div>
-</div>
-
-<!-- HEADER -->
-<header class="site-header" id="siteHeader">
-  <nav class="nav-inner">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="Aiva Wellness" onerror="this.style.display='none'" />
-      <div>
-        <span class="brand-name">Aiva<span>Wellness</span></span>
-        <small class="brand-sub">Premium Healthcare & Wellness</small>
+      /* ── HAMBURGER RESPONSIVE ── */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PRELOADER -->
+    <div id="preloader">
+      <div class="preloader-inner">
+        <img
+          src="assets/logo.png"
+          alt="Aiva Wellness"
+          width="80"
+          onerror="this.style.display = 'none'"
+        />
+        <p>Aiva Wellness</p>
       </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <a href="tel:+917807751710" class="nav-cta">
-        <i class="fa-solid fa-phone"></i> Call Now
-      </a>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </nav>
-</header>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu" onclick="if(event.target===this)toggleMenu()">
-  <nav class="mobile-nav-panel" id="mobilePanel">
-    <button class="mob-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-    <a href="tel:+917807751710" class="m-cta"><i class="fa-solid fa-phone"></i> Call Now</a>
-  </nav>
-</div>
-
-<!-- ── HERO SLIDER ── -->
-<section class="hero-slider" id="heroSlider">
-  <div class="slider-track" id="sliderTrack">
-    <div class="slide">
-      <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1600&q=80" alt="Aiva Wellness Natural Supplements" loading="eager" />
-      <div class="slide-overlay">
-        <div class="slide-content">
-          <p class="slide-eyebrow">Premium Ayurvedic Formulas</p>
-          <h1>Wellness Made Simple, Pure &amp; Essential</h1>
-          <p>Thoughtfully crafted supplements from Himachal Pradesh, designed to support your modern lifestyle — naturally.</p>
-          <a href="shop.html" class="slide-btn">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="slide">
-      <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1600&q=80" alt="Aiva Wellness Magnesium" loading="lazy" />
-      <div class="slide-overlay">
-        <div class="slide-content">
-          <p class="slide-eyebrow">Bestseller</p>
-          <h1>Magnesium Complex 5-in-1</h1>
-          <p>Five synergistic forms of Magnesium in one capsule. Supports sleep, muscle recovery, and energy production.</p>
-          <a href="shop.html" class="slide-btn">Explore Product <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="slide">
-      <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1600&q=80" alt="Aiva Wellness Heart Health" loading="lazy" />
-      <div class="slide-overlay">
-        <div class="slide-content">
-          <p class="slide-eyebrow">Nattokinase</p>
-          <h1>Heart Health &amp; Cardiovascular Support</h1>
-          <p>Our Nattokinase formulas are backed by clinical research — clean, potent, and free from unnecessary fillers.</p>
-          <a href="shop.html" class="slide-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="slide">
-      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&q=80" alt="Aiva Wellness Vitamins" loading="lazy" />
-      <div class="slide-overlay">
-        <div class="slide-content">
-          <p class="slide-eyebrow">Complete Nutrition</p>
-          <h1>Vitamins &amp; Minerals for Every Body</h1>
-          <p>Gender-specific multivitamin blends with essential amino acids, supporting immunity, energy, and vitality every day.</p>
-          <a href="shop.html" class="slide-btn">Shop All <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="slider-btn slider-prev" onclick="moveSlider(-1)" aria-label="Previous">&#8592;</button>
-  <button class="slider-btn slider-next" onclick="moveSlider(1)" aria-label="Next">&#8594;</button>
-  <div class="slider-dots" id="sliderDots"></div>
-</section>
-
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-  <div class="trust-inner">
-    <div class="trust-item">
-      <i class="fa-solid fa-leaf"></i>
-      <span>100% Ayurvedic &amp; Natural</span>
-    </div>
-    <div class="trust-item">
-      <i class="fa-solid fa-shield-halved"></i>
-      <span>No Fillers or Binders</span>
-    </div>
-    <div class="trust-item">
-      <i class="fa-solid fa-truck"></i>
-      <span>Free Shipping on ₹999+</span>
-    </div>
-    <div class="trust-item">
-      <i class="fa-solid fa-flask"></i>
-      <span>Science-Backed Formulas</span>
-    </div>
-    <div class="trust-item">
-      <i class="fa-solid fa-rotate-left"></i>
-      <span>Easy Returns</span>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT SECTION -->
-<section class="about-section">
-  <div class="about-text" data-aos="fade-right" data-aos-duration="700">
-    <p class="about-eyebrow">Who We Are</p>
-    <h2>Has wellness stopped feeling simple?</h2>
-    <p>At Aiva Wellness, we make it simple again. From our facility in Solan, Himachal Pradesh, we craft precision health formulas designed for the modern Indian body — free from unnecessary additives, binders, and fillers.</p>
-    <p>Every product is rooted in Ayurvedic wisdom and validated by modern science, because we believe you deserve both.</p>
-    <div class="about-stats">
-      <div>
-        <div class="a-stat-num">1200+</div>
-        <div class="a-stat-label">Happy Customers</div>
-      </div>
-      <div>
-        <div class="a-stat-num">15+</div>
-        <div class="a-stat-label">Premium Products</div>
-      </div>
-      <div>
-        <div class="a-stat-num">4.8★</div>
-        <div class="a-stat-label">Average Rating</div>
-      </div>
-    </div>
-    <a href="about.html" class="btn-outline">Know Our Story <i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-  <div class="about-images" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
-    <div class="about-img-main">
-      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80" alt="Natural Aiva Wellness ingredients" />
-    </div>
-    <div class="ai-sm">
-      <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" alt="Aiva Wellness capsules" />
-    </div>
-    <div class="ai-sm">
-      <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80" alt="Aiva Wellness wellness ritual" />
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTS SECTION -->
-<section class="products-section" id="products">
-  <div class="section-header" data-aos="fade-up">
-    <p class="section-eyebrow">Our Products</p>
-    <h2>Premium Supplements for Every Need</h2>
-    <p>Science-backed formulas made with clean, potent ingredients your body absorbs and your routine welcomes naturally.</p>
-  </div>
-  <div class="products-grid">
-
-    <div class="product-card" data-aos="fade-up" data-aos-delay="0">
-      <div class="product-img">
-        <span class="p-badge badge-new">New</span>
-        <a href="product-details.html">
-          <img src="products-1/Magnesium Complex.jpg" alt="Magnesium Complex 5-in-1" onerror="this.src='https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80'" />
-        </a>
-        <div class="p-actions">
-          <button class="p-action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
-          <button class="p-action-btn" title="Quick view"><i class="fa-regular fa-eye"></i></button>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Magnesium</div>
-        <h3><a href="product-details.html">Magnesium Complex 5-in-1</a></h3>
-        <div class="stars">★★★★★ <span>128 reviews</span></div>
-        <div class="price-row">
-          <span class="sale-price">₹1,299</span>
-          <span class="original-price">₹1,499</span>
-          <span class="save-badge">Save 13%</span>
-        </div>
-        <button class="btn-cart"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="ann-bar">
+      <div class="ann-bar-track">
+        <span
+          >✨ Premium Healthcare formulas made in Himachal Pradesh &nbsp;|&nbsp;
+          10% off your first order with code
+          <strong>AIVA10</strong> &nbsp;|&nbsp; Free shipping on orders over Rs.
+          999 &nbsp;|&nbsp; 100% Ayurvedic &amp; Natural &nbsp;|&nbsp; No
+          Fillers, No Binders</span
+        >
+        <span
+          >✨ Premium Healthcare formulas made in Himachal Pradesh &nbsp;|&nbsp;
+          10% off your first order with code
+          <strong>AIVA10</strong> &nbsp;|&nbsp; Free shipping on orders over Rs.
+          999 &nbsp;|&nbsp; 100% Ayurvedic &amp; Natural &nbsp;|&nbsp; No
+          Fillers, No Binders</span
+        >
       </div>
     </div>
 
-    <div class="product-card" data-aos="fade-up" data-aos-delay="80">
-      <div class="product-img">
-        <span class="p-badge badge-top">Top Seller</span>
-        <a href="product-details.html">
-          <img src="products-1/Nattokinase 200 Carton  final.jpg" alt="Nattokinase 200mg" onerror="this.src='https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80'" />
-        </a>
-        <div class="p-actions">
-          <button class="p-action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
-          <button class="p-action-btn" title="Quick view"><i class="fa-regular fa-eye"></i></button>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Nattokinase</div>
-        <h3><a href="product-details.html">Nattokinase 200 mg</a></h3>
-        <div class="stars">★★★★★ <span>73 reviews</span></div>
-        <div class="price-row">
-          <span class="sale-price">₹1,899</span>
-          <span class="original-price">₹2,099</span>
-          <span class="save-badge">Save 10%</span>
-        </div>
-        <button class="btn-cart"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
-      </div>
-    </div>
-
-    <div class="product-card" data-aos="fade-up" data-aos-delay="160">
-      <div class="product-img">
-        <span class="p-badge badge-top">Top Seller</span>
-        <a href="product-details.html">
-          <img src="products-1/vitamins minerals with amino acid (Woman).jpg" alt="Vitamins & Minerals for Women" onerror="this.src='https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&q=80'" />
-        </a>
-        <div class="p-actions">
-          <button class="p-action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
-          <button class="p-action-btn" title="Quick view"><i class="fa-regular fa-eye"></i></button>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Women's Health</div>
-        <h3><a href="product-details.html">Vitamins & Minerals with Amino Acids (Women)</a></h3>
-        <div class="stars">★★★★★ <span>101 reviews</span></div>
-        <div class="price-row">
-          <span class="sale-price">₹1,199</span>
-          <span class="original-price">₹1,399</span>
-          <span class="save-badge">Save 14%</span>
-        </div>
-        <button class="btn-cart"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
-      </div>
-    </div>
-
-    <div class="product-card" data-aos="fade-up" data-aos-delay="0">
-      <div class="product-img">
-        <span class="p-badge badge-sale">Sale</span>
-        <a href="product-details.html">
-          <img src="products-1/CCM, Mg, Zc, D3.jpg" alt="Bone Health Support" onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80'" />
-        </a>
-        <div class="p-actions">
-          <button class="p-action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
-          <button class="p-action-btn" title="Quick view"><i class="fa-regular fa-eye"></i></button>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Vitamins</div>
-        <h3><a href="product-details.html">Bone Health Support (CCM + Mg + Zc + D3)</a></h3>
-        <div class="stars">★★★★☆ <span>84 reviews</span></div>
-        <div class="price-row">
-          <span class="sale-price">₹899</span>
-          <span class="original-price">₹999</span>
-          <span class="save-badge">Save 10%</span>
-        </div>
-        <button class="btn-cart"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
-      </div>
-    </div>
-
-    <div class="product-card" data-aos="fade-up" data-aos-delay="80">
-      <div class="product-img">
-        <span class="p-badge badge-new">New</span>
-        <a href="product-details.html">
-          <img src="products-1/VITAMIN D3.jpg" alt="Vitamin D3 Supplement" onerror="this.src='https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?w=600&q=80'" />
-        </a>
-        <div class="p-actions">
-          <button class="p-action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
-          <button class="p-action-btn" title="Quick view"><i class="fa-regular fa-eye"></i></button>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Vitamins</div>
-        <h3><a href="product-details.html">Vitamin D3 Supplement</a></h3>
-        <div class="stars">★★★★★ <span>142 reviews</span></div>
-        <div class="price-row">
-          <span class="sale-price">₹499</span>
-          <span class="original-price">₹599</span>
-          <span class="save-badge">Save 17%</span>
-        </div>
-        <button class="btn-cart"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
-      </div>
-    </div>
-
-    <div class="product-card" data-aos="fade-up" data-aos-delay="160">
-      <div class="product-img">
-        <span class="p-badge badge-top">Top Seller</span>
-        <a href="product-details.html">
-          <img src="products-1/omega 3, Vitamin E.jpg" alt="Omega-3 Fish Oil" onerror="this.src='https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80'" />
-        </a>
-        <div class="p-actions">
-          <button class="p-action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
-          <button class="p-action-btn" title="Quick view"><i class="fa-regular fa-eye"></i></button>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Omega-3</div>
-        <h3><a href="product-details.html">Omega-3 Fish Oil + Vitamin E</a></h3>
-        <div class="stars">★★★★★ <span>198 reviews</span></div>
-        <div class="price-row">
-          <span class="sale-price">₹899</span>
-          <span class="original-price">₹1,099</span>
-          <span class="save-badge">Save 18%</span>
-        </div>
-        <button class="btn-cart"><i class="fa-solid fa-bag-shopping"></i> Buy Now</button>
-      </div>
-    </div>
-
-  </div>
-  <div class="view-all-wrap" data-aos="fade-up">
-    <a href="shop.html" class="btn-view-all">View All Products <i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</section>
-
-<!-- FEATURES SECTION -->
-<section class="features-section">
-  <div class="section-header" data-aos="fade-up">
-    <p class="section-eyebrow">Why Aiva Wellness</p>
-    <h2>Ayurveda Simplified for Everyday Life</h2>
-    <p>Clean inputs. Simple choices. Maximum results.</p>
-  </div>
-  <div class="features-grid">
-    <div class="feature-item" data-aos="fade-up" data-aos-delay="0">
-      <div class="feature-icon"><i class="fa-solid fa-capsules"></i></div>
-      <h4>Premium Vitamins & Minerals</h4>
-      <p>Bioavailable forms of essential nutrients your body actually uses efficiently.</p>
-    </div>
-    <div class="feature-item" data-aos="fade-up" data-aos-delay="80">
-      <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
-      <h4>100% Natural Extracts</h4>
-      <p>Ingredients sourced from nature, processed without compromising their integrity.</p>
-    </div>
-    <div class="feature-item" data-aos="fade-up" data-aos-delay="160">
-      <div class="feature-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
-      <h4>No Fillers or Binders</h4>
-      <p>Every capsule contains only what the label says — nothing more, nothing less.</p>
-    </div>
-    <div class="feature-item" data-aos="fade-up" data-aos-delay="240">
-      <div class="feature-icon"><i class="fa-solid fa-calendar-check"></i></div>
-      <h4>Daily Use Friendly</h4>
-      <p>Gentle, non-habit-forming formulas designed for consistent long-term use.</p>
-    </div>
-  </div>
-  <div class="values-row">
-    <div class="value-item" data-aos="fade-up" data-aos-delay="0">
-      <h4>Simple <span>01</span></h4>
-      <p>Wellness shouldn't demand complicated rituals. Our products integrate effortlessly into your routine, making it easy to stay consistent even on your busiest days.</p>
-    </div>
-    <div class="value-item" data-aos="fade-up" data-aos-delay="100">
-      <h4>Pure <span>02</span></h4>
-      <p>We stay true to nature's integrity. By sourcing high-quality ingredients and using modern extraction practices, we preserve the potency of traditional herbs without additives.</p>
-    </div>
-    <div class="value-item" data-aos="fade-up" data-aos-delay="200">
-      <h4>Essential <span>03</span></h4>
-      <p>We focus on the most effective botanicals in their most supportive forms — precision formulas that honor the wisdom of Ayurveda and the needs of the modern body.</p>
-    </div>
-  </div>
-</section>
-
-<!-- COMBO / FEATURED PRODUCT -->
-<section class="combo-section">
-  <div class="combo-img-wrap" data-aos="fade-right" data-aos-duration="700">
-    <img src="products-1/ZMA + VITAMIN B6.jpg" alt="ZMA + Vitamin B6" onerror="this.src='https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80'" />
-    <span class="combo-img-badge">Featured</span>
-  </div>
-  <div class="combo-info" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
-    <p class="about-eyebrow">Bestseller Combo</p>
-    <h2>ZMA + Vitamin B6 Formula</h2>
-    <p class="combo-sub">Zinc, Magnesium & B6 — the trinity for deep sleep, testosterone, and muscle recovery.</p>
-    <div class="combo-stars">★★★★★ <span>62 reviews</span></div>
-    <div class="combo-price-row">
-      <span class="sale">₹1,499</span>
-      <span class="orig">₹1,699</span>
-    </div>
-    <p class="combo-mrp">(MRP inclusive of all Taxes)</p>
-    <p class="combo-includes-label">What's Included</p>
-    <div class="combo-items">
-      <div class="combo-item">
-        <img src="products-1/ZMA + VITAMIN B6.jpg" alt="ZMA" onerror="this.src='https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?w=120&q=80'" />
-        <span>ZMA</span>
-      </div>
-      <div class="combo-item">
-        <img src="products-1/Magnesium Complex.jpg" alt="Magnesium" onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'" />
-        <span>Magnesium</span>
-      </div>
-      <div class="combo-item">
-        <img src="products-1/VITAMIN D3.jpg" alt="Vitamin B6" onerror="this.src='https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=120&q=80'" />
-        <span>Vitamin B6</span>
-      </div>
-    </div>
-    <a href="product-details.html" class="btn-add"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</a>
-    <p class="combo-note">100% Ayurvedic &amp; Herbal | No Fillers &amp; Binders | Made in India</p>
-  </div>
-</section>
-
-<!-- DROPS VS CAPSULES -->
-<section class="drops-section">
-  <div class="drops-inner">
-    <div class="sh" data-aos="fade-up">
-      <p class="se">The Aiva Advantage</p>
-      <h2>Why Liquid Drops Outperform Capsules & Tablets</h2>
-      <p>Formulated to support your daily health routine with maximum efficiency</p>
-    </div>
-    <div class="drops-grid">
-      <div class="drops-left">
-        <div class="drop-feat" data-aos="fade-right" data-aos-delay="0">
-          <div class="drop-feat-icon"><i class="fa-solid fa-bolt"></i></div>
-          <div class="drop-feat-text">
-            <h4>Better Absorption</h4>
-            <p>Absorbed sublingually for faster, higher utilization of the active extract.</p>
-          </div>
-        </div>
-        <div class="drop-feat" data-aos="fade-right" data-aos-delay="80">
-          <div class="drop-feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <div class="drop-feat-text">
-            <h4>Gentle for Regular Use</h4>
-            <p>Herbal formulation suitable for everyday routines without building dependency.</p>
-          </div>
-        </div>
-        <div class="drop-feat" data-aos="fade-right" data-aos-delay="160">
-          <div class="drop-feat-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-          <div class="drop-feat-text">
-            <h4>Digestive Comfort</h4>
-            <p>Bypasses heavy digestion — ideal for sensitive stomachs and those with gut issues.</p>
-          </div>
-        </div>
-      </div>
-      <div class="drops-middle" data-aos="zoom-in">
-        <img src="products-1/Nattokinase Carton  final.jpg" alt="Aiva Wellness Drops" onerror="this.src='https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&q=80'" />
-      </div>
-      <div class="drops-right">
-        <div class="drop-feat" data-aos="fade-left" data-aos-delay="0">
-          <div class="drop-feat-icon"><i class="fa-solid fa-microscope"></i></div>
-          <div class="drop-feat-text">
-            <h4>Higher Bioavailability</h4>
-            <p>More of what you take is effectively absorbed and used by your body.</p>
-          </div>
-        </div>
-        <div class="drop-feat" data-aos="fade-left" data-aos-delay="80">
-          <div class="drop-feat-icon"><i class="fa-solid fa-leaf"></i></div>
-          <div class="drop-feat-text">
-            <h4>Maximum Purity</h4>
-            <p>Selected herbs processed to achieve the highest level of purity available.</p>
-          </div>
-        </div>
-        <div class="drop-feat" data-aos="fade-left" data-aos-delay="160">
-          <div class="drop-feat-icon"><i class="fa-solid fa-circle-check"></i></div>
-          <div class="drop-feat-text">
-            <h4>No Filler and Binders</h4>
-            <p>Completely free from unnecessary additives, fillers, and artificial binders.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials-section">
-  <div class="test-inner">
-    <div class="section-header" data-aos="fade-up">
-      <p class="section-eyebrow">Customer Reviews</p>
-      <h2>Trusted by Wellness Seekers Across India</h2>
-    </div>
-    <div class="test-grid">
-      <div class="test-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="test-stars">★★★★★</div>
-        <blockquote>"The Magnesium Complex has genuinely changed my sleep quality. I wake up feeling rested — something I hadn't experienced in years. Highly recommend!"</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">AS</div>
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+      <nav class="nav-inner">
+        <a class="brand" href="index.html">
+          <img
+            src="assets/logo.png"
+            alt="Aiva Wellness"
+            onerror="this.style.display = 'none'"
+          />
           <div>
-            <cite>Aarav Sharma</cite>
-            <div class="test-location">Delhi, India</div>
+            <span class="brand-name">Aiva<span>Wellness</span></span>
+            <small class="brand-sub">Premium Healthcare & Wellness</small>
           </div>
-        </div>
-      </div>
-      <div class="test-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="test-stars">★★★★★</div>
-        <blockquote>"Clean ingredients, transparent labeling, no heaviness like typical capsules. The Nattokinase formula is now a permanent part of my morning routine."</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">NV</div>
-          <div>
-            <cite>Neha Verma</cite>
-            <div class="test-location">Bangalore, India</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="test-stars">★★★★★</div>
-        <blockquote>"What stood out was the transparency. No hidden ingredients, no bold claims — just honest, effective wellness products from a brand I genuinely trust."</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">RM</div>
-          <div>
-            <cite>Rohan Mehta</cite>
-            <div class="test-location">Mumbai, India</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="faq-inner">
-    <div class="section-header" data-aos="fade-up">
-      <p class="section-eyebrow">Got Questions?</p>
-      <h2>Frequently Asked Questions</h2>
-    </div>
-    <div data-aos="fade-up" data-aos-delay="100">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What makes Aiva Wellness different from other supplements? <span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Our formulas contain only essential, high-quality ingredients — no fillers, no binders, no artificial additives. We source potent raw materials and use modern extraction methods to preserve their natural efficacy, combining Ayurvedic wisdom with clinical validation.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Are Aiva Wellness products safe for daily use? <span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Yes. Our products are formulated with gentle, high-quality ingredients designed for daily routines. They are crafted to support wellbeing without habit-forming substances. If you are pregnant, nursing, or on medication, please consult a healthcare professional before use.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How quickly will I notice results? <span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Results vary per individual. Most users report noticing a difference within 2–4 weeks of consistent daily use. Ayurvedic formulations work best when used regularly over time, supporting cumulative improvement in wellbeing.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Do you ship across India? <span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Yes, we ship pan-India. Orders above Rs. 999 qualify for free shipping. Standard delivery takes 4–7 business days depending on your location.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Can I take more than one Aiva Wellness product at once? <span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Yes, our products are designed to complement each other. Many customers use multiple formulas as part of their daily wellness routine. Each product targets a distinct area of health, making them safe to combine for comprehensive support.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What is your return policy? <span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>We offer a hassle-free return policy. If you are not satisfied with your purchase, contact us within 7 days of delivery. Our team will assist you with returns or exchanges. Opened products may be evaluated on a case-by-case basis.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BLOGS -->
-<section class="blogs-section">
-  <div class="blogs-inner">
-    <div class="section-header" data-aos="fade-up">
-      <p class="section-eyebrow">Health Insights</p>
-      <h2>From Our Wellness Blog</h2>
-      <p>Expert-written articles to help you make informed choices about your health.</p>
-    </div>
-    <div class="blogs-grid">
-      <div class="blog-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="blog-img">
-          <img src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=700&q=80" alt="Magnesium Benefits" />
-        </div>
-        <div class="blog-info">
-          <div class="blog-tag">Magnesium</div>
-          <h3><a href="#">5 Signs You May Be Magnesium Deficient — And What to Do About It</a></h3>
-          <a href="#" class="blog-read">Read more <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="blog-img">
-          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80" alt="Heart Health" />
-        </div>
-        <div class="blog-info">
-          <div class="blog-tag">Heart Health</div>
-          <h3><a href="#">Nattokinase: The Natural Enzyme Supporting Cardiovascular Wellness</a></h3>
-          <a href="#" class="blog-read">Read more <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="blog-img">
-          <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&q=80" alt="Vitamins for Women" />
-        </div>
-        <div class="blog-info">
-          <div class="blog-tag">Women's Health</div>
-          <h3><a href="#">Why Women Need Different Vitamins: A Guide to Gender-Specific Nutrition</a></h3>
-          <a href="#" class="blog-read">Read more <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section class="insta-section">
-  <div class="insta-header" data-aos="fade-up">
-    <a href="https://www.instagram.com/aivawellness/" target="_blank" rel="noopener">
-      <i class="fa-brands fa-instagram"></i>
-      Follow @aivawellness on Instagram
-    </a>
-  </div>
-  <div style="overflow:hidden">
-    <div class="insta-track" id="instaTrack">
-      <img class="insta-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <!-- duplicated for loop -->
-      <img class="insta-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-      <img class="insta-img" src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop&q=80" alt="Aiva Wellness" />
-    </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter-section">
-  <div class="newsletter-inner" data-aos="fade-up">
-    <div class="newsletter-icon"><i class="fa-solid fa-paper-plane"></i></div>
-    <h2>Be Part of the Aiva Wellness Journey</h2>
-    <p>Subscribe for wellness tips, clean-living insights, exclusive offers, and early access to new products.</p>
-    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-      <input type="email" placeholder="Enter your email address" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="Aiva Wellness" width="36" height="36" style="border-radius:8px" onerror="this.style.display='none'" />
-          Aiva<span>Wellness</span>
-        </div>
-        <div class="footer-desc">Premium Healthcare & Wellness Solutions from Solan, Himachal Pradesh. Science-backed Ayurvedic formulations crafted for the health of every Indian family.</div>
-        <div class="footer-social">
-          <a class="social-btn" href="https://www.instagram.com/aivawellness/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a class="social-btn" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a class="social-btn" href="https://wa.me/919175772002" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a class="social-btn" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h6>Quick Links</h6>
-        <ul>
-          <li><a href="index.html">Home</a></li>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="nav-right">
+          <a href="tel:+917807751710" class="nav-cta">
+            <i class="fa-solid fa-phone"></i> Call Now
+          </a>
+          <button
+            class="hamburger"
+            onclick="toggleMenu()"
+            aria-label="Open menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      onclick="if (event.target === this) toggleMenu();"
+    >
+      <nav class="mobile-nav-panel" id="mobilePanel">
+        <button
+          class="mob-close"
+          onclick="toggleMenu()"
+          aria-label="Close menu"
+        >
+          &times;
+        </button>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:+917807751710" class="m-cta"
+          ><i class="fa-solid fa-phone"></i> Call Now</a
+        >
+      </nav>
+    </div>
+
+    <!-- ── HERO SLIDER (IMAGE ONLY) ── -->
+    <section class="hero-slider" id="heroSlider">
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide">
+          <a class="slide-link" href="product-details.html">
+            <img
+              src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1600&q=80"
+              alt="Aiva Wellness Natural Supplements"
+              loading="eager"
+            />
+          </a>
+        </div>
+
+        <div class="slide">
+          <a class="slide-link" href="product-details.html">
+            <img
+              src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1600&q=80"
+              alt="Magnesium Complex 5-in-1"
+              loading="lazy"
+            />
+          </a>
+        </div>
+
+        <div class="slide">
+          <a class="slide-link" href="product-details.html">
+            <img
+              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1600&q=80"
+              alt="Heart Health &amp; Cardiovascular Support"
+              loading="lazy"
+            />
+          </a>
+        </div>
+
+        <div class="slide">
+          <a class="slide-link" href="product-details.html">
+            <img
+              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&q=80"
+              alt="Vitamins &amp; Minerals"
+              loading="lazy"
+            />
+          </a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h6>Categories</h6>
-        <ul>
-          <li><a href="shop.html">Magnesium</a></li>
-          <li><a href="shop.html">Nattokinase</a></li>
-          <li><a href="shop.html">Vitamins & Minerals</a></li>
-          <li><a href="shop.html">Omega-3</a></li>
-          <li><a href="shop.html">ZMA</a></li>
-          <li><a href="shop.html">Immunity</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h6>Contact Us</h6>
-        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+917807751710">+91 78077 51710</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:aivawellness@gmail.com">aivawellness@gmail.com</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Solan, Himachal Pradesh, India</span></div>
+
+      <button
+        class="slider-btn slider-prev"
+        onclick="moveSlider(-1)"
+        aria-label="Previous"
+      >
+        &#8592;
+      </button>
+      <button
+        class="slider-btn slider-next"
+        onclick="moveSlider(1)"
+        aria-label="Next"
+      >
+        &#8594;
+      </button>
+      <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+      <div class="trust-inner">
+        <div class="trust-item">
+          <i class="fa-solid fa-leaf"></i
+          ><span>100% Ayurvedic &amp; Natural</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-shield-halved"></i
+          ><span>No Fillers or Binders</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-truck"></i><span>Free Shipping on ₹999+</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-flask"></i><span>Science-Backed Formulas</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-rotate-left"></i><span>Easy Returns</span>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Aiva Wellness. All rights reserved.</span>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Shipping Policy</a>
-        <a href="#">Return Policy</a>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
+      <div class="about-text" data-aos="fade-right" data-aos-duration="700">
+        <p class="about-eyebrow">Who We Are</p>
+        <h2>Has wellness stopped feeling simple?</h2>
+        <p>
+          At Aiva Wellness, we make it simple again. From our facility in Solan,
+          Himachal Pradesh, we craft precision health formulas designed for the
+          modern Indian body — free from unnecessary additives, binders, and
+          fillers.
+        </p>
+        <p>
+          Every product is rooted in Ayurvedic wisdom and validated by modern
+          science, because we believe you deserve both.
+        </p>
+        <div class="about-stats">
+          <div>
+            <div class="a-stat-num">1200+</div>
+            <div class="a-stat-label">Happy Customers</div>
+          </div>
+          <div>
+            <div class="a-stat-num">15+</div>
+            <div class="a-stat-label">Premium Products</div>
+          </div>
+          <div>
+            <div class="a-stat-num">4.8★</div>
+            <div class="a-stat-label">Average Rating</div>
+          </div>
+        </div>
+        <a href="about.html" class="btn-outline"
+          >Know Our Story <i class="fa-solid fa-arrow-right"></i
+        ></a>
       </div>
-    </div>
-  </div>
-</footer>
+      <div
+        class="about-images"
+        data-aos="fade-left"
+        data-aos-duration="700"
+        data-aos-delay="100"
+      >
+        <div class="about-img-main">
+          <img
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80"
+            alt="Natural Aiva Wellness ingredients"
+          />
+        </div>
+        <div class="ai-sm">
+          <img
+            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80"
+            alt="Aiva Wellness capsules"
+          />
+        </div>
+        <div class="ai-sm">
+          <img
+            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80"
+            alt="Aiva Wellness wellness ritual"
+          />
+        </div>
+      </div>
+    </section>
 
-<!-- WHATSAPP FLOAT -->
-<a class="whatsapp-float" href="https://wa.me/919175772002?text=Hello" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section" id="products">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-eyebrow">Our Products</p>
+        <h2>Premium Supplements for Every Need</h2>
+        <p>
+          Science-backed formulas made with clean, potent ingredients your body
+          absorbs and your routine welcomes naturally.
+        </p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="product-img">
+            <span class="p-badge badge-new">New</span>
+            <a href="product-details.html"
+              ><img
+                src="products-1/Magnesium Complex.jpg"
+                alt="Magnesium Complex 5-in-1"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80'
+                "
+            /></a>
+            <div class="p-actions">
+              <button class="p-action-btn" title="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Magnesium</div>
+            <h3><a href="product-details.html">Magnesium Complex 5-in-1</a></h3>
+            <div class="stars">★★★★★ <span>128 reviews</span></div>
+            <div class="price-row">
+              <span class="sale-price">₹1,299</span
+              ><span class="original-price">₹1,499</span
+              ><span class="save-badge">Save 13%</span>
+            </div>
+            <button class="btn-cart">
+              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+            </button>
+          </div>
+        </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  // ── AOS INIT ──
-  AOS.init({ once: true, offset: 80, easing: 'ease-out-quad' });
+        <div class="product-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="product-img">
+            <span class="p-badge badge-top">Top Seller</span>
+            <a href="product-details.html"
+              ><img
+                src="products-1/Nattokinase 200 Carton  final.jpg"
+                alt="Nattokinase 200mg"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80'
+                "
+            /></a>
+            <div class="p-actions">
+              <button class="p-action-btn" title="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Nattokinase</div>
+            <h3><a href="product-details.html">Nattokinase 200 mg</a></h3>
+            <div class="stars">★★★★★ <span>73 reviews</span></div>
+            <div class="price-row">
+              <span class="sale-price">₹1,899</span
+              ><span class="original-price">₹2,099</span
+              ><span class="save-badge">Save 10%</span>
+            </div>
+            <button class="btn-cart">
+              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+            </button>
+          </div>
+        </div>
 
-  // ── PRELOADER ──
-  window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('preloader').classList.add('hide'), 700);
-  });
+        <div class="product-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="product-img">
+            <span class="p-badge badge-top">Top Seller</span>
+            <a href="product-details.html"
+              ><img
+                src="products-1/vitamins minerals with amino acid (Woman).jpg"
+                alt="Vitamins & Minerals for Women"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&q=80'
+                "
+            /></a>
+            <div class="p-actions">
+              <button class="p-action-btn" title="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Women's Health</div>
+            <h3>
+              <a href="product-details.html"
+                >Vitamins & Minerals with Amino Acids (Women)</a
+              >
+            </h3>
+            <div class="stars">★★★★★ <span>101 reviews</span></div>
+            <div class="price-row">
+              <span class="sale-price">₹1,199</span
+              ><span class="original-price">₹1,399</span
+              ><span class="save-badge">Save 14%</span>
+            </div>
+            <button class="btn-cart">
+              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+            </button>
+          </div>
+        </div>
 
-  // ── HEADER SCROLL ──
-  window.addEventListener('scroll', () => {
-    document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 20);
-  });
+        <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="product-img">
+            <span class="p-badge badge-sale">Sale</span>
+            <a href="product-details.html"
+              ><img
+                src="products-1/CCM, Mg, Zc, D3.jpg"
+                alt="Bone Health Support"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80'
+                "
+            /></a>
+            <div class="p-actions">
+              <button class="p-action-btn" title="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Vitamins</div>
+            <h3>
+              <a href="product-details.html"
+                >Bone Health Support (CCM + Mg + Zc + D3)</a
+              >
+            </h3>
+            <div class="stars">★★★★☆ <span>84 reviews</span></div>
+            <div class="price-row">
+              <span class="sale-price">₹899</span
+              ><span class="original-price">₹999</span
+              ><span class="save-badge">Save 10%</span>
+            </div>
+            <button class="btn-cart">
+              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+            </button>
+          </div>
+        </div>
 
-  // ── HERO SLIDER ──
-  let currentSlide = 0;
-  const totalSlides = 4;
-  const track = document.getElementById('sliderTrack');
-  const dotsEl = document.getElementById('sliderDots');
-  let autoSlide;
+        <div class="product-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="product-img">
+            <span class="p-badge badge-new">New</span>
+            <a href="product-details.html"
+              ><img
+                src="products-1/VITAMIN D3.jpg"
+                alt="Vitamin D3 Supplement"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?w=600&q=80'
+                "
+            /></a>
+            <div class="p-actions">
+              <button class="p-action-btn" title="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Vitamins</div>
+            <h3><a href="product-details.html">Vitamin D3 Supplement</a></h3>
+            <div class="stars">★★★★★ <span>142 reviews</span></div>
+            <div class="price-row">
+              <span class="sale-price">₹499</span
+              ><span class="original-price">₹599</span
+              ><span class="save-badge">Save 17%</span>
+            </div>
+            <button class="btn-cart">
+              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+            </button>
+          </div>
+        </div>
 
-  for (let i = 0; i < totalSlides; i++) {
-    const d = document.createElement('div');
-    d.className = 'dot' + (i === 0 ? ' active' : '');
-    d.onclick = () => goToSlide(i);
-    dotsEl.appendChild(d);
-  }
+        <div class="product-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="product-img">
+            <span class="p-badge badge-top">Top Seller</span>
+            <a href="product-details.html"
+              ><img
+                src="products-1/omega 3, Vitamin E.jpg"
+                alt="Omega-3 Fish Oil"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80'
+                "
+            /></a>
+            <div class="p-actions">
+              <button class="p-action-btn" title="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Omega-3</div>
+            <h3>
+              <a href="product-details.html">Omega-3 Fish Oil + Vitamin E</a>
+            </h3>
+            <div class="stars">★★★★★ <span>198 reviews</span></div>
+            <div class="price-row">
+              <span class="sale-price">₹899</span
+              ><span class="original-price">₹1,099</span
+              ><span class="save-badge">Save 18%</span>
+            </div>
+            <button class="btn-cart">
+              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="view-all-wrap" data-aos="fade-up">
+        <a href="shop.html" class="btn-view-all"
+          >View All Products <i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </div>
+    </section>
 
-  function goToSlide(n) {
-    currentSlide = (n + totalSlides) % totalSlides;
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-  }
-  function moveSlider(dir) { goToSlide(currentSlide + dir); resetAuto(); }
-  function resetAuto() { clearInterval(autoSlide); autoSlide = setInterval(() => goToSlide(currentSlide + 1), 5500); }
-  resetAuto();
+    <!-- FEATURES SECTION -->
+    <section class="features-section">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-eyebrow">Why Aiva Wellness</p>
+        <h2>Ayurveda Simplified for Everyday Life</h2>
+        <p>Clean inputs. Simple choices. Maximum results.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="feature-icon"><i class="fa-solid fa-capsules"></i></div>
+          <h4>Premium Vitamins & Minerals</h4>
+          <p>
+            Bioavailable forms of essential nutrients your body actually uses
+            efficiently.
+          </p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="80">
+          <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h4>100% Natural Extracts</h4>
+          <p>
+            Ingredients sourced from nature, processed without compromising
+            their integrity.
+          </p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="160">
+          <div class="feature-icon">
+            <i class="fa-solid fa-vial-circle-check"></i>
+          </div>
+          <h4>No Fillers or Binders</h4>
+          <p>
+            Every capsule contains only what the label says — nothing more,
+            nothing less.
+          </p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="240">
+          <div class="feature-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
+          <h4>Daily Use Friendly</h4>
+          <p>
+            Gentle, non-habit-forming formulas designed for consistent long-term
+            use.
+          </p>
+        </div>
+      </div>
+      <div class="values-row">
+        <div class="value-item" data-aos="fade-up" data-aos-delay="0">
+          <h4>Simple <span>01</span></h4>
+          <p>
+            Wellness shouldn't demand complicated rituals. Our products
+            integrate effortlessly into your routine, making it easy to stay
+            consistent even on your busiest days.
+          </p>
+        </div>
+        <div class="value-item" data-aos="fade-up" data-aos-delay="100">
+          <h4>Pure <span>02</span></h4>
+          <p>
+            We stay true to nature's integrity. By sourcing high-quality
+            ingredients and using modern extraction practices, we preserve the
+            potency of traditional herbs without additives.
+          </p>
+        </div>
+        <div class="value-item" data-aos="fade-up" data-aos-delay="200">
+          <h4>Essential <span>03</span></h4>
+          <p>
+            We focus on the most effective botanicals in their most supportive
+            forms — precision formulas that honor the wisdom of Ayurveda and the
+            needs of the modern body.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  // Touch support
-  let sX = 0;
-  const heroEl = document.getElementById('heroSlider');
-  heroEl.addEventListener('touchstart', e => { sX = e.touches[0].clientX; }, { passive: true });
-  heroEl.addEventListener('touchend', e => {
-    const diff = e.changedTouches[0].clientX - sX;
-    if (Math.abs(diff) > 40) moveSlider(diff < 0 ? 1 : -1);
-  }, { passive: true });
+    <!-- COMBO / FEATURED PRODUCT -->
+    <section class="combo-section">
+      <div class="combo-img-wrap" data-aos="fade-right" data-aos-duration="700">
+        <img
+          src="products-1/ZMA + VITAMIN B6.jpg"
+          alt="ZMA + Vitamin B6"
+          onerror="
+            this.src =
+              'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80'
+          "
+        />
+        <span class="combo-img-badge">Featured</span>
+      </div>
+      <div
+        class="combo-info"
+        data-aos="fade-left"
+        data-aos-duration="700"
+        data-aos-delay="100"
+      >
+        <p class="about-eyebrow">Bestseller Combo</p>
+        <h2>ZMA + Vitamin B6 Formula</h2>
+        <p class="combo-sub">
+          Zinc, Magnesium & B6 — the trinity for deep sleep, testosterone, and
+          muscle recovery.
+        </p>
+        <div class="combo-stars">★★★★★ <span>62 reviews</span></div>
+        <div class="combo-price-row">
+          <span class="sale">₹1,499</span><span class="orig">₹1,699</span>
+        </div>
+        <p class="combo-mrp">(MRP inclusive of all Taxes)</p>
+        <p class="combo-includes-label">What's Included</p>
+        <div class="combo-items">
+          <div class="combo-item">
+            <img
+              src="products-1/ZMA + VITAMIN B6.jpg"
+              alt="ZMA"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?w=120&q=80'
+              "
+            /><span>ZMA</span>
+          </div>
+          <div class="combo-item">
+            <img
+              src="products-1/Magnesium Complex.jpg"
+              alt="Magnesium"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'
+              "
+            /><span>Magnesium</span>
+          </div>
+          <div class="combo-item">
+            <img
+              src="products-1/VITAMIN D3.jpg"
+              alt="Vitamin B6"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=120&q=80'
+              "
+            /><span>Vitamin B6</span>
+          </div>
+        </div>
+        <a href="product-details.html" class="btn-add"
+          ><i class="fa-solid fa-bag-shopping"></i> Add to Cart</a
+        >
+        <p class="combo-note">
+          100% Ayurvedic &amp; Herbal | No Fillers &amp; Binders | Made in India
+        </p>
+      </div>
+    </section>
 
-  // ── FAQ ──
-  function toggleFaq(el) {
-    const item = el.parentElement;
-    const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
-  }
+    <!-- DROPS VS CAPSULES -->
+    <section class="drops-section">
+      <div class="drops-inner">
+        <div class="sh" data-aos="fade-up">
+          <p class="se">The Aiva Advantage</p>
+          <h2>Why Liquid Drops Outperform Capsules & Tablets</h2>
+          <p>
+            Formulated to support your daily health routine with maximum
+            efficiency
+          </p>
+        </div>
+        <div class="drops-grid">
+          <div class="drops-left">
+            <div class="drop-feat" data-aos="fade-right" data-aos-delay="0">
+              <div class="drop-feat-icon"><i class="fa-solid fa-bolt"></i></div>
+              <div class="drop-feat-text">
+                <h4>Better Absorption</h4>
+                <p>
+                  Absorbed sublingually for faster, higher utilization of the
+                  active extract.
+                </p>
+              </div>
+            </div>
+            <div class="drop-feat" data-aos="fade-right" data-aos-delay="80">
+              <div class="drop-feat-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="drop-feat-text">
+                <h4>Gentle for Regular Use</h4>
+                <p>
+                  Herbal formulation suitable for everyday routines without
+                  building dependency.
+                </p>
+              </div>
+            </div>
+            <div class="drop-feat" data-aos="fade-right" data-aos-delay="160">
+              <div class="drop-feat-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <div class="drop-feat-text">
+                <h4>Digestive Comfort</h4>
+                <p>
+                  Bypasses heavy digestion — ideal for sensitive stomachs and
+                  those with gut issues.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="drops-middle" data-aos="zoom-in">
+            <img
+              src="products-1/Nattokinase Carton  final.jpg"
+              alt="Aiva Wellness Drops"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&q=80'
+              "
+            />
+          </div>
+          <div class="drops-right">
+            <div class="drop-feat" data-aos="fade-left" data-aos-delay="0">
+              <div class="drop-feat-icon">
+                <i class="fa-solid fa-microscope"></i>
+              </div>
+              <div class="drop-feat-text">
+                <h4>Higher Bioavailability</h4>
+                <p>
+                  More of what you take is effectively absorbed and used by your
+                  body.
+                </p>
+              </div>
+            </div>
+            <div class="drop-feat" data-aos="fade-left" data-aos-delay="80">
+              <div class="drop-feat-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="drop-feat-text">
+                <h4>Maximum Purity</h4>
+                <p>
+                  Selected herbs processed to achieve the highest level of
+                  purity available.
+                </p>
+              </div>
+            </div>
+            <div class="drop-feat" data-aos="fade-left" data-aos-delay="160">
+              <div class="drop-feat-icon">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="drop-feat-text">
+                <h4>No Filler and Binders</h4>
+                <p>
+                  Completely free from unnecessary additives, fillers, and
+                  artificial binders.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  // ── MOBILE MENU ──
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const ham = document.querySelector('.hamburger');
-    menu.classList.toggle('open');
-    ham.classList.toggle('active');
-    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
-  }
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+      <div class="test-inner">
+        <div class="section-header" data-aos="fade-up">
+          <p class="section-eyebrow">Customer Reviews</p>
+          <h2>Trusted by Wellness Seekers Across India</h2>
+        </div>
+        <div class="test-grid">
+          <div class="test-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="test-stars">★★★★★</div>
+            <blockquote>
+              "The Magnesium Complex has genuinely changed my sleep quality. I
+              wake up feeling rested — something I hadn't experienced in years.
+              Highly recommend!"
+            </blockquote>
+            <div class="test-author">
+              <div class="test-avatar">AS</div>
+              <div>
+                <cite>Aarav Sharma</cite>
+                <div class="test-location">Delhi, India</div>
+              </div>
+            </div>
+          </div>
+          <div class="test-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="test-stars">★★★★★</div>
+            <blockquote>
+              "Clean ingredients, transparent labeling, no heaviness like
+              typical capsules. The Nattokinase formula is now a permanent part
+              of my morning routine."
+            </blockquote>
+            <div class="test-author">
+              <div class="test-avatar">NV</div>
+              <div>
+                <cite>Neha Verma</cite>
+                <div class="test-location">Bangalore, India</div>
+              </div>
+            </div>
+          </div>
+          <div class="test-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="test-stars">★★★★★</div>
+            <blockquote>
+              "What stood out was the transparency. No hidden ingredients, no
+              bold claims — just honest, effective wellness products from a
+              brand I genuinely trust."
+            </blockquote>
+            <div class="test-author">
+              <div class="test-avatar">RM</div>
+              <div>
+                <cite>Rohan Mehta</cite>
+                <div class="test-location">Mumbai, India</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  // ── NEWSLETTER ──
-  function handleNewsletter(e) {
-    e.preventDefault();
-    e.target.innerHTML = '<p style="color:#fff;font-size:16px;padding:14px 0;font-family:Cormorant Garamond,serif;font-style:italic">✓ Thank you for joining the Aiva Wellness community!</p>';
-  }
-</script>
-</body>
+    <!-- FAQ -->
+    <section class="faq-section">
+      <div class="faq-inner">
+        <div class="section-header" data-aos="fade-up">
+          <p class="section-eyebrow">Got Questions?</p>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              What makes Aiva Wellness different from other supplements?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              <p>
+                Our formulas contain only essential, high-quality ingredients —
+                no fillers, no binders, no artificial additives. We source
+                potent raw materials and use modern extraction methods to
+                preserve their natural efficacy, combining Ayurvedic wisdom with
+                clinical validation.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Are Aiva Wellness products safe for daily use?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              <p>
+                Yes. Our products are formulated with gentle, high-quality
+                ingredients designed for daily routines. They are crafted to
+                support wellbeing without habit-forming substances. If you are
+                pregnant, nursing, or on medication, please consult a healthcare
+                professional before use.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              How quickly will I notice results? <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              <p>
+                Results vary per individual. Most users report noticing a
+                difference within 2–4 weeks of consistent daily use. Ayurvedic
+                formulations work best when used regularly over time, supporting
+                cumulative improvement in wellbeing.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Do you ship across India? <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              <p>
+                Yes, we ship pan-India. Orders above Rs. 999 qualify for free
+                shipping. Standard delivery takes 4–7 business days depending on
+                your location.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Can I take more than one Aiva Wellness product at once?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              <p>
+                Yes, our products are designed to complement each other. Many
+                customers use multiple formulas as part of their daily wellness
+                routine. Each product targets a distinct area of health, making
+                them safe to combine for comprehensive support.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              What is your return policy? <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-a">
+              <p>
+                We offer a hassle-free return policy. If you are not satisfied
+                with your purchase, contact us within 7 days of delivery. Our
+                team will assist you with returns or exchanges. Opened products
+                may be evaluated on a case-by-case basis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOGS -->
+    <section class="blogs-section">
+      <div class="blogs-inner">
+        <div class="section-header" data-aos="fade-up">
+          <p class="section-eyebrow">Health Insights</p>
+          <h2>From Our Wellness Blog</h2>
+          <p>
+            Expert-written articles to help you make informed choices about your
+            health.
+          </p>
+        </div>
+        <div class="blogs-grid">
+          <div class="blog-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="blog-img">
+              <img
+                src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=700&q=80"
+                alt="Magnesium Benefits"
+              />
+            </div>
+            <div class="blog-info">
+              <div class="blog-tag">Magnesium</div>
+              <h3>
+                <a href="#"
+                  >5 Signs You May Be Magnesium Deficient — And What to Do About
+                  It</a
+                >
+              </h3>
+              <a href="#" class="blog-read"
+                >Read more <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="blog-img">
+              <img
+                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80"
+                alt="Heart Health"
+              />
+            </div>
+            <div class="blog-info">
+              <div class="blog-tag">Heart Health</div>
+              <h3>
+                <a href="#"
+                  >Nattokinase: The Natural Enzyme Supporting Cardiovascular
+                  Wellness</a
+                >
+              </h3>
+              <a href="#" class="blog-read"
+                >Read more <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="blog-img">
+              <img
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&q=80"
+                alt="Vitamins for Women"
+              />
+            </div>
+            <div class="blog-info">
+              <div class="blog-tag">Women's Health</div>
+              <h3>
+                <a href="#"
+                  >Why Women Need Different Vitamins: A Guide to Gender-Specific
+                  Nutrition</a
+                >
+              </h3>
+              <a href="#" class="blog-read"
+                >Read more <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section class="insta-section">
+      <div class="insta-header" data-aos="fade-up">
+        <a
+          href="https://www.instagram.com/aivawellness/"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fa-brands fa-instagram"></i>
+          Follow @aivawellness on Instagram
+        </a>
+      </div>
+      <div style="overflow: hidden">
+        <div class="insta-track" id="instaTrack">
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+          <img
+            class="insta-img"
+            src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop&q=80"
+            alt="Aiva Wellness"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+      <div class="newsletter-inner" data-aos="fade-up">
+        <div class="newsletter-icon">
+          <i class="fa-solid fa-paper-plane"></i>
+        </div>
+        <h2>Be Part of the Aiva Wellness Journey</h2>
+        <p>
+          Subscribe for wellness tips, clean-living insights, exclusive offers,
+          and early access to new products.
+        </p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" placeholder="Enter your email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="assets/logo.png"
+                alt="Aiva Wellness"
+                width="36"
+                height="36"
+                style="border-radius: 8px"
+                onerror="this.style.display = 'none'"
+              />
+              Aiva<span>Wellness</span>
+            </div>
+            <div class="footer-desc">
+              Premium Healthcare & Wellness Solutions from Solan, Himachal
+              Pradesh. Science-backed Ayurvedic formulations crafted for the
+              health of every Indian family.
+            </div>
+            <div class="footer-social">
+              <a
+                class="social-btn"
+                href="https://www.instagram.com/aivawellness/"
+                target="_blank"
+                aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a class="social-btn" href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                class="social-btn"
+                href="https://wa.me/919175772002"
+                target="_blank"
+                aria-label="WhatsApp"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+              <a class="social-btn" href="#" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h6>Quick Links</h6>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h6>Categories</h6>
+            <ul>
+              <li><a href="shop.html">Magnesium</a></li>
+              <li><a href="shop.html">Nattokinase</a></li>
+              <li><a href="shop.html">Vitamins & Minerals</a></li>
+              <li><a href="shop.html">Omega-3</a></li>
+              <li><a href="shop.html">ZMA</a></li>
+              <li><a href="shop.html">Immunity</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h6>Contact Us</h6>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i
+              ><a href="tel:+917807751710">+91 78077 51710</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i
+              ><a href="mailto:aivawellness@gmail.com"
+                >aivawellness@gmail.com</a
+              >
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i
+              ><span>Solan, Himachal Pradesh, India</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Aiva Wellness. All rights reserved.</span>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Shipping Policy</a>
+            <a href="#">Return Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/919175772002?text=Hello"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      // ── AOS INIT ──
+      AOS.init({ once: true, offset: 80, easing: "ease-out-quad" });
+
+      // ── PRELOADER ──
+      window.addEventListener("load", () => {
+        setTimeout(
+          () => document.getElementById("preloader").classList.add("hide"),
+          700,
+        );
+      });
+
+      // ── HEADER SCROLL ──
+      window.addEventListener("scroll", () => {
+        document
+          .getElementById("siteHeader")
+          .classList.toggle("scrolled", window.scrollY > 20);
+      });
+
+      // ── HERO SLIDER ──
+      let currentSlide = 0;
+      const totalSlides = 4;
+      const track = document.getElementById("sliderTrack");
+      const dotsEl = document.getElementById("sliderDots");
+      let autoSlide;
+
+      for (let i = 0; i < totalSlides; i++) {
+        const d = document.createElement("button");
+        d.className = "dot" + (i === 0 ? " active" : "");
+        d.setAttribute("aria-label", "Go to slide " + (i + 1));
+        d.onclick = () => {
+          goToSlide(i);
+          resetAuto();
+        };
+        dotsEl.appendChild(d);
+      }
+
+      function goToSlide(n) {
+        currentSlide = (n + totalSlides) % totalSlides;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        document
+          .querySelectorAll(".dot")
+          .forEach((d, i) => d.classList.toggle("active", i === currentSlide));
+      }
+      function moveSlider(dir) {
+        goToSlide(currentSlide + dir);
+        resetAuto();
+      }
+      function resetAuto() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(() => goToSlide(currentSlide + 1), 5500);
+      }
+      resetAuto();
+
+      // Touch / swipe support
+      let sX = 0,
+        sY = 0,
+        isDragging = false;
+      const heroEl = document.getElementById("heroSlider");
+
+      heroEl.addEventListener(
+        "touchstart",
+        (e) => {
+          sX = e.touches[0].clientX;
+          sY = e.touches[0].clientY;
+          isDragging = false;
+        },
+        { passive: true },
+      );
+
+      heroEl.addEventListener(
+        "touchmove",
+        (e) => {
+          const dx = Math.abs(e.touches[0].clientX - sX);
+          const dy = Math.abs(e.touches[0].clientY - sY);
+          if (dx > dy && dx > 8) isDragging = true;
+        },
+        { passive: true },
+      );
+
+      heroEl.addEventListener("touchend", (e) => {
+        const diff = e.changedTouches[0].clientX - sX;
+        if (isDragging && Math.abs(diff) > 40) {
+          moveSlider(diff < 0 ? 1 : -1);
+          // Prevent click on slide-link after a swipe
+          e.preventDefault();
+        }
+        isDragging = false;
+      });
+
+      // ── FAQ ──
+      function toggleFaq(el) {
+        const item = el.parentElement;
+        const wasOpen = item.classList.contains("open");
+        document
+          .querySelectorAll(".faq-item")
+          .forEach((i) => i.classList.remove("open"));
+        if (!wasOpen) item.classList.add("open");
+      }
+
+      // ── MOBILE MENU ──
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        const ham = document.querySelector(".hamburger");
+        menu.classList.toggle("open");
+        ham.classList.toggle("active");
+        document.body.style.overflow = menu.classList.contains("open")
+          ? "hidden"
+          : "";
+      }
+
+      // ── NEWSLETTER ──
+      function handleNewsletter(e) {
+        e.preventDefault();
+        e.target.innerHTML =
+          '<p style="color:#fff;font-size:16px;padding:14px 0;font-family:Cormorant Garamond,serif;font-style:italic">✓ Thank you for joining the Aiva Wellness community!</p>';
+      }
+    </script>
+  </body>
 </html>
