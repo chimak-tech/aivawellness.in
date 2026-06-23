@@ -69,6 +69,8 @@
         scroll-behavior: smooth;
         overflow-x: hidden;
         width: 100%;
+        /* Increase root font size so rem-based sizing looks good at 100% zoom */
+        font-size: 16px;
       }
       body {
         font-family: "Inter", sans-serif;
@@ -906,7 +908,9 @@
       .btn-cart:hover {
         background: linear-gradient(135deg, var(--blue) 0%, #0052cc 100%);
         transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(0, 100, 255, 0.1);
+        box-shadow:
+          0 6px 16px rgba(0, 0, 0, 0.2),
+          0 0 0 3px rgba(0, 100, 255, 0.1);
       }
       .btn-cart:active {
         transform: translateY(0);
@@ -1443,78 +1447,334 @@
         }
       }
 
-      /* -- TESTIMONIALS -- */
+      /* ═══════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════ */
       .testimonials-section {
-        padding: 64px 20px;
-        width: 100%;
-        background: var(--white);
+        padding: 80px 20px;
+        background: #f8fafc;
       }
-      .test-inner {
-        max-width: 1100px;
+      .testimonials-inner {
+        max-width: 1280px;
         margin: 0 auto;
       }
-      .test-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+      .testimonials-header {
+        text-align: center;
+        margin-bottom: 48px;
       }
-      .test-card {
-        background: var(--light);
-        padding: 26px;
-        border-left: 3px solid var(--blue);
-        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-        transition:
-          transform 0.3s,
-          box-shadow 0.3s;
+      /* Make testimonial header fonts match main section headers */
+      .testimonials-header .section-eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--blue-light);
+        font-weight: 600;
+        margin-bottom: 10px;
       }
-      .test-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
-      }
-      .test-stars {
-        color: var(--gold);
-        font-size: 14px;
-        margin-bottom: 12px;
-      }
-      .test-card blockquote {
+      .testimonials-header .section-title {
         font-family: "Cormorant Garamond", serif;
-        font-size: 17px;
+        font-size: clamp(28px, 4vw, 52px);
+        font-weight: 600;
+        color: var(--black);
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      .testimonials-header .section-sub {
+        color: var(--muted);
+        font-size: 14px;
+        max-width: 540px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* ═══ PREMIUM TESTIMONIALS ═══ */
+      .ts-rating-summary {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        background: #fff;
+        border: 1.5px solid var(--border);
+        border-radius: 20px;
+        padding: 22px 28px;
+        margin-bottom: 28px;
+        flex-wrap: wrap;
+      }
+      .ts-big-score {
+        font-family: "Sora", sans-serif;
+        font-size: 42px;
+        font-weight: 900;
+        color: var(--black);
+        line-height: 1;
+      }
+      .ts-stars-big {
+        color: #f59e0b;
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin: 4px 0 2px;
+      }
+      .ts-stars-big i,
+      .ts-card-stars i {
+        color: #f59e0b;
+        margin-right: 6px;
+        font-size: 16px;
+      }
+      .ts-score-sub {
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .ts-v-divider {
+        width: 1px;
+        height: 52px;
+        background: var(--border);
+      }
+      .ts-dist {
+        flex: 1;
+        min-width: 160px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .ts-dist-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .ts-dist-bar {
+        flex: 1;
+        height: 5px;
+        background: var(--light);
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .ts-dist-fill {
+        height: 100%;
+        border-radius: 99px;
+        background: #f59e0b;
+        width: 0%;
+        transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .ts-fill-muted {
+        background: #94a3b8 !important;
+      }
+      .ts-total-num {
+        font-family: "Sora", sans-serif;
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--black);
+      }
+      .ts-total-label {
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .ts-filter-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+      }
+      .ts-filter-btn {
+        padding: 7px 18px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        border: 1.5px solid var(--border);
+        background: #fff;
+        color: var(--muted);
+        transition: all 0.2s;
+      }
+      .ts-filter-btn.active,
+      .ts-filter-btn:hover {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue);
+      }
+      .ts-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 32px;
+      }
+      .ts-card-new {
+        background: #fff;
+        border: 1px solid rgba(15, 23, 42, 0.04);
+        border-radius: 18px;
+        padding: 24px 26px;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.35s,
+          border-color 0.3s;
+        box-shadow: 0 8px 30px rgba(13, 17, 23, 0.06);
+      }
+      .ts-card-new::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        border-radius: 8px 8px 0 0;
+        background: var(--card-bar, #f59e0b);
+        opacity: 1;
+        transition:
+          transform 0.35s,
+          opacity 0.25s;
+        transform-origin: left center;
+      }
+      .ts-card-new:hover {
+        transform: translateY(-8px);
+        border-color: rgba(29, 78, 216, 0.12);
+        box-shadow: 0 20px 50px rgba(13, 17, 23, 0.12);
+      }
+      .ts-quote-bg {
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        font-family: Georgia, serif;
+        font-size: 64px;
+        line-height: 1;
+        color: var(--border);
+        pointer-events: none;
+      }
+      .ts-card-stars {
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+      .ts-card-text {
+        font-size: 14px;
+        color: rgba(15, 23, 42, 0.8);
+        line-height: 1.8;
+        margin-bottom: 16px;
         font-style: italic;
-        color: var(--text);
-        line-height: 1.65;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .ts-card-sep {
+        height: 1px;
+        background: var(--border);
         margin-bottom: 14px;
       }
-      .test-author {
+      .ts-card-user {
         display: flex;
         align-items: center;
         gap: 10px;
       }
-      .test-avatar {
-        width: 34px;
-        height: 34px;
+      .ts-card-avatar {
+        width: 48px;
+        height: 48px;
         border-radius: 50%;
-        background: var(--blue-pale);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: 700;
-        color: var(--blue);
-        font-size: 13px;
+        font-size: 14px;
+        font-weight: 800;
+        color: #fff;
         flex-shrink: 0;
+        box-shadow: 0 6px 18px rgba(13, 17, 23, 0.12);
+        border: 2px solid rgba(255, 255, 255, 0.06);
       }
-      .test-card cite {
-        font-size: 13px;
+      .ts-card-name {
+        font-weight: 800;
+        font-size: 14px;
+        color: var(--black);
+      }
+      .ts-card-loc {
+        font-size: 11px;
         color: var(--muted);
-        font-style: normal;
-        font-weight: 600;
       }
-      .test-card .test-location {
+      .ts-card-product-tag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 999px;
+        margin-top: 6px;
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.08),
+          rgba(96, 165, 250, 0.04)
+        );
+        color: var(--blue);
+        border: 1px solid rgba(59, 130, 246, 0.12);
+      }
+      .ts-card-verified {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        font-size: 10px;
+        color: var(--green);
+        font-weight: 700;
+      }
+      .ts-nav-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+      .ts-nav-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1.5px solid var(--border);
+        background: #fff;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+      }
+      .ts-nav-btn:hover {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue);
+      }
+      .ts-dots-wrap {
+        display: flex;
+        gap: 6px;
+      }
+      .ts-dot-new {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--border);
+        cursor: pointer;
+        border: none;
+        padding: 0;
+        transition: all 0.3s;
+      }
+      .ts-dot-new.active {
+        background: var(--blue);
+        width: 22px;
+        border-radius: 4px;
+      }
+      .ts-page-info {
         font-size: 12px;
-        color: var(--text-light);
+        color: var(--muted);
+        font-weight: 600;
+        min-width: 44px;
+        text-align: center;
       }
-      @media (max-width: 900px) {
-        .test-grid {
+      @media (max-width: 768px) {
+        .ts-cards-grid {
           grid-template-columns: 1fr;
+        }
+        .ts-rating-summary {
+          padding: 16px 18px;
+        }
+        .ts-v-divider {
+          display: none;
         }
       }
 
@@ -1558,7 +1818,9 @@
         font-weight: 600;
         color: var(--text);
         gap: 14px;
-        transition: color 0.25s ease, background 0.25s ease;
+        transition:
+          color 0.25s ease,
+          background 0.25s ease;
         user-select: none;
       }
       .faq-q:hover {
@@ -1575,7 +1837,10 @@
         justify-content: center;
         background: rgba(59, 130, 246, 0.1);
         color: var(--blue);
-        transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
+        transition:
+          background 0.25s ease,
+          transform 0.25s ease,
+          color 0.25s ease;
       }
       .faq-icon i {
         font-size: 14px;
@@ -1596,7 +1861,9 @@
         max-height: 0;
         overflow: hidden;
         padding: 0 22px;
-        transition: max-height 0.45s ease, padding 0.35s ease;
+        transition:
+          max-height 0.45s ease,
+          padding 0.35s ease;
       }
       .faq-item.open .faq-a {
         max-height: 260px;
@@ -1680,6 +1947,7 @@
         padding: 20px;
       }
       .blog-tag {
+        font-family: "Sora", "Inter", sans-serif;
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.08em;
@@ -1688,11 +1956,12 @@
         margin-bottom: 7px;
       }
       .blog-info h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 19px;
-        font-weight: 600;
-        margin-bottom: 12px;
+        font-family: "Sora", "Inter", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 10px;
         line-height: 1.35;
+        color: var(--black);
       }
       .blog-info h3 a {
         color: var(--text);
@@ -2205,11 +2474,7 @@
     </div>
 
     <!-- HERO SLIDER -->
-    <section
-      class="hero-slider"
-      id="heroSlider"
-      data-aos="fade-up"
-    >
+    <section class="hero-slider" id="heroSlider" data-aos="fade-up">
       <div class="slider-track" id="sliderTrack">
         <div class="slide">
           <a class="slide-link" href="product-details.html"
@@ -2319,10 +2584,7 @@
           ></a>
         </div>
       </div>
-      <div
-        class="about-images"
-        data-aos="fade-left"
-      >
+      <div class="about-images" data-aos="fade-left">
         <div class="about-img-main">
           <img
             src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80"
@@ -2345,11 +2607,7 @@
     </section>
 
     <!-- PRODUCTS SECTION -->
-    <section
-      class="products-section"
-      id="products"
-      data-aos="fade-up"
-    >
+    <section class="products-section" id="products" data-aos="fade-up">
       <div class="section-header" data-aos="fade-up">
         <p class="section-eyebrow">Our Products</p>
         <h2>Premium Supplements for Every Need</h2>
@@ -2359,10 +2617,7 @@
         </p>
       </div>
       <div class="products-grid">
-        <div
-          class="product-card"
-          data-aos="fade-right"
-        >
+        <div class="product-card" data-aos="fade-right">
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
@@ -2401,10 +2656,7 @@
             </button>
           </div>
         </div>
-        <div
-          class="product-card"
-          data-aos="fade-up"
-        >
+        <div class="product-card" data-aos="fade-up">
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
@@ -2445,10 +2697,7 @@
             </button>
           </div>
         </div>
-        <div
-          class="product-card"
-          data-aos="fade-left"
-        >
+        <div class="product-card" data-aos="fade-left">
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
@@ -2487,10 +2736,7 @@
             </button>
           </div>
         </div>
-        <div
-          class="product-card"
-          data-aos="zoom-in"
-        >
+        <div class="product-card" data-aos="zoom-in">
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span>
             <a href="product-details.html"
@@ -2529,10 +2775,7 @@
             </button>
           </div>
         </div>
-        <div
-          class="product-card"
-          data-aos="fade-right"
-        >
+        <div class="product-card" data-aos="fade-right">
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span>
             <a href="product-details.html"
@@ -2575,10 +2818,7 @@
             </button>
           </div>
         </div>
-        <div
-          class="product-card"
-          data-aos="fade-up"
-        >
+        <div class="product-card" data-aos="fade-up">
           <div class="product-img">
             <span class="p-badge badge-sale">Sale</span>
             <a href="product-details.html"
@@ -2621,10 +2861,7 @@
             </button>
           </div>
         </div>
-        <div
-          class="product-card"
-          data-aos="fade-left"
-        >
+        <div class="product-card" data-aos="fade-left">
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
@@ -2713,20 +2950,14 @@
     </section>
 
     <!-- FEATURES SECTION -->
-    <section
-      class="features-section"
-      data-aos="fade-up"
-    >
+    <section class="features-section" data-aos="fade-up">
       <div class="section-header" data-aos="fade-up">
         <p class="section-eyebrow">Why Aiva Wellness</p>
         <h2>Ayurveda Simplified for Everyday Life</h2>
         <p>Clean inputs. Simple choices. Maximum results.</p>
       </div>
       <div class="features-grid">
-        <div
-          class="feature-item"
-          data-aos="fade-right"
-        >
+        <div class="feature-item" data-aos="fade-right">
           <div class="feature-icon"><i class="fa-solid fa-capsules"></i></div>
           <h4>Premium Vitamins &amp; Minerals</h4>
           <p>
@@ -2734,10 +2965,7 @@
             efficiently.
           </p>
         </div>
-        <div
-          class="feature-item"
-          data-aos="fade-up"
-        >
+        <div class="feature-item" data-aos="fade-up">
           <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
           <h4>100% Natural Extracts</h4>
           <p>
@@ -2745,10 +2973,7 @@
             their integrity.
           </p>
         </div>
-        <div
-          class="feature-item"
-          data-aos="fade-left"
-        >
+        <div class="feature-item" data-aos="fade-left">
           <div class="feature-icon">
             <i class="fa-solid fa-vial-circle-check"></i>
           </div>
@@ -2758,10 +2983,7 @@
             nothing less.
           </p>
         </div>
-        <div
-          class="feature-item"
-          data-aos="zoom-in"
-        >
+        <div class="feature-item" data-aos="zoom-in">
           <div class="feature-icon">
             <i class="fa-solid fa-calendar-check"></i>
           </div>
@@ -2773,10 +2995,7 @@
         </div>
       </div>
       <div class="values-row">
-        <div
-          class="value-item"
-          data-aos="fade-right"
-        >
+        <div class="value-item" data-aos="fade-right">
           <h4>Simple <span>01</span></h4>
           <p>
             Wellness shouldn't demand complicated rituals. Our products
@@ -2784,10 +3003,7 @@
             consistent even on your busiest days.
           </p>
         </div>
-        <div
-          class="value-item"
-          data-aos="fade-up"
-        >
+        <div class="value-item" data-aos="fade-up">
           <h4>Pure <span>02</span></h4>
           <p>
             We stay true to nature's integrity. By sourcing high-quality
@@ -2795,10 +3011,7 @@
             potency of traditional herbs without additives.
           </p>
         </div>
-        <div
-          class="value-item"
-          data-aos="fade-left"
-        >
+        <div class="value-item" data-aos="fade-left">
           <h4>Essential <span>03</span></h4>
           <p>
             We focus on the most effective botanicals in their most supportive
@@ -2822,10 +3035,7 @@
         />
         <span class="combo-img-badge">Featured</span>
       </div>
-      <div
-        class="combo-info"
-        data-aos="fade-left"
-      >
+      <div class="combo-info" data-aos="fade-left">
         <p class="about-eyebrow">Bestseller Combo</p>
         <h2><strong>ZMA + Vitamin B6 Formula</strong></h2>
         <p class="combo-sub">
@@ -2853,21 +3063,30 @@
             <img
               src="products-1/ZMA + VITAMIN B6.jpg"
               alt="ZMA"
-              onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'
+              "
             /><span>ZMA</span>
           </div>
           <div class="combo-item">
             <img
               src="products-1/Magnesium Complex.jpg"
               alt="Magnesium"
-              onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'
+              "
             /><span>Magnesium</span>
           </div>
           <div class="combo-item">
             <img
               src="products-1/VITAMIN D3.jpg"
               alt="Vitamin D3"
-              onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=120&q=80'
+              "
             /><span>Vitamin D3</span>
           </div>
         </div>
@@ -2978,62 +3197,107 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section
-      class="testimonials-section"
-      data-aos="fade-up"
-    >
-      <div class="test-inner">
-        <div class="section-header" data-aos="fade-up">
-          <p class="section-eyebrow">Customer Reviews</p>
-          <h2>Trusted by Wellness Seekers Across India</h2>
+    <section class="testimonials-section">
+      <div class="testimonials-inner">
+        <div class="testimonials-header reveal">
+          <div class="section-eyebrow">
+            <i class="fa-solid fa-quote-left"></i> Real Customer Stories
+          </div>
+          <h2 class="section-title">
+            Trusted by <span>10,000+ Customers</span>
+          </h2>
+          <p class="section-sub">
+            Don't just take our word for it — hear from people whose lives have
+            changed with Aiva Wellness.
+          </p>
         </div>
-        <div class="test-grid">
-          <div class="test-card" data-aos="fade-up">
-            <div class="test-stars">★★★★★</div>
-            <blockquote>
-              "The Magnesium Complex has genuinely changed my sleep quality. I
-              wake up feeling rested ? something I hadn't experienced in years.
-              Highly recommend!"
-            </blockquote>
-            <div class="test-author">
-              <div class="test-avatar">AS</div>
-              <div>
-                <cite>Aarav Sharma</cite>
-                <div class="test-location">Delhi, India</div>
+
+        <!-- Rating Summary Bar -->
+        <div class="ts-rating-summary reveal">
+          <div class="ts-big-score-wrap">
+            <div class="ts-big-score">4.8</div>
+            <div class="ts-stars-big"></div>
+            <div class="ts-score-sub">Overall Rating</div>
+          </div>
+          <div class="ts-v-divider"></div>
+          <div class="ts-dist">
+            <div class="ts-dist-row">
+              <span>5★</span>
+              <div class="ts-dist-bar">
+                <div class="ts-dist-fill" data-w="82"></div>
               </div>
+              <span>82%</span>
+            </div>
+            <div class="ts-dist-row">
+              <span>4★</span>
+              <div class="ts-dist-bar">
+                <div class="ts-dist-fill" data-w="12"></div>
+              </div>
+              <span>12%</span>
+            </div>
+            <div class="ts-dist-row">
+              <span>3★</span>
+              <div class="ts-dist-bar">
+                <div class="ts-dist-fill ts-fill-muted" data-w="4"></div>
+              </div>
+              <span>4%</span>
+            </div>
+            <div class="ts-dist-row">
+              <span>2★</span>
+              <div class="ts-dist-bar">
+                <div class="ts-dist-fill ts-fill-muted" data-w="2"></div>
+              </div>
+              <span>2%</span>
             </div>
           </div>
-          <div class="test-card" data-aos="fade-up">
-            <div class="test-stars">★★★★★</div>
-            <blockquote>
-              "Clean ingredients, transparent labeling, no heaviness like
-              typical capsules. The Nattokinase formula is now a permanent part
-              of my morning routine."
-            </blockquote>
-            <div class="test-author">
-              <div class="test-avatar">NV</div>
-              <div>
-                <cite>Neha Verma</cite>
-                <div class="test-location">Bangalore, India</div>
-              </div>
-            </div>
+          <div class="ts-v-divider"></div>
+          <div class="ts-total-wrap">
+            <div class="ts-total-num">928</div>
+            <div class="ts-total-label">Verified Reviews</div>
           </div>
-          <div class="test-card" data-aos="fade-up">
-            <div class="test-stars">★★★★★</div>
-            <blockquote>
-              "What stood out was the transparency. No hidden ingredients, no
-              bold claims ? just honest, effective wellness products from a
-              brand I genuinely trust."
-            </blockquote>
-            <div class="test-author">
-              <div class="test-avatar">RM</div>
-              <div>
-                <cite>Rohan Mehta</cite>
-                <div class="test-location">Mumbai, India</div>
-              </div>
-            </div>
-          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="ts-filter-row reveal">
+          <button
+            class="ts-filter-btn active"
+            onclick="setTFilter('all', this)"
+          >
+            All
+          </button>
+          <button class="ts-filter-btn" onclick="setTFilter('Magnesium', this)">
+            Magnesium
+          </button>
+          <button
+            class="ts-filter-btn"
+            onclick="setTFilter('Nattokinase', this)"
+          >
+            Nattokinase
+          </button>
+          <button class="ts-filter-btn" onclick="setTFilter('Protein', this)">
+            Protein
+          </button>
+          <button class="ts-filter-btn" onclick="setTFilter('Vitamins', this)">
+            Vitamins
+          </button>
+          <button class="ts-filter-btn" onclick="setTFilter('Immunity', this)">
+            Immunity
+          </button>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="ts-cards-grid" id="tsGrid"></div>
+
+        <!-- Navigation -->
+        <div class="ts-nav-row">
+          <button class="ts-nav-btn" onclick="tNav(-1)">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="ts-dots-wrap" id="tsDots"></div>
+          <span class="ts-page-info" id="tsPageInfo">1 / 2</span>
+          <button class="ts-nav-btn" onclick="tNav(1)">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -3049,7 +3313,9 @@
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               What makes Aiva Wellness different from other supplements?
-              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+              <span class="faq-icon"
+                ><i class="fa-solid fa-chevron-down"></i
+              ></span>
             </div>
             <div class="faq-a">
               <p>
@@ -3064,7 +3330,9 @@
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               Are Aiva Wellness products safe for daily use?
-              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+              <span class="faq-icon"
+                ><i class="fa-solid fa-chevron-down"></i
+              ></span>
             </div>
             <div class="faq-a">
               <p>
@@ -3079,7 +3347,9 @@
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               How quickly will I notice results?
-              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+              <span class="faq-icon"
+                ><i class="fa-solid fa-chevron-down"></i
+              ></span>
             </div>
             <div class="faq-a">
               <p>
@@ -3093,7 +3363,9 @@
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               Do you ship across India?
-              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+              <span class="faq-icon"
+                ><i class="fa-solid fa-chevron-down"></i
+              ></span>
             </div>
             <div class="faq-a">
               <p>
@@ -3106,7 +3378,9 @@
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               Can I take more than one Aiva Wellness product at once?
-              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+              <span class="faq-icon"
+                ><i class="fa-solid fa-chevron-down"></i
+              ></span>
             </div>
             <div class="faq-a">
               <p>
@@ -3120,7 +3394,9 @@
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               What is your return policy?
-              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+              <span class="faq-icon"
+                ><i class="fa-solid fa-chevron-down"></i
+              ></span>
             </div>
             <div class="faq-a">
               <p>
@@ -3147,10 +3423,7 @@
           </p>
         </div>
         <div class="blogs-grid">
-          <div
-            class="blog-card"
-            data-aos="fade-right"
-          >
+          <div class="blog-card" data-aos="fade-right">
             <div class="blog-img">
               <img
                 src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=700&q=80"
@@ -3170,10 +3443,7 @@
               ></a>
             </div>
           </div>
-          <div
-            class="blog-card"
-            data-aos="fade-up"
-          >
+          <div class="blog-card" data-aos="fade-up">
             <div class="blog-img">
               <img
                 src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80"
@@ -3193,10 +3463,7 @@
               ></a>
             </div>
           </div>
-          <div
-            class="blog-card"
-            data-aos="fade-left"
-          >
+          <div class="blog-card" data-aos="fade-left">
             <div class="blog-img">
               <img
                 src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&q=80"
@@ -3308,10 +3575,7 @@
     </section>
 
     <!-- NEWSLETTER -->
-    <section
-      class="newsletter-section"
-      data-aos="fade-up"
-    >
+    <section class="newsletter-section" data-aos="fade-up">
       <div class="newsletter-inner" data-aos="fade-up">
         <div class="newsletter-icon">
           <i class="fa-solid fa-paper-plane"></i>
@@ -3525,27 +3789,27 @@
       }
 
       // COMBO ITEMS CLICK HANDLER
-      document.addEventListener('DOMContentLoaded', function() {
-        const comboItems = document.querySelectorAll('.combo-item');
-        const comboImgWrap = document.querySelector('.combo-img-wrap img');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const comboItems = document.querySelectorAll(".combo-item");
+        const comboImgWrap = document.querySelector(".combo-img-wrap img");
+
         comboItems.forEach((item, index) => {
           // Set first item as active on page load
           if (index === 0) {
-            item.classList.add('active');
+            item.classList.add("active");
           }
-          
-          item.addEventListener('click', function() {
+
+          item.addEventListener("click", function () {
             // Remove active class from all items
-            comboItems.forEach(i => i.classList.remove('active'));
-            
+            comboItems.forEach((i) => i.classList.remove("active"));
+
             // Add active class to clicked item
-            this.classList.add('active');
-            
+            this.classList.add("active");
+
             // Get the image source from clicked item
-            const imgSrc = this.querySelector('img').src;
-            const imgAlt = this.querySelector('img').alt;
-            
+            const imgSrc = this.querySelector("img").src;
+            const imgAlt = this.querySelector("img").alt;
+
             // Update featured image
             if (comboImgWrap) {
               comboImgWrap.src = imgSrc;
@@ -3572,9 +3836,226 @@
         e.target.innerHTML =
           '<p style="color:#fff;font-size:16px;padding:14px 0;font-family:Cormorant Garamond,serif;font-style:italic">? Thank you for joining the Aiva Wellness community!</p>';
       }
+
+      /* ═══════════════════════════════════════
+   PREMIUM TESTIMONIALS DATA + LOGIC
+════════════════════════════════════════ */
+      const T_REVIEWS = [
+        {
+          name: "Rajesh Kumar",
+          loc: "Delhi",
+          initials: "RK",
+          avatar: "linear-gradient(135deg,#1d4ed8,#3b82f6)",
+          accent: "#1d4ed8",
+          stars: 5,
+          category: "Magnesium",
+          product: "Magnesium Complex 5-in-1",
+          text: '"The Magnesium Complex has genuinely improved my sleep quality. I used to wake up 3–4 times a night, now I sleep through. Highly recommend it!"',
+        },
+        {
+          name: "Sunita Patel",
+          loc: "Mumbai",
+          initials: "SP",
+          avatar: "linear-gradient(135deg,#16a34a,#0d9488)",
+          accent: "#16a34a",
+          stars: 5,
+          category: "Nattokinase",
+          product: "Nattokinase 200 mg",
+          text: "\"I've tried many brands but Aiva's Nattokinase stands out. My doctor noticed improvement in my blood viscosity report within 3 months. Amazing!\"",
+        },
+        {
+          name: "Arjun Verma",
+          loc: "Chandigarh",
+          initials: "AV",
+          avatar: "linear-gradient(135deg,#7c3aed,#1d4ed8)",
+          accent: "#7c3aed",
+          stars: 5,
+          category: "Protein",
+          product: "Whey Isolate Advanced",
+          text: '"The Whey Isolate is superb. Clean ingredients, great taste, and I\'m seeing visible muscle gains. My gym trainer also noticed. Worth every rupee!"',
+        },
+        {
+          name: "Priya Sharma",
+          loc: "Pune",
+          initials: "PS",
+          avatar: "linear-gradient(135deg,#db2777,#7c3aed)",
+          accent: "#db2777",
+          stars: 4,
+          category: "Vitamins",
+          product: "Women's Vitamins & Minerals",
+          text: '"Ordered the Women\'s Vitamins pack and delivery was super fast. The product is excellent — energy levels are noticeably better daily!"',
+        },
+        {
+          name: "Manoj Rathi",
+          loc: "Bengaluru",
+          initials: "MR",
+          avatar: "linear-gradient(135deg,#0ea5e9,#1d4ed8)",
+          accent: "#0ea5e9",
+          stars: 5,
+          category: "Immunity",
+          product: "Omega-3 Fish Oil",
+          text: '"Best Omega-3 in India at this price. No fish burps, easy to swallow, and my joint pain reduced significantly after just 6 weeks!"',
+        },
+        {
+          name: "Neha Kapoor",
+          loc: "Jaipur",
+          initials: "NK",
+          avatar: "linear-gradient(135deg,#d97706,#dc2626)",
+          accent: "#d97706",
+          stars: 5,
+          category: "Vitamins",
+          product: "Vitamin D3 Supplement",
+          text: '"The Vitamin D3 is exactly what my doctor recommended. Pricing reasonable, quality top notch. Definitely ordering again!"',
+        },
+        {
+          name: "Vikram Singh",
+          loc: "Hyderabad",
+          initials: "VS",
+          avatar: "linear-gradient(135deg,#1d4ed8,#7c3aed)",
+          accent: "#1d4ed8",
+          stars: 5,
+          category: "Magnesium",
+          product: "Magnesium + Zinc Stack",
+          text: "\"Sleep quality improved dramatically, and I'm recovering faster between workouts. Best supplement investment I've made!\"",
+        },
+        {
+          name: "Anjali Mehta",
+          loc: "Ahmedabad",
+          initials: "AM",
+          avatar: "linear-gradient(135deg,#f59e0b,#d97706)",
+          accent: "#f59e0b",
+          stars: 5,
+          category: "Immunity",
+          product: "Immunity Booster Pack",
+          text: "\"Haven't fallen sick once since starting Aiva's immunity pack. My whole family swears by it now!\"",
+        },
+      ];
+
+      let tCurFilter = "all";
+      let tCurPage = 0;
+      const ITEMS_PER_PAGE = 2;
+
+      function tStars(n) {
+        let out = "";
+        for (let i = 1; i <= 5; i++) {
+          if (i <= n) out += `<i class="fa-solid fa-star"></i>`;
+          else out += `<i class="fa-regular fa-star"></i>`;
+        }
+        return out;
+      }
+
+      function renderAvgStars() {
+        const avg =
+          T_REVIEWS.reduce((s, r) => s + (r.stars || 0), 0) / T_REVIEWS.length;
+        const full = Math.floor(avg);
+        const frac = avg - full;
+        let out = "";
+        for (let i = 1; i <= full; i++)
+          out += `<i class="fa-solid fa-star"></i>`;
+        if (frac >= 0.5) out += `<i class="fa-solid fa-star-half-stroke"></i>`;
+        const displayed = full + (frac >= 0.5 ? 1 : 0);
+        for (let i = displayed + 1; i <= 5; i++)
+          out += `<i class="fa-regular fa-star"></i>`;
+        const el = document.querySelector(".ts-stars-big");
+        if (el) el.innerHTML = out;
+      }
+
+      function tFiltered() {
+        if (tCurFilter === "all") return T_REVIEWS;
+        return T_REVIEWS.filter((r) => r.category === tCurFilter);
+      }
+
+      function tTotalPages() {
+        return Math.ceil(tFiltered().length / ITEMS_PER_PAGE);
+      }
+
+      function renderT() {
+        const filtered = tFiltered();
+        const pages = tTotalPages();
+        const start = tCurPage * ITEMS_PER_PAGE;
+        const end = start + ITEMS_PER_PAGE;
+        const current = filtered.slice(start, end);
+
+        let html = "";
+        current.forEach((r) => {
+          const barColor = [
+            r.accent,
+            "#f59e0b",
+            "#16a34a",
+            "#7c3aed",
+            "#0ea5e9",
+          ][Math.floor(Math.random() * 5)];
+          html += `
+    <div class="ts-card-new" style="--card-bar:${r.accent}">
+      <div class="ts-quote-bg">"</div>
+      <div class="ts-card-stars">${tStars(r.stars)}</div>
+      <p class="ts-card-text">${r.text}</p>
+      <div class="ts-card-sep"></div>
+      <div class="ts-card-user">
+        <div class="ts-card-avatar" style="background:${r.avatar};">${r.initials}</div>
+        <div>
+          <div class="ts-card-name">${r.name}</div>
+          <div class="ts-card-loc">${r.loc}</div>
+          <div class="ts-card-product-tag">${r.product}</div>
+        </div>
+      </div>
+      <div class="ts-card-verified"><i class="fa-solid fa-check-circle"></i> Verified</div>
+    </div>`;
+        });
+
+        document.getElementById("tsGrid").innerHTML = html;
+
+        let dotsHtml = "";
+        for (let i = 0; i < pages; i++) {
+          dotsHtml += `<button class="ts-dot-new ${i === tCurPage ? "active" : ""}" onclick="tGo(${i})"></button>`;
+        }
+        document.getElementById("tsDots").innerHTML = dotsHtml;
+        document.getElementById("tsPageInfo").textContent =
+          `${tCurPage + 1} / ${pages}`;
+      }
+
+      function setTFilter(cat, btn) {
+        tCurFilter = cat;
+        tCurPage = 0;
+        document
+          .querySelectorAll(".ts-filter-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderT();
+      }
+
+      function tNav(dir) {
+        const pages = tTotalPages();
+        tCurPage = (tCurPage + dir + pages) % pages;
+        renderT();
+      }
+
+      function tGo(i) {
+        tCurPage = i;
+        renderT();
+      }
+
+      renderT();
+
+      // Animate rating bars on scroll
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.querySelectorAll(".ts-dist-fill").forEach((el) => {
+                const w = el.dataset.w;
+                setTimeout(() => {
+                  el.style.width = w + "%";
+                }, 100);
+              });
+              e.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.2 },
+      ).observe(document.querySelector(".ts-rating-summary"));
+      // render average stars after DOM updates
+      renderAvgStars();
     </script>
   </body>
 </html>
-
-
-
