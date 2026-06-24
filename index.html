@@ -540,8 +540,8 @@
       .about-text {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
       }
       .about-text h2 {
         font-family: "Cormorant Garamond", serif;
@@ -560,12 +560,12 @@
       .about-stats {
         display: flex;
         gap: 24px;
-        margin: 24px auto;
+        margin: 24px 0;
         padding: 20px 0;
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
       }
       .a-stat-num {
         font-family: "Sora", sans-serif;
@@ -592,7 +592,7 @@
         font-weight: 600;
         transition: all 0.25s;
         border-radius: 4px;
-        margin: 0 auto;
+        margin: 0;
       }
       .btn-outline:hover {
         background: var(--blue);
@@ -601,7 +601,7 @@
       }
       .about-cta {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         margin-top: 16px;
       }
       .about-images {
@@ -641,9 +641,15 @@
           gap: 32px;
         }
       }
-      @media (max-width: 480px) {
+      @media (max-width: 600px) {
         .about-text {
+          align-items: center;
           text-align: center;
+        }
+      }
+      @media (max-width: 480px) {
+        .about-stats {
+          gap: 16px;
         }
         .about-stats {
           gap: 16px;
@@ -686,48 +692,53 @@
         line-height: 1.7;
       }
 
-      /* -- PRODUCTS SECTION -- */
+      /* ── PRODUCTS SECTION ── */
       .products-section {
-        background:
-          linear-gradient(rgba(255, 255, 255, 0.95), rgba(250, 250, 252, 0.95)),
-          url("background2.webp") center/cover no-repeat;
-        padding: 64px 20px;
+        background: linear-gradient(180deg, var(--light) 0%, #eef5fd 100%);
+        padding: 80px 24px;
         width: 100%;
       }
       .products-grid {
-        max-width: 1200px;
+        max-width: 1320px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
+        gap: 20px;
       }
+      @media (max-width: 1200px) {
+        .products-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 900px) {
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
+        .products-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+
       .product-card {
         background: var(--white);
         border: 1px solid var(--border);
         border-radius: var(--radius);
         overflow: hidden;
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-xs);
         transition:
-          box-shadow 0.3s,
-          transform 0.3s;
-        position: relative;
+          box-shadow var(--transition),
+          transform var(--transition),
+          border-color var(--transition);
         display: flex;
         flex-direction: column;
-        align-items: center;
-      }
-      @media (max-width: 1024px) {
-        .products-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (max-width: 768px) {
-        .products-grid {
-          grid-template-columns: 1fr;
-        }
       }
       .product-card:hover {
         box-shadow: var(--shadow-lg);
-        transform: translateY(-4px);
+        transform: translateY(-6px);
+        border-color: var(--blue-border);
       }
       .product-img {
         position: relative;
@@ -742,35 +753,37 @@
         object-fit: cover;
         display: block;
         transition:
-          transform 0.55s ease,
+          transform 0.6s ease,
           opacity 0.3s ease;
       }
       .product-img .img-hover {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.35s ease;
+        object-fit: cover;
         width: 100%;
         height: 100%;
-        opacity: 0;
-        transition: opacity 0.3s ease;
       }
       .product-card:hover .product-img img {
-        transform: scale(1.05);
+        transform: scale(1.06);
       }
       .product-card:hover .product-img .img-hover {
         opacity: 1;
       }
+
       .p-badge {
         position: absolute;
         top: 12px;
         left: 12px;
         font-size: 10px;
         font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 6px;
+        padding: 4px 11px;
+        border-radius: var(--radius-xs);
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.06em;
         z-index: 2;
+        font-family: var(--font-ui);
       }
       .badge-new {
         background: var(--blue);
@@ -784,6 +797,7 @@
         background: #d97706;
         color: #fff;
       }
+
       .p-actions {
         position: absolute;
         top: 12px;
@@ -799,10 +813,15 @@
           transform 0.3s;
         pointer-events: none;
       }
+      .product-card:hover .p-actions {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+      }
       .p-action-btn {
         width: 36px;
         height: 36px;
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.96);
         border: none;
         border-radius: 8px;
         cursor: pointer;
@@ -812,121 +831,135 @@
         align-items: center;
         justify-content: center;
         transition: all 0.2s;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
       }
       .p-action-btn:hover {
         background: var(--blue);
         color: #fff;
+        transform: scale(1.08);
       }
+
       .product-info {
-        padding: 12px 14px;
+        padding: 18px 18px 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         flex-grow: 1;
-        width: 100%;
       }
       .product-cat {
-        font-size: 0.7rem;
+        font-size: 10px;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--blue-light);
+        letter-spacing: 0.1em;
+        color: var(--blue);
         font-weight: 700;
-        margin-bottom: 6px;
+        margin-bottom: 7px;
+        font-family: var(--font-ui);
       }
       .product-info h3 {
-        font-family: "Inter", sans-serif;
-        font-size: 1rem;
-        font-weight: 500;
-        margin-bottom: 5px;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        line-height: 1.35;
+        color: var(--black);
+        letter-spacing: -0.01em;
       }
       .product-info h3 a {
-        color: var(--text);
+        color: inherit;
         text-decoration: none;
-        transition: color 0.2s;
+        transition: color var(--transition);
       }
       .product-info h3 a:hover {
         color: var(--blue);
       }
+
       .stars {
         color: var(--gold);
-        font-size: 0.85rem;
-        margin-bottom: 8px;
+        font-size: 13px;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
       }
       .stars span {
         color: var(--text-light);
         font-size: 11px;
-        margin-left: 4px;
+        margin-left: 5px;
       }
+
       .price-row {
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        margin-bottom: 14px;
+        gap: 8px;
+        margin-bottom: 16px;
         flex-wrap: wrap;
       }
       .sale-price {
-        font-family: "Sora", sans-serif;
-        font-size: 1rem;
-        font-weight: 800;
+        font-family: var(--font-ui);
+        font-size: 18px;
+        font-weight: 700;
         color: var(--black);
+        letter-spacing: -0.02em;
       }
       .original-price {
-        font-size: 12px;
+        font-size: 13px;
         color: var(--text-light);
         text-decoration: line-through;
       }
       .save-badge {
         font-size: 10px;
-        background: #dcfce7;
-        color: #16a34a;
-        padding: 2px 7px;
+        background: var(--green-soft);
+        color: var(--green);
+        padding: 3px 9px;
         border-radius: 999px;
-        font-weight: 600;
+        font-weight: 700;
+        font-family: var(--font-ui);
       }
       .btn-cart {
-        width: auto;
-        background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+        width: 100%;
+        background: var(--black);
         color: #fff;
-        border: 1px solid rgba(96, 165, 250, 0.24);
-        padding: 14px 24px;
-        font-size: 0.85rem;
-        letter-spacing: 0.08em;
+        border: none;
+        padding: 13px 20px;
+        font-size: 13px;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
         cursor: pointer;
         font-weight: 700;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        font-family: "Inter", sans-serif;
+        transition: all var(--transition);
+        font-family: var(--font-ui);
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
-        margin: 0 auto;
         margin-top: auto;
-        border-radius: 8px;
-        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.16);
+        border-radius: var(--radius-sm);
         position: relative;
         overflow: hidden;
       }
+      .btn-cart::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, var(--blue) 0%, #1e40af 100%);
+        opacity: 0;
+        transition: opacity var(--transition);
+      }
+      .btn-cart:hover::before {
+        opacity: 1;
+      }
       .btn-cart:hover {
-        background: linear-gradient(135deg, #15803d 0%, #22c55e 100%);
-        transform: translateY(-2px);
-        box-shadow:
-          0 6px 16px rgba(0, 0, 0, 0.2),
-          0 0 0 3px rgba(34, 197, 94, 0.18);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(29, 78, 216, 0.28);
       }
-      .btn-cart:active {
-        transform: translateY(0);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      .btn-cart > * {
+        position: relative;
+        z-index: 1;
       }
+
       .view-all-wrap {
         text-align: center;
-        margin-top: 40px;
+        margin-top: 48px;
       }
       .btn-view-all {
         display: inline-flex;
@@ -934,51 +967,28 @@
         gap: 10px;
         background: var(--blue);
         color: #fff;
-        padding: 13px 32px;
+        padding: 14px 36px;
         font-size: 13px;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 0.07em;
         text-transform: uppercase;
         text-decoration: none;
         border-radius: 999px;
-        transition:
-          background 0.25s,
-          transform 0.2s,
-          box-shadow 0.2s;
+        transition: all var(--transition);
+        font-family: var(--font-ui);
       }
       .btn-view-all:hover {
         background: #1e40af;
         transform: translateY(-2px);
-        box-shadow: 0 10px 28px rgba(29, 78, 216, 0.25);
+        box-shadow: 0 12px 32px rgba(29, 78, 216, 0.28);
         color: #fff;
-      }
-      @media (max-width: 900px) {
-        .products-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-      @media (max-width: 480px) {
-        .products-grid {
-          grid-template-columns: 1fr;
-          gap: 14px;
-        }
-        .product-info {
-          padding: 12px;
-        }
-        .product-info h3 {
-          font-size: 16px;
-        }
-      }
-      @media (max-width: 360px) {
-        .products-grid {
-          grid-template-columns: 1fr;
-        }
       }
 
       /* -- FEATURES -- */
+      /* ── FEATURES SECTION ── */
       .features-section {
-        padding: 64px 20px;
-        max-width: 1200px;
+        padding: 80px 24px;
+        max-width: 1320px;
         margin: 0 auto;
       }
       .features-grid {
@@ -986,6 +996,18 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
       }
+      @media (max-width: 900px) {
+        .features-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 480px) {
+        .features-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+      }
+
       .feature-item {
         text-align: center;
         padding: 24px 16px;
@@ -993,47 +1015,51 @@
         border: 1px solid var(--border);
         background: var(--white);
         transition:
-          box-shadow 0.3s,
-          transform 0.3s,
-          border-color 0.3s;
+          box-shadow var(--transition),
+          transform var(--transition),
+          border-color var(--transition);
       }
       .feature-item:hover {
-        box-shadow: 0 12px 40px rgba(29, 78, 216, 0.1);
-        transform: translateY(-4px);
+        box-shadow: 0 16px 48px rgba(29, 78, 216, 0.1);
+        transform: translateY(-5px);
         border-color: var(--blue-border);
       }
       .feature-icon {
-        width: 56px;
-        height: 56px;
+        width: 52px;
+        height: 52px;
         margin: 0 auto 14px;
-        background: var(--blue-pale);
+        background: var(--blue-soft);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background 0.3s;
+        transition:
+          background var(--transition),
+          transform var(--transition);
       }
       .feature-icon i {
-        font-size: 20px;
+        font-size: 22px;
         color: var(--blue);
+        transition: color var(--transition);
       }
       .feature-item:hover .feature-icon {
         background: var(--blue);
+        transform: scale(1.08) rotate(-4deg);
       }
       .feature-item:hover .feature-icon i {
         color: #fff;
       }
       .feature-item h4 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 22px;
+        font-family: var(--font-display);
+        font-size: 20px;
         font-weight: 500;
         color: var(--black);
-        margin-bottom: 7px;
+        margin-bottom: 10px;
       }
       .feature-item p {
-        font-size: 0.86rem;
+        font-size: 14px;
         color: var(--muted);
-        line-height: 1.7;
+        line-height: 1.75;
       }
       .values-row {
         display: grid;
@@ -2617,7 +2643,7 @@
     <!-- PRODUCTS SECTION -->
     <section class="products-section" id="products" data-aos="fade-up">
       <div class="section-header" data-aos="fade-up">
-        <p class="section-eyebrow">Our Products</p>
+        <span class="section-eyebrow">Our Products</span>
         <h2>Premium Supplements for Every Need</h2>
         <p>
           Science-backed formulas made with clean, potent ingredients your body
@@ -2625,7 +2651,7 @@
         </p>
       </div>
       <div class="products-grid">
-        <div class="product-card" data-aos="fade-right">
+        <div class="product-card" data-aos="fade-up" data-aos-delay="0">
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
@@ -2644,8 +2670,9 @@
             />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
-                <i class="fa-regular fa-heart"></i></button
-              ><button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
@@ -2655,16 +2682,17 @@
             <h3><a href="product-details.html">Magnesium Complex 5-in-1</a></h3>
             <div class="stars">★★★★★ <span>128 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,299</span
-              ><span class="original-price">₹1,499</span
-              ><span class="save-badge">Save 13%</span>
+              <span class="sale-price">₹1,299</span>
+              <span class="original-price">₹1,499</span>
+              <span class="save-badge">Save 13%</span>
             </div>
             <button class="btn-cart">
-              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+              <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-up">
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="60">
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
@@ -2683,8 +2711,9 @@
             />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
-                <i class="fa-regular fa-heart"></i></button
-              ><button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
@@ -2696,16 +2725,17 @@
             </h3>
             <div class="stars">★★★★★ <span>62 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,499</span
-              ><span class="original-price">₹1,699</span
-              ><span class="save-badge">Save 12%</span>
+              <span class="sale-price">₹1,499</span>
+              <span class="original-price">₹1,699</span>
+              <span class="save-badge">Save 12%</span>
             </div>
             <button class="btn-cart">
-              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+              <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-left">
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="120">
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
@@ -2724,8 +2754,9 @@
             />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
-                <i class="fa-regular fa-heart"></i></button
-              ><button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
@@ -2735,16 +2766,17 @@
             <h3><a href="product-details.html">Probiotics Advanced</a></h3>
             <div class="stars">★★★★★ <span>57 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,299</span
-              ><span class="original-price">₹1,499</span
-              ><span class="save-badge">Save 13%</span>
+              <span class="sale-price">₹1,299</span>
+              <span class="original-price">₹1,499</span>
+              <span class="save-badge">Save 13%</span>
             </div>
             <button class="btn-cart">
-              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+              <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="zoom-in">
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="180">
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span>
             <a href="product-details.html"
@@ -2763,8 +2795,9 @@
             />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
-                <i class="fa-regular fa-heart"></i></button
-              ><button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
@@ -2774,16 +2807,17 @@
             <h3><a href="product-details.html">Nattokinase 200 mg</a></h3>
             <div class="stars">★★★★★ <span>73 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,899</span
-              ><span class="original-price">₹2,099</span
-              ><span class="save-badge">Save 10%</span>
+              <span class="sale-price">₹1,899</span>
+              <span class="original-price">₹2,099</span>
+              <span class="save-badge">Save 10%</span>
             </div>
             <button class="btn-cart">
-              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+              <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-right">
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="0">
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span>
             <a href="product-details.html"
@@ -2802,8 +2836,9 @@
             />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
-                <i class="fa-regular fa-heart"></i></button
-              ><button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
@@ -2817,16 +2852,17 @@
             </h3>
             <div class="stars">★★★★★ <span>101 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹1,199</span
-              ><span class="original-price">₹1,399</span
-              ><span class="save-badge">Save 14%</span>
+              <span class="sale-price">₹1,199</span>
+              <span class="original-price">₹1,399</span>
+              <span class="save-badge">Save 14%</span>
             </div>
             <button class="btn-cart">
-              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+              <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-up">
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="60">
           <div class="product-img">
             <span class="p-badge badge-sale">Sale</span>
             <a href="product-details.html"
@@ -2845,8 +2881,9 @@
             />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
-                <i class="fa-regular fa-heart"></i></button
-              ><button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
@@ -2860,16 +2897,17 @@
             </h3>
             <div class="stars">★★★★★ <span>84 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹899</span
-              ><span class="original-price">₹999</span
-              ><span class="save-badge">Save 10%</span>
+              <span class="sale-price">₹899</span>
+              <span class="original-price">₹999</span>
+              <span class="save-badge">Save 10%</span>
             </div>
             <button class="btn-cart">
-              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+              <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-left">
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="120">
           <div class="product-img">
             <span class="p-badge badge-new">New</span>
             <a href="product-details.html"
@@ -2888,8 +2926,9 @@
             />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
-                <i class="fa-regular fa-heart"></i></button
-              ><button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
@@ -2899,16 +2938,17 @@
             <h3><a href="product-details.html">Vitamin D3 Supplement</a></h3>
             <div class="stars">★★★★★ <span>142 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹499</span
-              ><span class="original-price">₹599</span
-              ><span class="save-badge">Save 17%</span>
+              <span class="sale-price">₹499</span>
+              <span class="original-price">₹599</span>
+              <span class="save-badge">Save 17%</span>
             </div>
             <button class="btn-cart">
-              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+              <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
             </button>
           </div>
         </div>
-        <div class="product-card" data-aos="fade-up">
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="180">
           <div class="product-img">
             <span class="p-badge badge-top">Top Seller</span>
             <a href="product-details.html"
@@ -2927,8 +2967,9 @@
             />
             <div class="p-actions">
               <button class="p-action-btn" title="Wishlist">
-                <i class="fa-regular fa-heart"></i></button
-              ><button class="p-action-btn" title="Quick view">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="p-action-btn" title="Quick view">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
@@ -2940,12 +2981,12 @@
             </h3>
             <div class="stars">★★★★★ <span>198 reviews</span></div>
             <div class="price-row">
-              <span class="sale-price">₹899</span
-              ><span class="original-price">₹1,099</span
-              ><span class="save-badge">Save 18%</span>
+              <span class="sale-price">₹899</span>
+              <span class="original-price">₹1,099</span>
+              <span class="save-badge">Save 18%</span>
             </div>
             <button class="btn-cart">
-              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+              <i class="fa-solid fa-bag-shopping"></i> <span>Buy Now</span>
             </button>
           </div>
         </div>
@@ -2965,7 +3006,7 @@
         <p>Clean inputs. Simple choices. Maximum results.</p>
       </div>
       <div class="features-grid">
-        <div class="feature-item" data-aos="fade-right">
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="0">
           <div class="feature-icon"><i class="fa-solid fa-capsules"></i></div>
           <h4>Premium Vitamins &amp; Minerals</h4>
           <p>
@@ -2973,7 +3014,7 @@
             efficiently.
           </p>
         </div>
-        <div class="feature-item" data-aos="fade-up">
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="80">
           <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
           <h4>100% Natural Extracts</h4>
           <p>
@@ -2981,17 +3022,17 @@
             their integrity.
           </p>
         </div>
-        <div class="feature-item" data-aos="fade-left">
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="160">
           <div class="feature-icon">
             <i class="fa-solid fa-vial-circle-check"></i>
           </div>
           <h4>No Fillers or Binders</h4>
           <p>
-            Every capsule contains only what the label says ? nothing more,
+            Every capsule contains only what the label says — nothing more,
             nothing less.
           </p>
         </div>
-        <div class="feature-item" data-aos="zoom-in">
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="240">
           <div class="feature-icon">
             <i class="fa-solid fa-calendar-check"></i>
           </div>
