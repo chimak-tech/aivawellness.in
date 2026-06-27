@@ -1457,8 +1457,14 @@ footer{background:#080d14;color:#94a3b8;padding:60px 20px 28px;border-top:1px so
       <div class="product-card reveal d2">
       <div class="product-img">
         <span class="p-badge badge-new">New</span>
-        <a href="product-details.html"><img src="products/ZMA + VITAMIN B6.jpg.jpeg" alt="Probiotics Advanced" onerror="this.src='https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80'"/></a>
-        <img class="img-hover" src="products-1/hover-vitamins minerals with amino acid (Woman).jpg" alt="Probiotics hover"/>
+        <a href="product-details.html"><!-- Main image — theek hai, onerror fallback bhi hai -->
+<img src="products/ZMA + VITAMIN B6.jpg.jpeg" alt="ZMA + Vitamin B6" 
+     onerror="this.src='https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80'"/>
+
+<!-- Hover image — ya toh rename karo ya Unsplash use karo -->
+<img class="img-hover" 
+     src="https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=600&q=80" 
+     alt="ZMA hover"/>
         <div class="p-actions">
           <button class="p-action-btn" title="Quick view" onclick="window.location.href='product-details.html'"><i class="fa-regular fa-eye"></i></button>
           <button class="p-action-btn" title="Share" onclick="toggleShareMenu(event, 3)"><i class="fa-solid fa-share-nodes"></i></button>
