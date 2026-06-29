@@ -2498,7 +2498,7 @@
           img: "products/Nattokinase Carton  final 3d.jpg.jpeg",
           img2: "products/Nattokinase Carton  final 3d.jpg.jpeg",
         },
-      
+
         {
           id: 105,
           name: "Heart, Skin, Eye & Joint Health Pack",
@@ -2580,8 +2580,8 @@
           badge: "new",
           rating: 4.7,
           reviews: 62,
-          img: "products/ZMA + VITAMIN B6.jpeg",
-          img2: "products/ZMA + VITAMIN B6.jpeg",
+          img: "products/ZMA + VITAMIN B6.png",
+          img2: "products/ZMA + VITAMIN B6.png",
         },
         {
           id: 112,
@@ -3087,7 +3087,9 @@
             return;
           }
           // Case-insensitive fallback
-          const key = Object.keys(counts).find((k) => k.toLowerCase() === label.toLowerCase());
+          const key = Object.keys(counts).find(
+            (k) => k.toLowerCase() === label.toLowerCase(),
+          );
           countEl.textContent = key ? counts[key] : 0;
         });
       }
