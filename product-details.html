@@ -20,9 +20,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <style>
-      /* ══════════════════════════════════════════════
-   TOKENS — identical to index.html
-══════════════════════════════════════════════ */
       *,
       *::before,
       *::after {
@@ -82,10 +79,6 @@
       img {
         max-width: 100%;
       }
-
-      /* ══════════════════════════════════════════════
-   ANNOUNCEMENT BAR
-══════════════════════════════════════════════ */
       .ann-bar {
         background: linear-gradient(
           90deg,
@@ -126,10 +119,6 @@
           transform: translateX(-50%);
         }
       }
-
-      /* ══════════════════════════════════════════════
-   HEADER
-══════════════════════════════════════════════ */
       .site-header {
         position: fixed;
         top: 0;
@@ -359,10 +348,6 @@
           display: flex;
         }
       }
-
-      /* ══════════════════════════════════════════════
-   BREADCRUMB
-══════════════════════════════════════════════ */
       .breadcrumb-bar {
         background: var(--white);
         border-bottom: 1px solid var(--border);
@@ -393,19 +378,11 @@
         color: var(--ink);
         font-weight: 500;
       }
-
-      /* ══════════════════════════════════════════════
-   PAGE WRAP
-══════════════════════════════════════════════ */
       .page-wrap {
         max-width: 1320px;
         margin: 0 auto;
         padding: 40px 24px 80px;
       }
-
-      /* ══════════════════════════════════════════════
-   PRODUCT TOP GRID
-══════════════════════════════════════════════ */
       .product-top {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -423,10 +400,6 @@
           gap: 32px;
         }
       }
-
-      /* ══════════════════════════════════════════════
-   GALLERY — PREMIUM PRODUCT MEDIA SECTION
-══════════════════════════════════════════════ */
       .gallery-wrap {
         position: sticky;
         top: 88px;
@@ -439,11 +412,9 @@
           position: static;
         }
       }
-
       .gallery-rail {
         display: none;
       }
-
       .gallery-main {
         flex: 1;
         min-width: 0;
@@ -451,8 +422,6 @@
         flex-direction: column;
         gap: 14px;
       }
-
-      /* Main image + zoom container */
       .main-img-container {
         position: relative;
         overflow: hidden;
@@ -516,7 +485,6 @@
         opacity: 1;
         background-position: -20% 100%;
       }
-
       .zoom-hint {
         position: absolute;
         bottom: 14px;
@@ -552,7 +520,6 @@
           padding: 6px 10px;
         }
       }
-
       .gallery-counter {
         position: absolute;
         top: 14px;
@@ -567,7 +534,6 @@
         padding: 6px 12px;
         border-radius: 999px;
       }
-
       .main-nav-arrow {
         position: absolute;
         top: 50%;
@@ -608,7 +574,6 @@
           height: 38px;
         }
       }
-
       .expand-btn {
         position: absolute;
         top: 14px;
@@ -643,7 +608,6 @@
           transform: translateY(0);
         }
       }
-
       .gallery-dots {
         display: none;
         justify-content: center;
@@ -670,7 +634,6 @@
         width: 20px;
         border-radius: 4px;
       }
-
       .image-modal-body {
         cursor: grab;
       }
@@ -714,7 +677,6 @@
       .image-modal-video-badge.show {
         display: inline-flex;
       }
-
       .image-modal-strip {
         position: absolute;
         bottom: 16px;
@@ -773,8 +735,6 @@
           display: none;
         }
       }
-
-      /* Video thumb */
       .video-thumb {
         position: relative;
         overflow: hidden;
@@ -841,7 +801,6 @@
         text-align: center;
         text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
       }
-
       .thumbs-row {
         display: flex;
         gap: 10px;
@@ -885,14 +844,11 @@
         border-color: var(--blue);
         box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.18);
       }
-
       .gallery-rail .thumb-img,
       .gallery-rail .video-thumb {
         width: 76px;
         height: 76px;
       }
-
-      /* Gallery badge */
       .gallery-badge {
         position: absolute;
         top: 14px;
@@ -915,17 +871,11 @@
           left: 14px;
         }
       }
-
-      /* ══════════════════════════════════════════════
-   PRODUCT INFO PANEL
-══════════════════════════════════════════════ */
       .product-info {
         display: flex;
         flex-direction: column;
         gap: 24px;
       }
-
-      /* Eyebrow */
       .p-eyebrow {
         display: inline-flex;
         align-items: center;
@@ -941,8 +891,6 @@
         border: 1px solid var(--blue-border);
         width: fit-content;
       }
-
-      /* Title */
       .p-title {
         font-family: "Inter", sans-serif;
         font-size: clamp(22px, 2.6vw, 36px);
@@ -959,8 +907,6 @@
         line-height: 1.8;
         max-width: 520px;
       }
-
-      /* Rating row */
       .rating-row {
         display: flex;
         align-items: center;
@@ -998,8 +944,6 @@
         align-items: center;
         gap: 4px;
       }
-
-      /* Stock */
       .stock-row {
         display: flex;
         align-items: center;
@@ -1032,8 +976,6 @@
         font-size: 0.76rem;
         color: var(--muted);
       }
-
-      /* Price card */
       .price-card {
         background: var(--white);
         border: 1px solid var(--border);
@@ -1081,8 +1023,6 @@
         font-size: 0.73rem;
         color: var(--muted);
       }
-
-      /* CTA Buttons */
       .cta-group {
         display: flex;
         gap: 12px;
@@ -1130,8 +1070,6 @@
         position: relative;
         z-index: 1;
       }
-
-      /* Trust grid */
       .trust-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1190,8 +1128,6 @@
         font-size: 0.68rem;
         color: var(--muted);
       }
-
-      /* Key features card */
       .features-card {
         background: var(--white);
         border: 1px solid var(--border);
@@ -1227,8 +1163,6 @@
         margin-top: 2px;
         flex-shrink: 0;
       }
-
-      /* Delivery estimator */
       .delivery-box {
         background: var(--blue-soft);
         border: 1px solid var(--blue-border);
@@ -1251,8 +1185,6 @@
       .delivery-text strong {
         color: var(--blue);
       }
-
-      /* Share */
       .share-row {
         display: flex;
         align-items: center;
@@ -1296,10 +1228,6 @@
       .meta-row strong {
         color: var(--ink);
       }
-
-      /* ══════════════════════════════════════════════
-   VIDEO MODAL
-══════════════════════════════════════════════ */
       .video-modal-overlay {
         position: fixed;
         inset: 0;
@@ -1513,10 +1441,6 @@
         font-size: 0.88rem;
         color: rgba(255, 255, 255, 0.6);
       }
-
-      /* ══════════════════════════════════════════════
-   TABS SECTION
-══════════════════════════════════════════════ */
       .tabs-section {
         margin-bottom: 72px;
       }
@@ -1569,8 +1493,6 @@
           transform: translateY(0);
         }
       }
-
-      /* Description */
       .desc-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1601,21 +1523,29 @@
       }
       .benefits-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+      @media (max-width: 768px) {
+        .benefits-grid {
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 16px;
+        }
       }
       @media (max-width: 480px) {
         .benefits-grid {
-          gap: 10px;
+          grid-template-columns: repeat(2, minmax(140px, 1fr));
+          gap: 12px;
         }
         .benefit-card {
-          padding: 16px 10px;
+          padding: 16px 14px;
+          min-height: 220px;
         }
         .benefit-icon {
-          font-size: 22px;
+          font-size: 20px;
         }
         .benefit-title {
-          font-size: 0.8rem;
+          font-size: 0.84rem;
         }
         .benefit-desc {
           font-size: 0.72rem;
@@ -1632,6 +1562,8 @@
         align-items: center;
         text-align: center;
         gap: 10px;
+        min-height: 240px;
+        width: 100%;
         box-shadow: 0 4px 24px rgba(8, 13, 20, 0.06);
         transition: all 0.35s var(--ease);
       }
@@ -1642,11 +1574,47 @@
         box-shadow: 0 20px 48px rgba(29, 78, 216, 0.14);
       }
       .benefit-icon {
-        font-size: 28px;
-        transition: transform 0.3s var(--ease);
+        width: 62px;
+        height: 62px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        font-size: 24px;
+        color: #fff;
+        transition:
+          transform 0.3s var(--ease),
+          background 0.3s var(--ease);
+      }
+      .benefit-icon i {
+        width: 1em;
+        height: 1em;
       }
       .benefit-card:hover .benefit-icon {
         transform: scale(1.15);
+      }
+      .benefit-icon--bone {
+        background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+        box-shadow: 0 12px 25px rgba(37, 99, 235, 0.24);
+      }
+      .benefit-icon--dumbbell {
+        background: linear-gradient(135deg, #0f766e 0%, #34d399 100%);
+        box-shadow: 0 12px 25px rgba(15, 118, 110, 0.22);
+      }
+      .benefit-icon--heart {
+        background: linear-gradient(135deg, #dc2626 0%, #f87171 100%);
+        box-shadow: 0 12px 25px rgba(220, 38, 38, 0.22);
+      }
+      .benefit-icon--shield {
+        background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        box-shadow: 0 12px 25px rgba(14, 165, 233, 0.22);
+      }
+      .benefit-icon--bolt {
+        background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        box-shadow: 0 12px 25px rgba(245, 158, 11, 0.22);
+      }
+      .benefit-icon--brain {
+        background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+        box-shadow: 0 12px 25px rgba(139, 92, 246, 0.22);
       }
       .benefit-title {
         font-weight: 700;
@@ -1662,8 +1630,6 @@
         color: var(--muted);
         line-height: 1.75;
       }
-
-      /* Nutrition */
       .nutrition-wrap {
         max-width: 700px;
         width: 100%;
@@ -1709,8 +1675,6 @@
         margin-top: 14px;
         line-height: 1.7;
       }
-
-      /* Ingredients */
       .ingredients-text {
         font-size: 0.88rem;
         color: var(--text-mid);
@@ -1731,8 +1695,6 @@
         display: block;
         margin-bottom: 5px;
       }
-
-      /* How to use */
       .usage-steps {
         display: flex;
         flex-direction: column;
@@ -1785,10 +1747,6 @@
         display: block;
         margin-bottom: 5px;
       }
-
-      /* ══════════════════════════════════════════════
-   REVIEWS SECTION
-══════════════════════════════════════════════ */
       .reviews-section {
         margin-bottom: 72px;
       }
@@ -1815,7 +1773,6 @@
         margin-bottom: 32px;
         line-height: 1.2;
       }
-
       .reviews-layout {
         display: grid;
         grid-template-columns: 280px 1fr;
@@ -1827,7 +1784,6 @@
           grid-template-columns: 1fr;
         }
       }
-
       .rating-summary-card {
         background: var(--white);
         border: 1px solid var(--border);
@@ -1924,7 +1880,6 @@
         background: #2563eb;
         transform: translateY(-1px);
       }
-
       .review-card {
         background: var(--white);
         border: 1px solid var(--border);
@@ -2008,10 +1963,6 @@
         border-color: var(--blue);
         color: var(--blue);
       }
-
-      /* ══════════════════════════════════════════════
-   SIMILAR PRODUCTS
-══════════════════════════════════════════════ */
       .similar-section {
         margin-bottom: 40px;
       }
@@ -2030,7 +1981,6 @@
           grid-template-columns: 1fr;
         }
       }
-
       .product-card {
         background: var(--white);
         border: 1px solid var(--border);
@@ -2195,10 +2145,6 @@
         transform: translateY(-1px);
         box-shadow: 0 6px 16px rgba(29, 78, 216, 0.3);
       }
-
-      /* ══════════════════════════════════════════════
-   STICKY BUY BAR (mobile)
-══════════════════════════════════════════════ */
       .sticky-buy-bar {
         display: none;
         position: fixed;
@@ -2245,10 +2191,6 @@
           display: block;
         }
       }
-
-      /* ══════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════ */
       footer {
         background: #080d14;
         color: #94a3b8;
@@ -2452,10 +2394,6 @@
           text-align: center;
         }
       }
-
-      /* ══════════════════════════════════════════════
-   TOAST
-══════════════════════════════════════════════ */
       .toast-wrap {
         position: fixed;
         bottom: 80px;
@@ -2499,10 +2437,6 @@
           transform: translateY(0);
         }
       }
-
-      /* ══════════════════════════════════════════════
-   SCROLL REVEAL
-══════════════════════════════════════════════ */
       .reveal {
         opacity: 0;
         transform: translateY(28px);
@@ -2526,8 +2460,6 @@
       .d4 {
         transition-delay: 0.4s !important;
       }
-
-      /* ══ IMAGE MODAL — PREMIUM ZOOM CONTROLS ══ */
       .image-modal-zoombar {
         position: absolute;
         bottom: 16px;
@@ -2603,7 +2535,6 @@
           font-size: 0.92rem;
           line-height: 1.6;
         }
-
         .image-modal-inner {
           height: auto;
           max-height: 92vh;
@@ -2659,7 +2590,6 @@
     </style>
   </head>
   <body>
-    <!-- ANNOUNCEMENT BAR -->
     <div class="ann-bar">
       <div class="ann-bar-track">
         <span
@@ -2687,7 +2617,6 @@
       </div>
     </div>
 
-    <!-- HEADER -->
     <header class="site-header" id="siteHeader">
       <nav class="nav-inner">
         <a class="brand" href="index.html">
@@ -2720,7 +2649,6 @@
       </nav>
     </header>
 
-    <!-- MOBILE MENU -->
     <div
       class="mobile-menu"
       id="mobileMenu"
@@ -2737,12 +2665,9 @@
       </nav>
     </div>
 
-    <!-- MAIN PAGE -->
     <main>
       <div class="page-wrap">
-        <!-- ── PRODUCT TOP ── -->
         <div class="product-top">
-          <!-- GALLERY -->
           <div class="gallery-wrap">
             <div class="gallery-main">
               <div class="main-img-container" id="imgContainer">
@@ -2795,10 +2720,8 @@
                 >
               </div>
 
-              <!-- Mobile dot indicators -->
               <div class="gallery-dots" id="galleryDots"></div>
 
-              <!-- Thumbnails row -->
               <div class="thumbs-row" id="thumbsRow">
                 <img
                   class="thumb-img active"
@@ -2861,7 +2784,6 @@
                     switchThumb(this, 'products/omega 3, Vitamin E.jpg.jpeg')
                   "
                 />
-                <!-- Video thumbnail -->
                 <div class="video-thumb" onclick="openVideoModal()">
                   <img
                     src="products-1/Magnesium Complex.jpg"
@@ -2878,7 +2800,6 @@
             </div>
           </div>
 
-          <!-- PRODUCT INFO -->
           <div class="product-info reveal">
             <span class="p-eyebrow"
               ><i class="fa-solid fa-leaf"></i> Aiva Wellness — Bestseller</span
@@ -2921,7 +2842,6 @@
               <span class="stock-sub">· 250+ units · Ships in 24 hrs</span>
             </div>
 
-            <!-- Price -->
             <div class="price-card">
               <div class="price-row-main">
                 <span id="priceMain" class="price-main-val">₹1,299</span>
@@ -2943,7 +2863,6 @@
               </button>
             </div>
 
-            <!-- Trust -->
             <div class="trust-grid">
               <div class="trust-item">
                 <div class="trust-icon-w">
@@ -2974,7 +2893,6 @@
               </div>
             </div>
 
-            <!-- Delivery -->
             <div class="delivery-box">
               <i class="fa-solid fa-location-dot"></i>
               <div class="delivery-text">
@@ -2984,7 +2902,6 @@
               </div>
             </div>
 
-            <!-- Features card -->
             <div class="features-card">
               <div class="features-hd">Key Benefits</div>
               <ul class="feat-list">
@@ -3021,7 +2938,6 @@
               </ul>
             </div>
 
-            <!-- Share + Meta -->
             <div class="share-row">
               <span class="share-lbl">Share:</span>
               <a
@@ -3052,7 +2968,6 @@
           </div>
         </div>
 
-        <!-- ── TABS ── -->
         <div class="tabs-section reveal">
           <div class="tabs-nav">
             <button class="tab-btn active" onclick="switchTab('desc', this)">
@@ -3069,7 +2984,6 @@
             </button>
           </div>
 
-          <!-- Description -->
           <div class="tab-panel active" id="tab-desc">
             <div class="desc-grid">
               <div class="desc-text">
@@ -3078,33 +2992,97 @@
                   Aiva Wellness Magnesium Complex 5-in-1 is a scientifically
                   formulated supplement combining five synergistic nutrients —
                   Magnesium, Vitamin D3, Zinc, Calcium, and Vitamin K2 — in a
-                  single, convenient tablet.
+                  single, convenient tablet for daily energy, bone strength, and
+                  muscle recovery.
                 </p>
-                <p>
-                  Magnesium is involved in over 300 enzymatic reactions in the
-                  body, supporting everything from ATP energy production to
-                  protein synthesis. Paired with Calcium and Vitamin D3 for
-                  superior bone mineralisation, and Zinc for immune defence,
-                  this complex ensures you get maximum benefit from every dose.
-                </p>
-                <p>
-                  Whether you are an active athlete recovering from training, a
-                  professional managing stress, or simply someone looking to
-                  fill nutritional gaps in a modern diet, this formula is
-                  designed to fit seamlessly into your daily routine.
-                </p>
-                <h4 style="margin-top: 20px">Why Choose This Formula?</h4>
-                <p>
-                  Most single-ingredient magnesium supplements miss the
-                  cofactors that enable proper absorption. Our 5-in-1 formula is
-                  built around bioavailability — combining nutrients that work
-                  together, not against each other. Every batch is third-party
-                  tested and FSSAI-certified.
-                </p>
+                <h4 style="margin-top: 20px">Product Information</h4>
+                <div class="nutrition-wrap" style="max-width: 100%">
+                  <table class="nutrition-table" style="min-width: 100%">
+                    <tbody>
+                      <tr>
+                        <td>Item Form</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Tablet
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Flavor</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Unflavoured
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brand</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Aiva Wellness
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Manufacturer</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Aiva Wellness Pvt. Ltd., Solan, Himachal Pradesh,
+                          India
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Country of Origin</td>
+                        <td style="text-align: right; font-weight: 700">
+                          India
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Item Type Name</td>
+                        <td style="text-align: right; font-weight: 700">
+                          Magnesium Glycinate Complex
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Unit Count</td>
+                        <td style="text-align: right; font-weight: 700">
+                          60 Tablets
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Number of Items</td>
+                        <td style="text-align: right; font-weight: 700">1</td>
+                      </tr>
+                      <tr>
+                        <td>Item Weight</td>
+                        <td style="text-align: right; font-weight: 700">
+                          190 Grams
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Product Dimensions</td>
+                        <td style="text-align: right; font-weight: 700">
+                          5.4 x 5.4 x 11.7 cm
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Customer Reviews</td>
+                        <td style="text-align: right; font-weight: 700">
+                          4.8 ★ (128 ratings)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Date First Available</td>
+                        <td style="text-align: right; font-weight: 700">
+                          January 2026
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="nutrition-note">
+                    FSSAI-certified · Third-party lab tested · Manufactured
+                    under strict GMP standards.
+                  </p>
+                </div>
               </div>
               <div class="benefits-grid">
                 <div class="benefit-card">
-                  <div class="benefit-icon">🦴</div>
+                  <div class="benefit-icon benefit-icon--bone">
+                    <i class="fa-solid fa-bone"></i>
+                  </div>
                   <div class="benefit-title">Strong Bones</div>
                   <div class="benefit-desc">
                     Calcium + Vitamin D3 + K2 trinity optimises bone mineral
@@ -3112,7 +3090,9 @@
                   </div>
                 </div>
                 <div class="benefit-card">
-                  <div class="benefit-icon">💪</div>
+                  <div class="benefit-icon benefit-icon--dumbbell">
+                    <i class="fa-solid fa-dumbbell"></i>
+                  </div>
                   <div class="benefit-title">Muscle Recovery</div>
                   <div class="benefit-desc">
                     Magnesium reduces muscle cramps, supports post-workout
@@ -3120,7 +3100,9 @@
                   </div>
                 </div>
                 <div class="benefit-card">
-                  <div class="benefit-icon">❤️</div>
+                  <div class="benefit-icon benefit-icon--heart">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                  </div>
                   <div class="benefit-title">Heart Health</div>
                   <div class="benefit-desc">
                     Regulates blood pressure, supports cardiac rhythm and
@@ -3128,7 +3110,9 @@
                   </div>
                 </div>
                 <div class="benefit-card">
-                  <div class="benefit-icon">🛡️</div>
+                  <div class="benefit-icon benefit-icon--shield">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
                   <div class="benefit-title">Immune Defence</div>
                   <div class="benefit-desc">
                     Zinc and Vitamin D3 fortify your body's natural immune
@@ -3136,7 +3120,9 @@
                   </div>
                 </div>
                 <div class="benefit-card">
-                  <div class="benefit-icon">⚡</div>
+                  <div class="benefit-icon benefit-icon--bolt">
+                    <i class="fa-solid fa-bolt"></i>
+                  </div>
                   <div class="benefit-title">Daily Energy</div>
                   <div class="benefit-desc">
                     Magnesium is essential for ATP production — your body's
@@ -3144,7 +3130,9 @@
                   </div>
                 </div>
                 <div class="benefit-card">
-                  <div class="benefit-icon">🧠</div>
+                  <div class="benefit-icon benefit-icon--brain">
+                    <i class="fa-solid fa-brain"></i>
+                  </div>
                   <div class="benefit-title">Sleep &amp; Calm</div>
                   <div class="benefit-desc">
                     Helps regulate the nervous system and promotes deeper, more
@@ -3155,7 +3143,6 @@
             </div>
           </div>
 
-          <!-- Nutrition -->
           <div class="tab-panel" id="tab-nutrition">
             <div class="nutrition-wrap">
               <p
@@ -3217,7 +3204,6 @@
             </div>
           </div>
 
-          <!-- Ingredients -->
           <div class="tab-panel" id="tab-ingredients">
             <p class="ingredients-text">
               <strong>Active Ingredients:</strong> Magnesium Glycinate (300 mg),
@@ -3242,7 +3228,6 @@
             </div>
           </div>
 
-          <!-- How to use -->
           <div class="tab-panel" id="tab-usage">
             <div class="usage-steps">
               <div class="usage-step">
@@ -3303,7 +3288,6 @@
           </div>
         </div>
 
-        <!-- ── REVIEWS ── -->
         <div class="reviews-section reveal">
           <span class="section-eyebrow"
             ><i class="fa-solid fa-star"></i> Customer Reviews</span
@@ -3477,7 +3461,6 @@
           </div>
         </div>
 
-        <!-- ── SIMILAR PRODUCTS ── -->
         <div class="similar-section reveal">
           <span class="section-eyebrow"
             ><i class="fa-solid fa-bag-shopping"></i> You May Also Like</span
@@ -3619,10 +3602,8 @@
           </div>
         </div>
       </div>
-      <!-- /page-wrap -->
     </main>
 
-    <!-- VIDEO MODAL -->
     <div
       class="video-modal-overlay"
       id="videoModal"
@@ -3642,7 +3623,6 @@
       </div>
     </div>
 
-    <!-- IMAGE VIEWER MODAL -->
     <div
       class="image-modal-overlay"
       id="imageModal"
@@ -3710,7 +3690,6 @@
       </div>
     </div>
 
-    <!-- STICKY BUY BAR (mobile) -->
     <div class="sticky-buy-bar" id="stickyBar">
       <div class="sticky-buy-bar-inner">
         <span class="sbb-price">₹1,299</span>
@@ -3720,7 +3699,6 @@
       </div>
     </div>
 
-    <!-- FOOTER -->
     <footer>
       <div class="footer-inner">
         <div class="footer-top">
@@ -3827,18 +3805,15 @@
       </div>
     </footer>
 
-    <!-- TOAST CONTAINER -->
     <div class="toast-wrap" id="toastWrap"></div>
 
     <script>
-      /* ══ HEADER SCROLL ══ */
       window.addEventListener("scroll", () => {
         document
           .getElementById("siteHeader")
           .classList.toggle("scrolled", window.scrollY > 20);
       });
 
-      /* ══ MOBILE MENU ══ */
       function toggleMenu() {
         const m = document.getElementById("mobileMenu");
         const h = document.querySelector(".hamburger");
@@ -3849,7 +3824,6 @@
           : "";
       }
 
-      /* ══ TABS ══ */
       function switchTab(id, btn) {
         document
           .querySelectorAll(".tab-panel")
@@ -3861,7 +3835,6 @@
         btn.classList.add("active");
       }
 
-      /* ══ GALLERY THUMBNAIL SWITCH (syncs rail + row) ══ */
       function switchThumb(el, src) {
         document.querySelectorAll(".thumb-img").forEach((t) => {
           t.classList.toggle("active", (t.dataset.fullSrc || t.src) === src);
@@ -3879,7 +3852,6 @@
         }, 120);
       }
 
-      /* ══ PREMIUM GALLERY CONTROLS ══ */
       const imgContainer = document.getElementById("imgContainer");
       const mainImg = document.getElementById("mainImg");
       let activeThumbSrc = mainImg.src;
@@ -3949,14 +3921,12 @@
         if (thumb) switchThumb(thumb, item.src);
       }
 
-      /* keyboard nav for main gallery (when modal closed) */
       document.addEventListener("keydown", (e) => {
         if (imageModal.classList.contains("open")) return;
         if (e.key === "ArrowLeft") stepMainGallery(-1);
         if (e.key === "ArrowRight") stepMainGallery(1);
       });
 
-      /* swipe support on mobile main image */
       (() => {
         let touchStartX = null;
         imgContainer.addEventListener(
@@ -3980,7 +3950,6 @@
 
       updateGalleryUI();
 
-      /* hover-to-preview: show thumbnail image in main viewer on hover */
       document.querySelectorAll("#thumbsRow .thumb-img").forEach((thumb) => {
         const previewSrc = thumb.dataset.fullSrc || thumb.src;
         thumb.addEventListener("mouseenter", () =>
@@ -3991,7 +3960,6 @@
         );
       });
 
-      /* ══ VIDEO MODAL ══ */
       function openVideoModal() {
         document.getElementById("videoModal").classList.add("open");
         document.body.style.overflow = "hidden";
@@ -4001,7 +3969,6 @@
         document.body.style.overflow = "";
       }
 
-      /* ══ IMAGE MODAL — fixed, professional, mobile + desktop ready ══ */
       const imageModal = document.getElementById("imageModal");
       const imageModalImg = document.getElementById("imageModalImg");
       const imageModalBody = document.getElementById("imageModalBody");
@@ -4025,7 +3992,6 @@
       let touchMode = null;
       let lastTapTime = 0;
 
-      /* build filmstrip thumbnails inside modal (once) */
       if (imageModalStrip) {
         galleryItems.forEach((item, i) => {
           if (item.type === "video") {
@@ -4060,7 +4026,6 @@
         return getActiveGalleryIndex();
       }
 
-      /* main image click / expand button both call this WITHOUT passing the click event */
       function openImageModal() {
         currentModalIndex = getCurrentModalIndex();
         showModalItem(currentModalIndex);
@@ -4132,7 +4097,6 @@
         setImageModalTransform();
       }
 
-      /* desktop: scroll wheel zoom */
       imageModalBody.addEventListener(
         "wheel",
         (e) => {
@@ -4144,7 +4108,6 @@
         { passive: false },
       );
 
-      /* desktop: double-click to zoom in/reset */
       imageModalBody.addEventListener("dblclick", (e) => {
         e.preventDefault();
         if (
@@ -4155,7 +4118,6 @@
         setImageModalScale(imageModalScale > 1 ? 1 : 2.2);
       });
 
-      /* desktop: drag to pan when zoomed */
       imageModalBody.addEventListener("pointerdown", (e) => {
         if (!imageModal.classList.contains("open") || imageModalScale <= 1)
           return;
@@ -4183,7 +4145,6 @@
         });
       });
 
-      /* mobile: pinch to zoom + single-finger pan + double-tap to zoom */
       imageModalBody.addEventListener(
         "touchstart",
         (e) => {
@@ -4197,7 +4158,6 @@
           } else if (e.touches.length === 1) {
             const now = Date.now();
             if (now - lastTapTime < 300) {
-              /* double tap */
               if (
                 !(
                   galleryItems[currentModalIndex] &&
@@ -4258,7 +4218,6 @@
         if (e.touches.length === 0) touchMode = null;
       });
 
-      /* tap on video preview inside modal opens the actual video modal */
       imageModalBody.addEventListener("click", (e) => {
         if (isDragging) return;
         if (
@@ -4271,7 +4230,6 @@
         }
       });
 
-      /* single, clean click handler — opens modal at the currently active image */
       imgContainer.addEventListener("click", (e) => {
         e.stopPropagation();
         openImageModal();
@@ -4285,14 +4243,12 @@
         if (e.key === "-") setImageModalScale(imageModalScale - 0.3);
       });
 
-      /* ══ QUANTITY ══ */
       let qty = 1;
       function changeQty(delta) {
         qty = Math.max(1, Math.min(99, qty + delta));
         document.getElementById("qtyVal").textContent = qty;
       }
 
-      /* ══ VARIANT PILLS ══ */
       document.querySelectorAll(".vpill").forEach((p) => {
         p.addEventListener("click", function () {
           document
@@ -4302,7 +4258,6 @@
         });
       });
 
-      /* ══ BUY NOW ══ */
       function handleBuyNow() {
         showToast("✅", "Redirecting to checkout…");
         setTimeout(() => {
@@ -4311,7 +4266,6 @@
         }, 800);
       }
 
-      /* ══ TOAST ══ */
       function showToast(icon, msg) {
         const wrap = document.getElementById("toastWrap");
         const t = document.createElement("div");
@@ -4327,7 +4281,6 @@
         }, 2800);
       }
 
-      /* ══ SCROLL REVEAL ══ */
       const revEls = document.querySelectorAll(".reveal");
       new IntersectionObserver(
         (entries) => {
@@ -4339,7 +4292,6 @@
         },
         { threshold: 0.1 },
       ).observe(document.body);
-      // observe individually
       revEls.forEach((el) => {
         new IntersectionObserver(
           ([e]) => {
@@ -4351,7 +4303,6 @@
         ).observe(el);
       });
 
-      /* ══ RATING BAR ANIMATION ══ */
       new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => {
@@ -4365,7 +4316,6 @@
         { threshold: 0.3 },
       ).observe(document.querySelector(".rating-summary-card"));
 
-      /* ══ STICKY BUY BAR — hide when in-view, show when scrolled past ══ */
       (() => {
         const bar = document.getElementById("stickyBar");
         const ctaGroup = document.querySelector(".cta-group");
@@ -4382,7 +4332,6 @@
         obs.observe(ctaGroup);
       })();
 
-      /* ══ PRODUCT MAP (URL param-driven) ══ */
       const PRODUCT_MAP = {
         101: {
           name: "Magnesium Complex 5-in-1",
