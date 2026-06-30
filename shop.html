@@ -2456,8 +2456,8 @@
           id: 104,
           name: "Nattokinase 200 mg",
           cat: "Nattokinase",
-          price: 1899,
-          old: 2099,
+          price: 1199,
+          old: 1399,
           badge: "top",
           rating: 4.9,
           reviews: 73,
@@ -2468,8 +2468,8 @@
           id: 103,
           name: "Nattokinase 100 mg",
           cat: "Nattokinase",
-          price: 1199,
-          old: 1399,
+          price: 799,
+          old: 949,
           badge: "new",
           rating: 4.7,
           reviews: 56,
@@ -2673,7 +2673,9 @@
         const detailLink =
           p.id === 104
             ? "product-details-pages/nattokinase200.html"
-            : "product-details.html";
+            : p.id === 103
+              ? "product-details-pages/nattokinase100.html"
+              : "product-details.html";
         return `<div class="product-card reveal d${(delay % 6) + 1}" data-id="${p.id}">
     <div class="product-img">
       <span class="p-badge ${badgeClass(p.badge)}">${badgeLabel(p.badge)}</span>
