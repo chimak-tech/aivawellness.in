@@ -425,14 +425,12 @@
       }
 
       /* ══════════════════════════════════════════════
-   GALLERY — PREMIUM PRODUCT MEDIA SECTION
+   GALLERY — AMAZON-STYLE ZOOM LENS
 ══════════════════════════════════════════════ */
       .gallery-wrap {
         position: sticky;
         top: 88px;
         align-self: start;
-        display: flex;
-        gap: 16px;
       }
       @media (max-width: 900px) {
         .gallery-wrap {
@@ -440,41 +438,19 @@
         }
       }
 
-      .gallery-rail {
-        display: none;
-      }
-
-      .gallery-main {
-        flex: 1;
-        min-width: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
-
-      /* Main image + zoom container */
+      /* Main image + zoom lens container */
       .main-img-container {
         position: relative;
         overflow: hidden;
         border-radius: var(--r);
         border: 1px solid var(--border);
-        background: linear-gradient(155deg, #ffffff 0%, #f6f9ff 100%);
+        background: var(--white);
         box-shadow: var(--sh-lg);
         aspect-ratio: 1;
         width: 100%;
-        cursor: zoom-in;
+        cursor: pointer;
         user-select: none;
         -webkit-user-select: none;
-        transition: box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
-      }
-      .main-img-container:hover {
-        box-shadow: var(--sh-xl);
-        border-color: var(--blue-border);
-      }
-      .main-img-container .img-frame {
-        position: absolute;
-        inset: 0;
-        overflow: hidden;
       }
       .main-img-container img#mainImg {
         width: 100%;
@@ -482,189 +458,9 @@
         object-fit: cover;
         display: block;
         pointer-events: none;
-        cursor: zoom-in;
-        transition: opacity 0.22s ease, transform 0.6s var(--ease);
-        will-change: transform;
-      }
-      .main-img-container:hover img#mainImg {
-        transform: scale(1.045);
-      }
-      .main-img-container::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          115deg,
-          transparent 40%,
-          rgba(255, 255, 255, 0.35) 50%,
-          transparent 60%
-        );
-        background-size: 220% 220%;
-        background-position: 120% 0%;
-        opacity: 0;
-        transition: opacity 0.4s, background-position 0.9s var(--ease);
-        pointer-events: none;
-        z-index: 4;
-      }
-      .main-img-container:hover::after {
-        opacity: 1;
-        background-position: -20% 100%;
-      }
-
-      .zoom-hint {
-        position: absolute;
-        bottom: 14px;
-        right: 14px;
-        z-index: 6;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: rgba(8, 13, 20, 0.62);
-        backdrop-filter: blur(6px);
-        color: #fff;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        padding: 7px 13px;
-        border-radius: 999px;
-        opacity: 0;
-        transform: translateY(6px);
-        transition: all 0.3s var(--ease);
-        pointer-events: none;
-      }
-      .main-img-container:hover .zoom-hint {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      @media (max-width: 900px) {
-        .zoom-hint {
-          opacity: 1;
-          transform: translateY(0);
-          bottom: 10px;
-          right: 10px;
-          font-size: 0.64rem;
-          padding: 6px 10px;
-        }
-      }
-
-      .gallery-counter {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        z-index: 6;
-        background: rgba(8, 13, 20, 0.55);
-        backdrop-filter: blur(6px);
-        color: #fff;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.03em;
-        padding: 6px 12px;
-        border-radius: 999px;
-      }
-
-      .main-nav-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        background: rgba(8, 13, 20, 0.45);
-        backdrop-filter: blur(6px);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         cursor: pointer;
-        z-index: 6;
-        opacity: 0;
-        transition: all 0.25s var(--ease);
+        transition: opacity 0.18s;
       }
-      .main-img-container:hover .main-nav-arrow {
-        opacity: 1;
-      }
-      .main-nav-arrow:hover {
-        background: var(--blue);
-        border-color: var(--blue);
-        transform: translateY(-50%) scale(1.08);
-      }
-      .main-nav-prev {
-        left: 12px;
-      }
-      .main-nav-next {
-        right: 12px;
-      }
-      @media (max-width: 900px) {
-        .main-nav-arrow {
-          opacity: 1;
-          width: 38px;
-          height: 38px;
-        }
-      }
-
-      .expand-btn {
-        position: absolute;
-        top: 14px;
-        left: 14px;
-        z-index: 6;
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        background: rgba(8, 13, 20, 0.5);
-        backdrop-filter: blur(6px);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 13px;
-        opacity: 0;
-        transform: translateY(-4px);
-        transition: all 0.25s var(--ease);
-      }
-      .main-img-container:hover .expand-btn {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .expand-btn:hover {
-        background: var(--blue);
-      }
-      @media (max-width: 900px) {
-        .expand-btn {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .gallery-dots {
-        display: none;
-        justify-content: center;
-        gap: 7px;
-        margin-top: 2px;
-      }
-      @media (max-width: 900px) {
-        .gallery-dots {
-          display: flex;
-        }
-      }
-      .gallery-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: var(--border);
-        cursor: pointer;
-        transition: all 0.25s var(--ease);
-        border: none;
-        padding: 0;
-      }
-      .gallery-dot.active {
-        background: var(--blue);
-        width: 20px;
-        border-radius: 4px;
-      }
-
       .image-modal-body {
         cursor: grab;
       }
@@ -672,7 +468,9 @@
         cursor: grabbing;
       }
       .image-modal-nav {
-        position: relative;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
         width: 48px;
         height: 48px;
         border-radius: 50%;
@@ -684,11 +482,19 @@
         justify-content: center;
         cursor: pointer;
         z-index: 10;
-        transition: transform 0.2s, background 0.2s;
+        transition:
+          transform 0.2s,
+          background 0.2s;
       }
       .image-modal-nav:hover {
         background: rgba(0, 0, 0, 0.65);
-        transform: scale(1.05);
+        transform: translateY(-50%) scale(1.05);
+      }
+      .image-modal-prev {
+        left: 14px;
+      }
+      .image-modal-next {
+        right: 14px;
       }
       .image-modal-video-badge {
         position: absolute;
@@ -706,63 +512,25 @@
       .image-modal-video-badge.show {
         display: inline-flex;
       }
-
-      .image-modal-strip {
-        position: absolute;
-        bottom: 16px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
-        display: flex;
-        gap: 8px;
-        padding: 8px;
-        background: rgba(8, 13, 20, 0.45);
-        backdrop-filter: blur(8px);
-        border-radius: 14px;
-        max-width: calc(100% - 40px);
-        overflow-x: auto;
+      /* The lens overlay that follows cursor */
+      .zoom-lens {
+        display: none !important;
       }
-      .image-modal-strip img {
-        width: 46px;
-        height: 46px;
-        object-fit: cover;
-        border-radius: 8px;
-        cursor: pointer;
-        opacity: 0.55;
-        border: 2px solid transparent;
-        transition: all 0.2s var(--ease);
-        flex-shrink: 0;
+      /* Zoom preview panel */
+      .zoom-preview {
+        display: none !important;
       }
-      .image-modal-strip img:hover {
-        opacity: 0.9;
-      }
-      .image-modal-strip img.active {
-        opacity: 1;
-        border-color: var(--blue-light);
-      }
-      .strip-video {
-        width: 46px;
-        height: 46px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        background: rgba(255, 255, 255, 0.08);
-        cursor: pointer;
-        opacity: 0.55;
-        border: 2px solid transparent;
-        transition: all 0.2s var(--ease);
-        flex-shrink: 0;
-      }
-      .strip-video:hover,
-      .strip-video.active {
-        opacity: 1;
-        border-color: var(--blue-light);
+      @media (max-width: 1200px) {
+        .zoom-preview {
+          left: 0;
+          top: calc(100% + 12px);
+          width: 100%;
+          height: 300px;
+        }
       }
       @media (max-width: 600px) {
-        .image-modal-strip {
-          display: none;
+        .zoom-preview {
+          display: none !important;
         }
       }
 
@@ -770,16 +538,15 @@
       .video-thumb {
         position: relative;
         overflow: hidden;
-        border-radius: 12px;
+        border-radius: 10px;
         border: 2px solid var(--border);
         cursor: pointer;
         width: 80px;
         height: 80px;
         flex-shrink: 0;
         transition:
-          border-color 0.25s var(--ease),
-          transform 0.25s var(--ease),
-          box-shadow 0.25s var(--ease);
+          border-color 0.2s,
+          transform 0.2s;
         background: var(--black);
         display: flex;
         align-items: center;
@@ -787,99 +554,57 @@
       }
       .video-thumb:hover {
         border-color: var(--blue);
-        transform: translateY(-3px) scale(1.04);
-        box-shadow: 0 10px 24px rgba(29, 78, 216, 0.22);
+        transform: scale(1.06);
       }
       .video-thumb img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.6;
-        transition: opacity 0.25s;
-      }
-      .video-thumb:hover img {
-        opacity: 0.4;
+        opacity: 0.7;
       }
       .video-thumb .play-icon {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 28px;
-        height: 28px;
-        background: rgba(255, 255, 255, 0.94);
+        width: 26px;
+        height: 26px;
+        background: rgba(255, 255, 255, 0.92);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 10px;
         color: var(--blue);
-        transition: transform 0.25s var(--ease);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-      }
-      .video-thumb:hover .play-icon {
-        transform: translate(-50%, -50%) scale(1.15);
-      }
-      .video-thumb .video-tag {
-        position: absolute;
-        bottom: 4px;
-        left: 4px;
-        right: 4px;
-        font-size: 0.55rem;
-        font-weight: 800;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: #fff;
-        text-align: center;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
       }
 
       .thumbs-row {
         display: flex;
         gap: 10px;
-        margin-top: 0;
+        margin-top: 14px;
         overflow-x: auto;
         padding-bottom: 4px;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-      }
-      .thumbs-row::-webkit-scrollbar { display: none; }
-      .thumbs-row {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
-      @media (max-width: 900px) {
-        .thumbs-row {
-          margin-top: 14px;
-        }
       }
       .thumb-img {
         width: 80px;
         height: 80px;
         object-fit: cover;
-        border-radius: 12px;
+        border-radius: 10px;
         border: 2px solid var(--border);
         cursor: pointer;
         flex-shrink: 0;
         transition:
-          border-color 0.25s var(--ease),
-          transform 0.25s var(--ease),
-          box-shadow 0.25s var(--ease);
+          border-color 0.2s,
+          transform 0.2s;
         display: block;
       }
       .thumb-img:hover {
-        transform: translateY(-3px) scale(1.04);
-        box-shadow: 0 10px 24px rgba(8, 13, 20, 0.14);
+        transform: scale(1.06);
       }
       .thumb-img.active {
         border-color: var(--blue);
         box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.18);
-      }
-
-      .gallery-rail .thumb-img,
-      .gallery-rail .video-thumb {
-        width: 76px;
-        height: 76px;
       }
 
       /* Gallery badge */
@@ -897,13 +622,6 @@
         background: linear-gradient(135deg, #1d4ed8, #3b82f6);
         color: #fff;
         box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
-      }
-      @media (max-width: 900px) {
-        .gallery-badge {
-          top: auto;
-          bottom: 14px;
-          left: 14px;
-        }
       }
 
       /* ══════════════════════════════════════════════
@@ -1335,64 +1053,12 @@
       }
       .image-modal-inner {
         position: relative;
-        display: flex;
-        flex-direction: column;
         width: 100%;
-        min-width: 320px;
-        max-width: 95vw;
-        height: 90vh;
-        max-height: 90vh;
-        padding: 16px 0 70px;
+        max-width: 1000px;
+        max-height: 95vh;
         border-radius: 22px;
         overflow: hidden;
         background: #000;
-      }
-      .image-modal-toolbar {
-        position: absolute;
-        top: 18px;
-        left: 18px;
-        z-index: 20;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: #fff;
-        font-size: 0.95rem;
-        background: rgba(0, 0, 0, 0.35);
-        padding: 8px 12px;
-        border-radius: 999px;
-        backdrop-filter: blur(8px);
-      }
-      .image-modal-content {
-        position: relative;
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 0;
-        padding: 0 72px;
-      }
-      .image-modal-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        background: rgba(0, 0, 0, 0.45);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        transition: transform 0.2s, background 0.2s;
-      }
-      .image-modal-prev {
-        left: 18px;
-      }
-      .image-modal-next {
-        right: 18px;
       }
       .image-modal-body {
         width: 100%;
@@ -1402,14 +1068,10 @@
         justify-content: center;
         overflow: hidden;
         touch-action: none;
-        position: relative;
       }
       .image-modal-body img {
         max-width: 100%;
         max-height: 100%;
-        width: auto;
-        height: auto;
-        object-fit: contain;
         transform-origin: center center;
         transition: transform 0.15s ease;
         pointer-events: none;
@@ -1560,20 +1222,7 @@
       }
       @media (max-width: 480px) {
         .benefits-grid {
-          gap: 10px;
-        }
-        .benefit-card {
-          padding: 16px 10px;
-        }
-        .benefit-icon {
-          font-size: 22px;
-        }
-        .benefit-title {
-          font-size: 0.8rem;
-        }
-        .benefit-desc {
-          font-size: 0.72rem;
-          line-height: 1.55;
+          grid-template-columns: 1fr;
         }
       }
       .benefit-card {
@@ -2450,76 +2099,6 @@
       .d4 {
         transition-delay: 0.4s !important;
       }
-
-      /* ══ IMAGE MODAL — PREMIUM ZOOM CONTROLS ══ */
-.image-modal-zoombar {
-  position: absolute;
-  bottom: 16px;
-  right: 18px;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(8px);
-  padding: 6px;
-  border-radius: 999px;
-}
-.zoom-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-}
-.zoom-btn:hover {
-  background: var(--blue);
-}
-.zoom-btn:active {
-  transform: scale(0.92);
-}
-.zoom-pct {
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  min-width: 40px;
-  text-align: center;
-  user-select: none;
-}
-.image-modal-hint {
-  position: absolute;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 15;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.7rem;
-  letter-spacing: 0.02em;
-  pointer-events: none;
-  white-space: nowrap;
-}
-@media (max-width: 600px) {
-  .image-modal-hint { display: none; }
-  .image-modal-content { padding: 0 50px; }
-  .image-modal-nav { width: 40px; height: 40px; }
-  .image-modal-zoombar { bottom: 12px; right: 12px; }
-}
-.image-modal-nav:active {
-  transform: translateY(-50%) scale(0.92);
-}
-.image-modal-close:hover {
-  background: var(--blue);
-}
-.image-modal-close:active {
-  transform: scale(0.92);
-}
     </style>
   </head>
   <body>
@@ -2608,127 +2187,95 @@
         <div class="product-top">
           <!-- GALLERY -->
           <div class="gallery-wrap">
-            <div class="gallery-main">
-              <div class="main-img-container" id="imgContainer">
-                <span class="gallery-badge">New</span>
-                <span class="gallery-counter" id="galleryCounter">1 / 6</span>
-                <button
-                  class="expand-btn"
-                  title="View fullscreen"
-                  onclick="event.stopPropagation(); openImageModal();"
-                >
-                  <i class="fa-solid fa-expand"></i>
-                </button>
-                <button
-                  class="main-nav-arrow main-nav-prev"
-                  title="Previous"
-                  onclick="event.stopPropagation(); stepMainGallery(-1);"
-                >
-                  <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button
-                  class="main-nav-arrow main-nav-next"
-                  title="Next"
-                  onclick="event.stopPropagation(); stepMainGallery(1);"
-                >
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
-                <div class="img-frame">
-                  <img
-                    id="mainImg"
-                    src="products/Magnesium Complex.jpg.jpeg"
-                    alt="Magnesium Complex 5-in-1"
-                    onerror="
-                      this.src =
-                        'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=700&q=80'
-                    "
-                  />
-                </div>
-                <span class="zoom-hint"
-                  ><i class="fa-solid fa-magnifying-glass-plus"></i> Click to
-                  zoom</span
-                >
-              </div>
+            <div class="main-img-container" id="imgContainer">
+              <span class="gallery-badge">New</span>
+              <img
+                id="mainImg"
+                src="products/Magnesium Complex.jpg.jpeg"
+                alt="Magnesium Complex 5-in-1"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=700&q=80'
+                "
+              />
+              <div class="zoom-lens" id="zoomLens"></div>
+              <div class="zoom-preview" id="zoomPreview"></div>
+            </div>
 
-              <!-- Mobile dot indicators -->
-              <div class="gallery-dots" id="galleryDots"></div>
-
-              <!-- Thumbnails row -->
-              <div class="thumbs-row" id="thumbsRow">
+            <!-- Thumbnails row -->
+            <div class="thumbs-row">
+              <img
+                class="thumb-img active"
+                src="products/Magnesium Complex.jpg.jpeg"
+                data-full-src="products/Magnesium Complex.jpg.jpeg"
+                alt="View 1"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=150&q=80'
+                "
+                onclick="
+                  switchThumb(this, 'products/Magnesium Complex.jpg.jpeg')
+                "
+              />
+              <img
+                class="thumb-img"
+                src="products/Nattokinase Carton.jpg.jpeg"
+                data-full-src="products/Nattokinase Carton.jpg.jpeg"
+                alt="View 2"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=150&q=80'
+                "
+                onclick="
+                  switchThumb(this, 'products/Nattokinase Carton.jpg.jpeg')
+                "
+              />
+              <img
+                class="thumb-img"
+                src="products/VITAMIN D3.jpg.jpeg"
+                data-full-src="products/VITAMIN D3.jpg.jpeg"
+                alt="View 3"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=150&q=80'
+                "
+                onclick="switchThumb(this, 'products/VITAMIN D3.jpg.jpeg')"
+              />
+              <img
+                class="thumb-img"
+                src="products/ZMA.png"
+                data-full-src="products/ZMA.png"
+                alt="View 4"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=150&q=80'
+                "
+                onclick="switchThumb(this, 'products/ZMA.png')"
+              />
+              <img
+                class="thumb-img"
+                src="products/omega 3, Vitamin E.jpg.jpeg"
+                data-full-src="products/omega 3, Vitamin E.jpg.jpeg"
+                alt="View 5"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=150&q=80'
+                "
+                onclick="
+                  switchThumb(this, 'products/omega 3, Vitamin E.jpg.jpeg')
+                "
+              />
+              <!-- Video thumbnail -->
+              <div class="video-thumb" onclick="openVideoModal()">
                 <img
-                  class="thumb-img active"
-                  src="products/Magnesium Complex.jpg.jpeg"
-                  data-full-src="products/Magnesium Complex.jpg.jpeg"
-                  alt="View 1"
+                  src="products-1/Magnesium Complex.jpg"
+                  alt="Product Video"
                   onerror="
                     this.src =
                       'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=150&q=80'
                   "
-                  onclick="
-                    switchThumb(this, 'products/Magnesium Complex.jpg.jpeg')
-                  "
                 />
-                <img
-                  class="thumb-img"
-                  src="products/Nattokinase Carton.jpg.jpeg"
-                  data-full-src="products/Nattokinase Carton.jpg.jpeg"
-                  alt="View 2"
-                  onerror="
-                    this.src =
-                      'https://images.unsplash.com/photo-1550258987-920a2eae7d5f?w=150&q=80'
-                  "
-                  onclick="
-                    switchThumb(this, 'products/Nattokinase Carton.jpg.jpeg')
-                  "
-                />
-                <img
-                  class="thumb-img"
-                  src="products/VITAMIN D3.jpg.jpeg"
-                  data-full-src="products/VITAMIN D3.jpg.jpeg"
-                  alt="View 3"
-                  onerror="
-                    this.src =
-                      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=150&q=80'
-                  "
-                  onclick="switchThumb(this, 'products/VITAMIN D3.jpg.jpeg')"
-                />
-                <img
-                  class="thumb-img"
-                  src="products/ZMA.png"
-                  data-full-src="products/ZMA.png"
-                  alt="View 4"
-                  onerror="
-                    this.src =
-                      'https://images.unsplash.com/photo-1587854692152-cbe660dbde36?w=150&q=80'
-                  "
-                  onclick="switchThumb(this, 'products/ZMA.png')"
-                />
-                <img
-                  class="thumb-img"
-                  src="products/omega 3, Vitamin E.jpg.jpeg"
-                  data-full-src="products/omega 3, Vitamin E.jpg.jpeg"
-                  alt="View 5"
-                  onerror="
-                    this.src =
-                      'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=150&q=80'
-                  "
-                  onclick="
-                    switchThumb(this, 'products/omega 3, Vitamin E.jpg.jpeg')
-                  "
-                />
-                <!-- Video thumbnail -->
-                <div class="video-thumb" onclick="openVideoModal()">
-                  <img
-                    src="products-1/Magnesium Complex.jpg"
-                    alt="Product Video"
-                    onerror="
-                      this.src =
-                        'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=150&q=80'
-                    "
-                  />
-                  <div class="play-icon"><i class="fa-solid fa-play"></i></div>
-                  <div class="video-tag">Video</div>
-                </div>
+                <div class="play-icon"><i class="fa-solid fa-play"></i></div>
               </div>
             </div>
           </div>
@@ -3522,32 +3069,29 @@
         <button class="image-modal-close" onclick="closeImageModal()">
           <i class="fa-solid fa-xmark"></i>
         </button>
-        <div class="image-modal-toolbar">
-          <span class="image-modal-counter" id="modalCounter">1 / 6</span>
+        <button
+          class="image-modal-nav image-modal-prev"
+          onclick="prevModalItem(event)"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button
+          class="image-modal-nav image-modal-next"
+          onclick="nextModalItem(event)"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="image-modal-body" id="imageModalBody">
+          <img
+            id="imageModalImg"
+            src=""
+            alt="Product image"
+            draggable="false"
+          />
+          <span class="image-modal-video-badge" id="imageModalVideoBadge"
+            >Video</span
+          >
         </div>
-        <span class="image-modal-hint" id="imageModalHint">Scroll / pinch to zoom · Drag to pan · Double-click to reset</span>
-        <div class="image-modal-zoombar">
-          <button class="zoom-btn" onclick="event.stopPropagation(); setImageModalScale(imageModalScale - 0.5);" title="Zoom out">
-            <i class="fa-solid fa-minus"></i>
-          </button>
-          <span class="zoom-pct" id="zoomPct">100%</span>
-          <button class="zoom-btn" onclick="event.stopPropagation(); setImageModalScale(imageModalScale + 0.5);" title="Zoom in">
-            <i class="fa-solid fa-plus"></i>
-          </button>
-        </div>
-        <div class="image-modal-content">
-          <button class="image-modal-nav image-modal-prev" onclick="prevModalItem(event)">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <div class="image-modal-body" id="imageModalBody">
-            <img id="imageModalImg" src="" alt="Product image" draggable="false" />
-            <span class="image-modal-video-badge" id="imageModalVideoBadge">Video</span>
-          </div>
-          <button class="image-modal-nav image-modal-next" onclick="nextModalItem(event)">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
-        <div class="image-modal-strip" id="imageModalStrip"></div>
       </div>
     </div>
 
@@ -3702,16 +3246,14 @@
         btn.classList.add("active");
       }
 
-      /* ══ GALLERY THUMBNAIL SWITCH (syncs rail + row) ══ */
+      /* ══ GALLERY THUMBNAIL SWITCH ══ */
       function switchThumb(el, src) {
         document
           .querySelectorAll(".thumb-img")
-          .forEach((t) => {
-            t.classList.toggle("active", (t.dataset.fullSrc || t.src) === src);
-          });
+          .forEach((t) => t.classList.remove("active"));
+        el.classList.add("active");
         activeThumbSrc = src;
         previewMainImage(src);
-        updateGalleryUI();
       }
 
       function previewMainImage(src) {
@@ -3719,109 +3261,40 @@
         setTimeout(() => {
           mainImg.src = src;
           mainImg.style.opacity = "1";
+          zoomPreview.style.backgroundImage = `url('${src}')`;
         }, 120);
       }
 
-      /* ══ PREMIUM GALLERY CONTROLS ══ */
+      /* ══ AMAZON-STYLE ZOOM LENS ══ */
       const imgContainer = document.getElementById("imgContainer");
       const mainImg = document.getElementById("mainImg");
+      const zoomLens = document.getElementById("zoomLens");
+      const zoomPreview = document.getElementById("zoomPreview");
+      const ZOOM = 2.5;
       let activeThumbSrc = mainImg.src;
-
-      const galleryItems = Array.from(
-        document.querySelectorAll('#thumbsRow .thumb-img'),
-      ).map((thumb) => ({
-        type: 'image',
-        src: thumb.dataset.fullSrc || thumb.src,
-      }));
-      const videoThumbEls = document.querySelectorAll('.video-thumb');
-      if (videoThumbEls.length) {
-        galleryItems.push({ type: 'video', src: '', label: 'Product Video' });
-      }
-
-      const galleryCounterEl = document.getElementById('galleryCounter');
-      const galleryDotsEl = document.getElementById('galleryDots');
-      if (galleryDotsEl) {
-        galleryItems.forEach((item, i) => {
-          const dot = document.createElement('button');
-          dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
-          dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
-          dot.addEventListener('click', () => {
-            if (item.type === 'video') {
-              openVideoModal();
-            } else {
-              const thumb = Array.from(document.querySelectorAll('#thumbsRow .thumb-img')).find(
-                (t) => (t.dataset.fullSrc || t.src) === item.src,
-              );
-              if (thumb) switchThumb(thumb, item.src);
-            }
-          });
-          galleryDotsEl.appendChild(dot);
-        });
-      }
-
-      function getActiveGalleryIndex() {
-        const idx = galleryItems.findIndex(
-          (item) => item.type === 'image' && item.src === activeThumbSrc,
-        );
-        return idx >= 0 ? idx : 0;
-      }
-
-      function updateGalleryUI() {
-        const idx = getActiveGalleryIndex();
-        if (galleryCounterEl) {
-          galleryCounterEl.textContent = (idx + 1) + ' / ' + galleryItems.length;
-        }
-        if (galleryDotsEl) {
-          Array.from(galleryDotsEl.children).forEach((dot, i) =>
-            dot.classList.toggle('active', i === idx),
-          );
-        }
-      }
-
-      function stepMainGallery(delta) {
-        const idx = getActiveGalleryIndex();
-        let nextIdx = (idx + delta + galleryItems.length) % galleryItems.length;
-        const item = galleryItems[nextIdx];
-        if (item.type === 'video') {
-          openVideoModal();
-          return;
-        }
-        const thumb = Array.from(document.querySelectorAll('#thumbsRow .thumb-img')).find(
-          (t) => (t.dataset.fullSrc || t.src) === item.src,
-        );
-        if (thumb) switchThumb(thumb, item.src);
-      }
-
-      /* keyboard nav for main gallery (when modal closed) */
-      document.addEventListener('keydown', (e) => {
-        if (imageModal.classList.contains('open')) return;
-        if (e.key === 'ArrowLeft') stepMainGallery(-1);
-        if (e.key === 'ArrowRight') stepMainGallery(1);
-      });
-
-      /* swipe support on mobile main image */
-      (() => {
-        let touchStartX = null;
-        imgContainer.addEventListener('touchstart', (e) => {
-          touchStartX = e.touches[0].clientX;
-        }, { passive: true });
-        imgContainer.addEventListener('touchend', (e) => {
-          if (touchStartX === null) return;
-          const dx = e.changedTouches[0].clientX - touchStartX;
-          if (Math.abs(dx) > 40) stepMainGallery(dx > 0 ? -1 : 1);
-          touchStartX = null;
-        }, { passive: true });
-      })();
-
-      updateGalleryUI();
-
-      /* hover-to-preview: show thumbnail image in main viewer on hover */
-      document.querySelectorAll('#thumbsRow .thumb-img').forEach((thumb) => {
+      const thumbImages = document.querySelectorAll(".thumb-img");
+      thumbImages.forEach((thumb) => {
         const previewSrc = thumb.dataset.fullSrc || thumb.src;
-        thumb.addEventListener('mouseenter', () => previewMainImage(previewSrc));
-        thumb.addEventListener('mouseleave', () => previewMainImage(activeThumbSrc));
+        thumb.addEventListener("mouseenter", () =>
+          previewMainImage(previewSrc),
+        );
+        thumb.addEventListener("mouseleave", () =>
+          previewMainImage(activeThumbSrc),
+        );
       });
+      const LENS_SIZE = 120;
 
+      zoomLens.style.width = LENS_SIZE + "px";
+      zoomLens.style.height = LENS_SIZE + "px";
+
+      function getPreviewSize() {
+        // Recalculate at runtime to support responsive layouts
+        const rect = imgContainer.getBoundingClientRect();
+        const isWide = window.innerWidth > 1200;
+        const pw = isWide ? 400 : rect.width;
+        const ph = isWide ? 400 : 300;
+        return { pw, ph };
+      }
 
       /* ══ VIDEO MODAL ══ */
       function openVideoModal() {
@@ -3833,19 +3306,27 @@
         document.body.style.overflow = "";
       }
 
-      /* ══ IMAGE MODAL — fixed, professional, mobile + desktop ready ══ */
       const imageModal = document.getElementById("imageModal");
       const imageModalImg = document.getElementById("imageModalImg");
       const imageModalBody = document.getElementById("imageModalBody");
-      const imageModalVideoBadge = document.getElementById("imageModalVideoBadge");
-      const imageModalStrip = document.getElementById("imageModalStrip");
-      const modalCounterEl = document.getElementById("modalCounter");
-      const zoomPctEl = document.getElementById("zoomPct");
-      const imageModalHint = document.getElementById("imageModalHint");
-
       let imageModalScale = 1;
       let imageModalBaseScale = 1;
       let imageModalTouchDist = null;
+
+      const galleryItems = Array.from(
+        document.querySelectorAll(".thumb-img"),
+      ).map((thumb) => ({
+        type: "image",
+        src: thumb.dataset.fullSrc || thumb.src,
+      }));
+      const videoThumb = document.querySelector(".video-thumb");
+      if (videoThumb) {
+        galleryItems.push({
+          type: "video",
+          src: "",
+          label: "Product Video",
+        });
+      }
       let currentModalIndex = 0;
       let imageModalTx = 0;
       let imageModalTy = 0;
@@ -3853,46 +3334,19 @@
       let lastPointerX = 0;
       let lastPointerY = 0;
       let touchMode = null;
-      let lastTapTime = 0;
-
-      /* build filmstrip thumbnails inside modal (once) */
-      if (imageModalStrip) {
-        galleryItems.forEach((item, i) => {
-          if (item.type === "video") {
-            const v = document.createElement("div");
-            v.className = "strip-video";
-            v.innerHTML = '<i class="fa-solid fa-play"></i>';
-            v.addEventListener("click", (e) => {
-              e.stopPropagation();
-              showModalItem(i);
-            });
-            imageModalStrip.appendChild(v);
-          } else {
-            const im = document.createElement("img");
-            im.src = item.src;
-            im.addEventListener("click", (e) => {
-              e.stopPropagation();
-              showModalItem(i);
-            });
-            imageModalStrip.appendChild(im);
-          }
-        });
-      }
-
-      function syncModalStrip() {
-        if (!imageModalStrip) return;
-        Array.from(imageModalStrip.children).forEach((child, i) =>
-          child.classList.toggle("active", i === currentModalIndex),
-        );
-      }
 
       function getCurrentModalIndex() {
-        return getActiveGalleryIndex();
+        const active = document.querySelector(".thumb-img.active");
+        if (!active) return 0;
+        const src = active.dataset.fullSrc || active.src;
+        const idx = galleryItems.findIndex(
+          (item) => item.type === "image" && item.src === src,
+        );
+        return idx >= 0 ? idx : 0;
       }
 
-      /* main image click / expand button both call this WITHOUT passing the click event */
-      function openImageModal() {
-        currentModalIndex = getCurrentModalIndex();
+      function openImageModal(index = null) {
+        currentModalIndex = index !== null ? index : getCurrentModalIndex();
         showModalItem(currentModalIndex);
         imageModal.classList.add("open");
         document.body.style.overflow = "hidden";
@@ -3908,47 +3362,35 @@
         imageModalScale = 1;
         imageModalTx = 0;
         imageModalTy = 0;
-        imageModalImg.style.transform = "translate3d(0,0,0) scale(1)";
+        imageModalImg.style.transform = "translate3d(0, 0, 0) scale(1)";
         imageModalVideoBadge.classList.remove("show");
-        if (zoomPctEl) zoomPctEl.textContent = "100%";
       }
 
       function showModalItem(index) {
         currentModalIndex = (index + galleryItems.length) % galleryItems.length;
         const item = galleryItems[currentModalIndex];
         resetImagePosition();
-
         if (item.type === "video") {
           imageModalImg.src = "products/Magnesium Complex.jpg.jpeg";
           imageModalVideoBadge.classList.add("show");
         } else {
           imageModalImg.src = item.src;
           imageModalVideoBadge.classList.remove("show");
-          const thumb = Array.from(
-            document.querySelectorAll("#thumbsRow .thumb-img"),
-          ).find((t) => (t.dataset.fullSrc || t.src) === item.src);
-          if (thumb) switchThumb(thumb, item.src);
         }
-
-        if (modalCounterEl) {
-          modalCounterEl.textContent = (currentModalIndex + 1) + " / " + galleryItems.length;
-        }
-        syncModalStrip();
       }
 
       function prevModalItem(event) {
-        if (event) event.stopPropagation();
+        event.stopPropagation();
         showModalItem(currentModalIndex - 1);
       }
 
       function nextModalItem(event) {
-        if (event) event.stopPropagation();
+        event.stopPropagation();
         showModalItem(currentModalIndex + 1);
       }
 
       function setImageModalTransform() {
-        imageModalImg.style.transform =
-          `translate3d(${imageModalTx}px, ${imageModalTy}px, 0) scale(${imageModalScale})`;
+        imageModalImg.style.transform = `translate3d(${imageModalTx}px, ${imageModalTy}px, 0) scale(${imageModalScale})`;
       }
 
       function setImageModalScale(scale) {
@@ -3957,28 +3399,19 @@
           imageModalTx = 0;
           imageModalTy = 0;
         }
-        if (zoomPctEl) zoomPctEl.textContent = Math.round(imageModalScale * 100) + "%";
         setImageModalTransform();
       }
 
-      /* desktop: scroll wheel zoom */
       imageModalBody.addEventListener("wheel", (e) => {
         if (!imageModal.classList.contains("open")) return;
         e.preventDefault();
-        const delta = e.deltaY > 0 ? 0.85 : 1.15;
+        const delta = e.deltaY > 0 ? 0.9 : 1.1;
         setImageModalScale(imageModalScale * delta);
-      }, { passive: false });
-
-      /* desktop: double-click to zoom in/reset */
-      imageModalBody.addEventListener("dblclick", (e) => {
-        e.preventDefault();
-        if (galleryItems[currentModalIndex] && galleryItems[currentModalIndex].type === "video") return;
-        setImageModalScale(imageModalScale > 1 ? 1 : 2.2);
       });
 
-      /* desktop: drag to pan when zoomed */
       imageModalBody.addEventListener("pointerdown", (e) => {
-        if (!imageModal.classList.contains("open") || imageModalScale <= 1) return;
+        if (!imageModal.classList.contains("open")) return;
+        if (imageModalScale <= 1) return;
         isDragging = true;
         lastPointerX = e.clientX;
         lastPointerY = e.clientY;
@@ -3989,21 +3422,25 @@
       imageModalBody.addEventListener("pointermove", (e) => {
         if (!isDragging) return;
         e.preventDefault();
-        imageModalTx += e.clientX - lastPointerX;
-        imageModalTy += e.clientY - lastPointerY;
+        const dx = e.clientX - lastPointerX;
+        const dy = e.clientY - lastPointerY;
         lastPointerX = e.clientX;
         lastPointerY = e.clientY;
+        imageModalTx += dx;
+        imageModalTy += dy;
         setImageModalTransform();
       });
 
-      ["pointerup", "pointercancel", "pointerleave"].forEach((evt) => {
-        imageModalBody.addEventListener(evt, () => {
-          isDragging = false;
-          imageModalBody.classList.remove("grabbing");
-        });
+      imageModalBody.addEventListener("pointerup", () => {
+        isDragging = false;
+        imageModalBody.classList.remove("grabbing");
       });
 
-      /* mobile: pinch to zoom + single-finger pan + double-tap to zoom */
+      imageModalBody.addEventListener("pointercancel", () => {
+        isDragging = false;
+        imageModalBody.classList.remove("grabbing");
+      });
+
       imageModalBody.addEventListener("touchstart", (e) => {
         if (e.touches.length === 2) {
           touchMode = "pinch";
@@ -4012,71 +3449,74 @@
             e.touches[0].pageY - e.touches[1].pageY,
           );
           imageModalBaseScale = imageModalScale;
-        } else if (e.touches.length === 1) {
-          const now = Date.now();
-          if (now - lastTapTime < 300) {
-            /* double tap */
-            if (!(galleryItems[currentModalIndex] && galleryItems[currentModalIndex].type === "video")) {
-              setImageModalScale(imageModalScale > 1 ? 1 : 2.2);
-            }
-            lastTapTime = 0;
-          } else {
-            lastTapTime = now;
-          }
-          if (imageModalScale > 1) {
-            touchMode = "pan";
-            lastPointerX = e.touches[0].pageX;
-            lastPointerY = e.touches[0].pageY;
-          }
+        } else if (e.touches.length === 1 && imageModalScale > 1) {
+          touchMode = "pan";
+          lastPointerX = e.touches[0].pageX;
+          lastPointerY = e.touches[0].pageY;
         }
-      }, { passive: true });
+      });
 
       imageModalBody.addEventListener("touchmove", (e) => {
         if (!imageModal.classList.contains("open")) return;
-        if (touchMode === "pinch" && e.touches.length === 2 && imageModalTouchDist) {
+        if (
+          touchMode === "pinch" &&
+          e.touches.length === 2 &&
+          imageModalTouchDist
+        ) {
           e.preventDefault();
           const currentDist = Math.hypot(
             e.touches[0].pageX - e.touches[1].pageX,
             e.touches[0].pageY - e.touches[1].pageY,
           );
-          setImageModalScale(imageModalBaseScale * (currentDist / imageModalTouchDist));
-        } else if (touchMode === "pan" && e.touches.length === 1 && imageModalScale > 1) {
+          const targetScale =
+            imageModalBaseScale * (currentDist / imageModalTouchDist);
+          setImageModalScale(targetScale);
+        } else if (
+          touchMode === "pan" &&
+          e.touches.length === 1 &&
+          imageModalScale > 1
+        ) {
           e.preventDefault();
-          imageModalTx += e.touches[0].pageX - lastPointerX;
-          imageModalTy += e.touches[0].pageY - lastPointerY;
+          const dx = e.touches[0].pageX - lastPointerX;
+          const dy = e.touches[0].pageY - lastPointerY;
           lastPointerX = e.touches[0].pageX;
           lastPointerY = e.touches[0].pageY;
+          imageModalTx += dx;
+          imageModalTy += dy;
           setImageModalTransform();
         }
-      }, { passive: false });
-
-      imageModalBody.addEventListener("touchend", (e) => {
-        if (e.touches.length < 2) imageModalTouchDist = null;
-        if (e.touches.length === 0) touchMode = null;
       });
 
-      /* tap on video preview inside modal opens the actual video modal */
+      imageModalBody.addEventListener("touchend", () => {
+        touchMode = null;
+        imageModalTouchDist = null;
+      });
+
       imageModalBody.addEventListener("click", (e) => {
-        if (isDragging) return;
-        if (galleryItems[currentModalIndex] && galleryItems[currentModalIndex].type === "video") {
+        if (
+          galleryItems[currentModalIndex] &&
+          galleryItems[currentModalIndex].type === "video"
+        ) {
           e.stopPropagation();
           closeImageModal();
           openVideoModal();
         }
       });
 
-      /* single, clean click handler — opens modal at the currently active image */
-      imgContainer.addEventListener("click", (e) => {
-        e.stopPropagation();
-        openImageModal();
+      imgContainer.addEventListener("click", () => openImageModal());
+
+      imageModalBody.addEventListener("touchend", (e) => {
+        if (e.touches.length < 2) {
+          imageModalTouchDist = null;
+        }
       });
 
+      imgContainer.addEventListener("click", openImageModal);
       document.addEventListener("keydown", (e) => {
-        if (!imageModal.classList.contains("open")) return;
-        if (e.key === "ArrowLeft") prevModalItem();
-        if (e.key === "ArrowRight") nextModalItem();
-        if (e.key === "+") setImageModalScale(imageModalScale + 0.3);
-        if (e.key === "-") setImageModalScale(imageModalScale - 0.3);
+        if (e.key === "Escape") {
+          closeVideoModal();
+          closeImageModal();
+        }
       });
 
       /* ══ QUANTITY ══ */
